@@ -124,3 +124,73 @@ function invertBeepers(){
          putBeeper();
       }
 }
+
+//2022.02.05
+
+//Unit12 Lesson1
+
+//Your final task is to teach
+//Karel to find the midpoint
+//of any world. You can assume
+//that all worlds are square.
+function main(){
+   putBeeper();
+   putBeeperRightEnd();
+   while(noBeepersPresent()){
+      moveToNewEnd();
+   }
+   moveToTheCenter();
+   moveToTheFirstPlace();
+   markTheCenter();
+}
+
+function putBeeperRightEnd(){
+   while(frontIsClear()){
+      move();
+   }
+   putBeeper();
+   turnAround();
+   move();
+}
+
+function moveToNewEnd(){
+   move();
+   while(noBeepersPresent()){
+      move();
+   }
+   turnAround();
+   move();
+   if(noBeepersPresent()){
+      putBeeper();
+   }
+   move();
+}
+
+function moveToTheCenter(){
+   turnAround();
+   move();
+   pickBeeper();
+}
+
+function moveToTheFirstPlace(){
+   while(frontIsClear()){
+      move();
+   }
+}
+
+function markTheCenter(){
+   turnAround();
+   while(frontIsClear()){
+      invertBeeper();
+      move();
+   }
+   invertBeeper();
+}
+
+function invertBeeper(){
+   if(beepersPresent()){
+      pickBeeper();
+   } else{
+      putBeeper();
+   }
+}
