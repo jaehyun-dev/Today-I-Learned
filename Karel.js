@@ -194,3 +194,53 @@ function invertBeeper(){
       putBeeper();
    }
 }
+
+//2022.02.07
+
+//Karel IDE 15x15
+
+/**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/
+function main(){
+   //your code here
+   putBeeperSquare();
+   moveToInnerPosition();
+   putBeeperInnerSquare();
+}
+
+function putBeeperLine(){
+   while(frontIsClear()){
+      putBeeper();
+      move();
+   }
+}
+
+function putBeeperSquare(){
+   while(noBeepersPresent()){
+      putBeeperLine();     
+      turnLeft();
+   }
+}
+
+function moveToInnerPosition(){
+   turnLeft();
+   move();
+   turnRight();
+   move();
+}
+
+function putBeeperInnerSquare(){
+   while(noBeepersPresent()){
+      while(noBeepersPresent()){
+         putBeeper();
+         move();
+      }
+      turnAround();
+      move();
+      turnRight();
+      move();
+   }
+}
