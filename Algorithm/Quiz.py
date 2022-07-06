@@ -1,3 +1,5 @@
+# 22.07.06
+
 # Fibonacci Sequence
 
 # n번째 피보나치 수를 리턴
@@ -118,3 +120,80 @@ def hanoi(num_disks, start_peg, end_peg):
     
 # 테스트 코드 (포함하여 제출해주세요)
 hanoi(3, 1, 3)
+
+
+
+# 22.07.07 00:43
+
+# Max Product
+
+def max_product(left_cards, right_cards):
+    # 코드를 작성하세요.
+    product_list = []
+    for i in left_cards:
+        for j in right_cards:
+            product_list.append(i * j)
+    return max(product_list)
+    
+# def max_product(left_cards, right_cards):
+#     max_product = left_cards[0] * right_cards[0]
+#     for left in left_cards:
+#         for right in right_cards:
+#             max_product = max(max_product, left * right)
+    
+#     return max_product 
+    
+    
+# 테스트
+print(max_product([1, 6, 5], [4, 2, 3]))
+print(max_product([1, -9, 3, 4], [2, 8, 3, 1]))
+print(max_product([-1, -7, 3], [-4, 3, 6]))
+
+
+
+# Closest Pair
+
+# 제곱근 사용을 위한 sqrt 함수
+from math import sqrt
+
+# 두 매장의 직선 거리를 계산해 주는 함수
+def distance(store1, store2):
+    return sqrt((store1[0] - store2[0]) ** 2 + (store1[1] - store2[1]) ** 2)
+
+# 가장 가까운 두 매장을 찾아주는 함수
+def closest_pair(coordinates):
+    # 여기 코드를 쓰세요
+    min_distance = distance(coordinates[0], coordinates[1])
+    closest_stores = [coordinates[0], coordinates[1]]
+    for i in range(len(coordinates)):
+        for j in range(len(coordinates)):
+            if i < j:
+                if distance(coordinates[i], coordinates[j]) < min_distance:
+                    min_distance = distance(coordinates[i], coordinates[j])
+                    closest_stores[0] = coordinates[i]
+                    closest_stores[1] = coordinates[j]
+                
+    return closest_stores
+
+# 테스트
+test_coordinates = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
+print(closest_pair(test_coordinates))
+
+
+# Trapping Rain
+
+def trapping_rain(buildings):
+    # 코드를 작성하세요
+    rain = 0
+    for i in range(1, len(buildings) - 1):
+        left_bound = max(buildings[:i])
+        right_bound = max(buildings[i:])
+        bound = min(left_bound, right_bound)
+        rain += max(0, bound - buildings[i])
+    
+    return rain
+
+
+# 테스트
+print(trapping_rain([3, 0, 0, 2, 0, 4]))
+print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
