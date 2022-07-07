@@ -202,7 +202,7 @@ print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
 
 # 22.07.08 04:03
 
-# 
+# Consecutive Sum
 
 def consecutive_sum(start, end):
     # 코드를 작성하세요
