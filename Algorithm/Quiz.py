@@ -646,3 +646,41 @@ def fib(n):
 print(fib(10))
 print(fib(50))
 print(fib(100))
+
+
+
+# 22.07.10 23:36
+
+# Fibonacci by Tabulation
+
+def fib_tab(n):
+    # 코드를 작성하세요.
+    if n < 1:
+        return None
+    elif n < 3:
+        return 1
+    fib_list = [1, 1]
+    i = 0
+    while i < n - 2:
+        fib_list.append(fib_list[i] + fib_list[i + 1])
+        i += 1
+    return fib_list[-1]
+
+# 모범답안
+
+# def fib_tab(n):
+#     # 이미 계산된 피보나치 수를 담는 리스트
+#     fib_table = [0, 1, 1]
+
+#     # n번째 피보나치 수까지 리스트를 하나씩 채워 나간다
+#     for i in range(3, n + 1):
+#         fib_table.append(fib_table[i - 1] + fib_table[i - 2])
+
+#     # 피보나치 n번째 수를 리턴한다
+#     return fib_table[n]
+
+
+# 테스트
+print(fib_tab(10))
+print(fib_tab(56))
+print(fib_tab(132))
