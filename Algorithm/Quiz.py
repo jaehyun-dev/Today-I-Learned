@@ -851,3 +851,160 @@ print(max_profit([0, 300, 600, 700, 1100, 1400], 8))
 print(max_profit([0, 100, 200, 400, 600, 900, 1200, 1300, 1500, 1800], 9))
 
 
+
+# 22.07.15 22:31
+# Minimum Coin Count
+
+def min_coin_count(value, coin_list):
+    # 코드를 작성하세요.
+    coin_list.sort(reverse = True)
+    num_coins = 0
+    value_remain = value
+    for i in coin_list:
+        num_i = value_remain // i
+        value_remain -= i * num_i
+        num_coins += num_i    
+    return num_coins    
+
+# 모범답안
+# def min_coin_count(value, coin_list):
+#     # 누적 동전 개수
+#     count = 0
+
+#     # coin_list의 값들을 큰 순서대로 본다
+#     for coin in sorted(coin_list, reverse=True):
+#         # 현재 동전으로 몇 개 거슬러 줄 수 있는지 확인한다
+#         count += (value // coin)
+
+#         # 잔액을 계산한다
+#         value %= coin
+
+#     return count
+
+# 테스트
+default_coin_list = [100, 500, 10, 50]
+print(min_coin_count(1440, default_coin_list))
+print(min_coin_count(1700, default_coin_list))
+print(min_coin_count(23520, default_coin_list))
+print(min_coin_count(32590, default_coin_list))
+
+
+# Max Card Product
+
+def max_product(card_lists):
+    # 코드를 작성하세요.
+    product = 1
+    for i in card_lists:
+        max_card = 1
+        for j in i:
+            max_card = max(max_card, j)
+        product *= max_card
+    return product
+
+# 모범답안
+# def max_product(card_lists):
+#     # 누적된 곱을 저장하는 변수
+#     product = 1
+
+#     # 반복문을 돌면서 카드 뭉치를 하나씩 본다
+#     for card_list in card_lists:
+#         # product에 각 뭉치의 최댓값을 곱해 준다
+#         product *= max(card_list)
+
+#     return product
+
+
+# 테스트
+test_cards1 = [[1, 6, 5], [4, 2, 3]]
+print(max_product(test_cards1))
+
+test_cards2 = [[9, 7, 8], [9, 2, 3], [9, 8, 1], [2, 8, 3], [1, 3, 6], [7, 7, 4]]
+print(max_product(test_cards2))
+
+test_cards3 = [[1, 2, 3], [4, 6, 1], [8, 2, 4], [3, 2, 5], [5, 2, 3], [3, 2, 1]]
+print(max_product(test_cards3))
+
+test_cards4 = [[5, 5, 5], [4, 3, 5], [1, 1, 1], [9, 8, 3], [2, 8, 4], [5, 7, 4]]
+print(max_product(test_cards4))
+
+
+# Minimum Fee
+
+def min_fee(pages_to_print):
+    # 코드를 작성하세요.
+    time_sum = 0
+    i = 0
+    j = 0
+    while i < len(pages_to_print):
+        while j < len(pages_to_print):
+            time_sum += sorted(pages_to_print)[i] * (len(pages_to_print)-j)    
+            i += 1
+            j += 1
+    return time_sum
+
+# 모범답안
+# def min_fee(pages_to_print):
+#     # 인풋으로 받은 리스트를 정렬시켜 준다
+#     sorted_list = sorted(pages_to_print)
+
+#     # 총 벌금을 담을 변수
+#     total_fee = 0
+
+#     # 정렬된 리스트에서 총 벌금 계산
+#     for i in range(len(sorted_list)):
+#         total_fee += sorted_list[i] * (len(sorted_list) - i)
+
+#     return total_fee
+
+
+# 테스트
+print(min_fee([6, 11, 4, 1]))
+print(min_fee([3, 2, 1]))
+print(min_fee([3, 1, 4, 3, 2]))
+print(min_fee([8, 4, 2, 3, 9, 23, 6, 8]))
+
+
+# Course Selection
+
+def course_selection(course_list):
+    # 코드를 작성하세요.
+    temp_list = []
+
+    for course in course_list:
+        temp_list.append(tuple(reversed(course)))
+    
+    temp_list.sort()
+    
+    course_pick = []
+    course_pick.append(temp_list[0])
+    
+    for i in range(1, len(temp_list)):
+        if temp_list[i][1] > course_pick[-1][0]:
+            course_pick.append(temp_list[i])
+    
+    final_list = []
+    for course in course_pick:
+        final_list.append(tuple(reversed(course)))
+    
+    return final_list
+  
+# 모범답안
+# def course_selection(course_list):
+#     # 수업을 끝나는 순서로 정렬한다
+#     sorted_list = sorted(course_list, key=lambda x: x[1])
+
+#     # 가장 먼저 끝나는 수업은 무조건 듣는다
+#     my_selection = [sorted_list[0]]
+
+#     # 이미 선택한 수업과 안 겹치는 수업 중 가장 빨리 끝나는 수업을 고른다
+#     for course in sorted_list:
+#         # 마지막 수업이 끝나기 전에 새 수업이 시작하면 겹친다
+#         if course[0] > my_selection[-1][1]:
+#             my_selection.append(course)
+
+#     return my_selection    
+
+# 테스트
+print(course_selection([(6, 10), (2, 3), (4, 5), (1, 7), (6, 8), (9, 10)]))
+print(course_selection([(1, 2), (3, 4), (0, 6), (5, 7), (8, 9), (5, 9)]))
+print(course_selection([(4, 7), (2, 5), (1, 3), (8, 10), (5, 9), (2, 5), (13, 16), (9, 11), (1, 8)]))
