@@ -1008,3 +1008,41 @@ def course_selection(course_list):
 print(course_selection([(6, 10), (2, 3), (4, 5), (1, 7), (6, 8), (9, 10)]))
 print(course_selection([(1, 2), (3, 4), (0, 6), (5, 7), (8, 9), (5, 9)]))
 print(course_selection([(4, 7), (2, 5), (1, 3), (8, 10), (5, 9), (2, 5), (13, 16), (9, 11), (1, 8)]))
+
+
+# 22.07.17 22:58
+
+# 투자 귀재 규식이 I
+
+def sublist_max(profits):
+    # 코드를 작성하세요.
+    profit_list = []
+    for i in range(len(profits)):
+        profit = 0
+        for j in range(i, len(profits)):
+            profit += profits[j]
+            profit_list.append(profit)
+    
+    return max(profit_list)
+
+# 모범답안
+# def sublist_max(profits):
+#     max_profit = profits[0] # 최대 수익
+    
+#     for i in range(len(profits)):
+#         # 인덱스 i부터 j까지 수익의 합을 보관하는 변수
+#         total = 0
+        
+#         for j in range(i, len(profits)):
+#             # i부터 j까지 수익의 합을 계산
+#             total += profits[j]
+            
+#             # i부터 j까지 수익의 합이 최대 수익이라면, max_profit 업데이트
+#             max_profit = max(max_profit, total)
+
+#     return max_profit
+    
+# 테스트
+print(sublist_max([4, 3, 8, -2, -5, -3, -5, -3]))
+print(sublist_max([2, 3, 1, -1, -2, 5, -1, -1]))
+print(sublist_max([7, -3, 14, -8, -5, 6, 8, -5, -4, 10, -1, 8]))
