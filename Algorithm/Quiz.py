@@ -1046,3 +1046,43 @@ def sublist_max(profits):
 print(sublist_max([4, 3, 8, -2, -5, -3, -5, -3]))
 print(sublist_max([2, 3, 1, -1, -2, 5, -1, -1]))
 print(sublist_max([7, -3, 14, -8, -5, 6, 8, -5, -4, 10, -1, 8]))
+
+
+
+# 22.07.18 22:47
+
+# Exponent Multiplication
+
+def power(x, y):
+    # 코드를 작성하세요.
+    if y == 1:
+        return x
+    if y % 2 == 0:
+        return power(x, y // 2) * power(x, y // 2)
+    if y % 2 == 1:
+        return power(x, y // 2) * power(x, y // 2 + 1)
+
+# 이 경우 시간복잡도 == O(y). 효율적이지 않음.
+
+# 모범답안
+
+# def power(x, y):
+#     if y == 0:
+#         return 1
+
+#     # 계산을 한 번만 하기 위해서 변수에 저장
+#     subresult = power(x, y // 2)
+    
+#     # 문제를 최대한 똑같은 크기의 문제 두 개로 나눠준다 (짝수, 홀수 경우 따로)
+#     if y % 2 == 0:
+#         return subresult * subresult
+#     else:
+#         return x * subresult * subresult
+
+# 이렇게 하면 시간복잡도 == O(lgy)    
+
+    
+# 테스트
+print(power(3, 5))
+print(power(5, 6))
+print(power(7, 9))
