@@ -1086,3 +1086,41 @@ def power(x, y):
 print(power(3, 5))
 print(power(5, 6))
 print(power(7, 9))
+
+
+# 22.07.19 22:40
+
+# 빠르게 산 오르기
+
+def select_stops(water_stops, capacity):
+    # 코드를 작성하세요.
+    
+    stop_list = []
+    i = 0
+    j = 0
+    
+    while i < len(water_stops):
+        if water_stops[i] > capacity:
+            stop_list.append(water_stops[i - 1])
+            j = i - 1
+            i += 1
+            break
+        i += 1
+    
+    while i < len(water_stops):
+        if water_stops[i] - water_stops[j] > capacity:
+            stop_list.append(water_stops[i - 1])
+            j = i - 1
+        i += 1
+    
+    if water_stops[-1] not in stop_list:
+        stop_list.append(water_stops[-1])
+    
+    return stop_list
+    
+# 테스트
+list1 = [1, 4, 5, 7, 11, 12, 13, 16, 18, 20, 22, 24, 26]
+print(select_stops(list1, 4))
+
+list2 = [5, 8, 12, 17, 20, 22, 23, 24, 28, 32, 38, 42, 44, 47]
+print(select_stops(list2, 6))
