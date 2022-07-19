@@ -1098,26 +1098,40 @@ def select_stops(water_stops, capacity):
     stop_list = []
     i = 0
     j = 0
-    
+
+
     while i < len(water_stops):
-        if water_stops[i] > capacity:
+        if water_stops[i] - j > capacity:
             stop_list.append(water_stops[i - 1])
-            j = i - 1
-            i += 1
-            break
+            j = water_stops[i - 1]
         i += 1
     
-    while i < len(water_stops):
-        if water_stops[i] - water_stops[j] > capacity:
-            stop_list.append(water_stops[i - 1])
-            j = i - 1
-        i += 1
-    
-    if water_stops[-1] not in stop_list:
-        stop_list.append(water_stops[-1])
+    stop_list.append(water_stops[-1])
     
     return stop_list
-    
+
+
+# 모범답안
+
+# def select_stops(water_stops, capacity):
+#     # 약수터 위치 리스트
+#     stop_list = []
+
+#     # 마지막 들른 약수터 위치
+#     prev_stop = 0
+
+#     for i in range(len(water_stops)):
+#         # i 지점까지 갈 수 없으면, i - 1 지점 약수터를 들른다
+#         if water_stops[i] - prev_stop > capacity:
+#             stop_list.append(water_stops[i - 1])
+#             prev_stop = water_stops[i - 1]
+
+#     # 마지막 약수터는 무조건 간다
+#     stop_list.append(water_stops[-1])
+
+#     return stop_list
+
+
 # 테스트
 list1 = [1, 4, 5, 7, 11, 12, 13, 16, 18, 20, 22, 24, 26]
 print(select_stops(list1, 4))
