@@ -1138,3 +1138,21 @@ print(select_stops(list1, 4))
 
 list2 = [5, 8, 12, 17, 20, 22, 23, 24, 28, 32, 38, 42, 44, 47]
 print(select_stops(list2, 6))
+
+
+
+# 중복되는 항목 찾기 I
+
+def find_same_number(some_list):
+    # 코드를 쓰세요
+    new_list = []
+    for number in some_list:
+        if number not in new_list:
+            new_list.append(number)
+        else:
+            return number
+
+# 중복되는 수 ‘하나’만 리턴합니다.
+print(find_same_number([1, 4, 3, 5, 3, 2]))
+print(find_same_number([4, 1, 5, 2, 3, 5]))
+print(find_same_number([5, 2, 3, 4, 1, 6, 7, 8, 9, 3]))
