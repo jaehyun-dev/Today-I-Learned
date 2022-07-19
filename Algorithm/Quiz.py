@@ -1151,6 +1151,21 @@ def find_same_number(some_list):
             new_list.append(number)
         else:
             return number
+        
+# 시간 복잡도 줄이는 문제인데, 이렇게 하면 O(n^2)이라서 효율적이지 못함.
+
+# 모범답안
+# def find_same_number(some_list):
+#     # 이미 나온 요소를 저장시켜줄 사전
+#     elements_seen_so_far = {}
+
+#     for element in some_list:
+#         # 이미 나온 요소인지 확인하고 맞으면 요소를 리턴한다
+#         if element in elements_seen_so_far:
+#             return element
+
+#         # 해당 요소를 사전에 저장시킨다
+#         elements_seen_so_far[element] = True       
 
 # 중복되는 수 ‘하나’만 리턴합니다.
 print(find_same_number([1, 4, 3, 5, 3, 2]))
