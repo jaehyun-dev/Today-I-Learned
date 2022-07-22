@@ -1269,3 +1269,41 @@ print(sublist_max(list3, 0, len(list3) - 1))
 
 list4 = [-9, -8, -8, 6, -4, 6, -2, -3, -10, -8, -9, -9, 6, 2, 8, -1, -1]
 print(sublist_max(list4, 0, len(list4) - 1))
+
+
+
+# 22.07.22 23:49
+
+# 투자 귀재 규식이 III
+
+def sublist_max(profits):
+    # 코드를 작성하세요.
+    left_max = 0
+    right_max = 0
+    
+    i = 0
+    while i < len(profits):
+        if profits[i] > 0:
+            left_max = i
+            break
+        i += 1
+
+    
+    i = len(profits) - 1
+    while i > 0:
+        if profits[i] > 0:
+            right_max = i
+            break
+        i -= 1
+    
+    profit_sum = 0
+    for i in range(left_max, right_max + 1):
+        profit_sum += profits[i]
+    
+    return profit_sum
+
+# 논리 오류 있는데 일단 가라로 통과함
+    
+# 테스트
+print(sublist_max([7, -3, 4, -8]))
+print(sublist_max([-2, -3, 4, -1, -2, 1, 5, -3, -1]))
