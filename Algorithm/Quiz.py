@@ -1398,3 +1398,30 @@ print(staircase(6))
 print(staircase(15))
 print(staircase(25))
 print(staircase(41))
+
+
+# 22.07.24 23:20
+
+# 출근하는 방법 II
+
+# 높이 n개의 계단을 올라가는 방법을 리턴한다
+def staircase(stairs, possible_steps):
+    # 코드를 쓰세요
+    steps_list = []
+    for i in range(possible_steps[1]):
+        steps_list.append(1)
+    next_step = 0
+    for i in range(possible_steps[1], stairs + 1):
+        for j in range(len(possible_steps)):
+            next_step += possible_steps[stairs - j]
+        steps_list.append(next_step)
+    return steps_list[stairs]
+
+# 미완성
+# 머릿속으로는 대충 생각이 떠오르는데 코드로 구현하기가 어렵다.
+# 뒤죽박죽... 잘할 수 있을까
+
+print(staircase(5, [1, 2, 3]))
+print(staircase(6, [1, 2, 3]))
+print(staircase(7, [1, 2, 4]))
+print(staircase(8, [1, 3, 5]))
