@@ -1400,7 +1400,7 @@ print(staircase(25))
 print(staircase(41))
 
 
-# 22.07.24 23:20
+# 22.07.25 22:50
 
 # 출근하는 방법 II
 
@@ -1410,16 +1410,17 @@ def staircase(stairs, possible_steps):
     steps_list = []
     for i in range(possible_steps[1]):
         steps_list.append(1)
-    next_step = 0
-    for i in range(possible_steps[1], stairs + 1):
-        for j in range(len(possible_steps)):
-            next_step += possible_steps[stairs - j]
-        steps_list.append(next_step)
+    for i in range(possible_steps[1] + 1, stairs + 1):
+        for j in range(1, len(possible_steps) + 1):
+            if i < possible_steps[j]:
+                steps_list.append(steps_list[i - possible_steps[0]] + steps_list[i - possible_steps[1]])
+
     return steps_list[stairs]
 
 # 미완성
 # 머릿속으로는 대충 생각이 떠오르는데 코드로 구현하기가 어렵다.
 # 뒤죽박죽... 잘할 수 있을까
+# 아직 생각 깊게 못했다. 시간 확보해두고 제대로 
 
 print(staircase(5, [1, 2, 3]))
 print(staircase(6, [1, 2, 3]))
