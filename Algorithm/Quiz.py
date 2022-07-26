@@ -1400,27 +1400,44 @@ print(staircase(25))
 print(staircase(41))
 
 
-# 22.07.25 22:50
+# 22.07.26 23:21
 
 # 출근하는 방법 II
 
 # 높이 n개의 계단을 올라가는 방법을 리턴한다
+# 높이 n개의 계단을 올라가는 방법을 리턴한다
 def staircase(stairs, possible_steps):
     # 코드를 쓰세요
+    # stair 갯수를 index로, 가능한 경우의 수를 element로 하는 list 생성
     steps_list = []
-    for i in range(possible_steps[1]):
-        steps_list.append(1)
-    for i in range(possible_steps[1] + 1, stairs + 1):
-        for j in range(1, len(possible_steps) + 1):
-            if i < possible_steps[j]:
-                steps_list.append(steps_list[i - possible_steps[0]] + steps_list[i - possible_steps[1]])
+    
+    # possible_steps의 두 번째 스텝 전까지의 stair는 모두 1가지만 가능
+    for i in range(stairs + 1):
+        if i < possible_steps[1]:
+            steps_list.append(1)
+        break
 
-    return steps_list[stairs]
+    # 이후 satir는, possible_steps의 step들 중 satir보다 작은 것들의 갯수만큼 더해줘야 함
+    i = len(steps_list)
+    j = 1
+    while i < stairs + 1:
+        while j < len(possible_steps):
+            if i >= possible_steps[j]:
+                next_step = 0
+                for k in range(j):
+                    next_step += steps_list[j - k]
+                    steps_list.append(next_step)
+            j += 1
+        i += 1
+    
+    
+    return steps_list[stairs + 1]
 
 # 미완성
 # 머릿속으로는 대충 생각이 떠오르는데 코드로 구현하기가 어렵다.
 # 뒤죽박죽... 잘할 수 있을까
-# 아직 생각 깊게 못했다. 시간 확보해두고 제대로 
+# 아직 생각 깊게 못했다. 시간 확보해두고 제대로 고민해봐야지
+# 될랑말랑 안 된다. 하... 할 수 있을 거 같은데
 
 print(staircase(5, [1, 2, 3]))
 print(staircase(6, [1, 2, 3]))
