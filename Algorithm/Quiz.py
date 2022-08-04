@@ -1459,10 +1459,19 @@ print(staircase(8, [1, 3, 5]))
 
 # 중복되는 항목 찾기 II
 
-def find_same_number(some_list, start, end):
+def find_same_number(some_list, start = None, end = None):
     # 필요한 경우, start와 end를 옵셔널 파라미터로 만들어도 됩니다.
     # 코드를 쓰세요
+    
+    element_seen_so_far = {}
+    
+    for element in some_list:
+        if element in element_seen_so_far:
+            return element
 
+        element_seen_so_far[element] = True
+
+# 일단은 공간복잡도 생각 않고 중복되는 항목 찾기 I 복습
 
 # 중복되는 수 ‘하나’만 리턴합니다.
 print(find_same_number([1, 4, 3, 5, 3, 2]))
