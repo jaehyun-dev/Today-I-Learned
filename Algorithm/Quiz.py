@@ -1503,3 +1503,19 @@ def find_same_number(some_list, start = None, end = None):
 print(find_same_number([1, 4, 3, 5, 3, 2]))
 print(find_same_number([4, 1, 5, 2, 3, 5]))
 print(find_same_number([5, 2, 3, 4, 1, 6, 7, 8, 9, 3]))
+
+
+# 22.08.06 18:08
+
+# 리스트 항목 합 탐색
+
+def sum_in_list(search_sum, sorted_list):
+    # 코드를 쓰세요
+    for i in range(len(sorted_list)):
+        for j in range(len(sorted_list)):
+            if sorted_list[i] + sorted_list[j] == search_sum:
+                return True
+    return False
+
+print(sum_in_list(15, [1, 2, 5, 6, 7, 9, 11]))
+print(sum_in_list(15, [1, 2, 5, 7, 9, 11]))
