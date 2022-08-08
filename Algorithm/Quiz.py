@@ -1539,3 +1539,32 @@ def sum_in_list(search_sum, sorted_list):
 
 print(sum_in_list(15, [1, 2, 5, 6, 7, 9, 11]))
 print(sum_in_list(15, [1, 2, 5, 7, 9, 11]))
+
+
+# 22.08.08 22:01
+
+# 강남역 폭우 II
+
+def trapping_rain(buildings):
+    # 코드를 작성하세요
+    total_rain = 0
+    for i in range(1, len(buildings)):
+        left_max = 0
+        right_max = 0
+        for j in range(0, i):
+            left_max = max(left_max, buildings[j])
+        for k in range(i + 1, len(buildings)):
+            right_max = max(right_max, buildings[k])
+        total_max = min(left_max, right_max)
+        if total_max > buildings[i]:
+            trapped_rain = total_max - buildings[i]
+        else:
+            trapped_rain = 0
+        total_rain += trapped_rain
+    
+    return total_rain
+
+    
+# 테스트
+print(trapping_rain([3, 0, 0, 2, 0, 4]))
+print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
