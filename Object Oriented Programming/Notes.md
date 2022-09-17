@@ -207,7 +207,7 @@ SNS User 클래스의 user 인스턴스의 총 갯수를 나타내는 속성을 
 #### 데코레이터(decorator)
 파이썬에서 어떤 함수를 꾸며서 새로운 함수를 만들 때 사용하는 방법  
 
-[main13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main12.py) 참고
+[main13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main13.py) 참고
 
 22.09.13 23:21  
 ### 14. 여기서 잠깐! 데코레이터 II
