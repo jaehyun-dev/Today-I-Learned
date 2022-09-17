@@ -85,7 +85,7 @@ User 객체를 만들 떄 이 틀을 기반으로 만들면 됨
 객체와 인스턴스는 굳이 따지면 조금 다르기는 하지만 큰 차이 없어 같은 의미임  
 클래스로 여러 객체, 혹은 여러 인스턴스를 만들 수 있음  
   
-main01.py 참고
+[main01.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main01.py) 참고
   
 22.09.10 22:43  
 ### 02. 인스턴스 변수
@@ -103,7 +103,7 @@ main01.py에서는 User 클래스로 인스턴스를 3개 만듦
 인스턴스 이름.인스턴스 변수 이름  
 인스턴스 변수를 사용하려면 꼭 그 전에 미리 정의해놔야 함
 
-main02.py 참고 
+[main02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main02.py) 참고 
   
 ### 03. 인스턴스 메소드  
 객체는 속성과 행동으로 이루어져있음  
@@ -126,33 +126,33 @@ main02.py 참고
 #### 인스턴스 메소드 사용하기
 클래스 이름.메소드 이름(인스턴스)
   
-main03.py 참고
+[main03.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main03.py) 참고
   
 ### 04. 인스턴스 메소드의 특별한 규칙
 인스턴스 메소드를 사용하는 또다른 방법이 있음  
 인스턴스 이름.메소드 이름()  
 인스턴스로 메소드를 호출할 경우, 인스턴스가 첫 번째 파라미터로 전달됨  
 
-main04.py 참고
+[main04.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main04.py) 참고
   
 22.09.11 20:03
 ### 05. self를 사용합시다
 #### 인스턴스 메소드의 특별한 규칙
 첫 번째 파라미터의 이름은 꼭! **self**로 쓰기  
   
-main05.py 참고  
+[main05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main05.py) 참고  
   
 ### 06. 인스턴스 변수와 같은 이름을 갖는 파라미터
 인스턴스 변수와 파라미터의 이름이 같아도 상관없음  
 심지어 이런 식으로 작성하는 게 꽤나 일반적이기도 함  
   
-main06.py 참고  
+[main06.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main06py) 참고  
   
 ### 07. initialize 메소드
 인스턴스 변수를 하나하나 작성하면 코드가 너무 길어짐  
 클래스에 initialize 메소드를 만들어 간단하게 할 수 있음  
   
-main07.py 참고  
+[main07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main07.py) 참고  
   
 ### 08. __init__ 메소드
 #### special method, magic method(특수 메소드)
@@ -164,11 +164,11 @@ main07.py 참고
 __init__ 메소드를 쓰면 인스턴스 생성과 동시에 인스턴스 변수 초기값 설정을 한 줄에 할 수 있음  
 이러한 장점으로 클래스에는 보통 이닛 메소드를 꼭 작성함  
   
-main08.py 참고  
+[main08.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main08.py) 참고  
   
 ### 09. #맞팔해요
   
-main09.py 참고  
+[main09.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main09.py) 참고  
   
 ### 10. __str__ 메소드
 메소드 이름 양옆에 underbar 두 개가 있는 특수 메소드  
@@ -179,7 +179,7 @@ dunder str 메소드는 print 함수를 호출할 때 자동으로 부름
 어떤 인스턴스를 출력하면 dunder str 메소드의 return 값이 출력됨  
 인스턴스를 출력할 때 우리가 원하는 정보를 나오게 하려면 클래스에 __str__ 메소드를 정의하면 됨  
   
-main10.py 참고  
+[main10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main10.py) 참고  
   
 ### 11. 클래스 변수 I
 인스턴스 자신만의 속성을 나타내는 인스턴스 변수  
@@ -191,7 +191,7 @@ SNS User 클래스의 user 인스턴스의 총 갯수를 나타내는 속성을 
 파이썬에서는 이러한 속성을 **클래스 변수**라는 것으로 나타냄  
 클래스 변수는 같은 클래스의 인스턴스들이 공유하는 값  
   
-main11.py 참고  
+[main11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main11.py) 참고  
   
 ### 12. 클래스 변수 II
 #### 클래스 변수의 값을 읽는 법
@@ -201,19 +201,19 @@ main11.py 참고
 #### 클래스 변수의 값 설정하는 법
 1. 클래스 이름.클래스 변수 이름
   
-main12.py 참고  
+[main12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main12.py) 참고  
   
 ### 13. 여기서 잠깐! 데코레이터 I
 #### 데코레이터(decorator)
 파이썬에서 어떤 함수를 꾸며서 새로운 함수를 만들 때 사용하는 방법  
 
-main13.py 참고
+[main13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main12.py) 참고
 
 22.09.13 23:21  
 ### 14. 여기서 잠깐! 데코레이터 II
 @ 붙여서 데코레이터 함수 이용하여 새로운 기능을 줄 수 있음  
 
-main14.py 
+[main14.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main14.py) 참고
 
 22.09.14 23:46
 ### 15. 클래스 메소드 I
@@ -226,7 +226,7 @@ main14.py
 #### 클래스 안의 함수를 클래스 메소드로 만드는 방법
 classmethod 데코레이터로 함수를 데코레이팅 해주기
 
-main15.py 참고
+[main15.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main15.py) 참고
 
 ### 16. 클래스 메소드 II
 인스턴스 변수를 사용하면 인스턴스 메소드를, 클래스 변수를 사용하면 클래스 메소드를 사용  
@@ -235,11 +235,11 @@ main15.py 참고
 인스턴스 메소드는 인스턴스 변수와 클래스 변수를 모두 사용 가능한 반면, 클래스 메소드는 인스턴스 변수를 가져올 수 없기 때문  
 인스턴스가 없을 때에도 필요하거나 사용할 가능성이 있으면 클래스 메소드로 만들어야 함  
 
-main16.py 참고
+[main16.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main16.py) 참고
 
 ### 17. 클래스 메소드 활용
 
-main17.py 참고
+[main17.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main17.py) 참고
 
 ### 18. 정적 메소드
 이때까지
