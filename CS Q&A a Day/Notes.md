@@ -87,3 +87,16 @@ A. **후보키**(candidate key)는 유일성과 최소성을 만족하는 속성
 [네이버 지식백과] 후보키, 기본키, 대체키
 
 https://computer-science-student.tistory.com/195
+
+22.09.20
+## Q. 도메인 제약조건에 대해서 설명해주세요.
+
+A.
+<li>각 애트리뷰트 값이 반드시 <b>원자값</b>이어야 함</li>
+<li>애트리뷰트 값의 디폴트 값, 가능한 값들의 범위 등을 지정할 수 있음</li>
+<li>데이터 형식을 통해 값들의 유형을 제한하고, CHECK 제약 조건을 통해 값들의 범위를 제한할 수 있음</li>
+<li>SQL2는 도메인을 명시적으로 정의하는 것을 허용하지만, 오라클은 지원하지 않음</li>
+<br>
+  
+https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
+
