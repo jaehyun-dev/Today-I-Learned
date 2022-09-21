@@ -100,3 +100,13 @@ A.
   
 https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
 
+22.09.21
+## Q. 물리적 데이터베이스의 히프파일과 순차파일에 대해서 설명해주세요.
+
+A. **히프 파일**(Heap File)  
+- 삽입된 순서대로 레코드를 파일 내에 배치하는 것으로서 파일의 마지막에 새로운 레코드를 삽입한다.
+
+**순서 파일**Sequential File)  
+- 레코드 필드들 중에서 순서 필드라고 하는 한 필드 값의 순서대로 디스크에 물리적으로 정렬할 수 있다.
+
+https://swin9333.tistory.com/65
