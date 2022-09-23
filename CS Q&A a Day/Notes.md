@@ -119,3 +119,12 @@ A. 트랜잭션의 **원자성**(atomicity)은 트랜잭션을 구성하는 연�
 [네이버 지식백과] 원자성
 
 https://hanamon.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-acid-%EC%84%B1%EC%A7%88/
+
+22.09.23  
+## Q. SQL조건절에 사용되는 ANY / ALL 의 차이를 설명해주세요.
+
+A. **ANY 연산자**는 주로 서브쿼리에 사용되며 하나라도 만족하는 값이 있다면 true를 반환한다.
+
+**ALL 연산자**는 전체 만족해야 true를 반환하는 특징을 가지고 있다.
+
+https://lhoris.tistory.com/136 
