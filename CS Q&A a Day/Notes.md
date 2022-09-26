@@ -135,3 +135,15 @@ https://lhoris.tistory.com/136
 A. 공유로크가 걸려있는 경우, 공유로크를 요청하면 허용하게 되고, 독점로크를 요청하면 대기하게 된다.
 
 https://velog.io/@chez_kwak/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-9.-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98
+
+22.09.26
+## Q. WAL이 무엇이고 왜 필요한지 설명해주세요.
+
+A. **WAL**(Write-Ahead-Logging)
+- WAL이란 Write-Ahead Logging의 약자로 로그 선행 기입
+- WAL을 사용하는 시스템에서 모든 수정은 적용을 하기 전에 먼저 로그에 기록된다.
+- 트랜잭션 발생시 로그에 일단 기입하여 기록을 남기고, 특정 데이터가 쌓이면 이를 flush 해 DB의 disk에 DATA BLOCK 형태로 write하게 된다.
+- 일단 Log에 적히게 되면 누가 조회를 하던간에 같은 데이터를 보여주는 일관성 (Consistency)을 보장하게 되고 서버가 다운되도 이미 Log에 기입되어 있기 때문에 원자성 (Atomicity)도 보장할 수 있다.
+- REDO 및 UNDO 정보를 모두 로그에 기록하며, buffer를 비우기 전에 로그파일에 기록
+
+https://nays111.tistory.com/12
