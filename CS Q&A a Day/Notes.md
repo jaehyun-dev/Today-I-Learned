@@ -160,3 +160,17 @@ Task란 운영체제에서 처리하는 작업의 단위 또는 정해진 일을
 여러개의 task를 자주 번갈아가며 수행하다보니 사용자는 동시에 여러 task가 수행되고 있다고 느끼게 된다.
 
 https://velog.io/@chy0428/OS-%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1
+
+22.09.28
+## Q. 다섯 가지 점근 표기법에 대해 설명해주세요.
+
+A.  
+| 표기법 |         대략적 의미        |
+|:------:|:--------------------------:|
+| f=ω(g) |     f는 g보다 크다, f>g    |
+| f=Ω(g) | f는 g보다 크거나 같다, f≥g |
+| f=Θ(g) |   f는 g와 대략 같다, f=g   |
+| f=O(g) | f는 g보다 작거나 같다, f≤g |
+| f=o(g) |     f는 g보다 작다, f<g    |
+
+https://ratsgo.github.io/data%20structure&algorithm/2017/09/13/asymptotic/
