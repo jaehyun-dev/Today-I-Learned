@@ -194,3 +194,12 @@ A.
 종류: 외부 인터럽트, 내부 인터럽트, 소프트웨어 인터럽트
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/Interrupt.md
+
+22.10.01
+## Q. 2단계 로킹 프로토콜에 대해서 설명해주세요.
+
+A. 기본 로킹 규약의 문제를 해결하고 트랜잭션의 직렬 가능성을 보장하기 위해 lock과 unlock 연산의 수행 시점에 대한 새로운 규약을 추가한 것이 **2단계 로킹 규약**(2PLP;2 Phase Locking Protocol)이다. 트랜잭션 스케줄의 모든 트랜잭션이 2단계 로킹 규약을 준수하면 해당 스케줄은 직렬 가능성이 보장된다.
+
+[네이버 지식백과] 2단계 로킹 규약
+
+https://noil0816.tistory.com/153
