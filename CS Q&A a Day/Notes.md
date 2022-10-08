@@ -280,7 +280,7 @@ https://www.google.com/search?q=quick+sort+time+complexity&oq=quick+sort+time+&s
 
 
 22.10.08
-## Q. Lis, Set, Map의 차이점에 대해 설명해주세요.
+## Q. List, Set, Map의 차이점에 대해 설명해주세요.
 
 A.
 1. List: 저장공간이 필요에 의해 자동으로 늘어난다(순서가 있는 저장공간)
