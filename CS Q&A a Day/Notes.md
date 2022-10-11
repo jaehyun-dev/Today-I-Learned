@@ -331,3 +331,14 @@ A.
   - Bubble Sort와 Selection Sort와 마찬가지로, 배열의 길이가 길어질수록 비효율적이다.  
 
 https://gyoogle.dev/blog/algorithm/Insertion%20Sort.html
+
+22.10.11
+## Q. 단일 연결리스트와 원형 연결리스트를 구별하는 방법에 대해 설명해주세요.
+
+A.  
+- 단순 연결 리스트와 다르게 원형 연결 리스트는 꼬리가 머리를 가리키는 구조
+- 단순 연결 리스트에서 꼬리가 머리를 가리키게만 하면 됨
+  - 단순 연결 리스트의 마지막 노드는 NULL을 가리킴
+  - 원형 연결 리스트의 마지막 노드는 첫 번째 노드를 가리킴
+
+https://seongkyun.github.io/data_structure/2019/03/20/data_structure/
