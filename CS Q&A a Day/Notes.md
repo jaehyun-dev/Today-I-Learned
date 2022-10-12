@@ -342,3 +342,12 @@ A.
   - 원형 연결 리스트의 마지막 노드는 첫 번째 노드를 가리킴
 
 https://seongkyun.github.io/data_structure/2019/03/20/data_structure/
+
+22.10.12
+## Q. IPC(Inter-Process Communication)가 무엇인가요?
+
+A. 프로세스들 사이의 통신 기법으로서 크게 공유 기억 장치 기법과 메시지 시스템 기법이 있다. 공유 기억 장치 기법은 통신하는 프로세스들 사이에 어떤 변수를 공유하고 이 공유 변수를 이용해서 정보를 교환하도록 한다. 메시지 시스템 방법은 통신을 제공하는 책임을 운영 체제가 가지고 프로세스가 메시지를 교환할 수 있게 한다.  
+
+[네이버 지식백과] 프로세서 간 통신(interprocessor communication)
+
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/IPC(Inter%20Process%20Communication).md
