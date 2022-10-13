@@ -351,3 +351,19 @@ A. 프로세스들 사이의 통신 기법으로서 크게 공유 기억 장치 
 [네이버 지식백과] 프로세서 간 통신(interprocessor communication)
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/IPC(Inter%20Process%20Communication).md
+
+22.10.13
+## Q. 합병 정렬(Merge Sort)의 구현 방식, 시간복잡도, 공간복잡도, 장단점에 대해 설명해주세요.(알고리즘)
+
+A. 병합 정렬이라고도 부르며, 분할 정복 방법을 통해 구현. 빠른 정렬로 분류되며, 퀵소트와 함께 많이 언급되는 정렬 방식이다.  
+구현 방식:
+1. 리스트를 반으로 나눈다
+2. 왼쪽 리스트와 오른쪽 리스트를 각각 정렬한다
+3. 정렬된 두 리스트를 하나의 정렬된 리스트로 합병한다.  
+
+시간복잡도: 평균 Θ(nlogn), 최악 O(nlogn)  
+공간복잡도: O(n)  
+장점: 길이가 긴 리스트에서 다른 정렬 방식보다 빠르게 동작한다.  
+단점: 이미 정렬이 되어있어도 전체 과정을 진행해야 한다.
+
+https://gyoogle.dev/blog/algorithm/Merge%20Sort.html
