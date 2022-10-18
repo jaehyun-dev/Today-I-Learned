@@ -411,3 +411,10 @@ A. 한 그래프의 스패닝 트리들 중에서 가중값의 합이 가장 작
 
 [네이버 지식백과] 최소 스패닝 트리  
 [Wikipedia] Minimun spanning tree
+
+22.10.18
+## Q. Race Condition이란 무엇인가요?(운영체제)
+
+A. 두 개 이상의 프로세스가 공통 자원을 병행적으로(concurrently) 읽거나 쓸 때, 공용 데이터에 대한 접근이 어떤 순서에 이루어졌는지에 따라 그 실행 결과가 달라지는 상황.
+
+https://drehzr.tistory.com/m/87
