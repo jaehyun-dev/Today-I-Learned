@@ -440,3 +440,12 @@ A. 구현 방식:
 https://velog.io/@jaeyunn_15/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%81-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%B9%84%EA%B5%90
 
 https://gyoogle.dev/blog/algorithm/Heap%20Sort.html
+
+22.10.20
+## Q. 모바일 기기용 주소록에 BST와 HashTable 중 어떤 자료구조를 사용하는 것이 좋은가요? 이유와 함께 설명해주세요.(자료구조)
+
+A. 모바일 기기용 주소록을 위해서는 이진 탐색 트리(Binary Search Tree, BST)를 사용하는 것이 해시 테이블(Hash Table)을 사용하는 것보다 좋다. 해시 테이블은 서로 다른 두 개의 키값이 해시 함수에 의해 같은 해시값으로 변환되는 해시 충돌이 일어날 수 있다. 이진 탐색 트리는 범위 기반 쿼리가 가능하다. 또한 메모리 효율 측면에서도 이진 탐색 트리가 더 유리하다.
+
+https://algorfati.tistory.com/123
+
+https://adevspoon.com/?code=CraoR_VdQ88QEcGkHil4mvWlchcI-MEvvCJHnyFcBLjvVPro7wvnxFb3iVtr3XPQrmViMAo9dJkAAAGD9Zmmqw
