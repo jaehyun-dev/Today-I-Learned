@@ -555,3 +555,12 @@ A. 구현 방식:
 [네이버 지식백과, 위키백과] 쉘 정렬
 
 https://yabmoons.tistory.com/247
+
+22.10.29
+## Q. Array와 ArrayList의 차이점에 대해 설명해주세요.(자료구조)
+
+A.  
+Array는 고정 길이이다. 따라서, 정해진 길이의 배열을 모두 채우면, 새로운 데이터를 추가하고 싶을 경우 새로운 배열을 만들어주어야 한다.  
+ArrayList는 가변 길이이다. 하지만 내부적으론 배열로 구성되어 있다.  
+
+https://velog.io/@humblechoi/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-Array-vs-ArrayList
