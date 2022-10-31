@@ -595,3 +595,22 @@ A.
    - 해결법 : 커널 내부에 있는 각 공유 데이터에 접근할 때마다, 그 데이터에 대한 lock/unlock을 하는 방법
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/Race%20Condition.md#os-race-condition
+
+22.10.31
+## Q. 그리디 알고리즘(Greedy Algorithm)이 무엇인지 설명하고 그리디 알고리즘의 종류에 대해 아는 대로 이야기해주세요.(알고리즘)
+
+A. 그리디 알고리즘이란 현재 상황에서 가장 좋은 것(최선의 선택)을 고르는 알고리즘이다.  
+종류:
+- 선택 정렬
+- 배낭 문제
+- 최소 신장 트리
+- 단일 출발지 최단 경로
+- 스케줄링 문제
+- 프림 알고리즘
+- 크루스컬 알고리즘
+- 다익스트라 알고리즘
+- 허프만 코딩
+- 포드-풀커슨 알고리즘
+
+https://velog.io/@contea95/%ED%83%90%EC%9A%95%EB%B2%95%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+https://www.programiz.com/dsa/greedy-algorithm
