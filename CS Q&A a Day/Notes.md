@@ -647,3 +647,10 @@ A.
 차이점: 모든 사람이 사용하는지, 특정 대상만 사용하는지
 
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=bloghkit&logNo=220576307382
+
+22.11.04
+## Q. 다익스트라 알고리즘(Dijkstra's Algorithm)에 대해 설명해주세요.(알고리즘)
+
+A. 다익스트라 알고리즘은 그래프에서 한 정점(노드)에서 다른 정점까지의 최단 경로를 구하는 알고리즘 중 하나이다. 현재 위치한 노드의 인접한 방문하지 않은 노드 중 거리가 가장 짧은 노드를 방문하는 것을 반복하는 알고리즘이다. 가중치가 양수일 때만 사용 가능하다는 중요한 특징이 있다.
+
+https://velog.io/@717lumos/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BCDijkstra-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
