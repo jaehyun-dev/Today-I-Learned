@@ -744,3 +744,10 @@ A. 프로토콜(Protocol): 통신 프로토콜 또는 통신 구약은 컴퓨터
 통신 객체를 사용하기 쉽도록 별도로 추가 서비스(패리티 검사, 보안도, 서비스 등급, 우선순위 등)를 제공하는 기능
 
 https://computer-science-student.tistory.com/377
+
+22.11.09
+## Q. 칸 알고리즘(Kahn's Algorithm)에 대해 설명해주세요.(알고리즘)
+
+A. 위상 정렬 알고리즘 중 하나이다. 궁극적인 위상 정렬로써 같은 순서 속에 있는 꼭짓점에 의해 선택된다.
+
+https://www.techiedelight.com/ko/kahn-topological-sort-algorithm/
