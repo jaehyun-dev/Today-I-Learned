@@ -751,3 +751,13 @@ https://computer-science-student.tistory.com/377
 A. 위상 정렬 알고리즘 중 하나이다. 궁극적인 위상 정렬로써 같은 순서 속에 있는 꼭짓점에 의해 선택된다.
 
 https://www.techiedelight.com/ko/kahn-topological-sort-algorithm/
+
+22.11.10
+## Q. 기본키와 엔티티 무결성 제약 조건에 대해서 설명해주세요.(데이터베이스)
+
+A. 기본키와 엔티티 무결성 제약조건(entity integrity constraint)
+- 기본키가 각 튜플들을 식별하기 위하여 사용되기 때문에 릴레이션의 기본키를 구성하는 어떤 애트리뷰트도 Null값을 가질 수 없다는 제약조건
+- 대체키에는 적용되지 않음(기본키에만 적용)
+- 사용자는 릴레이션을 생성하는 데이터 정의문에서 어떤 애트리뷰터가 릴레이션의 기본키의 구성요소인가를 DBMS에게 알려줌
+
+https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
