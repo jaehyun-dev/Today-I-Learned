@@ -761,3 +761,13 @@ A. 기본키와 엔티티 무결성 제약조건(entity integrity constraint)
 - 사용자는 릴레이션을 생성하는 데이터 정의문에서 어떤 애트리뷰터가 릴레이션의 기본키의 구성요소인가를 DBMS에게 알려줌
 
 https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
+
+22.11.11
+## Q. URL과 URI의 차이에 대해 설명해주세요.(네트워크)
+
+A.  
+URI(Uniform Resource Identifier): 특정 리소스를 식별하는 통합 자원 식별자. 웹기술에서 사용하는 논리적 또는 물리적 리소스를 식별하는 고유한 문자열 시퀀스이다.  
+URL(Uniform Resource Locator): 흔히 웹 주소라고도 하는, 컴퓨터 네트워크 상에서 리소스가 어디 있는지 알려주기 위한 규약. URI의 서브셋이다.  
+URI는 식별하고 URL은 위치를 가리킨다.
+
+https://www.charlezz.com/?p=44767
