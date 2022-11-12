@@ -771,3 +771,16 @@ URL(Uniform Resource Locator): 흔히 웹 주소라고도 하는, 컴퓨터 네�
 URI는 식별하고 URL은 위치를 가리킨다.
 
 https://www.charlezz.com/?p=44767
+
+22.11.12
+## Q. CPU 스케줄링 알고리즘의 종류와 각각에 대해 아는대로 설명해주세요.(운영체제)
+
+A.
+- FCFS(First Come, First Serve): 먼저 도착한 프로세스를 먼저 처리하는 스케줄링 알고리즘이다.
+- SJF(Shortest Job First): 최단적업우선 스케줄링 알고리즘이다. 여기서 최단작업이란 CPU버스트 타임이 가장 짧은 프로세스를 말한다.
+- Priority Scheduling(우선순위 스케줄링): 미리 주어진 프로세스의 우선순위에 따라서 스케줄링하는 방식이다.
+- Round Robin(라운드 로빈): 정해진 시간 할당량만큼 프로세스를 할당한 뒤, 작업이 끝난 프로세스는 준비완류 큐(순환 큐)의 가장 마지막에 가서 재할당을 기다린다.
+- Multilevel-Queue(다단계 큐): 준비완료 큐를 여러 개의 큐로 분류하여 각 큐가 각각 다른 스케줄링 알고리즘을 가지는 방식.
+- Multilevel-Feedback-Queue(다단계-피드백 큐): 기존 다단계 큐 방식은 특정 프로세스가 큐에 고정되는 방식인 반면 다단계 피드백 큐에서는 큐와 큐 사이에 프로세스가 이동하는 걸 허용한다.
+
+https://dduddublog.tistory.com/23
