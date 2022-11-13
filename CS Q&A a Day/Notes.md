@@ -784,3 +784,13 @@ A.
 - Multilevel-Feedback-Queue(다단계-피드백 큐): 기존 다단계 큐 방식은 특정 프로세스가 큐에 고정되는 방식인 반면 다단계 피드백 큐에서는 큐와 큐 사이에 프로세스가 이동하는 걸 허용한다.
 
 https://dduddublog.tistory.com/23
+
+22.11.13
+## Q. Stack 2개로 queue를 구현하는 방법을 섦명해주세요.(자료구조)
+
+A.  
+1. Stack1로는 data를 입력받는다.
+2. Stack2로는 data를 pop한다.
+3. Stack2가 비어있다면 Stack1에서 Stack2로 data를 옮긴다.
+
+https://velog.io/@wonhee010/Stack-2%EA%B0%9C%EB%A1%9C-Queue-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
