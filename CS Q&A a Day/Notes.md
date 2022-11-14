@@ -794,3 +794,13 @@ A.
 3. Stack2가 비어있다면 Stack1에서 Stack2로 data를 옮긴다.
 
 https://velog.io/@wonhee010/Stack-2%EA%B0%9C%EB%A1%9C-Queue-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+
+22.11.14
+## Q. 프림 알고리즘(Prim's Algorithm)에 대해 설명해주세요.(알고리즘)
+
+A. MST(최소신장트리)를 찾기 위한 그리디 패러다임 알고리즘.
+1. 임의의 점 하나를 선택하여 T에 넣는다.
+2. T 밖에 있는 점들 중에서 T에 있는 점과 가장 가까운 점을 T에 추가한다.
+3. 2를 n-1회 수행한다.
+
+https://www.weeklyps.com/entry/%ED%94%84%EB%A6%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Prims-algorithm
