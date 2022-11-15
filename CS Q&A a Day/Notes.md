@@ -804,3 +804,13 @@ A. MST(최소신장트리)를 찾기 위한 그리디 패러다임 알고리즘.
 3. 2를 n-1회 수행한다.
 
 https://www.weeklyps.com/entry/%ED%94%84%EB%A6%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Prims-algorithm
+
+22.11.15
+## Q. 데이터 사전(data dictionary)에 대해서 설명해주세요.(데이터베이스)
+
+A. 데이터 사전(Data Dictionary)이란?
+- 데이터 사전이란 대부분 읽기전용으로 제공되는 테이블 및 부들의 집합으로 데이터베이스 전반에 대한 정보를 제공한다.
+- 오라클 데이터베이스는 명령이 실행될 때마다 데이터 사전을 Access 한다.
+- DB작업 동안 Oracle은 데이터 사전을 읽어 객체의 존재여부와 사용자에게 적합한 Access 권한이 있는지를 확인한다. 또한 Oracle은 데이터 사전을 계속 갱신하여 데이터베이스 구조, 감사, 사용자권한, 데이터 등의 변경사항을 반영한다.
+
+https://tragramming.tistory.com/75
