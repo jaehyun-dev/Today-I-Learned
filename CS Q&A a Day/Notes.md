@@ -857,3 +857,13 @@ A.
 |     트렌지스터    |                축약명령어를 저장을 위해 트랜지스터가 사용됨.               |              메모리 레지스터에 보다 많은 트랜지스터가 사용됨.              |
 
 https://chlalgud8505.tistory.com/8
+
+22.11.18
+## Q. HashMap과 HashTable의 차이를 설명해주세요.(자료구조)
+
+A.  
+- HashMap은 동기화(Synchronization)을 지원하지 않는 반면 다중 스레드 환경에서 HashTable은 동기화를 지원한다.
+- 속도 측면에서 HashTable은 동기화 처리 비용 때문에 HashMap에 비해 더 느리다.
+- HashMap은 저장된 요소들의 순회를 위해 Fail-Fast Iterator를 반환하는 반면 HashTable은 Enumeration을 반환한다.
+
+https://odol87.tistory.com/3
