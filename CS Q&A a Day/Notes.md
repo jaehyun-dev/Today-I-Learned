@@ -908,5 +908,5 @@ A.
 2. **즉시 갱신 회복 기법(Immediate Updat)**  
 트랜잭션 수행 도중 데이터를 변경하면 변경 정보를 로그 파일에 저장하고, 트랜잭션이 부분 완료되기 전이라도 모든 변경 내용을 즉시 데이터베이스에 반영하는 기법
 
-https://itwiki.kr/w/%EB%A1%9C%EA%B7%B8_%EA%B8%B0%EB%B0%98_%ED%9A%8C%EB%B3%B5_%EA%B8%B0%EB%B2%95
+https://itwiki.kr/w/%EB%A1%9C%EA%B7%B8_%EA%B8%B0%EB%B0%98_%ED%9A%8C%EB%B3%B5_%EA%B8%B0%EB%B2%95  
 https://bubble-dev.tistory.com/entry/DB-Recovery-%EB%A1%9C%EA%B9%85-%EB%B0%A9%EC%8B%9D
