@@ -910,3 +910,13 @@ A.
 
 https://itwiki.kr/w/%EB%A1%9C%EA%B7%B8_%EA%B8%B0%EB%B0%98_%ED%9A%8C%EB%B3%B5_%EA%B8%B0%EB%B2%95  
 https://bubble-dev.tistory.com/entry/DB-Recovery-%EB%A1%9C%EA%B9%85-%EB%B0%A9%EC%8B%9D
+
+22.11.22
+## Q. 프록시에 대해 설명해주세요.(네트워크)
+
+A. **프록시(proxy)**  
+데이터를 가져올 때 해당 사이트에서 바로 자신의 PC로 가져오는 것이 아니라 임시 저장소를 거쳐서 가져오는 것. 프록시를 설정하면 수 초의 빠른 속도를 느낄 수 있다. 프록시 서버에는 다수의 사용자들이 들르는 사이트에 대한 데이터가 저장되어 있어 경우에 따라 해당 사이트에 들르지 않고 바로 이 서버에 있는 데이터를 이용하기도 한다. 하지만 프록시 서버에 문제가 생겼거나 과부하가 걸렸을 경우 오히려 더 느려지는 경우도 있다. (사이트 → 프록시 서버 → PC)
+
+[네이버 지식백과] 프록시  
+https://terms.naver.com/entry.naver?docId=834076&cid=42344&categoryId=42344  
+https://brownbears.tistory.com/191
