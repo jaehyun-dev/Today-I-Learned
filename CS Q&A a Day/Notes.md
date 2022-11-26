@@ -952,3 +952,18 @@ A.
 4. 삽입, 검색, 삭제의 시간 복잡도가 O(logN)이다.
 
 https://code-lab1.tistory.com/61?category=1213002
+
+22.11.26
+## Q. n개의 배열에서 k째로 큰 수를 찾는 알고리즘에 대해 설명해주세요.(알고리즘)
+
+A.  
+Quick Selection 알고리즘:  
+1. Array의 element 중 random한 하나의 element를 pivot으로 정한다.
+2. Array를 A1(Array의 element 중 pivot보다 작은 element들을 모은 Array)와 A2(pivot보다 큰 element들을 모은 Array)로 partitioning 한다.
+3. A1의 배열 Size에 따라, 다음의 세 가지 경우로 나뉜다.
+    - k번째 큰 element가 A2 배열 내에 있는 경우, Input Array를 A2로 정한 뒤 k번째 큰 element를 찾는 Subproblem의 값을 반환한다.
+    - k가 A1의 Size + 1인 경우, pivot이 k번째 큰 element가 되므로 pivot을 반환한다.
+    - k번째 큰 element가 A1 배열 내에 있는 경우, Input Array를 A1으로 정한 뒤 k-(A2 Size + 1)번째 큰 element를 찾는 Subproblem의 값을 반환한다.
+
+https://2jinishappy.tistory.com/124  
+https://gils-lab.tistory.com/94
