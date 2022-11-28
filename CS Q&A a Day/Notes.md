@@ -987,3 +987,15 @@ A. **의사결정나무(Decision Tree)**
 - 상위 노드로부터, 하위 노드로 트리구조를 형성하는 모든 단계마다 기준값의 선택이 중요하다.
 
 https://schoolforkids.tistory.com/entry/decision-tree
+
+22.11.28
+## Q. 트랜잭션의 연산 중 ROLLBACK의 개념을 간략히 설명해주세요.(데이터베이스)
+
+A.  
+- 작업 중 문제가 발생되어서 트랜잭션의 처리 과정에서 발생한 발견사항을 취소하는 명령어
+- ROLLBACK 역시 하나의 트랜잭션 과정을 종료하게 됨
+- 트랜잭션으로 인한 하나의 묶음 처리가 시작되기 이전의 상태로 되돌림
+- Transaction(INSERT, UPDATE, DELETE) 작업 내용을 취소함
+- 이전 COMMIT한 곳까지만 복구함
+
+https://itprogramming119.tistory.com/entry/Oracle-ROLLBACK%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EA%B3%BC%EC%A0%95
