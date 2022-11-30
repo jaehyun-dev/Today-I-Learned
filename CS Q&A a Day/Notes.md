@@ -1013,3 +1013,10 @@ A.
 - 쿠키에 정보가 있기 때문에 서버에 요청 시 속도가 빠르고 세션은 정보가 서버에 있기 때문에 처리가 요구도어 비교적 느린 속도를 가짐
 
 https://interconnection.tistory.com/74
+
+22.11.30
+## Q. 가상 메모리(Virtual Memory)에 대해 설명해주세요.
+
+A. main memory(RAM)의 크기가 작아서 모든 정보를 담기에 부족한 경우 하드디스크까지 main memory(RAM)를 확장해서 사용하는 것을 Virtual Memory 기법이라고 한다.  
+
+https://d-cron.tistory.com/30
