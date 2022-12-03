@@ -1055,3 +1055,25 @@ A.
 | 합병 정렬 | $O(NlogN)$ | $O(NlogN)$ | $O(NlogN)$ |
 
 https://yabmoons.tistory.com/250
+
+22.12.03
+## Q. generative model과 discriminative model의 차이에 대해 설명해주세요.(머신러닝)
+
+A.  
+**generative model**  
+- 데이터 X가 생성되는 과정을 두 개의 확률모형, 즉 $P(Y)$, $P(X|Y)$으로 정의하고, 베이즈룰을 사용해 $P(Y|X)$를 간접적으로 도출하는 모델
+- 레이블 정보가 있어도 되고(지도학습기반의 generative model, 선형판별분석이 대표적 사례), 없어도 구축할 수 있다(비지도학습 기반의 generative model, 가우시안 믹스처 모델, 토픽모델링이 대표적 사례).
+
+**discriminative model**  
+- 데이터 X가 주어졌을 때 레이블 Y가 나타날 조건부확률 $P(X|Y)$를 직접적으로 반환하는 모델
+- 레이블 정보가 있어야 하기 때문에 지도학습(supervised learning) 범주에 속하며 X의 레이블을 잘 구분하는 결정경계(decision boundary)를 학습하는 것이 목표
+- generative model에 비해 가정이 단순하고, 학습데이터 양이 충분하다면 좋은 성능을 내는 것으로 알려져있음
+- 선형회귀, 로지스틱회귀가 대표적인 예시
+
+**차이점**  
+![image](https://user-images.githubusercontent.com/71001479/205445141-e7cb44b2-451b-4319-8636-67cbbe29c1e1.png)  
+- generative model은 사후확률을 간접적으로, discriminative model은 직접적으로 도출함  
+![image](https://user-images.githubusercontent.com/71001479/205445202-fee6b867-4e72-48bd-a5b4-9947d92b6c06.png)  
+- generative model은 데이터 범주의 분포를, discriminative model은 결정경계를 학습함  
+
+https://ratsgo.github.io/generative%20model/2017/12/17/compare/
