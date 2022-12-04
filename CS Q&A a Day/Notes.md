@@ -1077,3 +1077,11 @@ A.
 - generative model은 데이터 범주의 분포를, discriminative model은 결정경계를 학습함  
 
 https://ratsgo.github.io/generative%20model/2017/12/17/compare/
+
+22.12.04
+## Q. 트랜잭션의 연산 중 COMMIT의 개념을 간략히 설명해주세요.(데이터베이스)
+
+A. **COMMIT**  
+저장되지 않은 모든 데이터를 데이터베이스에 저장하고 현재의 트랜잭션을 종료하라는 명령(데이터베이스에서 트랜잭션이란 논리적인 일의 단위를 말함)
+
+http://itnovice1.blogspot.com/2019/01/commit.html
