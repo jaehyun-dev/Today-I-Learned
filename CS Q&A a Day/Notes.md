@@ -1152,3 +1152,16 @@ A.
 
 [성균관대 문제해결과알고리즘 수업자료]  
 https://loosie.tistory.com/272
+
+22.12.09
+## Q. training set, validation set, test set의 차이에 대해 설명해주세요.(머신러닝)
+
+A.  
+**Training set**: 학습 과정에서 사용되는 예시 데이터 집합
+
+**Validation set**: training set을 통해 학습을 한 여러 모델의 성능을 측정하기 위한 데이터 집합
+
+**Test set**: validation set을 통해 결정된 모델의 성능을 측정하기 위한 데이터 집합
+
+https://modern-manual.tistory.com/19  
+https://davincilabs.ai/blog/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=10640969&t=board
