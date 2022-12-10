@@ -1165,3 +1165,23 @@ A.
 
 https://modern-manual.tistory.com/19  
 https://davincilabs.ai/blog/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=10640969&t=board
+
+22.12.10
+## Q. 데이터베이스 함수 종속 중 완전 함수 종속, 부분 함수 종속, 이행적 함수 종속에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+**함수 종속성**  
+- DB에서 속성들 간 종속 관계를 의미하며, 불필요한 데이터 중복을 줄이고 데이터 베이스를 더욱 논리적으로 만드는 정규화를 위해 필요한 개념
+- 어떤 테이블 R에 존재하는 필드들의 부분 집합을 각각 X와 Y라고 할 때, X의 한 값이 Y에 속한 값에만 매핑될 경우는 Y는 X에 함수 종속적이라고 하며 X -> Y로 표기
+- 이때 X를 결정자, Y를 종속자라고 부름
+
+**완전 함수 종속(Full Functional Dependency)**  
+- 기본키가 종속자이며 기본키가 여러 속성으로 구성되어 있을 경우 기본키를 구성하는 모든 속성이 포함된 부분 집합 또한 종속자일 경우
+
+**부분 함수 종속(Partial Functional Dependency)**  
+- 릴레이션에서 종속자가 기본키가 아닌 다른 속성에 종속되거나, 기본키를 구성하는 여러 속성들의 부분집합 중 일부분에만 종속되어 있는 경우
+
+**이행적 종속(Transitive Dependency)**  
+- X, Y, Z라는 3가지 부분집합을 가진 릴레이션에서 {X -> Y}이고 {Y -> Z}일 때 {Y -> Z}가 아니라면 암스트롱의 공리에 의해 {X -> Z}가 되는데 이 경우 X는 Z의 이행적 종속이라고 함
+
+https://been2.tistory.com/40
