@@ -1283,3 +1283,11 @@ A.
 - 반면에 truncate는 수행하는 순간 바로 커밋을 날려서 DB에 반영하므로 rollback이 불가능
 
 https://ws-pace.tistory.com/154
+
+22.12.17
+## Q. DNS 서버 구성방식 중 하나인 DNS Round Robin에 대해 설명해주세요.(네트워크)
+
+A.  
+Domain에 대한 IP 요청 쿼리 시 round robin 방식, 즉 프로세스들 사이에 우선순위를 두지 않고 순서에 따라 시간단위로 IP를 반환한다.
+
+https://velog.io/@eu_nzi/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-DNS-round-robin%EC%9D%98-%EB%B0%A9%EC%8B%9D
