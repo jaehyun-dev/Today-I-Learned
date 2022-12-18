@@ -1291,3 +1291,20 @@ A.
 Domain에 대한 IP 요청 쿼리 시 round robin 방식, 즉 프로세스들 사이에 우선순위를 두지 않고 순서에 따라 시간단위로 IP를 반환한다.
 
 https://velog.io/@eu_nzi/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-DNS-round-robin%EC%9D%98-%EB%B0%A9%EC%8B%9D
+
+22.12.18
+## Q. RAM과 ROM의 차이에 대해 설명해주세요.(운영체제)
+
+A.  
+**RAM**  
+- Random Access Memory의 약어
+- 휘발성 메모리(Volatile Memory)로, 전원이 차단되면 데이터가 사라짐
+- CPU에 비해 하드디스크는 너무 느리기 때문에, 하드디스크보다 빠른 메모리(RAM)를 CPU와 하드디스크 사이에 위치
+- 자주 쓰는 데이터를 RAM에 위치시켜 CPU에서 고속으로 처리 가능
+
+**ROM**  
+- Read Only Memory의 약어
+- 비휘발성 메모리(Non-Volatile Memory)로, 전원이 차단되어도 데이터가 사라지지 않음
+- BIOS(컴퓨터를 켰을 때 처음으로 시작되는 프로그램) 소프트웨어가 설치되어 있음
+
+https://information-factory.tistory.com/270
