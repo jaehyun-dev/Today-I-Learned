@@ -1346,3 +1346,13 @@ Shift 연산은 어떤 정수의 비트들을 왼쪽 또는 오른쪽으로 원�
 
 https://rebro.kr/63  
 https://j-ungry.tistory.com/137
+
+22.12.21  
+## Q. 앙상블(Ensemble)에 대해 설명해주세요.(머신러닝)  
+
+A.  
+- 앙상블 학습(Ensemble Learning)은 여러 개의 분류기를 생성하고, 그 예측을 결합함으로써 보다 정확한 예측을 도출하는 기법을 말함
+- 강력한 하나의 모델을 사용하는 대신 보다 약한 모델 여러 개를 조합하여 더 정확한 예측에 도움을 주는 방식
+- 여러 개의 분류기가 투표를 통해 최종 예측 결과를 결정하는 보팅(Voting) 방식, 데이터 샘플링(Bootstrap)을 통해 모델을 학습시키고 결과를 집계(Aggregating)하는 배깅(Bootstrap AGGregatING, Bagging) 방식, 여러 개의 분류기가 순차적으로 학습을 수행하며 이전 분류기가 예측이 틀린 데이터에 대해서 올바르게 예측할 수 있도록 다음 분류기에게 가중치(weight)를 부여하면서 학습과 예측을 진행하는 부스팅(Boosting) 방식이 있음
+
+http://www.dinnopartners.com/__trashed-4/
