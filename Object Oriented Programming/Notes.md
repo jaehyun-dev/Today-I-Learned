@@ -395,3 +395,21 @@ A. self인자가 파라미터 처음에 들어가게 되므로 인스턴스를 �
 숫자, 문자열 등 모두 어떤 클래스의 인스턴스  
 
 [main3_02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main3_02.py) 참고
+
+
+22.12.26 22:02
+
+### 03. 가변 vs. 불변 타입  
+파이썬에서 객체는 크게 가변 타입과 불변 타입으로 나뉨  
+
+**가변 타입 객체**  
+- 한번 생성한 인스튼서의 속성 변경 가능
+- ex) 리스트 클래스
+
+**불변 타입 객체**  
+- 한번 생성한 인스턴스의 속성 변경 불가
+- ex) 튜플 클래스
+
+어떤 타입이냐에 따라 같은 상황에서도 다른 결과 나타남  
+
+[main3_03.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main3_03.py) 참고
