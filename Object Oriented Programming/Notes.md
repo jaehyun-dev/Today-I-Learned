@@ -17,6 +17,8 @@ SNS 유저는 속성으로 이메일주소, 비밀번호, 친구목록 등이 �
 SNS 유저는 실제 물리적으로는 존재하지 않지만 속성과 행동이 있기 때문에 객체라고 볼 수 있다  
 따라서 거의 모든 게 객체가 될 수 있다  
 현실에 존재하든, 가상에 존재하든, 추상적 개념이든 상관없이 속성과 행동을 떠올릴 수 있다면 모두 객체  
+
+<br/><br/>
   
 ### 02. 객체 지향 프로그래밍이란?
 객체 지향 프로그래밍이란  
@@ -51,7 +53,11 @@ SNS 유저는 실제 물리적으로는 존재하지 않지만 속성과 행동�
 1. 프로그램에 어떤 객체들이 필요할지 정한다  
 2. 객체들의 속성과 행동을 정한다
 3. 객체들이 서로 어떻게 소통할지 정한다  
-  
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
 22.09.09 23:36  
 ## 2 객체를 만드는 법
 
@@ -87,6 +93,8 @@ User 객체를 만들 떄 이 틀을 기반으로 만들면 됨
   
 [main01.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main01.py) 참고
   
+<br/><br/>
+
 22.09.10 22:43  
 ### 02. 인스턴스 변수
 main01.py에서는 User 클래스로 인스턴스를 3개 만듦  
@@ -104,6 +112,8 @@ main01.py에서는 User 클래스로 인스턴스를 3개 만듦
 인스턴스 변수를 사용하려면 꼭 그 전에 미리 정의해놔야 함
 
 [main02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main02.py) 참고 
+  
+<br/><br/>  
   
 ### 03. 인스턴스 메소드  
 객체는 속성과 행동으로 이루어져있음  
@@ -127,60 +137,76 @@ main01.py에서는 User 클래스로 인스턴스를 3개 만듦
 클래스 이름.메소드 이름(인스턴스)
   
 [main03.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main03.py) 참고
-  
+
+<br/><br/>
+
 ### 04. 인스턴스 메소드의 특별한 규칙
 인스턴스 메소드를 사용하는 또다른 방법이 있음  
 인스턴스 이름.메소드 이름()  
 인스턴스로 메소드를 호출할 경우, 인스턴스가 첫 번째 파라미터로 전달됨  
 
 [main04.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main04.py) 참고
-  
+
+<br/><br/>
+
 22.09.11 20:03
 ### 05. self를 사용합시다
 #### 인스턴스 메소드의 특별한 규칙
 첫 번째 파라미터의 이름은 꼭! **self**로 쓰기  
   
 [main05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main05.py) 참고  
-  
+
+<br/><br/>
+
 ### 06. 인스턴스 변수와 같은 이름을 갖는 파라미터
 인스턴스 변수와 파라미터의 이름이 같아도 상관없음  
 심지어 이런 식으로 작성하는 게 꽤나 일반적이기도 함  
   
 [main06.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main06py) 참고  
+
+<br/><br/>
   
 ### 07. initialize 메소드
 인스턴스 변수를 하나하나 작성하면 코드가 너무 길어짐  
 클래스에 initialize 메소드를 만들어 간단하게 할 수 있음  
   
 [main07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main07.py) 참고  
+
+<br/><br/>
   
-### 08. __init__ 메소드
+### 08. \_\_init\_\_ 메소드
 #### special method, magic method(특수 메소드)
-앞뒤로 __(underbar 2개) 붙어있으면 특수 메소드  
+앞뒤로 \_\_(underbar 2개) 붙어있으면 특수 메소드  
 특정 상황에서 자동으로 호출되는 메소드  
-#### __init__ 메소드
+#### \_\_init\_\_ 메소드
 인스턴스가 생성될 때 자동으로 호출  
   
-__init__ 메소드를 쓰면 인스턴스 생성과 동시에 인스턴스 변수 초기값 설정을 한 줄에 할 수 있음  
+\_\_init\_\_ 메소드를 쓰면 인스턴스 생성과 동시에 인스턴스 변수 초기값 설정을 한 줄에 할 수 있음  
 이러한 장점으로 클래스에는 보통 이닛 메소드를 꼭 작성함  
   
 [main08.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main08.py) 참고  
-  
+
+<br/><br/>
+
 ### 09. #맞팔해요
   
 [main09.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main09.py) 참고  
-  
-### 10. __str__ 메소드
+
+<br/><br/>
+
+### 10. \_\_str\_\_ 메소드
 메소드 이름 양옆에 underbar 두 개가 있는 특수 메소드  
 "double underscore", 줄여서 **dunder** 메소드라고 부르기도 함  
 dunder str 메소드라고 부름  
 특수 메소드는 특정 상황에 자동으로 호출되는 메소드  
 dunder str 메소드는 print 함수를 호출할 때 자동으로 부름  
 어떤 인스턴스를 출력하면 dunder str 메소드의 return 값이 출력됨  
-인스턴스를 출력할 때 우리가 원하는 정보를 나오게 하려면 클래스에 __str__ 메소드를 정의하면 됨  
+인스턴스를 출력할 때 우리가 원하는 정보를 나오게 하려면 클래스에 \_\_str\_\_ 메소드를 정의하면 됨  
   
 [main10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main10.py) 참고  
-  
+
+<br/><br/>
+
 ### 11. 클래스 변수 I
 인스턴스 자신만의 속성을 나타내는 인스턴스 변수  
 여러 인스턴스들이 공유하는 속성은?
@@ -192,7 +218,9 @@ SNS User 클래스의 user 인스턴스의 총 갯수를 나타내는 속성을 
 클래스 변수는 같은 클래스의 인스턴스들이 공유하는 값  
   
 [main11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main11.py) 참고  
-  
+
+<br/><br/>
+
 ### 12. 클래스 변수 II
 #### 클래스 변수의 값을 읽는 법
 1. 클래스 이름.클래스 변수 이름
@@ -202,18 +230,24 @@ SNS User 클래스의 user 인스턴스의 총 갯수를 나타내는 속성을 
 1. 클래스 이름.클래스 변수 이름
   
 [main12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main12.py) 참고  
-  
+
+<br/><br/>
+
 ### 13. 여기서 잠깐! 데코레이터 I
 #### 데코레이터(decorator)
 파이썬에서 어떤 함수를 꾸며서 새로운 함수를 만들 때 사용하는 방법  
 
 [main13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main13.py) 참고
 
+<br/><br/>
+
 22.09.13 23:21  
 ### 14. 여기서 잠깐! 데코레이터 II
 @ 붙여서 데코레이터 함수 이용하여 새로운 기능을 줄 수 있음  
 
 [main14.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main14.py) 참고
+
+<br/><br/>
 
 22.09.14 23:46
 ### 15. 클래스 메소드 I
@@ -228,6 +262,8 @@ classmethod 데코레이터로 함수를 데코레이팅 해주기
 
 [main15.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main15.py) 참고
 
+<br/><br/>
+
 ### 16. 클래스 메소드 II
 인스턴스 변수를 사용하면 인스턴스 메소드를, 클래스 변수를 사용하면 클래스 메소드를 사용  
 클래스 변수만 사용하는 메소드라면 클래스 메소드로 작성해야 함  
@@ -237,9 +273,13 @@ classmethod 데코레이터로 함수를 데코레이팅 해주기
 
 [main16.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main16.py) 참고
 
+<br/><br/>
+
 ### 17. 클래스 메소드 활용
 
 [main17.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main17.py) 참고
+
+<br/><br/>
 
 ### 18. 정적 메소드
 이때까지
@@ -330,6 +370,8 @@ Q. @staticmethod 안 쓰면?
 A. self인자가 파라미터 처음에 들어가게 되므로 인스턴스를 생성해주어야 사용이 가능함.  
 반면 정적 메소드 데코레이터를 붙여주면 인스턴스를 생성하지 않아도 클래스 자체로 호출 및 사용 가능함.  
 
+<br/><br/>
+
 ### 19. 객체를 만드는 법
 질문 1  
 다음 중 옳은 내용을 고르시오.  
@@ -363,6 +405,7 @@ A. self인자가 파라미터 처음에 들어가게 되므로 인스턴스를 �
 <br/><br/>
 <br/><br/>
 <br/><br/>
+
 #### 퀴즈 해설  
 질문 1  
 정답: (1)  
@@ -381,12 +424,17 @@ A. self인자가 파라미터 처음에 들어가게 되므로 인스턴스를 �
 정답: (4)  
 해설: 클래스 메소드는 어떤 방식으로 호출하든 첫번째 파라미터로 그 클래스가 넘어갑니다. number_of_users는 파라미터가 한 개만 필요한데, 보기 4에서는 자동 전달되는 User 클래스와 직접 전달한 User 클래스까지 총 두 개의 파라미터가 넘어가기 때문에 에러가 발생합니다.
 
-22.09.29 21:46
+<br/><br/>
+<br/><br/>
+<br/><br/>
 
+22.09.29 21:46
 ## 3 미리 알고 가야 할 것들
 
 ### 01. 미리 알고 갑시다
 '객체 지향 프로그래밍' 관련 여러 토픽들을 수강하기 전에는 파이썬 문법 등에 관한 사전 지식이 필요합니다. 이런 것들을 알아야 다음 단계로 넘어갈 수 있으니까 이 챕터의 내용을 꼼꼼히 읽고 기억해주세요!
+
+<br/><br/>
 
 ### 02. 파이썬은 순수 객체 지향 언어?
 파이썬으로 객체 지향 프로그래밍을 배우는 이유?  
@@ -396,6 +444,7 @@ A. self인자가 파라미터 처음에 들어가게 되므로 인스턴스를 �
 
 [main3_02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main3_02.py) 참고
 
+<br/><br/>
 
 22.12.26 22:02
 
@@ -414,6 +463,7 @@ A. self인자가 파라미터 처음에 들어가게 되므로 인스턴스를 �
 
 [main3_03.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main3_03.py) 참고
 
+<br/><br/>
 
 ### 04. 파이썬 퀴즈  
 질문 1  
@@ -447,6 +497,7 @@ print(list_x[2])
 <br/><br/>
 <br/><br/>
 <br/><br/>
+
 #### 퀴즈 해설  
 질문 1  
 정답: (5)  
@@ -575,8 +626,6 @@ False
 두 방식 중 어느 한 가지가 더 좋다고 할 수는 없습니다. 프로그램의 용도에 따라 적합한 방식이 다르기 때문입니다. 만약 데이터와 동작의 연관성이 높고 이걸 객체라는 단위로 묶는 것이 낫겠다는 생각이 들면 객체 지향 프로그래밍을 하는 것이 좋습니다. 보통 복잡한 프로그램일수록 객체 지향 프로그래밍으로 하는 것이 더 나은 경우가 많습니다.
 
 <br/><br/>
-<br/><br/>
-<br/><br/>
 
 ### 06. 유용한 함수들  
 앞으로 자주 마주치게 될 함수들을 미리 살펴봅시다.  
@@ -676,9 +725,6 @@ print("abc".zfill(8))
 00000abc
 ```
 
-
-<br/><br/>
-<br/><br/>
 <br/><br/>
 
 ### 07. 모듈
@@ -721,7 +767,7 @@ from calculator import sum
     
 print(sum(3, 5))
 ```
-```python
+```
 8
 ```
 만약 calculator.py모듈에 정의된 모든 것들을 사용하려면 어떻게 선언해야 할까요?
@@ -738,7 +784,7 @@ print(difference(3, 5))
 print(product(3, 5))
 print(square(3))
 ```
-```python
+```
 8
 -2
 15
