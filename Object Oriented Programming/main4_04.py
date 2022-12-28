@@ -22,12 +22,13 @@ class BlogUser:
 
     def add_post(self, date, content):
         # 새로운 게시글 추가
-        self.posts.append([date, content])
+        new_post = Post(date, content)
+        self.posts.append(new_post)
 
     def show_all_posts(self):
         # 블로그 유저의 모든 게시글 출력
         for post in self.posts:
-            print(f"작성 날짜: {post[0]}\n내용: {post[1]}")
+            print(post)
 
     def __str__(self):
         # 간단한 인사와 이름을 문자열로 리턴
