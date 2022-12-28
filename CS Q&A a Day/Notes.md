@@ -1485,3 +1485,15 @@ A.
 - 데이터를 모델링하는 알고리즘은 여러가지가 있지만, 크게 지도학습(Supervised Learning), 비지도학습(Unsupervised Learning), 강화학습(Reinforcemenet Learning)으로 분류됨
 
 https://dalsacoo-log.tistory.com/entry/difference-in-terms-of-ai
+
+22.12.28
+## Q. Inner JOIN, Outer JOIN의 차이점에 대해서 설명해주세요.(데이터베이스)  
+
+A.  
+**Inner JOIN**(내부 조인)  
+- 키 값이 있는 테이블의 컬럼 값을 비교 후 조건에 맞는 값을 가져오는 것. 간단히 말하면 서로 연관된 내용만 검색하는 조인 방법
+
+**Outer JOIN**(외부 조인)  
+- 조인하는 여러 테이블에서 한 쪽에는 데이터가 있고 한 쪽에는 데이터가 없는 경우, 데이터가 있는 쪽 테이블의 내용을 전부 출력하는 방법. 즉, 조인 조건에 만족하지 않아도 해당 행을 출력하고 싶을 때 사용할 수 있음  
+
+https://clairdelunes.tistory.com/22
