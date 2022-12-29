@@ -59,16 +59,17 @@ class Clock:
         self.hour = Counter(Clock.HOURS)
         self.minute = Counter(Clock.MINUTES)
         self.second = Counter(Clock.SECONDS)
-        self.hour.value = hour
-        self.minute.value = minute
-        self.second.value = second
+        
+        self.hour.set(hour)
+        self.minute.set(minute)
+        self.second.set(second)
 
     def set(self, hour, minute, second):
         """현재 시간을 파라미터 hour시, minute분, second초로 설정한다."""
         # 코드를 쓰세요
-        Counter.set(self.hour, hour)
-        Counter.set(self.minute, minute)
-        Counter.set(self.second, second)
+        self.hour.set(hour)
+        self.minute.set(minute)
+        self.second.set(second)
 
     def tick(self):
         """
@@ -76,9 +77,9 @@ class Clock:
         초 카운터를 증가시킬 때, 분 또는 시가 바뀌어야하는 경우도 처리한다.
         """
         # 코드를 쓰세요
-        if Counter.tick(self.second):
-            if Counter.tick(self.minute):
-                Counter.tick(self.hour)
+        if self.second.tick():
+            if self.minute.tick():
+                self.hour.tick()
 
     def __str__(self):
         """
@@ -86,7 +87,7 @@ class Clock:
         예시: "03:11:02"
         """
         # 코드를 쓰세요
-        return f"{Counter.__str__(self.hour)}:{Counter.__str__(self.minute)}:{Counter.__str__(self.second)}"
+        return f"{self.hour}:{self.minute}:{self.second}"
 
 
 # 초가 60이 넘을 때 분이 늘어나는지 확인하기
