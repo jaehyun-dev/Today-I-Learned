@@ -18,10 +18,7 @@ class Counter:
         아닐 경우 value에 0을 설정한다.
         """
         # 여기에 코드를 작성하세요
-        if new_value >= 0 and new_value < self.limit:
-            self.value = new_value
-        else:
-            self.value = 0
+        self.value = new_value if 0 <= new_value < self.limit else 0
 
     def tick(self):
         """
@@ -31,11 +28,11 @@ class Counter:
         """
         # 여기에 코드를 작성하세요
         self.value += 1
-        if self.value >= self.limit:
+        
+        if self.value == self.limit:
             self.value = 0
             return True
-        else:
-            return False
+        return False
 
     def __str__(self):
         """
@@ -68,4 +65,4 @@ print(counter)
 print("카운터 값이 30이 되면 0으로 바뀝니다")
 for i in range(5):
     counter.tick()
-    print(counter)       
+    print(counter)
