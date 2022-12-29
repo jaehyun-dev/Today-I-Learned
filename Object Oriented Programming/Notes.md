@@ -955,3 +955,531 @@ class Post:
 ```
 
 [main4_04.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main4_04.py) 참고
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+22.12.29
+## 5 객체 지향 프로그래밍 직접 해보기
+
+### 01. 혹시... 시간이 어떻게 되나요?
+
+이번 토픽에서는 객체 지향 프로그래밍이 무엇인지, 그리고 파이썬에서 클래스와 인스턴스를 어떻게 만드는지 배웠는데요. 배운 것을 다시 제대로 점검합시다.
+
+우리가 컴퓨터나 스마트폰에서 자주 확인하는 시계 프로그램을 객체 지향 프로그래밍으로 만들어봅시다.
+
+일단 정의하려는 시계가 어떤 기능을 가져야할지 먼저 정합시다. 특별한 기능을 갖기보다는 기본 기능에 충실한 시계를 만들려고 합니다. 다음과 같은 기능들이 필요하겠죠?
+
+1. 현재 시간을 설정할 수 있다.
+2. 현재 시간을 변경할 수 있다.
+3. 현재 시간에 1초씩 더할 수 있다.
+
+아래의 코드처럼 Clock 클래스를 사용할 수 있도록, 이 3가지 기능들을 Clock 클래스 안에 정의해야합니다.
+```python
+# 1시 30분 48초인 시계 인스턴스 생성
+clock = Clock(1, 30, 48)
+    
+# 13초를 늘린다
+for i in range(13):
+    clock.tick()
+    
+# 시계의 현재 시간 출력
+print(clock)
+    
+# 2시 3분 58초로 시계 세팅
+clock.set(2, 3, 58)
+    
+# 5초를 늘린다
+for i in range(5):
+    clock.tick()
+    
+# 시계의 현재 시간 출력
+print(clock)
+    
+# 23시 59분 57초로 세팅
+clock.set(23, 59, 57)
+    
+# 5초를 늘린다
+for i in range(5):
+    clock.tick()
+    
+# 시계의 현재 시간 출력
+print(clock)
+```
+#### 실행 결과
+```
+01:31:01
+02:04:03
+00:00:02
+```
+위 코드처럼 작동하는 Clock 클래스를 작성한다고 할 때, 어떤 속성과 기능(행동)을, 어떻게 넣어야 할까요?
+다음 레슨의 설명을 듣기 전에 꼭 스스로 이 부분에 대해 고민해보세요!
+
+[main5_01.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main5_01.py) 참고
+
+<br/><br/>
+
+### 02. 시간 나누기
+
+#### 실습 설명
+비슷한 객체를 표현하더라도 그 내부를 어떻게 구성하느냐는 프로그램의 목적이나 개발자의 생각에 따라 다를 수 있습니다. 일단 이 과제에서는 어떻게 문제를 풀지에 대한 간단한 **가이드**를 드릴게요, 본인만의 다른 사고방식이 있다면 답을 보기 전에 먼저 본인의 방식대로 과제를 풀어봐도 좋습니다.
+
+자, 이제 가이드를 드리겠습니다. 시계는 결국 시간을 나타내는 기능이 핵심이고 시간은 **시, 분, 초**로 구성되어 있습니다. 시, 분, 초 이 3가지는 모두 하나의 클래스로 표현 가능합니다. 이 하나의 클래스는 다음과 같은 속성과 행동을 가져야 합니다.
+
+##### 속성
+- 시, 분, 초는 각각 자기의 “값”을 속성으로 갖습니다. 예를 들면 4시 54분 12초에서는 4, 54, 12가 각각 시, 분, 초의 값이 되죠.
+- 시, 분, 초 모두 “최댓값”이 있습니다. 분과 초는 각각 59, 그리고 시는 23이라는 최댓값을 가집니다.
+
+##### 행동
+- 값 1 증가시키기:
+    - 시간이 흐르는 동작 즉 1초, 1분, 1시가 증가하는 동작을 할 수 있어야 합니다.
+    - 이렇게 시간이 흐를 때 시, 분, 초는 각자의 최댓값에 도달하면 그 값을 0으로 바꾸고 그 위의 단위를 1 증가시켜야 합니다. 예를 들어 59초에서 60초가 되면 초를 다시 0으로 바꿔주고 분을 1분 늘리는 것처럼요.
+- 값 설정하기: 가끔씩 잘 되던 시계에 오차가 생기거나 시간대가 다른 나라로 여행을 가면 현재 시간을 변경해야 합니다. 이렇게 하려면 시, 분, 초를 바로 세팅할 수 있어야겠죠? 이 기능도 추가하겠습니다.  
+
+이처럼 같은 속성과 행동을 갖는 시, 분, 초를 하나의 클래스로 나타내 봅시다. 시, 분, 초의 주된 동작은 "0 또는 시작값"에서 "최댓값"까지 숫자를 증가시키는 것이니까 클래스 이름을 Counter로 작성해 봅시다.
+
+#### 실습 결과
+```
+1부터 5까지 카운트하기 
+01 
+02
+03
+04
+05
+카운터 값 0으로 설정하기
+00
+카운터 값 27로 설정하기
+27
+카운터 값이 30이 되면 0으로 바뀝니다
+28
+29
+00
+01
+02
+```
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+#### 해설
+```python
+class Counter:
+    """
+    시계 클래스의 시,분,초를 각각 나타내는데 사용될 카운터 클래스    
+    """
+    
+    def __init__(self, limit):
+        """
+        인스턴스 변수 limit(최댓값), value(현재까지 카운트한 값)을 설정한다.
+        인스턴스를 생성할 때 인스턴스 변수 limit만 파라미터로 받고, value는 초깃값 0으로 설정한다.
+        """
+        # 여기에 코드를 작성하세요
+    
+    def set(self, new_value):
+        """
+        파라미터가 0 이상, 최댓값 미만이면 value에 설정한다.
+        아닐 경우 value에 0을 설정한다.
+        """
+        # 여기에 코드를 작성하세요
+    
+    def tick(self):
+        """
+        value를 1 증가시킨다.
+        카운터의 값 value가 limit에 도달하면 value를 0으로 바꾼 뒤 True를 리턴한다.
+        value가 limit보다 작은 경우 False를 리턴한다.
+        """
+        # 여기에 코드를 작성하세요
+    
+    def __str__(self):
+        """
+        value를 최소 두 자릿수 이상의 문자열로 리턴한다. 
+        일단 str 함수로 숫자형 변수인 value를 문자열로 변환하고 zfill 메소드를 호출한다. 
+        """
+        return str(self.value).zfill(2)
+```
+
+Counter 클래스의 메소드를 하나씩 살펴봅시다.
+
+##### \_\_init\_\_ 메소드
+파라미터로 받은 limit을 인스턴스 변수 limit에 설정하고, 인스턴스 변수 value에 0을 설정합니다. 코드로는 이렇게 해주면 됩니다.  
+```python
+def __init__(self, limit):
+    """
+    인스턴스 변수 limit(최댓값), value(현재까지 카운트한 값)을 설정한다.
+    인스턴스를 생성할 때 인스턴스 변수 limit만 파라미터로 받고, value는 초깃값 0으로 설정한다.
+    """
+    self.limit = limit
+    self.value = 0
+```
+
+##### set 메소드
+인스턴스 변수 value를 파라미터 new_value의 값에 따라 new_value 의 값으로 설정하거나 0으로 설정해야 합니다. **ternary expression**을 사용하면 불린 조건에 따라 다른 값을 지정할 수 있습니다.  
+```python
+def set(self, new_value):
+    """
+    파라미터가 0 이상, 최댓값 미만이면 value에 설정한다.
+    아닐 경우 value에 0을 설정한다.
+    """
+    self.value = new_value if 0 <= new_value < self.limit else 0
+```
+위 코드는 아래의 코드랑 똑같은 뜻을 가집니다. 하지만 위 코드처럼 좀 더 짧게 쓰는 게 보기 좋죠?
+```python
+def set(self, new_value):
+    """
+    파라미터가 0 이상, 최댓값 미만이면 value에 설정한다.
+    아닐 경우 value에 0을 설정한다.
+    """
+    if 0 <= new_value < self.limit:
+        self.value = new_value
+    else:
+        self.value = 0
+```
+
+##### tick 메소드
+tick 메소드는 다음 설명에 따라 동작하면 됩니다.
+1. 인스턴스 변수 value의 값을 1만큼 증가시키고
+2. value의 값이 limit 값과 같으면
+    1. value 변수에 0을 지정하고
+    2. True를 리턴한다
+3. 같지 않다면 False를 리턴한다
+
+코드로 바꾸면 이렇게 되겠죠?
+```python
+def tick(self):
+    """
+    value를 1 증가시킨다.
+    카운터의 값 value가 limit에 도달하면 value를 0으로 바꾼 뒤 True를 리턴한다.
+    value가 limit보다 작은 경우 False를 리턴한다.
+    """
+    self.value += 1
+    
+    if self.value == self.limit:
+        self.value = 0
+        return True
+    return False
+```
+아래는 완성된 Counter 클래스의 전체 코드입니다.
+
+#### 모범 답안
+```python
+class Counter:
+    """
+    시계 클래스의 시,분,초를 각각 나타내는데 사용될 카운터 클래스
+    """
+    
+    def __init__(self, limit):
+        """
+        인스턴스 변수 limit(최댓값), value(현재까지 카운트한 값)을 설정한다.
+        인스턴스를 생성할 때 인스턴스 변수 limit만 파라미터로 받고, value는 초깃값 0으로 설정한다.
+        """
+        self.limit = limit
+        self.value = 0
+    
+    def set(self, new_value):
+        """
+        파라미터가 0 이상, 최댓값 미만이면 value에 설정한다.
+        아닐 경우 value에 0을 설정한다.
+        """
+        self.value = new_value if 0 <= new_value < self.limit else 0
+    
+    def tick(self):
+        """
+        value를 1 증가시킨다.
+       카운터의 값 value가 limit에 도달하면 value를 0으로 바꾼 뒤 True를 리턴한다.
+        value가 limit보다 작은 경우 False를 리턴한다.
+        """
+        self.value += 1
+    
+        if self.value == self.limit:
+            self.value = 0
+            return True
+        return False
+    
+    def __str__(self):
+        """
+        value를 최소 두 자릿수 이상의 문자열로 리턴한다. 
+        일단 str 함수로 숫자형 변수인 value를 문자열로 변환하고 zfill을 호출한다. 
+        """
+        return str(self.value).zfill(2)
+```
+Counter 클래스가 제대로 작동하는지 확인합시다.
+```python
+# 최대 30까지 셀 수 있는 카운터 인스턴스 생성
+counter = Counter(30)
+
+# 0부터 5까지 센다
+print("1부터 5까지 카운트하기")
+for i in range(5):
+    counter.tick()
+    print(counter)
+
+# 타이머 값을 0으로 바꾼다
+print("카운터 값 0으로 설정하기")
+counter.set(0)
+print(counter)
+
+# 카운터 값 27로 설정
+print("카운터 값 27로 설정하기")
+counter.set(27)
+print(counter)
+
+# 카운터 값이 30이 되면 0으로 바뀌는지 확인
+print("카운터 값이 30이 되면 0으로 바뀝니다")
+for i in range(5):
+    counter.tick()
+    print(counter)    
+```
+#### 실습 결과
+```
+1부터 5까지 count
+01
+02
+03
+04
+05
+카운터 값 0으로 설정하기
+00
+카운터 값 27로 설정하기
+27
+카운터 값이 30이 되면 0으로 바뀝니다
+28
+29
+00
+01
+02
+```
+잘 동작하네요! 이제 Counter 클래스로 인스턴스 3개를 만들면 각각 시, 분, 초를 나타내도록 할 수 있겠네요. 이걸 잘 진행하면 결국 시계를 완성할 수 있을 것 같은데, 다음 실습에서 계속 진행해 봅시다.
+
+[main5_02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main5_02.py) 참고
+
+<br/><br/>
+
+### 03. 시계 프로그램
+
+#### 실습 설명
+"0 또는 시작값"에서부터 특정 "최댓값"까지 숫자를 증가시키는 Counter 클래스를 정의했습니다. 그렇다면 Counter 클래스로 어떻게 시계의 시, 분, 초를 나타낼 수 있을까요? 그 전에 일단 ‘시계’라는 객체도 클래스로 정의해야겠죠? 이전의 레슨에서 보았듯이, 만들려는 시계 프로그램은 다음 조건들을 만족해야 합니다.
+1. 현재 시간을 설정할 수 있다.
+2. 현재 시간을 변경할 수 있다.
+3. 현재 시간에 1초씩 더할 수 있다.
+Counter 클래스를 조합하면 시계의 기능을 완성할 수 있는데요. 시계를 나타내는 클래스의 이름은 Clock으로 하겠습니다. Clock 클래스가 가질 속성과 행동을 먼저 봅시다.
+
+##### 속성
+시계는 현재 시간을 속성으로 가집니다. Counter 클래스를 사용해서 시, 분, 초를 나타낼 수 있습니다.
+- 초: 1부터 59까지 셀 줄 아는 Counter 클래스의 인스턴스
+- 분: 1부터 59까지 셀 줄 아는 Counter 클래스의 인스턴스
+- 시: 1부터 23까지 셀 줄 아는 Counter 클래스의 인스턴스
+
+##### 행동
+- 1초 증가시키기
+    - 시간을 1초씩 증가시킵니다.
+    - 이때 주의할 점은 시간을 증가시킬 때 59초가 60초가 되면 초를 다시 00초로 바꾼 후에 분을 1분 증가시키고, 59분이 60분이 되면 분을 다시 00분으로 바꾼 후에 시를 1시간 증가시키는 것입니다. 이것은 당연한 시간의 원리이니 따로 설명하지 않겠습니다. 이 부분을 구현할 때 Counter 클래스의 tick 메소드의 리턴값(True 또는 False)이 어떻게 활용될지 생각해 보세요.
+- 값 변경하기: 이미 Counter 클래스에는 값을 설정하는 메소드가 있습니다. 시계 클래스에서 시간을 설정할 때 시, 분, 초를 각각 따로 설정하는 건 귀찮겠죠? 시, 분, 초의 값을 한번에 설정하는 메소드를 만듭시다.  
+
+이러한 속성과 행동을 가지는 Clock 클래스를 정의해 보세요!
+
+#### 실습 결과
+```
+시간을 1시 30분 48초로 설정합니다
+01:30:48
+13초가 흘렀습니다
+01:31:01
+시간을 2시 59분 58초로 설정합니다
+02:59:58
+5초가 흘렀습니다
+03:00:03
+시간을 23시 59분 57초로 설정합니다
+23:59:57
+5초가 흘렀습니다
+00:00:02
+```
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+#### 해설
+```python
+    def set(self, hour, minute, second):
+        """현재 시간을 파라미터 hour시, minute분, second초로 설정한다."""     
+
+    def tick(self):
+        """
+        초 카운터의 값을 1만큼 증가시킨다.
+        초 카운터를 증가시킬 때, 분 또는 시가 바뀌어야하는 경우도 처리한다.
+        """
+
+    def __str__(self):
+        """
+        현재 시간을 시:분:초 형식으로 리턴한다. 시, 분, 초는 두 자리 형식이다.
+        예시: "03:11:02"
+        """
+```
+Clock 클래스의 메소드를 하나씩 살펴보겠습니다.
+
+##### \_\_init\_\_ 메소드, set 메소드  
+먼저 시, 분, 초를 나타내는 인스턴스 변수 3개가 필요합니다. 이를 위해 hour, minute, second 라는 Counter 클래스의 인스턴스 3개를 정의합니다. hour의 최댓값은 24, minute과 second의 최댓값은 60입니다. Clock  클래스의 클래스 변수들 HOURS, MINUTES, SECONDS를 사용해서 최댓값을 지정하겠습니다. 그리고 Counter 클래스의 set 메소드로 현재의 시, 분, 초를 설정하면 되겠네요.
+```python
+def __init__(self, hour, minute, second):
+    """
+    각각 시, 분, 초를 나타내는 카운터 인스턴스 3개(hour, minute, second)를 정의한다.
+    현재 시간을 파라미터 hour시, minute분, second초로 지정한다.
+    """
+    self.hour = Counter(Clock.HOURS)
+    self.minute = Counter(Clock.MINUTES)
+    self.second = Counter(Clock.SECONDS)
+
+    self.hour.set(hour)
+    self.minute.set(minute)
+    self.second.set(second)
+```
+다음은 Clock 클래스의 set 메소드를 작성합시다. 이미 __init__ 메소드에서 각 Counter 인스턴스를 초기화했으므로 여기서는 Counter 인스턴스의 값만 지정하면 됩니다. Counter 클래스의 set 메소드를 사용하면 됩니다.
+```python
+def set(self, hour, minute, second):
+    """현재 시간을 파라미터 hour시, minute분, second초로 설정한다."""
+    self.hour.set(hour)
+    self.minute.set(minute)
+    self.second.set(second)
+```
+Clock 클래스의 set 메소드의 바디를 작성하고 나니 그 내용이 \_\_init\_\_ 메소드의 뒷부분과 똑같죠? \_\_init\_\_ 메소드의 뒷부분을 방금 완성한 set 메소드를 사용해서 더 간결하게 나타냅시다.
+```python
+def __init__(self, hour, minute, second):
+    """
+    각각 시, 분, 초를 나타내는 카운터 인스턴스 3개(hour, minute, second)를 정의한다.
+    현재 시간을 파라미터 hour시, minute분, second초로 지정한다.
+    """
+    self.hour = Counter(Clock.HOURS)
+    self.minute = Counter(Clock.MINUTES)
+    self.second = Counter(Clock.SECONDS)
+
+    self.set(hour, minute, second)
+```
+\_\_init\_\_ 메소드가 훨씬 더 간결해졌네요.
+
+##### tick 메소드
+Counter 클래스의 tick 메소드는 해당 인스턴스의 value를 1만큼 증가시키고 최댓값에 도달하면 value의 값을 0으로 바꾼 후 True를 리턴합니다.
+
+시간은 1초씩 증가하니까 초를 나타내는 second의 tick 메소드를 호출해야 합니다. 이렇게 1초씩 증가시키다가 second의 value가 limit 이상이 될 경우 True를 리턴해야 합니다. 이 True의 의미는 무엇일까요? 초의 값을 0으로 초기화하고 더 윗 단위인 minute을 1만큼 증가시키라는 겁니다. 이 부분을 이해했다면 아래 코드를 보세요.
+```python
+def tick(self):
+    """
+    초 카운터의 값을 1만큼 증가시킨다.
+    초 카운터를 증가시킴으로써, 분 또는 시가 바뀌어야하는 경우를 처리한다.
+    """
+    if self.second.tick():
+        if self.minute.tick():
+            self.hour.tick()
+```
+Clock 클래스의 tick 메소드에서 시, 분, 초를 나타내는 Counter 인스턴스 3가지의 tick 메소드를 사용하고 있죠? 이렇게 계단식으로 표현하면 초가 60초가 되면 1분이 늘어나고, 분이 60분이 되면 시가 1시 늘어납니다. 뭔가 참신한 방법 아닌가요? 여러분은 어떤 식으로 구현했을지 궁금하네요.
+
+##### \_\_str\_\_ 메소드
+아래와 같이 문자열의 {}와 format 메소드로 hour, minute, second 변수들의 값을 {}이 있는 부분에 순서대로 추가할 수 있는데요. 이렇게 하면 시계 인스턴스를 출력할 때 "시:분:초" 형식의 현재 시간이 출력되겠죠?
+```
+def __str__(self):
+    """
+    현재 시간을 시:분:초 형식으로 리턴한다. 시, 분, 초는 두 자리 형식이다.
+    예시: "03:11:02"
+    """
+    return "{}:{}:{}".format(self.hour, self.minute, self.second)
+```
+완성된 Clock 클래스의 전체 코드는 다음과 같습니다.
+
+#### 모범 답안
+```python
+class Clock:
+    """
+    시계 클래스
+    """
+    HOURS = 24 # 시 최댓값
+    MINUTES = 60 # 분 최댓값
+    SECONDS = 60 # 초 최댓값
+
+    def __init__(self, hour, minute, second):
+        """
+        각각 시, 분, 초를 나타내는 카운터 인스턴스 3개(hour, minute, second)를 정의한다.
+        현재 시간을 파라미터 hour시, minute분, second초로 지정한다.
+        """
+        self.hour = Counter(Clock.HOURS)
+        self.minute = Counter(Clock.MINUTES)
+        self.second = Counter(Clock.SECONDS)
+
+        self.set(hour, minute, second)
+
+    def set(self, hour, minute, second):
+        """현재 시간을 파라미터 hour시, minute분, second초로 설정한다."""
+        self.hour.set(hour)
+        self.minute.set(minute)
+        self.second.set(second)
+
+    def tick(self):
+        """
+        초 카운터의 값을 1만큼 증가시킨다.
+        초 카운터를 증가시킴으로써, 분 또는 시가 바뀌어야하는 경우를 처리한다.
+        """
+        if self.second.tick():
+            if self.minute.tick():
+                self.hour.tick()
+
+    def __str__(self):
+        """
+        현재 시간을 시:분:초 형식으로 리턴한다. 시, 분, 초는 두 자리 형식이다.
+        예시: "03:11:02"
+        """
+        return "{}:{}:{}".format(self.hour, self.minute, self.second)
+```
+이제 Clock 클래스를 사용하는 코드를 실행해 봅시다.
+```python
+# 초가 60이 넘을 때 분이 늘어나는지 확인하기
+print("시간을 1시 30분 48초로 설정합니다")
+clock = Clock(1, 30, 48)
+print(clock)
+
+# 13초를 늘린다
+print("13초가 흘렀습니다")
+for i in range(13):
+    clock.tick()
+print(clock)
+
+# 분이 60이 넘을 때 시간이 늘어나는지 확인
+print("시간을 2시 59분 58초로 설정합니다")
+clock.set(2, 59, 58)
+print(clock)
+
+# 5초를 늘린다
+print("5초가 흘렀습니다")
+for i in range(5):
+    clock.tick()
+print(clock)
+
+# 시간이 24가 넘을 때 00:00:00으로 넘어가는 지 확인
+print("시간을 23시 59분 57초로 설정합니다")
+clock.set(23, 59, 57)
+print(clock)
+
+# 5초를 늘린다
+print("5초가 흘렀습니다")
+for i in range(5):
+    clock.tick()
+print(clock)
+```
+
+#### 실습 결과
+```
+시간을 1시 30분 48초로 설정합니다
+01:30:48
+13초가 흘렀습니다
+01:31:01
+시간을 2시 59분 58초로 설정합니다
+02:59:58
+5초가 흘렀습니다
+03:00:03
+시간을 23시 59분 57초로 설정합니다
+23:59:57
+5초가 흘렀습니다
+00:00:02
+```
+
+잘 출력되는군요! 이렇게 우리는 Clock 클래스에서 Counter라는 다른 클래스의 인스턴스를 사용해서 그 기능을 완성해 보았습니다. 이제 객체를 설계하고 실제 클래스로 만들어보는 게 좀 익숙해지셨나요? 일단 여러분은 객체 지향 프로그래밍의 기초를 모두 배우신 겁니다. 보람찬 마음을 갖고 객체 지향 프로그래밍을 더 공부해 봅시다!
+
+[main5_03.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main5_03.py) 참고
