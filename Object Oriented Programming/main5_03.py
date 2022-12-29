@@ -60,9 +60,7 @@ class Clock:
         self.minute = Counter(Clock.MINUTES)
         self.second = Counter(Clock.SECONDS)
         
-        self.hour.set(hour)
-        self.minute.set(minute)
-        self.second.set(second)
+        self.set(hour, minute, second)
 
     def set(self, hour, minute, second):
         """현재 시간을 파라미터 hour시, minute분, second초로 설정한다."""
