@@ -1,7 +1,7 @@
-# 링크드 리스트
+# 4 링크드 리스트
 22.09.05 23:18  
   
-## 링크드 리스트 개념  
+## 01. 링크드 리스트 개념  
   
 ### 링크드 리스트(Linked List)
 - 데이터를 순서대로 저장해준다
@@ -25,9 +25,11 @@
 2가 담겨있는 규리 박스 오른쪽 칸에 3이 담겨있는 박스의 이름 태호를 넣으면 됨  
 같은 식으로 하면 규리, 태호, 동욱, 유나, 현승 박스가 차례로 연결됨
 오른쪽 칸이 비어있는 현승 박스는 마지막 박스  
-  
+
+<br/><br/>
+
 22.09.06 23:47  
-## 링크드 리스트 프로그래밍적으로 생각하기
+## 02. 링크드 리스트 프로그래밍적으로 생각하기
 노드(Node)  
 각 노드는 하나의 객체로 표현됨  
 각 노드 객체에는 두 가지 속성이 있음  
@@ -53,8 +55,145 @@ head 노드만 있으면 흩어져있는 다른 노드들을 연결지어 순서
 앞으로 링크드 리스트 나타낼 때 마치 이 객체들이 순서대로 나열되어 있는 것처럼 보여주겠지만 이건 우리의 이해를 돕기 위한 것  
 실제 메모리에서는 여기저기 흩어져있음  
   
+<br/><br/>
+
 22.09.07 23:04  
-## 노드 클래스 만들기
+## 03. 노드 클래스 만들기
 링크드 리스트는 노드 객체로 이루어져있음  
 노드 객체를 만들려면 노드 클래스를 정의해야 함  
-main03.py 참고
+```python
+class Node:
+    """링크드 리스트의 노드 클래스"""
+
+    def __init__(self, data):
+        self.data = data  # 노드가 저장하는 데이터
+        self.next = None  # 다음 노드에 대한 레퍼런스
+
+
+# 데이터 2, 3, 5, 7, 11을 담는 노드들 생성, 이름을 짓고 변수에 지정
+head_node = Node(2)
+node_1 = Node(3)
+node_2 = Node(5)
+node_3 = Node(7)
+tail_node = Node(11)
+```
+
+<br/><br/>
+
+## 04. 간단한 링크드 리스트 만들기  
+
+```python
+class Node:
+    """링크드 리스트의 노드 클래스"""
+
+    def __init__(self, data):
+        self.data = data  # 노드가 저장하는 데이터
+        self.next = None  # 다음 노드에 대한 레퍼런스
+
+
+# 데이터 2, 3, 5, 7, 11을 담는 노드들 생성, 이름을 짓고 변수에 지정
+head_node = Node(2)
+node_1 = Node(3)
+node_2 = Node(5)
+node_3 = Node(7)
+tail_node = Node(11)
+
+# 노드들을 연결
+head_node.next = node_1
+node_1.next = node_2
+node_2.next = node_3
+node_3.next = tail_node
+
+# 노드 순서대로 출력
+iterator = head_node
+
+while iterator is not None:
+    print(iterator.data)
+    iterator = iterator.next
+```
+```
+2
+3
+5
+7
+11
+```
+
+<br/><br/>
+
+22.12.30  
+## 05. 링크드 리스트 추가 연산  
+위에까지는 Node Class를 정의하고 인스턴스를 만들어 연결을 해주었다.  
+링크드 리스트라고 할 수는 있는데, 더 체계적으로 관리하기 위해 LinkedList Class 만들 수 있다.  
+append 메소드.
+
+[main4_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_05.py) 참고
+
+<br/><br/>
+
+## 06. 링크드 리스트 \_\_str\_\_ 메소드
+### \_\_str\_\_ 메소드
+링크드 리스트를 클래스로 만들었으니까 링크드 리스트를 문자열로 표현해주는 \_\_str\_\_ 메소드를 정의해봅시다. \_\_str\_\_ 메소드가 기억 안 나시는 분들은 그냥 링크드 리스트를 출력할 때 자동으로 링크드 리스트의 내용을 사람들이 이해할 수 있는 문자열로 리턴해주는 메소드로 이해하시면 됩니다.
+
+### 링크드 리스트 \_\_str\_\_ 메소드
+```python
+class LinkedList:
+    """링크드  리스트 클래스"""
+    def __init__(self):
+        self.head = None  # 링크드 리스트의 가장 앞 노드
+        self.tail = None  # 링크드 리스트의 가장 뒤 노드
+
+    def append(self, data):
+        """링크드 리스트 추가 연산 메소드"""
+        new_node = Node(data)
+        
+        # 링크드 리스트가 비어 있으면 새로운 노드가 링크드 리스트의 처음이자 마지막 노드다
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        # 링크드 리스트가 비어 있지 않으면
+        else:
+            self.tail.next = new_node  # 가장 마지막 노드 뒤에 새로운 노드를 추가하고
+            self.tail = new_node  # 마지막 노드를 추가한 노드로 바꿔준다
+
+    def __str__(self):
+        """링크드 리스트를 문자열로 표현해서 리턴하는 메소드"""
+        res_str = "|"
+
+        # 링크드  리스트 안에 모든 노드를 돌기 위한 변수. 일단 가장 앞 노드로 정의한다.
+        iterator = self.head
+
+        # 링크드  리스트 끝까지 돈다
+        while iterator is not None:
+            # 각 노드의 데이터를 리턴하는 문자열에 더해준다
+            res_str += f" {iterator.data} |"
+            iterator = iterator.next  # 다음 노드로 넘어간다
+
+        return res_str
+```
+\_\_str\_\_ 메소드는 문자열을 리턴하니까 일단 리턴 시킬 res_str 변수를 빈 문자열로 정의합니다. iterator을 써서 링크드 리스트를 도는 방법은 이미 배웠죠?
+1. iterator 변수를 링크드 리스트의 head를 가리키게 합니다
+2. iterator 변수가 None이 아닐 때까지 (링크드 리스트의 처음부터 끝 노드까지) iterator 변수의 data를 res_str 변수에 추가해 줍니다. iterator 변수의 next 속성을 이용해서 while 문을 돌 때마다 다음 노드로 갑니다.
+3. 링크드 리스트를 다 돈 후에 res_str 변수를 리턴합니다.
+
+한 번 제대로 코드를 작성했는지 확인해봅시다.
+```python
+# 새로운 링크드 리스트 생성
+linked_list = LinkedList()
+
+# 링크드 리스트에 데이터 추가
+linked_list.append(2)
+linked_list.append(3)
+linked_list.append(5)
+linked_list.append(7)
+linked_list.append(11)
+```
+영상에서와 동일하게 링크드 리스트에 노드를 추가해줬습니다.
+```python
+print(linked_list)  # 링크드 리스트 출력
+```
+그다음에 이렇게 링크드 리스트 인스턴스를 출력할 건데요. 이때 노트 위에서 정의한 __str__ 메소드가 호출되는 거죠.
+```
+| 2 | 3 | 5 | 7 | 11 |
+```
+링크드 리스트의 내용이 원하는 대로 잘 출력되는군요! 앞으로 링크드 리스트에 저장되어 있는 데이터를 확인하기 위해서 \_\_str\_\_ 메소드를 자주 쓸 건데요. 이번 노트에서 정의해놨으니까 다음 레슨들에서 그냥 자연스럽게 사용할게요.
