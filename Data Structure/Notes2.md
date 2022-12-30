@@ -221,3 +221,130 @@ int_array[1] = 11
 
 [main4_07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_07.py) 참고
 
+<br/><br/>
+
+## 08. 링크드 리스트 탐색 연산
+
+### 실습 설명
+탐색 연산은 자료 구조에서 원하는 조건의 데이터를 찾아내는 연산입니다.
+
+링크드 리스트 탐색 연산은 특정 데이터를 갖는 노드를 리턴합니다.
+
+이렇게
+```
+| 2 | 3 | 5 | 7 | 11
+```
+링크드 리스트에 2, 3, 5, 7, 11이 저장돼 있다고 합시다. 여기서 5를 갖는 노드를 탐색하면, 링크드 리스트 안에서 5를 가지고 있는 노드를 찾아서 리턴하는 거죠.
+
+배열에서 탐색 연산을 어떻게 하셨는지 기억 나시나요? 선형적으로 가장 앞부터 마지막 인덱스까지 돌면서 탐색을 했습니다. 링크드 리스트도 배열과 마찬가지로 선형 탐색을 사용합니다. 가장 앞 노드부터 끝 노드까지 돌면서 원하는 데이터를 갖는 노드를 리턴하죠.
+
+이번 과제에서는 링크드 리스트의 탐색 연산을 직접 구현해 볼게요.
+
+메소드 find_node_with_data는 찾으려는 데이터를 파라미터 data로 받아서 링크드 리스트 내에서 원하는 데이터를 갖고 있는 노드를 리턴합니다.
+
+단, 원하는 데이터가 링크드 리스트 안에 없을 때는 None을 리턴합니다.
+
+<br/><br/>
+
+### 실습 결과
+```
+2
+11
+6을 갖는 노드는 없습니다
+```
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+### 해설
+해설 노트에서 링크드 리스트 클래스를 전부 다 보여주기에는 공간이 너무 많이 차지되기 때문에 과제마다 해당 메소드와 실행 코드만 보여드리겠습니다!
+
+#### find_node_with_data 메소드
+```python
+def find_node_with_data(self, data):
+    """링크드 리스트에서 탐색 연산 메소드. 단, 해당 노드가 없으면 None을 리턴한다"""
+    iterator = self.head  # 링크드 리스트를 돌기 위해 필요한 노드 변수
+```
+링크드 리스트를 처음부터 끝까지 돌 때는 \_\_str\_\_ 메소드나 find_node_at 메소드를 쓸 때랑 똑같이 iterator 변수를 사용합니다. 처음에 iterator 변수는 링크드 리스트의 헤드 노드를 가리키게 합니다.
+```python
+# 링크드 리스트 전체를 돈다
+while iterator is not None:
+    # iterator 노드의 데이터가 찾는 데이터면 iterator를 리턴한다
+    if iterator.data == data:
+        return iterator
+    iterator = iterator.next  # 다음 노드로 넘어간다
+```
+그리고 링크드 리스트를 도는데요. while문을 이용해서 head에서 tail 노드까지 돕니다. iterator 변수가 반복문을 돌 때마다 다음 순서에 있는 노드를 가리키는데요. iterator가 None이면 더이상 다음 노드가 없다는 말, 그러니까 링크드 리스트 끝까지 도달했다는 뜻입니다.
+
+반복문 안에서는 if문을 사용해서 현재 보고 있는 노드 iterator 변수의 속성이 파라미터로 받은 data인지 확인해 줍니다. 맞다면 iterator 변수, 즉 현재 돌면서 확인하고 있는 노드를 리턴하는 거죠.
+```python
+    # 링크드 리스트 안에 원하는 데이터가 없었기 때문에 None 리턴한다
+    return None
+```
+링크드 리스트의 모든 노드를 다 돌았는데 원하는 조건의 노드를 못 찾은 경우는 뭘까요? 원하는 조건의 노드가 링크드 리스트 안에 없다는 거죠. 이 때는 None을 리턴합니다.
+
+
+
+### 모범 답안
+위 해설 코드를 다 합치면 이렇게 되겠죠?
+```python
+def find_node_with_data(self, data):
+    """링크드 리스트에서 탐색 연산 메소드. 단, 해당 노드가 없으면 None을 리턴한다"""
+    iterator = self.head  # 링크드 리스트를 돌기 위해 필요한 노드 변수
+
+    # 링크드 리스트 전체를 돈다
+    while iterator is not None:
+        # iterator 노드의 데이터가 찾는 데이터면 iterator를 리턴한다
+        if iterator.data == data:
+            return iterator
+        iterator = iterator.next  # 다음 노드로 넘어간다
+
+    # 링크드 리스트 안에 원하는 데이터가 없었기 때문에 None 리턴한다
+    return None 
+```
+#### 테스트 코드
+제대로 동작하는지 실행 코드를 돌려 볼게요.
+```python
+# 새로운 링크드 리스트 생성
+linked_list = LinkedList()
+
+# 여러 데이터를 링크드 리스트 마지막에 추가
+linked_list.append(2)
+linked_list.append(3)
+linked_list.append(5)
+linked_list.append(7)
+linked_list.append(11)
+
+# 데이터 2를 갖는 노드 탐색
+node_with_2 = linked_list.find_node_with_data(2)
+
+if not node_with_2 is None:
+    print(node_with_2.data)
+else:
+    print("2를 갖는 노드는 없습니다")
+
+# 데이터 11을 갖는 노드 탐색
+node_with_11 = linked_list.find_node_with_data(11)
+
+if not node_with_11 is None:
+    print(node_with_11.data)
+else:
+    print("11를 갖는 노드는 없습니다")
+
+# 데이터 6 갖는 노드 탐색
+node_with_6 = linked_list.find_node_with_data(6)
+
+if not node_with_6 is None:
+    print(node_with_6.data)
+else:
+    print("6을 갖는 노드는 없습니다")
+```
+결과가 제대로 출력되는 걸 확인할 수 있습니다.
+```
+2
+11
+6을 갖는 노드는 없습니다
+```
+
+[main4_08.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_08.py) 참고
