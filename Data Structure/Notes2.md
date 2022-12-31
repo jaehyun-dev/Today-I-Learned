@@ -27,6 +27,8 @@
 오른쪽 칸이 비어있는 현승 박스는 마지막 박스  
 
 <br/><br/>
+<br/><br/>
+<br/><br/>
 
 22.09.06 23:47  
 ## 02. 링크드 리스트 프로그래밍적으로 생각하기
@@ -56,6 +58,8 @@ head 노드만 있으면 흩어져있는 다른 노드들을 연결지어 순서
 실제 메모리에서는 여기저기 흩어져있음  
   
 <br/><br/>
+<br/><br/>
+<br/><br/>
 
 22.09.07 23:04  
 ## 03. 노드 클래스 만들기
@@ -78,6 +82,8 @@ node_3 = Node(7)
 tail_node = Node(11)
 ```
 
+<br/><br/>
+<br/><br/>
 <br/><br/>
 
 ## 04. 간단한 링크드 리스트 만들기  
@@ -119,6 +125,8 @@ while iterator is not None:
 11
 ```
 
+<br/><br/>
+<br/><br/>
 <br/><br/>
 
 22.12.30  
@@ -348,3 +356,10 @@ else:
 ```
 
 [main4_08.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_08.py) 참고
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+22.12.31  
+## 09. 링크드 리스트 삽입 연산
