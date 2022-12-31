@@ -1552,3 +1552,26 @@ A.
 | 프로그래밍 언어 |           C, C++처럼 비교적 저수준에 가까운 언어          |      Python, Ruby처럼 비교적 고수준에 가까운 언어      |
 
 https://velog.io/@jaeyunn_15/OS-Compiler-vs-Interpreter
+
+22.12.31
+## Q. 컨테이너 어댑터의 종류와 각각의 특징에 대해 설명해주세요.(자료구조)  
+
+A.  
+**스택**(stack)  
+- vector 클래스의 인터페이스를 제한하여, 전형적인 스택 메모리 구조의 인터페이스를 제공함
+- stack 헤더 파일에 정의되어 있음
+- empty(), size(), top(), push(), pop() 등의 멤버 함수를 제공함
+- 요소에 대한 임의 접근을 허용하지 않을 뿐만 아니라, 스택을 순회하는 반복자도 허용하지 않음
+
+**큐**(queue)  
+- deque 클래스의 인터페이스를 제한하여, 전형적인 큐 메모리 구조의 인터페이스를 제공함
+- queue 헤더 파일에 정의되어 있음
+- empty(), size(), front(), back(), push(), pop() 등의 멤버 함수를 제공함
+
+**우선순위 큐**(priority_queue)  
+- 큐의 맨 앞의 요소로 가장 먼저 저장된 요소가 아닌, 가장 큰 값을 지닌 요소가 위치하게 됨
+- 큐가 deque 클래스를 기반으로 하는 것과는 달리, vector 클래스를 기반으로 함
+- queue 헤더 파일에 정의되어 있음
+- 큐 컨테이너와 같은 멤버 함수를 제공함
+
+http://www.tcpschool.com/cpp/cpp_container_adapter
