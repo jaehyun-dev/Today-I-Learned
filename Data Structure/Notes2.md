@@ -368,3 +368,27 @@ append 메소드는 Linked List 끝에 새로운 데이터를 추가하는 방�
 Linked List의 Node가 주어졌을 때 그 노드 바로 뒤에 새로운 Node를 삽입하는 insert_after도 생각할 수 있다
 
 [main4_09.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_09.py) 참고
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+## 10. prepend: 링크드 리스트 가장 앞 삽입
+
+### 실습 설명
+저번 레슨에서는 링크드 리스트에서 주어진 노드 뒤에 새로운 노드를 삽입하는 연산을 배웠는데요. 이 연산을 메소드로 구현했을 때는 insert_after 메소드로 구현했습니다.
+
+사실 이 연산에는 한 가지 흠이 있는데요. 이 연산은 항상 주어진 노드 다음에 노드를 삽입하잖아요? 파라미터로 가장 앞 노드 head를 넘겨줘도 head 노드 앞에는 새로운 노드를 추가할 수 없습니다. 링크드 리스트 가장 앞에는 삽입할 수 없다는 거죠.
+
+이 문제를 해결해주는 새로운 메소드를 정의해 줍시다. 이 메소드는 prepend라고 부르고요, 파라미터로 데이터 data를 받아서 링크드 리스트의 가장 앞에 데이터를 data로 갖는 새로운 노드를 추가시켜 줍니다.
+
+주의 사항: prepend 메소드를 작성할 때 링크드 리스트가 비어 있는 경우도 생각해서 작성하셔야 됩니다!
+
+### 실습 결과
+```
+| 2 | 3 | 5 | 7 | 11 |
+2
+11
+```
+
+[main4_10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_10.py) 참고
