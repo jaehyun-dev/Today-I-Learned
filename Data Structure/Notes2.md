@@ -361,5 +361,10 @@ else:
 <br/><br/>
 <br/><br/>
 
-22.12.31  
+23.01.02  
 ## 09. 링크드 리스트 삽입 연산
+
+append 메소드는 Linked List 끝에 새로운 데이터를 추가하는 방법  
+Linked List의 Node가 주어졌을 때 그 노드 바로 뒤에 새로운 Node를 삽입하는 insert_after도 생각할 수 있다
+
+[main4_09.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_09.py) 참고
