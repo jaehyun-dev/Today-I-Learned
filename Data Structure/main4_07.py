@@ -6,7 +6,7 @@ class Node:
         self.next = None  # 다음 노드에 대한 레퍼런스
 
 class LinkedList:
-    """링크드  리스트 클래스"""
+    """링크드 리스트 클래스"""
 
     def __init__(self):
         self.head = None  # 링크드 리스트의 가장 앞 노드
