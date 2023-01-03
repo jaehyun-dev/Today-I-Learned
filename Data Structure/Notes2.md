@@ -252,8 +252,6 @@ int_array[1] = 11
 ```
 
 <br/><br/>
-<br/><br/>
-<br/><br/>
 
 ### 해설
 해설 노트에서 링크드 리스트 클래스를 전부 다 보여주기에는 공간이 너무 많이 차지되기 때문에 과제마다 해당 메소드와 실행 코드만 보여드리겠습니다!
@@ -390,3 +388,115 @@ Linked List의 Node가 주어졌을 때 그 노드 바로 뒤에 새로운 Node�
 삭제하는 노드의 데이터를 보여주는 게 관습이기 때문에 삭제되는 데이터를 return
 
 [main4_11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_11.py) 참고
+
+<br/><br/>
+
+23.01.03  
+
+## 12. popleft 링크드 리스트 가장 앞 삭제
+
+### 실습 설명
+바로 전 레슨에서 배운 삭제는 삽입과 마찬가지의 문제가 있는데요. 주어진 노드의 다음 노드를 삭제하기 때문에 head 노드를 삭제할 수 없습니다. 전과 마찬가지로 head 노드도 지울 수 있도록 메소드를 추가하겠습니다.
+
+메소드 pop_left는 파라미터로 self 이외에 아무것도 받지 않으며, 링크드 리스트의 head 노드를 삭제해줍니다. pop_left 메소드는 링크드 리스트에서 삭제하는 노드의 데이터를 리턴합니다.
+
+### 주의 사항
+- pop_left 메소드를 호출함으로 인해서 링크드 리스트가 비어지는 경우를 생각해서 작성하셔야 됩니다! (지우려는 노드가 링크드 리스트의 마지막 남은 노드일 때)
+- pop_left를 호출할 때 링크드 리스트가 비어 있는 경우는 없다고 가정해도 됩니다.
+- pop_left 메소드는 삭제하는 노드의 데이터를 리턴합니다.
+
+### 실습 결과
+```
+2
+3
+5
+7
+11
+|
+None
+None
+```
+
+<br/><br/>
+
+### 해설
+#### 경우 1: 삭제하려는 노드가 마지막 남은 노드일 때
+```python
+def pop_left(self):
+    """링크드 리스트의 가장 앞 노드 삭제 메소드. 단, 링크드 리스트에 항상 노드가 있다고 가정한다"""
+    # 지우려는 데이터가 링크드 리스트의 마지막 남은 데이터일 때
+    if self.head is self.tail:
+        self.head = None
+        self.tail = None
+```
+링크드 리스트에 하나의 노드만 남은 경우는 가장 앞 노드가 동시에 가장 마지막 노드인 경우입니다. 이 경우는 if self.head is self.tail의 if문으로 찾을 수 있습니다.
+
+이 경우에는 링크드 리스트에 남은 노드가 하나도 없게 해야 됩니다. head와 tail 속성을 모두 None을 가리키게 하면 되죠.
+
+#### 경우 2: 삭제하려는 노드가 마지막 남은 노드가 아닐 때
+```python
+else:
+    # 링크드 리스트의 head를 지금 head의 다음 노드로 지정해준다
+    self.head = self.head.next
+```
+경우가 두 개밖에 없기 때문에 else문을 사용해서 두 번째 경우를 찾습니다.
+
+head 노드를 더 이상 찾을 수 없게 해주는 동시에 인덱스 1에 있는 노드를 head로 만들어 줘야 되는데요. 이때 그냥 self.head 속성이 현재 head 노드의 다음 노드를 가리키게 하면 됩니다. 그럼 링크드 리스트 안에 원래 head 노드를 가리키는 레퍼런스는 없어지고, 링크드 리스트의 가장 앞 노드가 한 순서 뒤로 밀렸으니까 head 노드를 삭제했다고 할 수 있겠죠?
+
+#### 삭제하는 데이터 리턴
+```python
+def pop_left(self):
+    """링크드 리스트의 가장 앞 노드 삭제 메소드. 단, 링크드 리스트에 항상 노드가 있다고 가정한다"""
+    data = self.head.data  # 삭제할 노드를 미리 저장해놓는다
+
+    # 지우려는 데이터가 링크드 리스트의 마지막 남은 데이터일 때
+    if self.head is self.tail:
+        self.head = None
+        self.tail = None
+    else: 
+        self.head = self.head.next
+
+    return data  # 삭제된 노드의 데이터를 리턴한다
+```
+이렇게 메소드 가장 위 부분에 삭제하는 노드의 데이터를 변수에 저장하고, 마지막에 리턴해 주면 됩니다.
+
+코드가 제대로 실행되는지 볼게요.
+
+#### 테스트 코드
+```python
+# 새로운 링크드 리스트 생성
+linked_list = LinkedList()
+
+# 여러 데이터를 링크드 리스트 앞에 추가
+linked_list.prepend(11)
+linked_list.prepend(9)
+linked_list.prepend(5)
+linked_list.prepend(3)
+linked_list.prepend(2)
+
+print(linked_list) # 링크드 리스트 출력
+
+# 가장 앞 노드 계속 삭제
+print(linked_list.pop_left())
+print(linked_list.pop_left())
+print(linked_list.pop_left())
+print(linked_list.pop_left())
+print(linked_list.pop_left())
+
+print(linked_list) # 링크드 리스트 출력
+print(linked_list.head)
+print(linked_list.tail)
+```
+
+### 실습 결과
+```
+2
+3
+5
+7
+11
+|
+None
+None
+```
+[main4_12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_12.py) 참고
