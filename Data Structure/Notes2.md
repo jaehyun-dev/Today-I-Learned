@@ -752,6 +752,8 @@ def append(self, data):
 
 [main4_16.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_16.py) 참고
 
+<br/><br/>
+
 ## 17. 더블리 링크드 리스트 삽입 연산 개념
 
 tail 노드 뒤에 삽입하는 경우와, 두 노드 사이에 삽입하는 경우로 나누어서 생각해야 함  
@@ -761,3 +763,126 @@ tail 노드 뒤에 삽입하는 경우와, 두 노드 사이에 삽입하는 경
     2. previous_node.next.prev에 new_node를, previous_node.next에 new_node를 연결한다
 
 [main4_17.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_17.py) 참고
+
+<br/><br/>
+
+## 18. 더블리 링크드 리스트 삽입 연산 구현
+
+### 실습 설명
+저번 영상에서는 더블리 링크드 리스트에 노드 삽입을 어떻게 하는지 두 개의 경우를 나눠서 봤는데요. 이번 과제에서는 영상에서 배운 내용을 바탕으로 직접 삽입 연산을 하는 메소드 insert_after를 작성해 볼게요.
+
+insert_after 메소드는 파라미터로 노드 previous_node와 삽입할 정보 data를 받습니다. 그리고 previous_node 다음 위치에 data를 저장하는 노드를 삽입합니다.
+
+insert_after 메소드를 직접 코드로 구현해 보세요!
+
+### 실습 결과
+```
+| 2 | 3 | 5 | 7 | 11 |
+| 2 | 3 | 5 | 7 | 11 | 5 |
+5
+| 2 | 3 | 5 | 7 | 3 | 11 | 5 |
+| 2 | 3 | 5 | 2 | 7 | 3 | 11 | 5 |
+```
+
+<br/><br/>
+
+### 해설
+
+#### 새로운 노드 생성
+```python
+def insert_after(self, previous_node, data):
+    """주어진 노드 다음에 데이터를 추가시켜주는 메소드"""
+    new_node = Node(data)  # 새로운 노드 생성
+```
+링크드 리스트에 새로운 데이터를 더해줄 때는 항상 그 데이터를 저장하는 새로운 노드를 만듭니다. 파라미터 data를 저장하는 노드를 만들고 변수 new_node에 저장해 줄게요.
+
+#### 경우 1: tail 노드 뒤에 삽입할 때:
+```python
+# tail 노드 다음에 노드를 삽입할 때
+if previous_node is self.tail:
+    self.tail.next = new_node  # 새로운 노드를 tail 노드의 다음 노드로 지정한다
+    new_node.prev = self.tail  # tail 노드를 새로운 노드의 전 노드로 지정한다
+    self.tail = new_node  # 새로운 노드를 tail 노드로 지정한다
+```
+먼저 tail 노드 뒤에 데이터를 삽입하는 경우부터 봅시다. tail 노드 뒤에 삽입하는 경우는 insert_after 메소드가 파라미터로 받은 previous_node가 tail 노드인지 확인합니다. insert_after 메소드는 previous_node 뒤에 새로운 노드를 삽입하잖아요? 그러니까 previous_node가 tail 노드인지 확인하면 tail 노드 뒤에 삽입하는 경우인지를 알 수 있는 거죠.
+
+이 경우에는 new_node를 기존 tail 노드와 연결시켜주고, tail 노드를 new_node로 만들어 주면 됩니다.
+
+영상에서 봤듯이 아래 세 가지를 해주면 되죠.
+1. 새로운 노드를 tail 노드의 다음 노드로 지정한다
+2. tail 노드를 새로운 노드의 전 노드로 지정한다
+3. 새로운 노드를 tail 노드로 지정한다
+
+#### 경우 2: 두 노드 사이에 삽입할 때:
+```python
+else:
+    # 새롭게 생성한 노드를 이미 있는 링크드 리스트에 연결시키고
+    new_node.prev = previous_node 
+    new_node.next = previous_node.next
+
+    # 이미 있는 노드들의 앞과 다음 레퍼런스를 새롭게 생성한 노드로 지정한다
+    previous_node.next.prev = new_node
+    previous_node.next = new_node
+```
+두 노드 사이에 삽입하는 경우는 else문을 써서 처리해 줍니다. 이 경우는 새롭게 만든 노드를 링크드 리스트에 연결하고, 링크드 리스트에 있는 노드들을 새롭게 만든 노드에 연결하면 됩니다.
+
+1. 새롭게 만든 노드를 링크드 리스트에 연결시킨다
+    1. new_node를 previous_node의 다음 노드로 지정한다
+    2. new_node를 previous_node의 다음 노드의 전 노드로 지정한다
+2. 이미 있던 노드들에 새롭게 만든 노드를 연결시킨다
+    1. previous_node의 다음 노드의 전 노드를 new_node로 지정한다
+    2. previous_node의 다음 노드를 new_node로 지정한다
+
+이 네 가지를 해주면 되는 거죠.
+
+### 모범 답안
+위에서 작성한 코드들을 다 합쳐 볼게요.
+```python
+def insert_after(self, previous_node, data):
+    """주어진 노드 다음에 데이터를 추가시켜주는 메소드"""
+    new_node = Node(data)  # 새로운 노드 생성
+
+    # tail 노드 다음에 노드를 삽입할 때
+    if previous_node is self.tail:
+        self.tail.next = new_node  # 새로운 노드를 tail 노드의 다음 노드로 지정한다
+        new_node.prev = self.tail  # tail 노드를 새로운 노드의 전 노드로 지정한다
+        self.tail = new_node  # 새로운 노드를 tail 노드로 지정한다
+
+    else:
+        # 새롭게 생성한 노드를 이미 있는 링크드 리스트에 연결시키고
+        new_node.prev = previous_node 
+        new_node.next = previous_node.next
+
+        # 이미 있는 노드들의 앞과 다음 레퍼런스를 새롭게 생성한 노드로 지정한다
+        previous_node.next.prev = new_node
+        previous_node.next = new_node
+```
+
+### 테스트 코드
+한 번 코드가 제대로 돌아가는지 확인해 봅시다.
+```python
+tail_node = my_list.tail  # tail 노드
+my_list.insert_after(tail_node, 6)  # tail 노드 뒤에 노드 추가
+print(my_list)
+print(my_list.tail.data)  # 새로운 tail 노드 데이터 출력
+
+# 링크드 리스트 중간에 데이터 삽입
+node_at_index_3 = my_list.find_node_at(3)  # 노드 접근
+my_list.insert_after(node_at_index_3, 3)
+print(my_list)
+
+# 링크드 리스트 중간에 데이터 삽입
+node_at_index_2 = my_list.find_node_at(2)  # 노드 접근
+my_list.insert_after(node_at_index_2, 2)
+print(my_list)
+```
+```
+| 2 | 3 | 5 | 7 | 11 |
+| 2 | 3 | 5 | 7 | 11 | 5 |
+5
+| 2 | 3 | 5 | 7 | 3 | 11 | 5 |
+| 2 | 3 | 5 | 2 | 7 | 3 | 11 | 5 |
+```
+원하는 위치에 원하는 데이터가 삽입된 것을 확인할 수 있습니다!
+
+[main4_18.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_18.py) 
