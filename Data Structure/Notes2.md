@@ -731,20 +731,23 @@ def __str__(self):
 <br/><br/>
 
 ## 16. 더블리 링크드 리스트 추가 연산
-```python
-    def append(self, data):
-        """링크드 리스트 추가 연산 메소드"""
-        new_node = Node(data)  # 새로운 데이터를 저장하는 노드
 
-        # 링크드 리스트가 비어 있는 경우
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-        # 링크드 리스트에 이미 노드가 있는 경우
-        else:
-            self.tail.next = new_node
-            new_node.prev = self.tail
-            self.tail = new_node
+싱글리 링크드 리스트와 거의 비슷하고, new_node의 prev를 지정해주는 것만 추가해주면 
+
+```python
+def append(self, data):
+    """링크드 리스트 추가 연산 메소드"""
+    new_node = Node(data)  # 새로운 데이터를 저장하는 노드
+
+    # 링크드 리스트가 비어 있는 경우
+    if self.head is None:
+        self.head = new_node
+        self.tail = new_node
+    # 링크드 리스트에 이미 노드가 있는 경우
+    else:
+        self.tail.next = new_node
+        new_node.prev = self.tail
+        self.tail = new_node
 ```
 
 [main4_16.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_16.py) 참고
