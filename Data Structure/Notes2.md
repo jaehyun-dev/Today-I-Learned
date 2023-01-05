@@ -752,3 +752,12 @@ def append(self, data):
 
 [main4_16.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_16.py) 참고
 
+## 17. 더블리 링크드 리스트 삽입 연산 개념
+
+tail 노드 뒤에 삽입하는 경우와, 두 노드 사이에 삽입하는 경우로 나누어서 생각해야 함  
+1. tail 노드 뒤에 삽입하는 경우는 append와 동일  
+2. 두 노드 사이에 삽입하는 경우는  
+    1. new_node의 prev에 previous_node를, new_node의 next에 previous_node.next를 연결한다
+    2. previous_node.next.prev에 new_node를, previous_node.next에 new_node를 연결한다
+
+[main4_17.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_17.py) 참고
