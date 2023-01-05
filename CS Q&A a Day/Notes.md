@@ -1684,3 +1684,15 @@ A.
     - 혼잡 상황을 한 번 겪은 이후로는 AIMD 방식으로 동작함
 
 https://benlee73.tistory.com/186
+
+23.01.05
+## Q. context switching에 대해 설명해주세요.(운영체제)  
+
+A.  
+**Context Switching**
+- CPU가 한 개의 Task(Process/Thread)를 실행하고 있는 상태에서 Interrupt 요청에 의해 다른 Task로 실행이 전환되는 과정에서 기존의 Task 상태 및 Register 값들에 대한 정보(Context)를 저장하고 새로운 Task의 Context 정보로 교체하는 작업
+- Context란, CPU가 다루는 Task(Process/Thread)에 대한 정보로 대부분의 정보는 Register에 저장되며 PCB(Process Control Block)으로 관리됨
+- Process와 Thread를 처리하는 Context Switching은 조금 다른데, PCB는 OS에 의해 스케줄링되는 Process Control Box이고, Thread의 경우 Process 내의 TCB(Task Control Box)라는 내부 구조를 통해 관리됨
+- Context Switching 진행 시 CPU는 Cache를 초기화하고 Memory Mapping을 초기화하는 작업을 거치는 등 아무 Task도 수행하지 못하므로 잦은 Context Switching은 성능 저하를 가져옴
+
+https://jins-dev.tistory.com/entry/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%8A%A4%EC%9C%84%EC%B9%98Context-Switching-%EC%97%90-%EB%8C%80%ED%95%9C-%EC%A0%95%EB%A6%AC
