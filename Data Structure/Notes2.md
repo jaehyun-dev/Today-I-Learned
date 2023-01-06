@@ -886,3 +886,13 @@ print(my_list)
 원하는 위치에 원하는 데이터가 삽입된 것을 확인할 수 있습니다!
 
 [main4_18.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_18.py) 
+
+<br/><br/>
+
+23.01.06
+## 19. 더블리 링크드 리스트 prepend 메소드
+
+[main4_19.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_19.py) 참고
+
+<br/><br/>
+
