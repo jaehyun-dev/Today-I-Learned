@@ -59,3 +59,8 @@ print(my_list)  # 링크드 리스트 출력
 # head, tail 노드가 제대로 설정됐는지 확인
 print(my_list.head.data)
 print(my_list.tail.data)
+
+
+# | 2 | 3 | 5 | 7 | 11 |
+# 2
+# 11
