@@ -106,3 +106,11 @@ print(my_list)
 last_node = my_list.head
 my_list.delete(last_node)
 print(my_list)
+
+
+# | 2 | 3 | 5 | 7 |
+# | 2 | 3 | 7 |
+# 2
+# | 3 | 7 |
+# | 3 |
+# |
