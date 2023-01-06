@@ -896,3 +896,20 @@ print(my_list)
 
 <br/><br/>
 
+## 20. 더블리 링크드 리스트 삭제 연산 개념
+
+싱글리 링크드 리스트에서는 delete_after 이용해 삭제하려는 앞 노드를 parameter로 넘겨줬다  
+하지만 더블리 링크드 리스트에서는 앞 뒤 노드 모두 연결되어 있기 때문에 삭제하려는 노드 자체를 parameter로 넘겨줘도 됨
+
+1. 지우려는 노드가 링크드 리스트의 유일한 노드인 경우: head와 tail을 None으로 지정하면 됨
+2. 지우려는 노드가 링크드 리스트의 head 노드인 경우(유일하지 않음): head의 next를 head로 지정하면 됨
+3. 지우려는 노드가 링크드 리스트의 tail 노드인 경우(유일하지 않음): tail의 prev를 tail로 지정하면 됨
+4. 지우려는 노드가 두 노드 사이에 있는 노드인 경우: 삭제하려는 노드의 전후 노드를 서로 연결하면 됨
+
+시간복잡도: $O(1)$
+
+<br/><br/>
+
+## 21. 더블리 링크드 리스트 삭제 연산 구현
+
+[main4_21.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/main4_21.py) 
