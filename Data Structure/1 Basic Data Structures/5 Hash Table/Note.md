@@ -197,3 +197,28 @@ print(hash("자바"))  # -8553573703343279427
 - 문자열
 
 이 정도가 있는데요. 이런 타입의 자료형만 hash 함수의 파라미터로 넘겨줄 수 있습니다.
+
+<br/><br/>
+
+23.01.08  
+## 06. 해시 테이블 충돌과 Chaining 개념
+
+key-value쌍을 저장하기 위해 key를 해시 함수에 넣었는데, 서로 다른 key 값이 같은 해시함수 return 값이 나올 수가 있음  
+한 인덱스에 두 개의 key-value 쌍을 저장해야 되는 경우가 생김  
+이미 사용하고 있는 인덱스에 새로운 key-value 쌍을 또 저장해야 되는 경우를 충돌(Collision)이 일어났다고 표현함  
+충돌을 해결하는 방법 중 하나인 Chaining에 대해 알아볼 것  
+
+### Chaining
+직역하면 쇠사슬로 묶는 것  
+배열 인덱스에 링크드 리스트를 저장해서 충돌을 해결함  
+
+```python
+class Node:
+    """링크드 리스트 노드"""
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.next = next
+```
+
+이렇게 노드를 만들어서, 만약 key 값에 같은 hash 함수 return값이 나오면 해당 인덱스에 링크드 리스트 노드를 그대로 이어붙이면 됨
