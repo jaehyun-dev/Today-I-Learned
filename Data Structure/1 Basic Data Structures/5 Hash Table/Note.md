@@ -484,3 +484,267 @@ def __str__(self):
 “해시 테이블 삽입, 삭제, 탐색 연산들은 최악의 경우 $O(n)$이 걸리지만, 평균적으로는 $O(1)$이 걸린다”
 
 라고 합니다.
+
+<br/><br/>
+
+## 12. Chaining을 쓰는 해시 테이블 구현 I
+
+### 실습 설명
+Chaining을 이용하는 해시 테이블 탐색과 삽입 연산들을 구현해 볼게요.
+
+이번 과제에서 사용하는 링크드 리스트 클래스는 전에 노트에서 해시 테이블에서 사용할 수 있게 바꿔놓은 더블리 링크드 리스크 클래스입니다. 혹시 링크드 리스트 코드에서 이해가 안 되시는 부분이 있다면 전 노트를 참고하세요!
+
+탐색 연산은 look_up_value라는 이름의 메소드로 구현할게요. 파라미터로는 탐색하려는 key를 받습니다. 파라미터 key에 해당하는 value를 리턴합니다.
+
+삽입 연산은 insert라는 이름의 메소드로 구현합시다. 파라미터로는 key와 value 데이터 쌍을 각각 받습니다. 파라미터로 받은 key - value 쌍을 해시 테이블 안에 저장합니다. 단 이미 key에 해당하는 key - value 데이터 쌍을 저장했다면, 그 데이터 쌍의 value만 새로운 value로 바꿔 줍니다.
+
+(두 메소드 모두 main.py 파일에서 작성하시면 됩니다!)
+
+여러분들이 좀 더 수월하게 과제를 하실 수 있도록 미리 메소드 몇 개를 정의해놨는데요. 하나씩 살펴볼게요.
+
+#### \_\_init\_\_ 메소드
+```python
+def __init__(self, capacity):
+    self._capacity = capacity  # 파이썬 리스트 수용 크기 저장
+    self._table = [LinkedList() for _ in range(self._capacity)]  # 파이썬 리스트 인덱스에 반 링크드 리스트 저장
+```
+해시 테이블 클래스는 인스턴스 변수로 \_capacity와 \_table을 받습니다.
+- \_capacity는 해시 테이블(이 사용하는 배열)의 크기입니다. 해시 테이블 인스턴스를 만들 때 파라미터 capacity를 받아서 self.\_capacity에 저장합니다.
+- \_table은 해시 테이블에서 사용하는 파이썬 리스트입니다. 크기는 \_capacity 이며 각 인덱스에는 비어 있는 링크드 리스트를 저장합니다. 저희는 배열 대신 파이썬 리스트를 이용해서 해시 테이블을 구현해 볼게요.
+- 두 인스턴스 변수는 외부에서 접근하면 안 된다는 걸 알리기 위해서 앞에 \_를 붙입니다.
+
+예를 들어 아래처럼 해시 테이블 인스턴스를 만들었다고 할게요.
+```python
+test_scores = HashTable(50)
+```
+- 일단 self.\_capacity에는 50이 저장됩니다.
+- 그리고 self.\_table이 만들어집니다. self.\_table은 0 ~ 49까지 인덱스를 갖는 파이썬 리스트가 생성됩니다. 각 인덱스에는 비어 있는 링크드 리스트가 저장됩니다.
+
+#### 해시 함수
+```python
+def _hash_function(self, key):
+    """
+    주어진 key에 나누기 방법을 사용해서 해시된 값을 리턴하는 메소드
+    주의 사항: key는 파이썬 불변 타입이어야 한다.
+    """
+    return hash(key) % self._capacity
+```
+메소드 \_hash_function은 파라미터로 key를 받습니다. 파이썬 hash 함수는 불변 타입의 값을 고유 정수값으로 변환해 주는데요. 이 정수에 나누기 방법을 이용해서 저희 해시 테이블의 해시 함수로 이용합니다. 해시 테이블의 해시 함수도 외부에서 사용하지 말라는 표시로 앞에 \_를 써줍니다.
+
+self.\_capacity 가 50이라면 무조건 0 ~ 49 사이의 자연수가 리턴됩니다.
+
+#### 문자열 메소드
+```python
+def __str__(self):
+    """해시 테이블 문자열 메소드"""
+    res_str = ""
+
+    for linked_list in self._table:
+        res_str += str(linked_list)
+    
+    return res_str[:-1]
+```
+문자열 메소드는 self.\_table을 한 인덱스씩 돌면서 각 인덱스에 저장된 링크드 리스트의 데이터를 출력합니다. 해시 테이블 안에 저장된 모든 key, value 데이터 쌍을 출력할 수 있습니다.
+
+### 실습 결과
+- 해시 테이블은 순서가 저장되지 않기 때문에 순서는 출력 예시와 다를 수 있습니다.
+```
+현승: 85
+태호: 90
+지웅: 99
+규식: 97
+신의: 88
+영훈: 90
+동욱: 87
+85
+90
+90
+현승: 10
+태호: 20
+지웅: 99
+규식: 97
+신의: 88
+영훈: 30
+동욱: 87
+```
+
+### 해설
+본격적으로 각 연산들을 메소드로 구현해 보기 전에 먼저 각 연산들에서 반복적으로 쓰는 코드를 메소드로 정의해 줄게요. 자주 사용하는 코드를 묶어서 메소드로 정의하면 코드를 좀 더 깔끔하게 쓸 수 있습니다.
+
+#### 헬퍼 메소드 1: \_get_linked_list_for_key()
+```python
+def _get_linked_list_for_key(self, key):
+        """주어진 key에 대응하는 인덱스에 저장된 링크드 리스트를 리턴하는 메소드"""
+        hashed_index = self._hash_function(key)
+
+        return self._table[hashed_index]
+```
+\_get_linked_list_for_key 메소드는 파라미터로 key를 받아서 그 key에 해당하는 인덱스에 있는 링크드 리스트를 리턴합니다.
+
+코드를 살펴보면 해시 함수에 key를 넣어서 나온 결과 값을 변수 hashed_index에 저장합니다.
+
+그리고 내부적으로 배열로 사용하는 self.\_table의 hashed_index 인덱스에 있는 링크드 리스트를 리턴해 줍니다.
+
+#### 헬퍼 메소드 2: \_look_up_node()
+```python
+def _look_up_node(self, key):
+        """파라미터로 받은 key를 갖고 있는 노드를 리턴하는 메소드"""
+        linked_list = self._get_linked_list_for_key(key)
+        return linked_list.find_node_with_key(key)
+```
+\_look_up_node 메소드는 파라미터로 key를 받아서 그 key를 가지고 있는 링크드 리스트 노드를 리턴합니다.
+
+첫 번째 줄에서는 배열의 원하는 인덱스에 있는 링크드 리스트를 가지고 옵니다.
+두 번째 줄에서는 이 링크드 리스트 안에서 원하는 key를 갖고 있는 노드를 탐색해서 리턴합니다.
+- find_node_with_key 메소드는 링크드 리스트안에 파라미터로 받은 key가 없으면 None을 리턴합니다.
+
+#### 탐색 연산: look_up_value() 메소드
+```python
+def look_up_value(self, key):
+        """
+        주어진 key에 해당하는 데이터를 리턴하는 메소드
+        """
+        return self._look_up_node(key).value
+```
+look_up_value() 메소드는 헬퍼 메소드만 써서 작성할 수 있습니다.
+
+먼저, 찾으려는 key를 파라미터로 받습니다. \_look_up_node 메소드를 이용해서 원하는 key에 해당하는 노드를 찾습니다. 이 노드의 value 변수를 리턴합니다.
+
+이미 써놓은 헬퍼 메소드를 잘 이용하기만 하면 되니까 쉽죠?
+
+#### 삽입 연산: insert() 메소드
+```python
+def insert(self, key, value):
+    """
+    새로운 key - value 쌍을 삽입시켜주는 메소드
+    이미 해당 key에 저장된 데이터가 있으면 해당 key에 해당하는 데이터를 바꿔준다
+    """
+    existing_node = self._look_up_node(key)  # 이미 저장된 key인지 확인한다
+
+    if existing_node is not None:
+        existing_node.value = value  # 이미 저장된 key면 데이터만 바꿔주고
+    else:
+        # 없는 key면 링크드 리스트에 새롭게 삽입시켜준다
+        linked_list = self._get_linked_list_for_key(key)
+        linked_list.append(key, value)
+```
+key - value 데이터는 하나의 key에 두 개의 value를 저장하면 안 되잖아요? 그래서 해시 테이블 삽입 연산에서는 이미 저장한 키인지 아닌지를 확인해야 합니다.
+
+헬퍼 메소드 \_look_up_node 메소드를 이용해서 파라미터 key를 갖고 있는 노드를 탐색합니다. 이미 원하는 key에 대한 key - value 쌍을 저장했으면 변수 existing_node에 노드가 저장되고, 아니면 None 이 저장되겠죠?
+
+파라미터로 받은 key가 이미 저장한 데이터 쌍이라면, existing_node의 변수 value를 파라미터로 받은 value로 바꿔 줍니다.
+
+파라미터 key에 대한 데이터가 저장되어 있지 않다면 아래 내용들을 수행합니다.
+1. 원하는 인덱스에 저장된 링크드 리스트를 받아 온다.
+2. 이 링크드 리스트에 새로운 key - value 쌍을 추가한다.
+
+### 모범 답안
+```python
+from HDLL import LinkedList
+
+class HashTable:
+    def __init__(self, capacity):
+        self._capacity = capacity  # 파이썬 리스트 수용 크기 저장
+        self._table = [LinkedList() for _ in range(self._capacity)]  # 파이썬 리스트 인덱스에 반 링크드 리스트 저장
+
+    def _hash_function(self, key):
+        """
+        주어진 key에 나누기 방법을 사용해서 해시된 값을 리턴하는 메소드
+        주의 사항: key는 파이썬 불변 타입이어야 한다.
+        """
+        return hash(key) % self._capacity
+
+
+    def _get_linked_list_for_key(self, key):
+        """주어진 key에 대응하는 인덱스에 저장된 링크드 리스트를 리턴하는 메소드"""
+        hashed_index = self._hash_function(key)
+
+        return self._table[hashed_index]
+
+
+    def _look_up_node(self, key):
+        """파라미터로 받은 key를 갖고 있는 노드를 리턴하는 메소드"""
+        linked_list = self._get_linked_list_for_key(key)
+        return linked_list.find_node_with_key(key)
+
+    def look_up_value(self, key):
+        """
+        주어진 key에 해당하는 데이터를 리턴하는 메소드
+        """
+        return self._look_up_node(key).value
+
+            
+    def insert(self, key, value):
+        """
+        새로운 key - 데이터 쌍을 삽입시켜주는 메소드
+        이미 해당 key에 저장된 데이터가 있으면 해당 key에 대응하는 데이터를 바꿔준다
+        """
+        existing_node = self._look_up_node(key)  # 이미 저장된 key인지 확인한다
+
+        if existing_node is not None:
+            existing_node.value = value  # 이미 저장된 key면 데이터만 바꿔주고
+        else:
+            # 없는 키면 새롭게 삽입시켜준다
+            linked_list = self._get_linked_list_for_key(key)
+            linked_list.append(key, value)
+
+    def __str__(self):
+        """해시 테이블 문자열 메소드"""
+        res_str = ""
+
+        for linked_list in self._table:
+            res_str += str(linked_list)
+
+        return res_str[:-1]
+```
+
+#### 테스트 코드
+```python
+test_scores = HashTable(50) # 시험 점수를 담을 해시 테이블 인스턴스 생성
+
+# 여러 학생들 이름과 시험 점수 삽입
+test_scores.insert("현승", 85)
+test_scores.insert("영훈", 90)
+test_scores.insert("동욱", 87)
+test_scores.insert("지웅", 99)
+test_scores.insert("신의", 88)
+test_scores.insert("규식", 97)
+test_scores.insert("태호", 90)
+
+print(test_scores)
+
+# key인 이름으로 특정 학생 시험 점수 검색
+print(test_scores.look_up_value("현승"))
+print(test_scores.look_up_value("태호"))
+print(test_scores.look_up_value("영훈"))
+
+# 학생들 시험 점수 수정
+test_scores.insert("현승", 10)
+test_scores.insert("태호", 20)
+test_scores.insert("영훈", 30)
+
+print(test_scores)
+```
+
+### 실습 결과
+```
+현승: 85
+태호: 90
+지웅: 99
+규식: 97
+신의: 88
+영훈: 90
+동욱: 87
+85
+90
+90
+현승: 10
+태호: 20
+지웅: 99
+규식: 97
+신의: 88
+영훈: 30
+동욱: 87
+```
+
+[main5_12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/5%20Hash%20Table/main5_12.py) 참고
