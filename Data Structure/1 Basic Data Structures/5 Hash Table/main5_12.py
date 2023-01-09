@@ -15,13 +15,20 @@ class HashTable:
         """
         return hash(key) % self._capacity
 
+    def _get_linked_list_for_key(self, key):
+        hashed_index = self._hash_function(key)
+        return self._table[hashed_index]
+
+    def _look_up_node(self, key):
+        linked_list = self._get_linked_list_for_key(key)
+        return linked_list.find_node_with_key(key)
+
     def look_up_value(self, key):
         """
         주어진 key에 해당하는 데이터를 리턴하는 메소드
         """
         # 코드를 쓰세요
-        index = self._hash_function(key)
-        data = self._table[index].find_node_with_key(key)
+        data = self._look_up_node(key)
         if data == None:
             return None
         else:
@@ -33,11 +40,13 @@ class HashTable:
         이미 해당 key에 저장된 데이터가 있으면 해당 key에 해당하는 데이터를 바꿔준다
         """
         # 코드를 쓰세요
-        index = self._hash_function(key)
-        if self.look_up_value(key) == None:
-            self._table[index].append(key, value)
+        existing_node = self._look_up_node(key)
+
+        if existing_node is not None:
+            existing_node.value = value
         else:
-            self._table[self._hash_function(key)].find_node_with_key(key).value = value
+            linked_list = self._get_linked_list_for_key(key)
+            linked_list.append(key, value)
 
     def __str__(self):
         """해시 테이블 문자열 메소드"""
@@ -73,3 +82,30 @@ test_scores.insert("태호", 20)
 test_scores.insert("영훈", 30)
 
 print(test_scores)
+
+
+''' 모범 답안 보기 전 헬퍼 메소드 사용하지 않고 짠 코드
+    def look_up_value(self, key):
+        """
+        주어진 key에 해당하는 데이터를 리턴하는 메소드
+        """
+        # 코드를 쓰세요
+        index = self._hash_function(key)
+        data = self._table[index].find_node_with_key(key)
+        if data == None:
+            return None
+        else:
+            return data.value
+
+    def insert(self, key, value):
+        """
+        새로운 key - value 쌍을 삽입시켜주는 메소드
+        이미 해당 key에 저장된 데이터가 있으면 해당 key에 해당하는 데이터를 바꿔준다
+        """
+        # 코드를 쓰세요
+        index = self._hash_function(key)
+        if self.look_up_value(key) == None:
+            self._table[index].append(key, value)
+        else:
+            self._table[self._hash_function(key)].find_node_with_key(key).value = value
+'''
