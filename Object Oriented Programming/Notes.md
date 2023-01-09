@@ -843,7 +843,7 @@ MenuItem 클래스가 가져야할 다음 조건들을 보고 배달 음식 메�
 후렌치 후라이 가격: 1500
 ```
 
-[main4_01.py](https://github.com/jaehyun-dev/Today-I-Learned) 참고
+[main4_01.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Object%20Oriented%20Programming/main4_01.py) 참고
 
 <br/><br/>
 
