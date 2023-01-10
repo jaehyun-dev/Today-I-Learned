@@ -824,3 +824,29 @@ print(test_scores)
 ```
 
 [main5_13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/5%20Hash%20Table/main5_13.py) 
+
+<br/><br/>
+
+## 14. Open Addressing을 이용한 충돌 해결
+
+chaining 이외에도 hash 충돌을 해결하기 위한 방법이 여러 개 있음  
+그 중 Open Addressing에 대해 배울 것
+
+### Open Addressing
+- 충돌이 일어났을 때 비어있는 인덱스를 찾아 거기에 데이터를 저장하는 방법
+- 예시) 101: "최지웅", 204: "강영훈"을 저장하고 싶다
+- 101과 204 모두 해시 함수에 넣었을 떄 return 값이 20으로 동일하다면
+- 인덱스 20에 101, "최지웅"을 저장
+- 인덱스 20에 이미 데이터가 있기 때문에, 204, "강영훈"은 비어있는 인덱스 21에 저장
+
+비어있는 인덱스를 어떻게 찾을 수 있을까?
+
+### 선형 탐사(linear probing)
+- 충돌이 일어났을 때, 한 칸씩 다음 인덱스가 비어있는지 확인
+- 빈 인덱스를 하나씩, 순서대로, 선형적으로 찾는 방법
+- 예시) 101, "최지웅"이 인덱스 20에 저장되어 있는데 해시 함수 return 값이 다시 20이 나온 경우
+- 인덱스 20부터 하나씩 더 큰 인덱스가 비어있는지 확인
+- 차례대로 확인하다가 가장 먼저 나오는 빈 인덱스에 key - value 쌍 저장
+
+<br/><br/>
+
