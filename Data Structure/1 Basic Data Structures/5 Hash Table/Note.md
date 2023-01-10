@@ -748,3 +748,79 @@ print(test_scores)
 ```
 
 [main5_12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/5%20Hash%20Table/main5_12.py) 참고
+
+<br/><br/>
+
+23.01.10
+## 13. Chaining을 쓰는 해시 테이블 구현 II
+
+### 실습 설명
+Chaining을 이용하는 해시 테이블 삭제 연산을 구현해 볼게요.
+
+삭제 연산의 메소드 이름은 delete_by_key입니다. 파라미터로 key를 받는데요. 해시 테이블에서 key에 해당하는 key - value 쌍을 지워 줍니다.
+- 저번 과제 해설에 나온 헬퍼 메소드를 사용하시면 조금 더 편하게 과제를 풀 수 있습니다.
+- 수정할 코드는 main.py의 delete_by_key 메소드입니다
+
+### 실습 결과
+```
+영훈: 90
+동욱: 87
+```
+
+<br/><br/>
+
+### 해설
+#### delete_by_key() 메소드
+```python
+def delete_by_key(self, key):
+    """주어진 key에 해당하는 key - value 쌍을 삭제하는 메소드"""
+    node_to_delete = self._look_up_node(key)  # 이미 저장된 key인지 확인한다
+
+    # 저장되어 있는 key면 삭제한다
+    if node_to_delete is not None:
+        linked_list = self._get_linked_list_for_key(key)
+        linked_list.delete(node_to_delete)
+```
+delete_by_key() 메소드는 파라미터로 key를 받아서 해시 테이블에서 그 key에 대한 key - value 쌍을 지워줍니다.
+
+delete_by_key()에서도 저번 과제 때 작성했던 헬퍼 메소드들을 사용하면 됩니다.
+
+먼저 파라미터 key를 갖고 있는 노드를 받아옵니다. 이 노드를 node_to_delete 변수에 저장해 줍니다.
+
+만약에 지우려는 key를 갖고 있는 노드가 없다면 node_to_delete 가 None이겠죠?
+
+반대로 None이 아니라는 것은 해시 테이블 안에 해당 key에 대한 key - value 쌍이 있다는 말입니다. 있을 경우 해시 값 인덱스에 저장된 링크드 리스트를 받아옵니다. 이 링크드 리스트에서 node_to_delete를 삭제해 줍니다. 어차피 링크드 리스트 클래스의 delete 메소드는 지우려는 노드 자체를 받잖아요. delete 메소드에 node_to_delete 변수를 파라미터로 넘겨줘서 링크드 리스트에서 삭제합니다.
+
+#### 테스트 코드
+제대로 돌아가는지 코드를 돌려 봅시다.
+```python
+test_scores = HashTable(50) # 시험 점수를 담을 해시 테이블 인스턴스 생성
+
+# 여러 학생들 이름과 시험 점수 삽입
+test_scores.insert("현승", 85)
+test_scores.insert("영훈", 90)
+test_scores.insert("동욱", 87)
+test_scores.insert("지웅", 99)
+test_scores.insert("신의", 88)
+test_scores.insert("규식", 97)
+test_scores.insert("태호", 90)
+
+print(test_scores)
+
+# 학생들 시험 점수 삭제
+test_scores.delete_by_key("태호")
+test_scores.delete_by_key("지웅")
+test_scores.delete_by_key("신의")
+test_scores.delete_by_key("현승")
+test_scores.delete_by_key("규식")
+
+print(test_scores)
+```
+
+### 실습 결과
+```
+영훈: 90
+동욱: 87
+```
+
+[main5_13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/5%20Hash%20Table/main5_13.py) 
