@@ -1,4 +1,4 @@
-from HDLL5_12 import LinkedList  # 해시 테이블에서 사용할 링크드 리스트 임포트
+from HDLL import LinkedList  # 해시 테이블에서 사용할 링크드 리스트 임포트
 
 
 class HashTable:
