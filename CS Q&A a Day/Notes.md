@@ -1791,3 +1791,35 @@ A.
 - DNS는 모든 도메인 이름을 한 곳에서 저장하지 않고 하위 도메인으로 분할한 다음 특정 정보를 특정 서버에 저장하는 특정 계층 구조를 따르므로 분권화되어있는 반면 DHCP 서버는 IP 주소 풀에서 클라이언트의 IP 주소를 구성하고 모든 작업을 중앙에서 처리하므로 DHCP 서버가 클라이언트에 직접 연결되어있지 않으면 라우터를 사용하여 DHCP 브로드 캐스트를 수신하고 릴레이함
 
 https://ko.gadget-info.com/difference-between-dns
+
+23.01.12  
+## Q. 동기(Synchronous)와 비동기(Asynchronous), 블로킹(Blocking)과 논-블로킹(Non-blocking)에 대해 설명해주세요.(운영체제)
+
+A.  
+- I/O 작업은 user space에서 직접 수행할 수 없기 때문에 user process가 kernel에 I/O 작업을 '요청'하고 '응답'을 받는 구조
+- 응답을 어떤 순서로 받는지(synchronous/asynchronous), 어떤 타이밍에 받는지(blocking/non-blocking)에 따라 여러 모델로 분류됨
+
+**동기 작업(Synchronous)**  
+- 작업이 한 번에 하나씩 수행되며 진행 중인 작업이 끝나기 전까지는 해당 작업 외의 다른 작업을 수행하지 못함
+- 모든 I/O 요청-응답 작업이 일련의 순서를 따르므로 작업의 순서가 보장됨
+- 작업 완료를 user space에서 판단하고 다음 작업을 언제 요청할지 결정함
+- 일련의 Pipeline을 준수하는 구조에서 효율적임
+
+**비동기 작업(Asynchronous)**  
+- 한 번에 하나 이상의 작업이 수행될 수 있으므로 현재 작업을 진행 중이더라도 다른 작업을 수행할 수 있음
+- 작업에 대한 결과를 바로 원하지 않음
+- kernel에 I/O 작업을 요청해두고 다른 작업 처리가 가능하나, 작업의 순서는 보장되지 않음
+- 작업 완료를 kernel space에서 통보해줌
+- 각 작업들이 독립적이거나, 작업 별 지연이 큰 경우 효율적임
+
+**블로킹(Blocking)**  
+- 동기 작업 중에 I/O를 받아 오기 전까지 프로그램을 멈추어 비동기 수행을 할 수 있게 하는 것
+- Blocking 시간에 다른 작업을 할 수 있게 됨
+- Thread가 Blocking 된다는 것은 CPU가 점유되어 실행되지 못함을 의미함
+
+**논-블로킹(Non-Blocking)**  
+- Wait 하지 않고 작업이 그냥 수행됨
+- 자신이 호출되었을 때 즉 System call을 받았을 때 제어권을 바로 자신을 호출한 쪽으로 넘겨 다른 작업을 할 수 있도록 하는 것을 의미
+- Thread가 Waiting하지 않으므로 CPU 제어는 그대로임
+
+https://luv-n-interest.tistory.com/1121
