@@ -304,3 +304,151 @@ popleft() 메소드로 맨 앞 데이터를 삭제함과 동시에 삭제하는 
 
 큐를 구현할 때 링크드 리스트는 모든 연산을 $O(1)$으로 할 수 있지만, 동적 배열은 맨 앞 삭제 연산에 $O(n)$이 걸리므로 링크드 리스트가 더 효율적임  
 파이썬에서 queue로 사용했던 자료형 deque도 내부적으로는 더블리 링크드 리스트로 구현되어 있음
+
+<br/><br/>
+
+## 09. 서비스 센터 문의 처리
+
+### 실습 설명
+고조선 호텔 서비스 센터에서 일하고 있는 영훈이는 하루에도 수 백개의 문의를 처리합니다.
+
+고조선 호텔 서비스 센터에서는 모든 문의 사항을 접수 순서대로 처리를 하도록 되어 있는데요. 다행히도 컴퓨터 과학을 공부한 영훈이는 프로그래밍을 이용해서 접수되는 문의들을 자동으로 처리하려고 합니다. 마침 데이터를 저장하는 순서대로 기억하고 가장 먼저 저장된 데이터부터 삭제할 수 있는 추상 자료형 큐가 있는데요. 큐를 이용해서 접수된 문의를 처리하는 클래스를 작성해 봅시다.
+
+다행이 영훈이는 이미 고객 문의를 나타낼 클래스 CustomerComplaint는 정의해 놨는데요. 이제는 자동으로 문의를 처리해 줄 서비스 센터를 나타내는 CustomerServiceCenter를 작성해 봅시다. CustomerServiceCenter에는 문의를 처리하는 메소드 process_complaint() 메소드와 문의를 처리 대기열에 추가시켜주는 메소드 add_complaint() 메소드가 있습니다.
+
+- process_complaint() 메소드는 아래 내용들을 수행합니다.
+    1. 현재 접수 대기 중인 문의가 있으면 "{}님의 {} 문의 내용 접수 되었습니다. 담당자가 배정되면 {}로 연락드리겠습니다!"의 내용을 출력한다.
+    2. 접수 대기중인 문의가 없으면 "더 이상 대기 중인 문의가 없습니다!"를 출력한다.
+- add_complaint() 메소드는 다음 내용을 수행해요.
+    1. 받아오는 파라미터를 이용해서 고객 센터 문의 인스턴스를 만들고 서비스 센터 인스턴스의 문의 대기 큐에 해당 문의를 추가시켜줍니다.
+
+### 실습 결과
+```
+강영훈님의 음식이 너무 맛이 없어요 문의 내용 접수 되었습니다. 담당자가 배정되면 younghoon@codeit.com로 연락드리겠습니다!
+더 이상 대기 중인 문의가 없습니다!
+이윤수님의 에어컨이 안 들어와요... 문의 내용 접수 되었습니다. 담당자가 배정되면 yoonsoo@codeit.kr로 연락드리겠습니다!
+손동욱님의 결제가 제대로 안 되는 거 같군요 문의 내용 접수 되었습니다. 담당자가 배정되면 dongwook@codeit.us로 연락드리겠습니다!
+```
+
+### 해설
+#### add_complaint() 메소드
+먼저 구체적인 문의 내용을 받아서 문의를 생성하고 접수 대기 큐에 추가시켜주는 add_complaint() 메소드를 정의해 봅시다.
+
+일단 파라미터로 넘겨 받은 데이터를 이용해서 문의 인스턴스를 생성합니다.
+```python
+def add_complaint(self, name, email, content):
+    """새로운 문의를 큐에 추가 시켜주는 메소드"""
+    new_complaint = CustomerComplaint(name, email, content) # 새 문의 인스턴스 생성
+```
+그 다음에는 새롭게 만든 이 문의 사항을 문의 대기 큐에 추가시켜주면 되겠죠? deque를 이용한 큐의 마지막 순서에 데이터를 추가시켜주는 메소드는 append() 였던 거 기억나시죠?
+```python
+def add_complaint(self, name, email, content):
+    """새로운 문의를 큐에 추가 시켜주는 메소드"""
+    new_complaint = CustomerComplaint(name, email, content) # 새 문의 인스턴스 생성
+    self.queue.append(new_complaint) # 문의 대기 큐에 추가 시켜준다
+```
+이렇게 하면 add_complaint 메소드는 다음 두 가지 조건을 만족시키게 돼요.
+1. 새로운 문의 인스턴스를 생성한다.
+2. 문의 대기 큐에 해당 인스턴스를 추가한다.
+
+#### process_complaint() 메소드
+다음은 처리 대기 중인 문의를 먼저 저장된 순서대로 처리해주는 메소드 process_complaint()를 작성해 봅시다.
+
+가장 먼저 대기 큐가 비어 있는지 확인을 해야겠죠?
+```python
+def process_complaint(self):
+    """접수된 고객 센터 문의 내용 처리하는 메소드"""
+    if self.queue: # 대기 중인 문의가 있는지 확인
+    
+    else:
+        print("더 이상 대기 중인 문의가 없습니다!")
+```
+파이썬 deque(를 비롯한 다른 여러 데이터 항목을 담는 자료형과 마찬가지로)가 비었는지 확인하는 방법은 if 뒤에 deque 인스턴스를 넣으면 됩니다.
+
+만약 대기 큐가 비었으면 처리할 문의가 없기 때문에 해당 메시지를 출력하겠습니다.
+
+다음은 대기 큐에 문의가 남아 있는 경우에 대해서 생각해 볼게요.
+
+일단 가장 먼저 접수된 문의부터 삭제하는 동시에 처리해야 하는데요. deque에 popleft() 메소드를 사용하면 큐의 가장 앞에 저장되어 있는 데이터를 삭제하는 동시에 큐에서 삭제하는 데이터를 리턴받을 수 있습니다.
+
+큐에서 삭제하면서 리턴받은 데이터의 속성을 이용하면 문의 처리 메시지를 출력할 수 있겠죠? 코드로 봅시다.
+```python
+def process_complaint(self):
+    """접수된 고객 센터 문의 내용 처리하는 메소드"""
+    if self.queue: # 대기 중인 문의가 있는지 확인
+
+        # 가장 오래된 문의 먼저 처리
+        complaint = self.queue.popleft()
+        print(f"{complaint.name}님의 {complaint.content} 문의 내용 접수 되었습니다. 담당자가 배정되면 {complaint.email}로 연락드리겠습니다!")
+    else:
+        print("더 이상 대기 중인 문의가 없습니다!")
+```
+complaint 변수에 대기 큐에서 삭제한 문의 인스턴스를 저장하고 complaint의 속성들을 이용해서 이런식으로 처리 내용을 출력해 주는 거죠.
+
+### 모범 답안
+위 내용들을 하나로 뭉치면 이렇게 되겠죠?
+```python
+from collections import deque
+
+class CustomerComplaint:
+    """고객 센터 문의를 나타내는 클래스"""
+    def __init__(self, name, email, content):
+        self.name = name
+        self.email = email
+        self.content = content
+
+class CustomerServiceCenter:
+    """고조선 호텔 서비스 센터 클래스"""
+    def __init__(self):
+        self.queue = deque()   # 대기 중인 문의를 저장할 큐 생성
+
+    def process_complaint(self):
+        """접수된 고객 센터 문의 내용 처리하는 메소드"""
+        if self.queue:  # 대기 중인 문의가 있는지 확인
+
+            # 가장 오래된 문의 먼저 처리
+            complaint = self.queue.popleft()
+            print(f"{complaint.name}님의 {complaint.content} 문의 내용 접수 되었습니다. 담당자가 배정되면 {complaint.email}로 연락드리겠습니다!")
+        else:
+            print("더 이상 대기 중인 문의가 없습니다!")
+
+
+    def add_complaint(self, name, email, content):
+        """새로운 문의를 큐에 추가 시켜주는 메소드"""
+        new_complaint = CustomerComplaint(name, email, content)   # 새 문의 인스턴스 생성
+        self.queue.append(new_complaint)   # 문의 대기 큐에 추가 시켜준다
+```
+
+### 테스트 코드
+```python
+# 고객 문의 센터 인스턴스 생성
+center = CustomerServiceCenter()
+
+
+# 문의 접수한다
+center.add_complaint("강영훈", "younghoon@codeit.com", "음식이 너무 맛이 없어요")
+
+# 문의를 처리한다
+center.process_complaint()
+center.process_complaint()
+
+# 문의 세 개를 더 접수한다
+center.add_complaint("이윤수", "yoonsoo@codeit.kr", "에어컨이 안 들어와요...")
+center.add_complaint("손동욱", "dongwook@codeit.us", "결제가 제대로 안 되는 거 같군요")
+center.add_complaint("김현승", "hyunseung@codeit.ca", "방을 교체해주세요")
+
+# 문의를 처리한다
+center.process_complaint()
+center.process_complaint()
+```
+
+### 실습 결과
+```
+강영훈님의 음식이 너무 맛이 없어요 문의 내용 접수 되었습니다. 담당자가 배정되면 younghoon@codeit.com로 연락드리겠습니다!
+더 이상 대기 중인 문의가 없습니다!
+이윤수님의 에어컨이 안 들어와요... 문의 내용 접수 되었습니다. 담당자가 배정되면 yoonsoo@codeit.kr로 연락드리겠습니다!
+손동욱님의 결제가 제대로 안 되는 거 같군요 문의 내용 접수 되었습니다. 담당자가 배정되면 dongwook@codeit.us로 연락드리겠습니다!
+이렇게 대기 순서대로 문의가 잘 처리되는 것을 확인할 수 있습니다.
+```
+
+[main6_09.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/6%20Abstract%20Data%20Type/main6_09.py) 참고
