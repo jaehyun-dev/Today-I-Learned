@@ -695,7 +695,7 @@ parentheses_checker(case6)
 - key-value 쌍을 삽입, 탐색, 삭제할 수 있는 추상 자료형
 - 데이터 간 순서 관계를 약속하지 않음
 
-``python
+```python
 grades = {}  # 딕셔너리는 중괄호로 선언함
 
 # key - value 데이터 삽입
