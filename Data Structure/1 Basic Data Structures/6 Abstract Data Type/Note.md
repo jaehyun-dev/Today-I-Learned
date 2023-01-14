@@ -683,3 +683,59 @@ parentheses_checker(case6)
 ```
 
 [main6_12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/6%20Abstract%20Data%20Type/main6_12.py) 참고
+
+<br/><br/>
+
+23.01.15
+
+## 13. 딕셔너리
+
+### 딕셔너리(Dictionary)
+- 맵(Map)이라고도 부름
+- key-value 쌍을 삽입, 탐색, 삭제할 수 있는 추상 자료형
+- 데이터 간 순서 관계를 약속하지 않음
+
+``python
+grades = {}  # 딕셔너리는 중괄호로 선언함
+
+# key - value 데이터 삽입
+grades["현승"] = 80
+grades["태호"] = 60
+grades["영훈"] = 90
+grades["지웅"] = 70
+grades["동욱"] = 96
+
+print(grades)  # 딕셔너리 출력
+# {'현승': 80, '태호': 60, '영훈': 90, '지웅': 70, '동욱': 96}
+
+# 한 key에 여러 value 저장 시도
+grades["태호"] = 100
+
+print(grades)  # 딕셔너리 출력
+# {'현승': 80, '태호': 100, '영훈': 90, '지웅': 70, '동욱': 96}
+# key에 여러 value가 들어가는 게 아니라 마지막 value로 바뀜
+
+# key를 이용해서 value 탐색
+print(grades["동욱"])  # 96
+print(grades["현승"])  # 80
+
+# key를 이용한 삭제
+grades.pop("태호")  # print 사용하면 pop 하는 value return하여 보여줌
+grades.pop("지웅")
+
+print(grades)  # 딕셔너리 출력
+# {'현승': 80, '영훈': 90, '동욱': 96}
+```
+
+key - value 쌍을 저장, key로 value 탐색, key로 데이터 삭제하고 싶으면 추상 자료형 딕셔너리(맵) 떠올리면 됨  
+기능에 집중하고 구현은 신경 덜 쓸 수 있게 해줌  
+
+딕셔너리를 어떤 자료구조로 구현할 수 있을까?  
+해시 테이블  
+|                     | 해시 테이블 |
+|:-------------------:|:-----------:|
+| key - value 쌍 삽입 |    $O(1)$   |
+|  key를 이용한 탐색  |    $O(1)$   |
+|  key를 이용한 삭제  |    $O(1)$   |
+
+파이썬 딕셔너리도 해시 테이블 이용해 구현되어 있음  
