@@ -452,3 +452,59 @@ center.process_complaint()
 ```
 
 [main6_09.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/6%20Abstract%20Data%20Type/main6_09.py) 참고
+
+<br/><br/>
+
+23.01.14
+
+## 10. 스택 개념
+
+### 스택(Stack)
+리스트, 큐와 마찬가지로 데이터 간 순서를 약속하는 추상 자료형  
+stack: 어떤 물건이 차곡차곡 쌓여있는 것(예: 쌓여 있는 접시 스택 등)  
+쌓여 있는 접시는 제일 위에 있는 접시부터 씀  
+새로운 접시를 쌓을 때도 가장 위에 쌓음  
+스택에서는 접시를 뺼 때도 쌓을 때도 맨 위에서만  
+접시가 아니라 데이터로 바꾸어 생각해도 마찬가지  
+데이터를 추가하거나 삭제할 때 맨 끝에 추가, 삭제하는 연산을 약속하는 추상 자료형  
+큐는 FIFO, 스택은 LIFO  
+LIFO: Last-in-first-out  
+가장 마지막에 들어온 데이터가 가장 먼저 삭제됨
+
+- 데이터 간 순서 관계를 유지할 수 있다
+- 맨 뒤 데이터 추가
+- 맨 뒤 데이터 삭제
+- 맨 뒤 데이터 접근
+
+
+
+파이썬에서는 큐와 마찬가지로 deque를 이용해 구현할 수 있음  
+한글이나 워드에서 Ctrl + Z 하면 실행취소를 할 수 있음  
+스택을 통해 구현 가능
+```python
+from collections import deque
+
+stack = deque()
+
+# 스택 맨 끝에 데이터 추가
+stack.append("T")
+stack.append("a")
+stack.append("e")
+stack.append("h")
+stack.append("o")
+
+print(stack)  # 스택 출력
+# deque(['T', 'a', 'e', 'h', 'o'])
+
+
+# 맨 끝 데이터 접근
+print(stack[-1])  # o
+
+# 맨 끝 데이터 삭제
+print(stack.pop())  # o
+print(stack.pop())  # h
+print(stack.pop())  # e
+
+print(stack)  # 스택 출력
+# deque(['T', 'a'])
+```
