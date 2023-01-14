@@ -1862,3 +1862,14 @@ A.
 5. 모든 LCA(a, b) 연산에 대해 3~4번의 과정을 반복함
 
 https://velog.io/@shiningcastle/%EC%B5%9C%EC%86%8C-%EA%B3%B5%ED%86%B5-%EC%A1%B0%EC%83%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+
+23.01.15
+## Q. 서포트 벡터 머신(SVM)에 대해 설명해주세요.(머신러닝)
+
+A.  
+**서포트 벡터 머신(SVM, Support Vector Machine)**  
+- 주어진 데이터가 어느 카테고리에 속할지 판단하는 이진 선형 분류 모델
+- 선과 가장 가까운 포인트인 서포트 벡터(Support Vector)와 구분선의 거리를 의미하는 Margin을 최대화하게끔 구분선을 결정함
+- 동시에 아웃라이어(outlier)의 영향을 받지 않는 robustness도 최대화함
+
+https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-2%EC%84%9C%ED%8F%AC%ED%8A%B8-%EB%B2%A1%ED%84%B0-%EB%A8%B8%EC%8B%A0-SVM
