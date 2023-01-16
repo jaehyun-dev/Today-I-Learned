@@ -118,3 +118,92 @@ test_node_2 = test_node_1.right_child
 
 print(test_node_2.data)  # 11
 ```
+
+<br/><br/>
+
+## 07. 이진 트리 만들어 보기  
+
+### 실습 설명
+이전 영상에서는 간단히 이진 트리를 코드로 구현해봤습니다. 그 순서를 간단히 설명하면 아래 3 단계로 나타낼 수 있습니다.
+1. 노드 클래스를 정의하고
+2. 그 인스턴스들을 생성한 후
+3. 만들어놓은 인스턴스들을 트리 모양에 맞게 연결한다.
+
+이번 과제에서는 이 방법대로 이진 트리를 직접 만들어 볼게요.
+저희가 만들어 볼 이진 트리는 아래와 같은 모양의 트리입니다.
+![image](https://bakey-api.codeit.kr/files/2370/o1NaXU?name=1.png)
+
+노드 안에 있는 데이터는 문자열 데이터이며, 각각 문자열 A, B, C, D, E, F, G, H를 저장하고 있습니다.  
+직접 노드 인스턴스들을 만들고 연결시켜서 위와 같은 트리를 만들어 보세요.
+
+### 실습 결과
+```
+F
+G
+H
+```
+
+<br/><br/>
+
+### 해설
+```python
+# root 노드 생성
+root_node = Node("A")
+```
+#### 각 노드 인스턴스 생성
+먼저 트리 안에 추가할 모든 노드 인스턴스들을 생성해야 하는데요. root 노드를 Node("A")로 만든 것처럼, 다른 노드들도 저장할 데이터를 Node 클래스의 \_\_init\_\_ 메소드의 파라미터로 넘겨 주면서 생성합시다.
+```python
+# 다른 노드들 생성
+node_B = Node("B")
+node_C = Node("C")
+node_D = Node("D")
+node_E = Node("E")
+node_F = Node("F")
+node_G = Node("G")
+node_H = Node("H")
+```
+
+#### 각 노드 인스턴스를 서로 연결
+만든 노드 인스턴스들을 트리 모양에 맞게 연결합니다. 각 노드 인스턴스는 왼쪽 자식 노드를 나타내는 변수 left_child와 오른쪽 자식 노드를 나타내는 변수 right_child를 가지는데요. 이 변수들을 통해서 각 노드들을 연결하면 됩니다.
+```python
+# 노드 인스턴스들 연결
+root_node.left_child = node_B
+root_node.right_child = node_C
+
+node_B.left_child = node_D
+node_B.right_child = node_E
+
+node_C.right_child = node_F
+
+node_E.left_child = node_G
+node_E.right_child = node_H
+```
+root 노드의 왼쪽 자식은 B, 오른쪽 자식은 C.  
+B의 왼쪽 자식은 D, 오른쪽 자식은 E.  
+C의 오른쪽 자식은 F.  
+E의 왼쪽 자식은 G, 오른쪽 자식은 H.  
+이대로 연결하면 되겠죠?  
+
+### 테스트 코드
+테스트 코드를 실행해 볼게요.
+```python
+# 실행 코드
+test_node = root_node.right_child.right_child
+print(test_node.data)
+
+test_node = root_node.left_child.right_child.left_child
+print(test_node.data)
+
+test_node = root_node.left_child.right_child.right_child
+print(test_node.data)
+```
+
+### 실습 결과
+```
+F
+G
+H
+```
+트리 모양에 맞게 잘 출력됩니다.
+
+[main1_07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/2%20Tree/1%20Tree/main1_07.py) 참고
