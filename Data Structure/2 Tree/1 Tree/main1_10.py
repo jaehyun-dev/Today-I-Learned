@@ -1,25 +1,32 @@
 def get_parent_index(complete_binary_tree, index):
     """배열로 구현한 완전 이진 트리에서 index번째 노드의 부모 노드의 인덱스를 리턴하는 함수"""
-    # 여기에 코드를 작성하세요
-    if index // 2 < 1:
-        return None
-    else:
-        return index // 2
+    parent_index = index // 2
+
+    # 부모 노드가 있으면 인덱스를 리턴한다
+    if 0 < parent_index < len(complete_binary_tree):
+        return parent_index
+
+    return None
 
 def get_left_child_index(complete_binary_tree, index):
     """배열로 구현한 완전 이진 트리에서 index번째 노드의 왼쪽 자식 노드의 인덱스를 리턴하는 함수"""
-    # 여기에 코드를 작성하세요
-    if index * 2 >= len(complete_binary_tree):
-        return None
-    return index * 2
+    left_child_index = 2 * index
+
+    # 왼쪽 자식 노드가 있으면 인덱스를 리턴한다
+    if 0 < left_child_index < len(complete_binary_tree):
+        return left_child_index
+
+    return None
 
 def get_right_child_index(complete_binary_tree, index):
     """배열로 구현한 완전 이진 트리에서 index번째 노드의 오른쪽 자식 노드의 인덱스를 리턴하는 함수"""
-    # 여기에 코드를 작성하세요
-    if index * 2 + 1 >= len(complete_binary_tree):
-        return None
-    else:
-        return index * 2 + 1
+    right_child_index = 2 * index + 1
+
+    # 오른쪽 자식 노드가 있으면 인덱스를 리턴한다
+    if 0 < right_child_index < len(complete_binary_tree):
+        return right_child_index
+
+    return None
 
 # 테스트 코드
 root_node_index = 1 # root 노드
