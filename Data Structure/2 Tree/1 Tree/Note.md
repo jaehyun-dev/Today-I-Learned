@@ -371,3 +371,151 @@ complete_binary_tree = [None, 1, 5, 12, 11, 9, 10, 14, 2, 10]
 - 마지막 레벨은 왼쪽에서 오른쪽 방향으로 노드들로 가득 차 있어야 함(오른쪽은 비어있어도 되지만 왼쪽은 비어있으면 안 됨)
 
 때문에 이렇게 각 노드를 리스트에 저장한 후에도 부모 노드와 자식 노드를 손쉽게 찾을 수 있습니다.
+
+<br/><br/>
+
+## 10. 완전 이진 트리 직접 구현하기  
+
+### 실습 설명
+
+![image](https://bakey-api.codeit.kr/files/2374/DEp8fI?name=1.png)  
+```python
+complete_binary_tree = [None, 1, 5, 12, 11, 9, 10, 14, 2, 10]
+```
+이전 레슨에서는 파이썬의 리스트로 완전 이진 트리를 구현하는 방법을 배웠습니다. 그리고 자식 노드와 부모 노드를 찾는 법을 배웠는데요.
+
+이번 레슨에서는 자식 노드와 부모 노드를 찾는 기능을 함수로 직접 구현해 볼게요.
+
+- get_left_child_index() 함수는 리스트 complete_binary_tree와 정수 index를 파라미터로 받습니다. 그리고 왼쪽 자식 노드가 있는 인덱스를 찾아서 리턴해 줍니다. 단, 왼쪽 자식 노드가 없을 경우, None을 리턴합니다.
+- get_right_child_index() 함수는 리스트 complete_binary_tree와 정수 index를 받습니다. 그리고 오른쪽 자식 노드가 있는 인덱스를 찾아서 리턴해 줍니다. 단, 오른쪽 자식 노드가 없을 경우, None을 리턴합니다.
+- get_parent_index() 함수는 리스트 complete_binary_tree와 정수 index를 받습니다. 그리고 부모 노드가 있는 인덱스를 찾아서 리턴해 줍니다. 단, 부모 노드가 없을 경우, None을 리턴합니다.
+
+실행 코드에서는 위 이미지에 있는 트리를 그대로 사용합니다.
+
+### 출력 예시
+```
+5
+12
+11
+None
+None
+None
+```
+
+<br/><br/>
+
+### 해설
+각 함수를 하나씩 살펴볼게요.
+
+#### get_parent_index() 함수
+```python
+def get_parent_index(complete_binary_tree, index):
+    """배열로 구현한 완전 이진 트리에서 index번째 노드의 부모 노드의 인덱스를 리턴하는 함수"""
+    parent_index = index // 2
+
+    # 부모 노드가 있으면 인덱스를 리턴한다
+    if 0 < parent_index < len(complete_binary_tree):
+        return parent_index
+
+    return None
+```
+get_parent_index() 함수는 부모 노드의 인덱스를 리턴해 주는 함수입니다. 이전 노트에서 부모 노드의 인덱스는 자식 노드의 인덱스에서 2를 나눈 후의 정수값이라고 했죠? 파이썬의 // 연산자를 사용해서 계산하면 됩니다.
+
+부모 노드의 인덱스를 구했으면 그 인덱스가 유효한 범위에 있는 인덱스인지를 판단해야 합니다.
+- 지금 complete_binary_tree 리스트의 0번째 인덱스에는 None이 저장돼 있기 때문에 인덱스는 0보다 커야 하고
+- 인덱스는 리스트의 길이보다는 작아야 합니다.
+
+그러니까 인덱스가 0보다 크고, complete_binary_tree 리스트의 길이보다 작은지 확인해야 합니다. 
+만약 이 범위를 벗어나는 인덱스라면 어차피 노드가 존재하지 않습니다.
+
+유효한 범위 내의 인덱스인 경우, parent_index를 리턴하고, 아니면 None을 리턴해 줍니다.
+
+#### get_left_child_index() 함수
+```python
+def get_left_child_index(complete_binary_tree, index):
+    """배열로 구현한 완전 이진 트리에서 index번째 노드의 왼쪽 자식 노드의 인덱스를 리턴하는 함수"""
+    left_child_index = 2 * index
+
+    # 왼쪽 자식 노드가 있으면 인덱스를 리턴한다
+    if 0 < left_child_index < len(complete_binary_tree):
+        return left_child_index
+
+    return None
+```
+get_left_child_index() 함수는 왼쪽 자식 노드의 인덱스를 리턴해 주는 함수입니다. 이전 노트에서 왼쪽 자식 노드의 인덱스는 부모 노드의 인덱스에 2를 곱하면 된다고 했는데요. 이건 그냥 2\*index를 해 주면 되죠?
+
+그렇게 구한 인덱스가 유효한 범위에 있는 인덱스인지를 확인하면 됩니다.
+- 지금 complete_binary_tree 리스트의 0번째 인덱스에는 None이 저장돼있기 때문에 인덱스는 0보다 커야 하고
+- 인덱스는 리스트의 길이보다는 작아야 합니다.
+
+그러니까 인덱스가 0보다 크고, complete_binary_tree 리스트의 길이보다 작은지 확인해야 합니다. 
+만약 이 범위를 벗어나는 인덱스라면 어차피 노드가 존재하지 않습니다.
+
+유효한 범위 내의 인덱스인 경우, left_child_index를 리턴하고, 아니면 None을 리턴해 줍니다.
+
+#### get_right_child_index() 함수
+```python
+def get_right_child_index(complete_binary_tree, index):
+    """배열로 구현한 완전 이진 트리에서 index번째 노드의 오른쪽 자식 노드의 인덱스를 리턴하는 함수"""
+    right_child_index = 2 * index + 1
+
+    # 오른쪽 자식 노드가 있으면 인덱스를 리턴한다
+    if 0 < right_child_index < len(complete_binary_tree):
+        return right_child_index
+
+    return None
+```
+get_right_child_index() 함수는 오른쪽 자식 노드의 인덱스를 리턴해 주는 함수입니다. 이전 노트에서 오른쪽 자식 노드의 인덱스는 부모 노드의 인덱스에 2를 곱하고 1을 더하면 된다고 했는데요. 이건 그냥 2\*index + 1을 해 주면 되죠?
+
+그렇게 구한 인덱스가 유효한 범위에 있는 인덱스인지를 확인하면 됩니다.
+- 지금 complete_binary_tree 리스트의 0번째 인덱스에는 None이 저장돼있기 때문에 인덱스는 0보다 커야 하고
+- 인덱스는 리스트의 길이보다는 작아야 합니다.
+
+그러니까 인덱스가 0보다 크고, complete_binary_tree 리스트의 길이보다 작은지 확인해야 합니다. 
+만약 이 범위를 벗어나는 인덱스라면 어차피 노드가 존재하지 않습니다.
+
+유효한 범위 내의 인덱스인 경우, right_child_index를 리턴하고, 아니면 None을 리턴해 줍니다.
+
+### 테스트 코드
+작성한 함수들이 제대로 동작하는지 확인해 봅시다.
+```python
+# 실행 코드
+root_node_index = 1 # root 노드
+
+tree = [None, 1, 5, 12, 11, 9, 10, 14, 2, 10]  # 과제 이미지에 있는 완전 이진 트리
+
+# root 노드의 왼쪽과 오른쪽 자식 노드의 인덱스를 받아온다
+left_child_index = get_left_child_index(tree, root_node_index)
+right_child_index = get_right_child_index(tree,root_node_index)
+
+print(tree[left_child_index])
+print(tree[right_child_index])
+
+# 9번째 노드의 부모 노드의 인덱스를 받아온다
+parent_index = get_parent_index(tree, 9)
+
+print(tree[parent_index])
+
+# 부모나 자식 노드들이 없는 경우들
+parent_index = get_parent_index(tree, 1)  # root 노드의 부모 노드의 인덱스를 받아온다
+print(parent_index)
+
+left_child_index = get_left_child_index(tree, 6)  # 6번째 노드의 왼쪽 자식 노드의 인덱스를 받아온다
+print(left_child_index)
+
+right_child_index = get_right_child_index(tree, 8)  # 8번째 노드의 오른쪽 자식 노드의 인덱스를 받아온다
+print(right_child_index)
+```
+
+### 실습 결과
+```
+5
+12
+11
+None
+None
+None
+```
+구하려는 각 인덱스에 위치한 노드의 값이 잘 출력되는 걸 확인할 수 있습니다. 그리고 어차피 노드가 없는 인덱스인 경우 None을 리턴하는 것을 알 수 있습니다.
+
+[main1_10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/24280debc2c738c38fcac806fdd46e9841c0225b/Data%20Structure/2%20Tree/1%20Tree/main1_10.py) 
