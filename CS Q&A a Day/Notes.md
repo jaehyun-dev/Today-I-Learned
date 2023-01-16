@@ -1873,3 +1873,27 @@ A.
 - 동시에 아웃라이어(outlier)의 영향을 받지 않는 robustness도 최대화함
 
 https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-2%EC%84%9C%ED%8F%AC%ED%8A%B8-%EB%B2%A1%ED%84%B0-%EB%A8%B8%EC%8B%A0-SVM
+
+23.01.16  
+## Q. 대표적인 SQL종류 3가지에 대해서 설명하고, 종류별 명령어를 아는 만큼 나열해주세요.(데이터베이스)
+
+A.  
+DML(Data Manipulation Language)  
+- 테이블의 데이터를 조작하는 명령어
+- INSERT: 데이터베이스 객체에 데이터를 삽입
+- DELETE: 데이터베이스 객체에서 데이터를 삭제
+- UPDATE: 데이터베이스 객체 안의 데이터를 수정
+- SELECT: 데이터베이스 객체 안의 데이터를 조회
+
+DDL(Data Definition Language)
+- 데이터베이스, 테이블의 스키마를 정의, 수정, 삭제하는 명령어
+- CREATE: 데이터베이스 객체를 생성
+- DROP: 데이터베이스 객체를 삭제
+- ALTER: 기존에 존재하는 데이터베이스 객체를 다시 정의
+
+DCL(Data Control Language)
+- 데이터베이스, 테이블의 접근권한이나 CRUD 권한을 정의하는 명령어
+- GRANT: 데이터베이스 객체에 권한을 부여
+- REVOKE: 이미 부여된 데이터베이스 객체 권한을 취소
+
+https://leejinseop.tistory.com/6
