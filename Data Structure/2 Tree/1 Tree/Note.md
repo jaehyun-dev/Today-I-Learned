@@ -79,3 +79,42 @@ A 노드가 B 노드와 C 노드를 하위 노드로 갖는다면, B와 C는 A�
 - 최대 두 개의 자식이 있기 때문에, 왼쪽 자식 & 오른쪽 자식으로 부를 수 있음  
 - 개념을 이해하기도 쉽고 구현도 간단하기 때문에 트리를 공부할 때 이진 트리를 쓰면 더 개념에 집중할 수 있음
 - (항상 이진 트리만 쓰는 것은 아님!)
+
+<br/><br/>
+
+## 06. 이진 트리 구현
+```python
+class Node:
+    """이진 트리 노드 클래스"""
+
+    def __init__(self, data):
+        """데이터와 두 자식 노드에 대한 레퍼런스를 갖는다"""
+        self.data = data
+        self.left_child = None
+        self.right_child = None
+
+"""노드 인스턴스 생성"""
+root_node = Node(2)
+node_B = Node(3)
+node_C = Node(5)
+node_D = Node(7)
+node_E = Node(11)
+
+"""B와 C를 root 노드의 자식으로 지정"""
+root_node.left_child = node_B
+root_node.right_child = node_C
+
+"""D와 E를 B 노드의 자식으로 지정"""
+node_B.left_child = node_D
+node_B.right_child = node_E
+
+# root 노드에서 왼쪽 자식 노드 받아오기
+test_node_1 = root_node.left_child
+
+print(test_node_1.data)  # 3
+
+# 노드 B의 오른쪽 자식 노드 받아오기
+test_node_2 = test_node_1.right_child
+
+print(test_node_2.data)  # 11
+```
