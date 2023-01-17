@@ -576,3 +576,14 @@ def traverse(node):
 - 재귀적으로 오른쪽 부분 트리 순회
 
 ![image](https://user-images.githubusercontent.com/71001479/212907010-34749899-18bb-4c48-9593-5e7541c0fb29.png)
+
+<br/><br/>
+
+## 13. 트리 순회: post-order
+
+### post-order 순회
+- 재귀적으로 왼쪽 부분 트리 순회
+- 재귀적으로 오른쪽 부분 트리 순회
+- 현재 노드 데이터를 출력한다
+
+![image](https://user-images.githubusercontent.com/71001479/212907661-f772d34b-2525-4fe0-93b6-4825fe8eb139.png)
