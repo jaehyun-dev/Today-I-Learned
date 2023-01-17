@@ -565,3 +565,14 @@ def traverse(node):
     print(node.data)  # 순회하여 출력하는 예시이므로
     ...
 ```
+
+<br/><br/>
+
+## 12. 트리 순회: pre-order
+
+### pre-order 순회
+- 현재 노드 데이터를 출력한다
+- 재귀적으로 왼쪽 부분 트리 순회
+- 재귀적으로 오른쪽 부분 트리 순회
+
+![image](https://user-images.githubusercontent.com/71001479/212907010-34749899-18bb-4c48-9593-5e7541c0fb29.png)
