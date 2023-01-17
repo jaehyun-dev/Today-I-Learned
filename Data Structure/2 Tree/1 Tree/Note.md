@@ -602,3 +602,154 @@ def traverse(node):
 
 - 데이터 간 계층 관계를 저장하는 트리도, 순회를 하면 노드들 사이에 선형적 순서를 만들 수 있다!
 - 트리를 사용하면서도 순회를 통해 저장한 데이터 간 선형적 관계를 만들고 활용할 수 있음
+
+<br/><br/>
+
+## 15. in-order 순회 구현하기
+
+### 실습 설명
+이번 레슨에서는 in-order 순회를 구현해 볼게요. in-order는 순회 기본 동작들을 아래 순서로 실행합니다.
+- 왼쪽 부분 트리를 in-order 순회한다
+- 현재 노드의 데이터를 출력한다
+- 오른쪽 부분 트리를 in-order 순회한다
+
+in-order 순회를 하기위해 만든 traverse_in_order()  함수를 직접 구현해 보세요.  
+
+traverse_in_order() 함수는 트리의 root 노드를 파라미터로 받습니다. 그리고 그 트리를 in-order 순회하면서 각 노드의 데이터를 출력합니다.
+
+실행 코드에서 사용하는 트리는 이전 영상에서 봤던 트리랑 같은 트리입니다.  
+![image](https://user-images.githubusercontent.com/71001479/212909892-092533eb-ba50-4f1e-a8c4-20fd7b0852b0.png)  
+이 트리를 in-order 순회하면 데이터가 A, B, C, D, E, F, G, H, I 순으로 출력하겠죠?  
+
+### 실습 결과
+```
+A
+B
+C
+D
+E
+F
+G
+H
+I
+```
+
+<br/><br/>
+
+### 해설
+#### traverse_inorder() 함수
+```python
+def traverse_inorder(node):
+    """in-order 순회 함수"""
+```
+먼저 아래에 있는 in-order 순회의 기본 동작 3가지를 코드로 어떻게 나타낼 수 있을지 생각해 보세요.
+- 왼쪽 부분 트리를 in-order 순회한다
+- 현재 노드의 데이터를 출력한다
+- 오른쪽 부분 트리를 in-order 순회한다
+
+이걸 코드로 나타내면 아래와 같습니다.
+```python
+traverse_inorder(node.left_child)  # 왼쪽 부분 트리 in-order 순회
+print(node.data)  # 노드의 데이터 출력
+traverse_inorder(node.right_child)  # 오른쪽 부분 트리 in-order 순회
+```
+생각보다 간단합니다. 단지, traverse_inorder()  함수가 재귀 함수라는 것만 파악하시면 됩니다. 하지만 특정 경우가 되었을 때 traverse_inorder() 함수는 in-order 순회를 멈춰야합니다. 어떤 경우일까요?
+
+그건 바로 traverse_inorder() 함수의 파라미터 node가 None일 때입니다. traverse_inorder() 함수의 파라미터 node가 None이라는 말의 뜻은 뭘까요?
+
+traverse_inorder() 함수는 현재 노드의 왼쪽 자식 노드와 오른쪽 자식 노드를 파라미터로 넘겨서 다시 스스로를 호출하는데요. 그런데 지금 Node 클래스의 \_\_init\_\_ 함수를 살펴보면 하나의 노드에 왼쪽 자식 노드가 없으면 left_child 변수가 None이고, 오른쪽 자식 노드가 없으면 right_child 변수가 None입니다.
+
+그러니까 traverse_inorder() 함수가 다시 자신을 호출할 때, 파라미터로 None을 넘겨 주게 되는 경우는 현재 노드에 왼쪽 혹은 오른쪽 자식 노드가 없다는 뜻입니다. 그리고 이때 traverse_inorder() 함수 안에서는 그냥 아무것도 안 하면 됩니다.
+
+이걸 거꾸로 말하면 traverse_inorder() 함수에서는 node가 None이 아닌 경우에만 in-order 순회의 세 가지 기본 동작을 해주면 되는 겁니다.
+
+위에서 말한 걸 코드로 나타내면 이렇게 됩니다.
+```python
+def traverse_inorder(node):
+    """in-order 순회 함수"""
+    if node is not None:
+        traverse_inorder(node.left_child)  # 재귀적으로 왼쪽 부분 트리 순회
+        print(node.data)  # 데이터 출력
+        traverse_inorder(node.right_child)  # 재귀적으로 오른쪽 부분 트리 순회
+```
+if node is not None: 이 true일 때만, 그러니까 node가 None이 아닐 때만 in-order 순회를 진행하면 되는 겁니다.
+
+### 테스트 코드
+traverse_inorder() 함수가 잘 작동하는지 확인해 봅시다.
+```python
+# 여러 노드 인스턴스 생성
+node_A = Node("A")
+node_B = Node("B")
+node_C = Node("C")
+node_D = Node("D")
+node_E = Node("E")
+node_F = Node("F")
+node_G = Node("G")
+node_H = Node("H")
+node_I = Node("I")
+
+# 생성한 노드 인스턴스들 연결
+node_F.left_child = node_B
+node_F.right_child = node_G
+
+node_B.left_child = node_A
+node_B.right_child = node_D
+
+node_D.left_child = node_C
+node_D.right_child = node_E
+
+node_G.right_child = node_I
+
+node_I.left_child = node_H
+
+# 노드 F를 root 노드로 만든다
+root_node = node_F
+
+# 만들어 놓은 트리를 in-order 순회한다
+traverse_inorder(root_node)
+```
+
+### 모범 답안
+```
+A
+B
+C
+D
+E
+F
+G
+H
+I
+```
+트리의 데이터들이 in-order 순회의 순서대로 출력되는 걸 확인할 수 있습니다.
+
+### pre-order, post-order
+이번 과제는 트리를 in-order 순회하는 함수를 구현하는 것이었습니다. 그런데 방금 과제에서 쓴 코드를 조금만 바꿔주면 트리를 pre-order 순회하는 함수와 post-order 순회하는 함수도 코드로 구현할 수 있습니다.
+
+in-order 순회의 기본 동작은 아래와 같은 3가지 순서로 이루어졌는데요.
+- traverse(node.left_child)
+- print(node.data)
+- traverse(node.right_child)
+
+pre-order, post-order 순회의 경우에는 각각의 3가지 기본 동작의 순서만 조금씩 바꿔주면 됩니다. 아래 코드처럼 말이죠.
+
+#### pre-order 순회 함수
+```python
+def traverse_preorder(node):
+    """post-order 순회 함수"""
+    if node is not None:
+        print(node.data)  # 데이터 출력
+        traverse_preorder(node.left_child)  # 재귀적으로 왼쪽 부분 트리 순회
+        traverse_preorder(node.right_child)  # 재귀적으로 오른쪽 부분 트리 순회
+```
+#### post-order 순회 함수
+```python
+def traverse_postorder(node):
+    """post-order 순회 함수"""
+    if node is not None:
+        traverse_postorder(node.left_child)  # 재귀적으로 왼쪽 부분 트리 순회
+        traverse_postorder(node.right_child)  # 재귀적으로 오른쪽 부분 트리 순회
+        print(node.data)  # 데이터 출력
+```
+
+[main1_15.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/22299f44a5ce31b314a742bda748d1220e4b4709/Data%20Structure/2%20Tree/1%20Tree/main1_15.py) 참고
