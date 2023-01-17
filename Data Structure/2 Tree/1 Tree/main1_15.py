@@ -47,6 +47,17 @@ root_node = node_F
 # 만들어 놓은 트리를 in-order로 순회한다
 traverse_inorder(root_node)
 
+''' 실행 결과
+A
+B
+C
+D
+E
+F
+G
+H
+I
+'''
 
 ''' 모범 답안 보기 전 작성 코드
 def traverse_inorder(node):
