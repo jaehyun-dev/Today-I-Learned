@@ -587,3 +587,18 @@ def traverse(node):
 - 현재 노드 데이터를 출력한다
 
 ![image](https://user-images.githubusercontent.com/71001479/212907661-f772d34b-2525-4fe0-93b6-4825fe8eb139.png)
+
+
+<br/><br/>
+
+## 14. 트리 순회: in-order
+
+### in-oredr 순회
+- 재귀적으로 왼쪽 부분 트리 순회
+- 현재 노드 데이터를 출력한다
+- 재귀적으로 오른쪽 부분 트리 순회
+
+![image](https://user-images.githubusercontent.com/71001479/212907984-26bc50e7-816f-42e9-aed4-37277dea6513.png)
+
+- 데이터 간 계층 관계를 저장하는 트리도, 순회를 하면 노드들 사이에 선형적 순서를 만들 수 있다!
+- 트리를 사용하면서도 순회를 통해 저장한 데이터 간 선형적 관계를 만들고 활용할 수 있음
