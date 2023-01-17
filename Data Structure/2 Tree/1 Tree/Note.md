@@ -519,3 +519,49 @@ None
 구하려는 각 인덱스에 위치한 노드의 값이 잘 출력되는 걸 확인할 수 있습니다. 그리고 어차피 노드가 없는 인덱스인 경우 None을 리턴하는 것을 알 수 있습니다.
 
 [main1_10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/24280debc2c738c38fcac806fdd46e9841c0225b/Data%20Structure/2%20Tree/1%20Tree/main1_10.py) 
+
+<br/><br/>
+
+23.01.17
+
+## 11. 트리 순회
+
+### 순회
+- 자료 구조에 저장된 모든 데이터를 도는 것
+- 배열, 링크드 리스트 같은 선형 자료구조는 가장 앞 데이터부터 마지막 데이터까지 순서대로 데이터 접근하면 된다
+- 트리 노드들 사이에는 앞과 뒤라는 선형적 관계가 없는데 어떻게 순회할 수 있을까?
+- 즉, 데이터를 어떤 순서로 접근할 수 있을까?
+
+### 트리 순회
+- 선형 자료구조 순회는 반복문을 주로 사용하고, 트리 순회는 재귀 함수를 주로 사용함
+- 순회하며 출력하는 예시
+```python
+def traverse(node):
+    """트리를 순회하면서 출력하는 함수"""
+     
+traverse(root_node)
+```
+순회하고 싶은 트리의 루트 노드를 파라미터로 받아와서 트리의 모든 노드를 순회
+
+### 순회 방법
+- 재귀적으로 왼쪽 부분 트리 순회
+```python
+def traverse(node):
+    ...
+    traverse(node.left_child)
+    ...
+```
+- 재귀적으로 오른쪽 부분 트리 순회
+```python
+def traverse(node):
+    ...
+    traverse(node.right_child)
+    ...
+```
+- 현재 노드 데이터에 접근
+```python
+def traverse(node):
+    ...
+    print(node.data)  # 순회하여 출력하는 예시이므로
+    ...
+```
