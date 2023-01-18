@@ -1913,3 +1913,21 @@ A.
 8. 왔던 방식대로 응답 메시지가 클라이언트에게 전달된다.
 
 https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network#%EC%9B%B9-%ED%86%B5%EC%8B%A0%EC%9D%98-%ED%81%B0-%ED%9D%90%EB%A6%84
+
+23.01.18
+## Q. 커널(kernel)의 종류에 대해 설명해주세요.(운영체제)  
+
+A.  
+**단일형 커널(Monolithic Kernel)**  
+- 커널의 다양한 서비스 및 높은 수준의 하드웨어 추상화를 하나의 덩어리로 묶어 놓은 구조
+
+**마이크로 커널(Micro Kernel)**  
+- 하드웨어 추상화에 대한 간결한 작은 집합을 제공하고 더 많은 기능은 서버라고 불리는 응용 소프트웨어를 통해 제공됨
+
+**혼합형 커널(Hybrid Kernel)**  
+- 본질적으로는 마이크로 커널을 따르고 있으나, 비 본질적인 기능이더라도 사용자 레벨에서 수행될 때 성능상 느린 코드들을 커널 레벨에서 수행하도록 수정한 것
+
+**엑소 커널(Exo Kernel)**  
+- 낮은 수준의 하드웨어 접근을 위한 최소한의 추상화를 제공함
+
+https://ljhblog.tistory.com/37
