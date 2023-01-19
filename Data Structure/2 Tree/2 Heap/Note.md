@@ -78,3 +78,125 @@
 최악의 경우: 루트 노드가 가장 작아서, 계속 밑으로 내려가서 leaf 노드까지 내려가는 경우  
 이 경우 노드는 트리의 높이만큼 데이터를 비교하고 재배치한다  
 힙은 완전 이진 트리이기 때문에 높이가 $O(lg(n))$이기 때문에 최악의 경우 시간 복잡도도 마찬가지로 $O(lg(n))$  
+
+<br/><br/>
+
+## 05. heapify 함수 구현
+
+### 실습 설명
+이번 과제에서는 heapify() 함수를 직접 구현해 볼게요. 혹시 heapify() 함수가 무슨 작업을 하는지 정확히 이해가 안 되신 분은 이전 영상을 다시 보고 오세요.
+
+heapify() 함수는 아래 세 가지 파라미터를 받습니다.
+- 완전 이진 트리를 나타내는 리스트, tree
+- heapify 하려는 노드의 인덱스, index
+- 트리로 사용하는 리스트의 길이, tree_size (배열의 0번째 인덱스는 None으로 설정했기 때문에 실제로 총 노드 수보다 1이 큽니다.)
+
+그리고 파라미터로 받은 tree의 index번째 노드가, 힙 속성을 유지하도록 트리 안의 노드들을 재배치합니다. (앞으로 “index" 번째 노드는 그냥 줄여서 “노드 index"라고 하겠습니다.)
+
+heapify() 함수가 이런 기능을 하려면 아래와 같은 상세 작업을 순서대로 해야 합니다.
+
+1. 부모 노드(heapify하려는 현재 노드), 왼쪽 자식 노드, 오른쪽 자식 노드, 이 3가지 노드 중에서 가장 큰 값을 가진 노드가 무엇인지 파악합니다.
+2. (1)가장 큰 값을 가진 노드가 부모 노드라면 그 상태 그대로 둡니다. (2)가장 큰 값을 가진 노드가 자식 노드 중에 있다면 그 자식 노드와 부모 노드의 위치를 바꿔 줍니다.
+3. 기존의 부모 노드가 자식 노드로 내려갔을 때, 다시 힙 속성을 어길 수도 있습니다. 힙 속성이 충족될 때까지 1~2 단계를 반복합니다.
+
+이때 단계 2-(2)를 보면 heapify() 함수 내에는 두 노드의 위치를 바꿀 수 있는 기능이 필요하다는 걸 알 수 있습니다. 이런 기능을 하는 swap() 이라는 함수를 미리 작성해 뒀는데요. swap() 함수는 아래 두 가지 파라미터를 받습니다.
+- 리스트로 구현한 완전 이진 트리, tree
+- 두 인덱스, index_1과 index_2
+
+그리고 트리 내에서 두 인덱스에 해당하는 두 노드의 위치를 바꿔주죠. heapify() 함수의 내부 코드를 작성할 때 swap() 함수를 사용해 보세요.
+
+### 실습 결과
+```
+[None, 15, 14, 12, 11, 9, 10, 6, 2, 5, 1]
+```
+
+<br/><br/>
+
+### 해설
+먼저 heapify()의 첫 번째 단계를 어떻게 할 수 있을지 생각해 봅시다.
+
+1. 부모 노드(heapify하려는 현재 노드), 왼쪽 자식 노드, 오른쪽 자식 노드, 이 3가지 노드 중에서 가장 큰 값을 가진 노드가 무엇인지 파악합니다.
+
+```python
+largest = index  # 일단 부모 노드의 값이 가장 크다고 설정
+
+# 왼쪽 자식 노드의 값과 비교
+if 0 < left_child_index < tree_size and tree[largest] < tree[left_child_index]:
+    largest = left_child_index
+```
+
+largest 변수에는 3가지 노드 중 가장 큰 값을 가진 노드의 인덱스를 저장할 건데요. 일단은 부모 노드의 데이터가 가장 크다고 설정합니다.
+
+그래서 처음에 largest 변수에는 부모 노드의 인덱스가 저장돼 있습니다.
+
+그 다음 부모 노드의 값을 왼쪽 자식 노드의 값과 비교합니다. 여기서 아래 내용들을 확인합니다.
+
+1. 먼저 왼쪽 자식 노드가 있는지, 없는지부터 확인한다.(왼쪽 자식 노드의 인덱스가 유효한 범위 내에 있는지 확인) 0 < left_child_index < tree_size
+2. 왼쪽 자식 노드의 값이 부모 노드의 값보다 큰지 확인한다. tree[largest] < tree[left_child_index]
+3. 왼쪽 자식 노드의 값이 더 큰 경우에는 largest 변수에 왼쪽 자식 노드의 인덱스를 저장한다.
+
+그 다음, 같은 방식으로 largest의 값과 오른쪽 자식 노드의 값을 비교합니다.
+```python
+# 오른쪽 자식 노드의 값과 비교
+if 0 < right_child_index < tree_size and tree[largest] < tree[right_child_index]:
+    largest = right_child_index
+```
+
+이 과정을 거치고 나면 이제 largest 변수에는 아래 세 가지 노드 중 최댓값을 가진 노드의 인덱스를 갖게 됩니다.
+- 부모 노드(heapify하려는 현재 노드)
+- 왼쪽 자식 노드
+- 오른쪽 자식 노드
+
+이때 최댓값을 가진 노드가 부모 노드라면 아무런 작업을 하지 않아도 됩니다. 이미 힙 속성을 만족하고 있으니까요. 하지만 최댓값을 가진 노드가 왼쪽 자식 노드이거나 오른쪽 자식 노드라면 아래 코드를 수행해야 합니다.
+```python
+if largest != index: # 부모 노드의 값이 자식 노드의 값보다 작으면
+    swap(tree, index, largest)  # 부모 노드와 최댓값을 가진 자식 노드의 위치를 바꿔준다
+    heapify(tree, largest, tree_size)  # 자리가 바뀌어 자식 노드가 된 기존의 부모 노드를 대상으로 또 heapify 함수를 호출한다
+```
+위의 코드를 해석하면 다음과 같습니다.
+  (1) 부모 노드와 최댓값을 가진 노드의 위치를 바꿔 준다.
+  (2) 자리가 바뀌어 자식 노드가 된 기존의 부모 노드를 대상으로 또 heapify() 함수를 호출한다.
+
+즉, heapify() 함수는 재귀 함수인 겁니다. 이렇게 하면 heapify하려고 했던 최초의 부모 노드는 힙 속성을 만족할 때까지 그 위치가 변경되어 갈 겁니다.
+
+### 모범 답안
+코드를 정리하면 이렇게 되겠죠?
+```python
+def heapify(tree, index, tree_size):
+    """heapify 함수"""
+
+    # 왼쪽 자식 노드의 인덱스와 오른쪽 자식 노드의 인덱스를 계산
+    left_child_index = 2 * index
+    right_child_index = 2 * index + 1
+
+    largest = index  # 일단 부모 노드의 값이 가장 크다고 설정
+
+    # 왼쪽 자식 노드의 값과 비교
+    if 0 < left_child_index < tree_size and tree[largest] < tree[left_child_index]:
+        largest = left_child_index
+
+    # 오른쪽 자식 노드의 값과 비교
+    if 0 < right_child_index < tree_size and tree[largest] < tree[right_child_index]:
+        largest = right_child_index
+    
+    if largest != index: # 부모 노드의 값이 자식 노드의 값보다 작으면
+        swap(tree, index, largest)  # 부모 노드와 최댓값을 가진 자식 노드의 위치를 바꿔준다
+        heapify(tree, largest, tree_size)  # 자리가 바뀌어 자식 노드가 된 기존의 부모 노드를대상으로 또 heapify 함수를 호출한다
+```
+
+### 테스트 코드
+코드가 제대로 작동하는지 확인해 봅시다.
+```python
+tree = [None, 15, 5, 12, 14, 9, 10, 6, 2, 11, 1]  # heapify하려고 하는 완전 이진 트리
+heapify(tree, 2, len(tree))  # 노드 2에 heapify 호출
+print(tree)
+```
+
+### 실습 결과
+```
+[None, 15, 14, 12, 11, 9, 10, 6, 2, 5, 1]
+```
+
+완전 이진 트리의 노드 2(값이 5인 노드)의 위치가 힙 속성을 만족하는 곳으로 잘 바뀝니다.
+
+[main2_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/1bdd680ae6e7db6016292be940f99f80a65dfbac/Data%20Structure/2%20Tree/2%20Heap/main2_05.py) 참고
