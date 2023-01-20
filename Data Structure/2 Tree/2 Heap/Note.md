@@ -216,7 +216,7 @@ heapify 함수에 어떤 노드를 넣어주면 어떻게 될까?
 
 완전 이진 트리가 파이썬 리스트로 구현되어 있을 때, 마지막 인덱스부터 첫 인덱스까지 차례로 heapify를 호출하면, heap으로 만들 수 있음.  
 
-heapify의 시간 복잡도는 $O(lg(n)$, 트리의 노드 개수$(n)$만큼 반복, 따라서
+heapify의 시간 복잡도는 $O(lg(n))$, 트리의 노드 개수 $(n)$만큼 반복, 따라서
 
 ### 힙을 만드는 데 걸리는 시간: $O(nlg(n))$  
 
@@ -233,3 +233,117 @@ heapify의 시간 복잡도는 $O(lg(n)$, 트리의 노드 개수$(n)$만큼 반
 - 모든 인덱스를 돌 때까지 반복
 - Q. 내림 차순으로 정렬하고 싶으면?
 - A. 힙 속성을 반대로 바꾸고 똑같은 알고리즘을 적용하면 된다!
+
+<br/><br/>
+
+## 08. 힙 정렬 구현하기
+
+### 실습 설명
+이번 과제에서는 영상에서 본 힙 정렬을 직접 구현해 볼게요.
+
+어떤 리스트 하나가 있다고 합시다. 이때 그 리스트를 힙 정렬하려면 아래 과정들을 거치면 됩니다.
+1. 먼저 리스트를 힙으로 만듭니다.
+2. root 노드와 마지막 노드의 위치를 바꿉니다. 마지막 위치로 간 기존의 root 노드는 이제 힙에서 없다고 가정합니다.
+3. 새로운 root 노드가 힙 속성을 지킬 수 있게 heapify합니다.
+4. 힙에 남아있는 노드가 없도록 단계 2 ~ 3을 반복합니다.
+
+힙 정렬을 하기위해 heapsort()라는 함수를 구현해 볼게요. heapsort() 함수는 정렬할 리스트를 tree라는 파라미터로 받아서 힙 정렬합니다. 이때 저번 과제에서 완성한 heapify() 함수를 사용할게요.
+
+### 실습 결과
+```
+[None, 1, 1, 1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 8, 10]
+```
+
+<br/><br/>
+
+### 해설
+
+#### 힙 만들기
+
+힙 정렬을 하려면 파라미터로 받은 리스트, tree를 먼저 힙으로 만들어야 합니다.  
+힙을 만드는 방법, 생각나시나요? 가장 마지막 위치의 노드부터 root 노드까지 역순으로 heapify해 주면 됩니다. (왜 그래야 하는지 기억이 안 나시면 이전 영상 힙 만들기 II 를 다시 보고 오세요)  
+
+이것을 코드로 작성하면 아래와 같습니다.
+```python
+# 마지막 노드부터 root 노드까지 heapify를 해준다 
+for index in range(tree_size-1, 0, -1):
+    heapify(tree, index, tree_size)
+```
+이 코드가 실행되고 나면 리스트 tree는 힙이 됩니다.
+
+#### 힙 정렬
+그 다음에는 힙 정렬을 위한 아래의 나머지 단계들을 수행하면 됩니다.
+1. root 노드와 마지막 노드의 위치를 바꿉니다. 마지막 위치로 간 기존의 root 노드는 이제 힙에서 없다고 가정합니다.
+2. 새로운 root 노드가 힙 속성을 지킬 수 있게 heapify합니다.
+3. 힙에 남아있는 노드가 없도록 단계 2 ~ 3을 반복합니다.  
+
+먼저 2 단계는 아래와 같이 코드를 쓰면 됩니다.
+```python
+for i in range(tree_size-1, 0, -1):
+    swap(tree, 1, i)  # root 노드와 마지막 인덱스를 바꿔준 후
+    # 여기에 코드를 작성하세요
+```
+root 노드와 가장 마지막 노드의 위치를 계속 swap() 함수로 바꿔줍니다. 마지막 위치로 간 root 노드는 힙에서 없는 것으로 간주됩니다. 따라서 마지막 노드의 인덱스는 매번 1씩 줄어들게 됩니다.
+
+root 노드와 가장 마지막 노드의 위치를 한번 바꾸고 난 후에는 남은 리스트가 다시 힙이 되도록 새로운 root 노드를 heapify해야 합니다. 이때 이미 맨 뒤에 있는 노드를 하나씩 무시하고, 나머지만 가지고 heapify를 하려면 어떻게 해야 할까요?
+
+heapify() 함수의 파라미터 tree_size의 역할에 대해서 잘 생각해 보세요.
+```python
+def heapify(tree, index, tree_size):
+```
+tree_size는 현재 트리에 들어있는 노드의 수를 나타냅니다. heapify() 함수의 내용 일부를 다시 잠깐 볼까요?
+```python
+# 왼쪽 자식 노드의 값과 비교
+if 0 < left_child_index < tree_size and tree[largest] < tree[left_child_index]:
+    largest = left_child_index
+
+# 오른쪽 자식 노드의 값과 비교
+if 0 < right_child_index < tree_size and tree[largest] < tree[right_child_index]:
+    largest = right_child_index
+```
+tree_size는 해당 인덱스가 유효한지, 그러니까 해당 인덱스에 노드가 존재하는지를 판단하는 기준으로 사용됩니다. 즉, 리스트에 아무리 많은 노드들이 있다고 해도 결국 heapify의 대상은 tree_size 값을 통해 결정됩니다. 이 사실을 잘 활용하면 될 것 같은데, 어떻게 하면 좋을까요?
+
+매번 heapify()를 호출할 때, 파라미터 tree_size도 1씩 줄여가면 됩니다. 그럼 힙 맨 뒤 노드들을 하나씩 무시해가면서 heapify를 할 수 있습니다.
+
+정리하면 아래 코드처럼 heapify() 함수를 호출하면 됩니다.
+```python
+# 마지막 인덱스부터 처음 인덱스까지
+for i in range(tree_size-1, 0, -1):
+    swap(tree, 1, i)  # root 노드와 마지막 인덱스를 바꿔준 후
+    heapify(tree, 1, i)  # root 노드에 heapify를 호출한다
+```
+현재 i는 tree_size - 1부터 시작해서 계속 1씩 감소하는데요. 이 i를 heapify() 함수의 파라미터 tree_size로 넘겨주면 heapify() 함수가 인식하는 리스트의 크기가 매번 줄어듭니다. 즉, tree라는 전체 리스트의 사이즈는 그대로지만 실제로 heapify의 대상이 되는 리스트의 크기는 하나씩 줄어들게 되는 겁니다. 이렇게 하면 힙 맨 뒤 노드들은 하나씩 무시하고, 점점 더 작게 인식되는 리스트에서, 매번 새로운 root 노드를 heapify할 수 있겠죠?
+
+### 모범 답안
+작성한 코드를 정리해 볼게요.
+```python
+def heapsort(tree):
+    """힙 정렬 함수"""
+    tree_size = len(tree)
+
+    # 마지막 인덱스부터 처음 인덱스까지 heapify를 호출한다 
+    for index in range(tree_size-1, 0, -1):
+        heapify(tree, index, tree_size)
+
+    # 마지막 인덱스부터 처음 인덱스까지
+    for i in range(tree_size-1, 0, -1):
+        swap(tree, 1, i)  # root 노드와 마지막 인덱스를 바꿔준 후
+        heapify(tree, 1, i)  # root 노드에 heapify를 호출한다
+```
+
+### 테스트 코드
+힙 정렬 코드를 제대로 작성했는지 봅시다.
+```python
+# 실행 코드
+data_to_sort = [None, 6, 1, 4, 7, 10, 3, 8, 5, 1, 5, 7, 4, 2, 1]
+heapsort(data_to_sort)
+print(data_to_sort)
+```
+
+### 실습 결과
+```
+[None, 1, 1, 1, 2, 3, 4, 4, 5, 5, 6, 7, 7, 8, 10]
+```
+노드가 오름차순으로 정렬됩니다. 실제로 힙 정렬을 구현해보니 뿌듯하죠?
+
+[main2_08.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/0dea9764ca328b9bbc683dfe4f408202cc915d8c/Data%20Structure/2%20Tree/2%20Heap/main2_08.py) 참고
