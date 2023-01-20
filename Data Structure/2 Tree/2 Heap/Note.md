@@ -200,3 +200,22 @@ print(tree)
 완전 이진 트리의 노드 2(값이 5인 노드)의 위치가 힙 속성을 만족하는 곳으로 잘 바뀝니다.
 
 [main2_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/1bdd680ae6e7db6016292be940f99f80a65dfbac/Data%20Structure/2%20Tree/2%20Heap/main2_05.py) 참고
+
+<br/><br/>
+
+23.01.20
+
+## 06. 힙 만들기 II
+
+### heapify
+heapify 함수에 어떤 노드를 넣어주면 어떻게 될까?  
+파라미터로 넘기는 노드가 힙 속성을 지킬 수 있도록 힙에서 위치를 찾아간다  
+(leaf 노드는 heapify 해도 자식 노드가 없기 때문에 위치가 바뀌지 않음)  
+
+마지막 노드부터 루트 노드까지 heapify를 차례로 적용하면, 위쪽 노드를 heapify할 때 그 노드를 루트 노드로 하는 부분 트리는 힙 속성 이미 지키고있음(heapify 이미 했기 때문)  
+
+완전 이진 트리가 파이썬 리스트로 구현되어 있을 때, 마지막 인덱스부터 첫 인덱스까지 차례로 heapify를 호출하면, heap으로 만들 수 있음.  
+
+heapify의 시간 복잡도는 $O(lg(n)$, 트리의 노드 개수( $n$ )만큼 반복, 따라서
+
+### 힙을 만드는 데 걸리는 시간: $O(nlg(n))$  
