@@ -2005,3 +2005,12 @@ A.
 - 참조 무결성 제약조건(외래키 제약): 테이블 간의 참조 관계를 선언하는 조건. 외래키의 값은 NULL이거나 참조 릴레이션의 기본키 값과 동일해야 함.
 
 https://velog.io/@zooneon/DB-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
+
+23.01.23
+## Q. cors(Cross-Origin Resource Sharing)란 무엇일까요?(네트워크)  
+
+A.  
+브라우저에서는 보안적인 이유로 cross-origin HTTP 요청들을 제한하기에, cross-origin 요청을 하려면 서버의 동의가 필요함. 만약 서버가 동의한다면 브라우저에서는 요청을 허락하고, 동의하지 않는다면 브라우저에서 거절함  
+이러한 허락을 구하고 거절하는 메커니즘은 HTTP-header를 이용해서 가능한데, 이를 CORS(Cross-Origin Resource Sharing)이라고 부름  
+
+https://hannut91.github.io/blogs/infra/cors
