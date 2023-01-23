@@ -450,3 +450,138 @@ print(priority_queue.pop())
 2. 삽입한 데이터와 부모 노드의 데이터를 비교한다
 3. 부모 노드의 데이터가 더 작으면 둘의 위치를 바꿔준다
 4. 2~3의 과정을 새로 삽입한 노드가 제 위치를 찾을 때까지 반복한다 
+
+<br/><br/>
+
+## 12. 힙 데이터 삽입 구현하기
+
+### 실습 설명
+이번 과제에서는 힙에 데이터를 삽입하는 것을 구현해 볼게요.
+
+먼저 우선순위 큐를 PriorityQueue라는 클래스로 정의하고 그 안에 힙을 두겠습니다.  
+PriorityQueue 클래스에는 heap이라는 인스턴스 변수가 있고, 그것은 파이썬의 리스트를 가리킵니다. 가장 처음 heap에는 None이라는 원소 하나만 있는데요. 이제 이 힙에 데이터를 하나씩 삽입하려고 합니다.
+
+힙에 데이터를 삽입하는 메소드의 이름은 insert()입니다. insert() 메소드는 데이터를 삽입할 때 리스트가 계속 힙의 속성을 유지하도록 하는 기능도 포함해야 합니다.
+
+insert() 메소드로 데이터를 삽입할 때 이루어져야 하는 일을 순서대로 정리하면 아래의 3단계로 나눌 수 있습니다.
+
+  1. 힙의 마지막 인덱스에 노드를 삽입합니다.
+
+  2. (1)삽입한 노드와 그 부모 노드를 비교해서 부모 노드가 더 작으면 둘의 위치를 바꿉니다. (2)삽입한 노드와 그 부모 노드를 비교해서 부모 노드가 더 크면 그대로 둡니다.
+
+  3. 2-(1)의 경우에는 삽입한 노드가 올바른 위치를 찾을 때까지 2 단계를 반복합니다.
+
+이때 2 단계와 3 단계의 작업을 하는 별도의 함수 reverse_heapify()를 정의할게요.  
+reverse_heapify 함수는 다음과 같은 파라미터를 받습니다.
+- 리스트로 구현한 완전 이진 트리, tree
+- 삽입된 노드의 인덱스, index
+
+그리고 삽입된 노드를 힙 속성을 유지할 수 있는 위치로 이동시킵니다.
+
+이전에 배운 heapify() 함수가 위에 있는 노드를 아래로 이동시켜서 힙 속성을 유지했다면 reverse_heapify() 함수는 아래에 있는 노드를 위로 이동시켜서 힙 속성을 유지하는 거죠.
+
+reverse_heapify() 함수만 완성되면 insert() 메소드를 완성하는 건 간단해요.  
+insert()  함수는 다음과 같은 파라미터를 받습니다.
+- self
+- 삽입하는 데이터, data
+
+insert() 메소드는 (1) 리스트, heap의 마지막에 새로운 데이터를 삽입하고 (2) 그 마지막 인덱스를 reverse_heapify() 함수에 파라미터로 넘겨서 호출하면 됩니다.
+
+### 실습 결과
+```
+[None, 13, 9, 11, 3, 6, 1, 10]
+```
+
+<br/><br/>
+
+### 해설
+
+#### reverse_heapify() 함수
+reverse_heapify()  함수부터 써볼게요. heapify() 함수에서 했던 것처럼, 부모 노드의 값과 자식 노드의 값을 비교하면 되는데요.
+
+게다가 reverse_heapify() 함수는 2개의 노드만 비교하면 되기 때문에 훨씬 간단하죠.
+```python
+def reverse_heapify(tree, index):
+    """삽입된 노드를 힙 속성을 지키는 위치로 이동시키는 함수"""
+    parent_index = index // 2  # 삽입된 노드의 부모 노드의 인덱스 계산
+
+    # 부모 노드가 존재하고, 부모 노드의 값이 삽입된 노드의 값보다 작을 때
+      if 0 < parent_index < len(tree) and tree[index] > tree[parent_index]:
+          swap(tree, index, parent_index)  # 부모 노드와 삽입된 노드의 위치 교환
+          reverse_heapify(tree, parent_index)  # 삽입된 노드를 대상으로 다시 reverse_heapify 호출  
+```
+먼저 아래처럼 부모 노드의 인덱스를 구합니다.
+```python
+parent_index = index // 2
+```
+그리고 아래 두 가지를 확인합니다.
+- 부모 노드의 인덱스가 유효한지 즉, 부모 노드가 존재하는지
+- 부모 노드의 값이, 삽입된 노드의 값보다 작은지
+
+만약 부모 노드의 값이 더 작으면 swap() 함수를 써서 두 노드의 위치를 바꿔 줍니다. 그럼 새로 삽입된 노드가 부모 노드가 되겠죠. 그 노드의 인덱스를 파라미터로 넘겨서 다시 reverse_heapify()를 호출합니다.
+
+reverse_heapify() 함수도 heapify() 함수 때처럼 재귀 함수인 겁니다.
+
+#### PriorityQueue 클래스의 insert() 메소드
+insert() 메소드는 인스턴스 변수 heap의 맨 뒤에 데이터를 추가하고, 그렇게 추가된 데이터(삽입된 노드)를 대상으로  reverse_heapify() 함수를 호출하면 됩니다.
+```python
+def insert(self, data):
+    """삽입 메소드"""
+    self.heap.append(data)  # 힙의 마지막에 데이터 추가
+    reverse_heapify(self.heap, len(self.heap)-1)
+```
+간단하죠? 이렇게 하면 insert() 메소드로 데이터를 삽입할 때 리스트, heap은 언제나 힙 속성을 유지하게 됩니다.
+
+### 모범 답안
+위 코드를 하나로 정리해 볼게요.
+```python
+def reverse_heapify(tree, index):
+    """삽입된 노드를 힙 속성을 지키는 위치로 이동시키는 함수"""
+    parent_index = index // 2  # 삽입된 노드의 부모 노드의 인덱스 계산
+
+    # 부모 노드가 존재하고, 부모 노드의 값이 삽입된 노드의 값보다 작을 때
+    if 0 < parent_index < len(tree) and tree[index] > tree[parent_index]:
+        swap(tree, index, parent_index)  # 부모 노드와 삽입된 노드의 위치 교환
+        reverse_heapify(tree, parent_index)  # 삽입된 노드를 대상으로 다시 reverse_heapify 호출
+
+
+class PriorityQueue:
+    """힙으로 구현한 우선순위 큐"""
+    def __init__(self):
+        self.heap = [None]  # 파이썬 리스트로 구현한 힙
+
+
+    def insert(self, data):
+        """삽입 메소드"""
+        self.heap.append(data)  # 힙의 마지막에 데이터 추가
+        reverse_heapify(self.heap, len(self.heap)-1) # 삽입된 노드(추가된 데이터)의 위치를 재배치
+
+
+    def __str__(self):
+        return str(self.heap)
+```
+
+### 테스트 코드
+코드가 제대로 실행되는지 확인해 봅시다.
+```python
+# 테스트 코드
+priority_queue = PriorityQueue()
+
+priority_queue.insert(6)
+priority_queue.insert(9)
+priority_queue.insert(1)
+priority_queue.insert(3)
+priority_queue.insert(10)
+priority_queue.insert(11)
+priority_queue.insert(13)
+
+print(priority_queue)
+```
+
+### 실습 결과
+```
+[None, 13, 9, 11, 3, 6, 1, 10]
+```
+데이터가 일단 priority_queue (우선순위 큐)에 잘 삽입됩니다. 그리고 데이터를 출력해보니 데이터가 삽입될 때 priority_queue 내부에 있는 힙의 ‘힙 속성’을 유지하면서 저장되는 것을 알 수 있습니다.
+
+[main2_12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/9ee776a2c028a18af509475831434581e5164879/Data%20Structure/2%20Tree/2%20Heap/main2_12.py) 참고
