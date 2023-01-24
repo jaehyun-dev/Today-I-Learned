@@ -598,3 +598,173 @@ print(priority_queue)
 - 마지막 노드(가장 큰 숫자)를 힙에서 삭제
 - root 노드가 가장 작은 숫자로 heap 속성을 지키지 않기 때문에, heapify 하여 힙 속성 지키게 함
 - 변수에 저장해둔 가장 큰 노드를 return함
+
+<br/><br/>
+
+## 14. 힙 우선순위 데이터 추출 구현
+
+### 실습 설명
+이번 과제에서는 힙에서 가장 우선순위가 높은 데이터를 추출하는 함수를 구현해 볼게요.  
+이전 영상에서 배운 데이터 추출의 과정을 정리해 보면 아래의 네 단계로 정리할 수 있습니다.  
+1. root 노드와 마지막 노드의 위치를 바꿉니다.
+2. 마지막 위치로 간 원래 root 노드의 데이터를 별도 변수에 저장하고, 노드는 힙에서 지웁니다.
+3. 새로운 root 노드를 대상으로 heapify해서 망가진 힙 속성을 복원합니다.
+4. 2단계에서 따로 저장해 둔 최우선순위 데이터를 리턴합니다.
+
+이렇게 나타낼 수 있었는데요.
+
+이 기능을 PriorityQueue 클래스의 extract_max()라는 메소드로 구현해 볼게요.
+
+extract_max() 메소드는 파라미터로 self만 받고, heap에서 가장 우선 순위가 높은 데이터를 추출(지우면서 리턴)합니다.
+
+**이번 과제에서는 PriorityQueue 클래스를 제외한 나머지 코드는 heapify_code.py 파일에 옮겨 놨습니다. 실제 코드 작성은 main.py에서 하시면 됩니다!**
+
+### 실습 결과
+```
+13
+11
+10
+9
+6
+3
+1
+```
+
+<br/><br/>
+
+### 해설
+extract_max() 메소드는 다음 네 단계를 순서대로 구현하면 됩니다.  
+1. root 노드와 마지막 노드의 위치를 바꿉니다.
+2. 마지막 위치로 간 원래 root 노드의 데이터를 별도 변수에 저장하고, 노드는 힙에서 지웁니다.
+3. 새로운 root 노드를 대상으로 heapify해서 망가진 힙 속성을 복원합니다.
+4. 2단계에서 따로 저장해 둔 최우선순위 데이터를 리턴합니다.
+
+아래 코드를 참고해 주세요.
+```python
+def extract_max(self):
+    """최우선순위 데이터 추출 메소드"""
+    swap(self.heap, 1, len(self.heap) - 1)  # root 노드와 마지막 노드의 위치 바꿈
+    max_value = self.heap.pop()  # 힙에서 마지막 노드 추출(삭제)해서 변수에 저장
+    heapify(self.heap, 1, len(self.heap))  # 새로운 root 노드를 대상으로 heapify 호출해서 힙 속성 유지
+    return max_value  # 최우선순위 데이터 리턴
+```
+단계 순으로 다시 보여드릴게요.  
+- 1단계
+```python
+swap(self.heap, 1, len(self.heap) - 1)  # root 노드와 마지막 노드의 위치 바꿈
+```
+- 2단계
+```python
+max_value = self.heap.pop()  # 힙에서 마지막 노드 추출(삭제)해서 변수에 저장
+```
+- 3단계
+```python
+heapify(self.heap, 1, len(self.heap))  # 새로운 root 노드를 대상으로 heapify 호출해서 힙 속성 유지
+```
+- 4단계
+```python
+return max_value  # 최우선순위 데이터 리턴
+```
+
+### 모범 답안
+필요한 코드를 다 정리하면 이렇게 되겠죠?
+```python
+def swap(tree, index_1, index_2):
+    """완전 이진 트리의 노드 index_1과 노드 index_2의 위치를 바꿔 준다"""
+    temp = tree[index_1]
+    tree[index_1] = tree[index_2]
+    tree[index_2] = temp
+
+
+def heapify(tree, index, tree_size):
+    """heapify 함수"""
+
+    # 왼쪽 자식 노드의 인덱스와 오른쪽 자식 노드의 인덱스를 계산
+    left_child_index = 2 * index
+    right_child_index = 2 * index + 1
+
+    largest = index  # 일단 부모 노드의 값이 가장 크다고 설정
+
+    # 왼쪽 자식 노드의 값과 비교
+    if 0 < left_child_index < tree_size and tree[largest] < tree[left_child_index]:
+        largest = left_child_index
+
+    # 오른쪽 자식 노드의 값과 비교
+    if 0 < right_child_index < tree_size and tree[largest] < tree[right_child_index]:
+        largest = right_child_index
+    
+    if largest != index: # 부모 노드의 값이 자식 노드의 값보다 작으면
+        swap(tree, index, largest)  # 부모 노드와 최댓값을 가진 자식 노드의 위치를 바꿔 준다
+        heapify(tree, largest, tree_size)  # 자리가 바뀌어 자식 노드가 된 기존의 부모 노드를대상으로 또 heapify 함수를 호출한다
+
+
+def reverse_heapify(tree, index):
+    """삽입된 노드를 힙 속성을 지키는 위치로 이동시키는 함수"""
+    parent_index = index // 2  # 삽입된 노드의 부모 노드의 인덱스 계산
+
+    # 부모 노드가 존재하고, 부모 노드의 값이 삽입된 노드의 값보다 작을 때
+    if 0 < parent_index < len(tree) and tree[index] > tree[parent_index]:
+        swap(tree, index, parent_index)  # 부모 노드와 삽입된 노드의 위치 교환
+        reverse_heapify(tree, parent_index)  # 삽입된 노드를 대상으로 다시 reverse_heapify 호출        
+
+
+class PriorityQueue:
+    """힙으로 구현한 우선순위 큐"""
+    def __init__(self):
+        self.heap = [None]  # 파이썬 리스트로 구현한 힙
+
+    def insert(self, data):
+        """삽입 메소드"""
+        self.heap.append(data)  # 힙의 마지막에 데이터 추가
+        reverse_heapify(self.heap, len(self.heap)-1) # 삽입된 노드(추가된 데이터)의 위치를 재배치
+
+    def extract_max(self):
+        """최고 우선순위 데이터 추출 메소드"""
+        swap(self.heap, 1, len(self.heap) - 1)  # root 노드와 마지막 노드의 위치 바꿈
+        max_value = self.heap.pop()  # 힙에서 마지막 노드 추출(삭제)해서 변수에 저장
+        heapify(self.heap, 1, len(self.heap))  # 새로운 root 노드를 대상으로 heapify 호출해서 힙 속성 유지
+        return max_value  # 최우선순위 데이터 리턴
+
+    def __str__(self):
+        return str(self.heap)
+```
+
+### 테스트 코드
+extract_max() 메소드가 제대로 작동하는지 확인해 볼게요.
+```python
+# 테스트 코드
+priority_queue = PriorityQueue()
+
+priority_queue.insert(6)
+priority_queue.insert(9)
+priority_queue.insert(1)
+priority_queue.insert(3)
+priority_queue.insert(10)
+priority_queue.insert(11)
+priority_queue.insert(13)
+
+print(priority_queue.extract_max())
+print(priority_queue.extract_max())
+print(priority_queue.extract_max())
+print(priority_queue.extract_max())
+print(priority_queue.extract_max())
+print(priority_queue.extract_max())
+print(priority_queue.extract_max())
+```
+
+### 실습 결과
+```
+13
+11
+10
+9
+6
+3
+1
+```
+priority_queue(우선순위 큐)에서 데이터를 하나씩 추출해서 출력해 보니까 데이터가 내림차순으로 즉, 우선순위가 높은 순으로 추출되는 걸 볼 수 있습니다.
+
+이제 우리는 priority_queue(우선순위 큐)에 새로운 데이터를 삽입하고 추출할 수 있습니다. 힙을 사용해서 마침내 완전한 하나의 우선순위 큐를 구현하는 데 성공한 겁니다!
+
+[heapify_code.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/dffc53e52d2e243197a87d17c64a4f4f6675512b/Data%20Structure/2%20Tree/2%20Heap/heapify_code.py)  
+[main2_14.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/dffc53e52d2e243197a87d17c64a4f4f6675512b/Data%20Structure/2%20Tree/2%20Heap/main2_14.py) 참고
