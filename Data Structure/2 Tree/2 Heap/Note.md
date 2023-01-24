@@ -585,3 +585,16 @@ print(priority_queue)
 데이터가 일단 priority_queue (우선순위 큐)에 잘 삽입됩니다. 그리고 데이터를 출력해보니 데이터가 삽입될 때 priority_queue 내부에 있는 힙의 ‘힙 속성’을 유지하면서 저장되는 것을 알 수 있습니다.
 
 [main2_12.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/9ee776a2c028a18af509475831434581e5164879/Data%20Structure/2%20Tree/2%20Heap/main2_12.py) 참고
+
+<br/><br/>
+
+23.01.24
+
+## 13. 힙에서 최고 우선순위 데이터 추출하기
+
+### 힙에서 root 노드 데이터 추출하기
+가장 큰 숫자가 우선순위가 높다고 가정하고, 이를 추출하려고 할 때
+- root 노드가 가장 큰 숫자이기에, root 노드의 데이터를 변수에 넣어두고, 마지막 노드와 교체
+- 마지막 노드(가장 큰 숫자)를 힙에서 삭제
+- root 노드가 가장 작은 숫자로 heap 속성을 지키지 않기 때문에, heapify 하여 힙 속성 지키게 함
+- 변수에 저장해둔 가장 큰 노드를 return함
