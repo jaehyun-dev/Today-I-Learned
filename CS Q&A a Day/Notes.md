@@ -2034,3 +2034,13 @@ A.
 - context switching, 동기화 등의 이유로 싱글 코어 멀티 스레딩은 스레드 생성 시간이 오히려 오버헤드로 작용해 단일 스레드보다 느리다.
 
 https://eun-jeong.tistory.com/20
+
+23.01.25  
+# Q. Stack과 Queue의 차이점에 대해 설명해주세요.(자료구조)
+
+A.  
+Stack과 Queue 모두 데이터 간 순서 관계가 중요한 선형 추상 자료형이다.  
+Stack은 접시를 쌓아놓을 때와 같이, 먼저 들어간 데이터가 가장 마지막으로 나오는 LIFO(Last In, First Out) 성질이 있다.  
+Queue는 버스 줄을 설 때와 같이, 먼저 들어간 데이터가 먼저 나오는 FIFO(First In, First Out) 성질이 있다.  
+
+https://velog.io/@humblechoi/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-Stack-Queue
