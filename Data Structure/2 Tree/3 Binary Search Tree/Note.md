@@ -26,3 +26,54 @@
  더블리 링크드 리스트에서 앞과 뒤 노드의 레퍼런스를 저장했듯이, 이진 탐색 트리 노드는 왼쪽 자식, 오른쪽 자식, 부모 노드까지 총 3개의 레퍼런스를 가짐  
  
  [main3_02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/6d8732f13c6e250bc8646547b68d73afecd58ffc/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_02.py) 참고
+
+<br/><br/>
+
+## 03. 이진 탐색 트리 출력
+
+### in-order 순회
+이진 탐색 트리에는 굉장히 재미있는 특성이 하나 더 있는데요. 전에 배웠던 in-order 순회, 기억나시나요?
+
+이런 트리를:  
+![image](https://bakey-api.codeit.kr/files/2393/7HTQHF?name=1.png)  
+in-order 순회하면서 노드의 값을 출력하면 A, B, C, D, E, F, G, H, I의 순서대로 출력됩니다.
+
+기억이 안 나는 분들을 위해 다시 정리하면 in-order 순회는
+1. 왼쪽 부분 트리를 in-order 순회한다
+2. 현재 노드의 데이터를 출력한다
+3. 오른쪽 부분 트리를 in-order 순회한다
+
+의 순서로 전체 트리를 순회합니다. 그래도 기억이 안 나시면 챕터 1을 복습하고 오세요.
+
+### in-order 순회와 이진 탐색 트리
+이진 탐색 트리를 in-order 순회하면 저장된 데이터들을 정렬된 순서대로 출력할 수 있습니다. 아래와 같은 이진 탐색 트리가 있다고 했을 때  
+![image](https://bakey-api.codeit.kr/files/2393/TGgyjv?name=2.png)  
+트리의 root 노드(8이 있는 노드)를 in-order 순회 함수의 파라미터로 넘겨주면 트리 안에 있는 데이터를:
+
+1, 3, 4, 6, 7, 8, 10, 13, 14
+
+처럼 정렬된 순서대로 출력할 수 있는 거죠.
+
+### BinarySearchTree 클래스
+이전에 구현해 본 in-order 순회 함수를 재활용해서 이진 탐색 트리를 나타내는 BinarySearchTree 클래스에 트리 속의 데이터를 순서대로 출력하는 메소드, print_sorted_tree 메소드를 작성할게요.
+```python
+def print_inorder(node):
+    """주어진 노드를 in-order로 출력해주는 함수"""
+    if node is not None:
+        print_inorder(node.left_child)
+        print(node.data)
+        print_inorder(node.right_child)
+
+
+class BinarySearchTree:
+    """이진 탐색 트리 클래스"""
+    def __init__(self):
+        self.root = None
+
+
+    def print_sorted_tree(self):
+        """이진 탐색 트리 내의 데이터를 정렬된 순서로 출력해주는 메소드"""
+        print_inorder(self.root)  # root 노드를 in-order로 출력한다
+```
+
+이제 트리를 출력할 때는 print_sorted_tree 메소드를 사용하겠습니다!
