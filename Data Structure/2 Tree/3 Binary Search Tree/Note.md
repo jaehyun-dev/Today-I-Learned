@@ -94,3 +94,181 @@ class BinarySearchTree:
 3. 찾은 위치에 새롭게 만든 노드 연결: $O(1)$
 
 즉 삽입 시간 복잡도는 $O(1 + h + 1) = O(h)$
+
+<br/><br/>
+
+## 05. 이진 탐색 트리 삽입 구현  
+### 실습 설명
+이번 과제에서는 이진 탐색 트리에 데이터를 삽입하는 함수를 구현해 보겠습니다.  
+이전 영상에서 본 대로 데이터 삽입 연산을 단계별로 정리하면 아래와 같습니다.  
+1. 새로운 노드를 생성합니다.
+2. root 노드부터 데이터를 비교하면서 새로운 노드를 저장할 위치를 찾습니다.
+    - 새로운 노드의 데이터가 더 크면, root 노드의 오른쪽 부분 트리에 저장돼야 하고
+    - 더 작으면, root 노드의 왼쪽 부분 트리에 저장돼야 합니다.
+3. 찾은 위치에 새로운 노드를 저장합니다
+
+이 내용을 코드로 작성해 봅시다.
+
+BinarySearchTree 클래스의 insert() 메소드는 self, 새로운 데이터 data를 파라미터로 받습니다. 그리고 이진 탐색 트리 안에서 알맞는 위치에 data를 갖는 새로운 노드를 삽입하죠.
+
+그런데 데이터를 삽입할 때 만약 이진 탐색 트리에 노드가 하나도 없는 경우는 어떻게 해야 할까요? 그럴 땐 그냥 새 노드를 root 노드로 만들면 됩니다. 그 경우에 대한 처리는 이미 코드로 작성해 두었습니다. 템플릿의 insert()  메소드 안에서 data를 갖는 새로운 노드 new_node를 root 변수에 지정한 부분을 보세요.
+
+이런 특수한 경우를 제외한 일반적인 경우에서의 데이터 삽입을 위한 코드를 직접 작성해 보세요.
+
+### 실습 결과
+```
+2
+3
+4
+5
+7
+8
+9
+11
+14
+17
+19
+```
+
+<br/><br/>
+
+### 해설
+#### temp 변수 정의와 반복문
+새로운 노드를 저장할 위치를 찾기 위해서는 일단 root 노드에서부터 그 위치를 찾아서 내려가야 하는데요. 위치를 찾을 때 임시 변수이자 도우미 변수인 temp를 정의할게요. temp는 맨 처음엔 root 노드로 초기화합니다. 나중에 이 변수가 저장하는 노드를 계속 바꿔 줄게요.
+```python
+temp = self.root  # 비교 대상이 되는 노드를 담기 위한 임시 변수, root 노드로 초기화한다
+```
+temp와 삽입하려는 데이터를 비교해 가면서 new_node를 저장할 위치를 찾아 가야 되는데요.
+
+원하는 위치를 찾을 때까지 반복문을 돌리면 됩니다. 반복문이 한 번 돌 때마다 temp 노드와 삽입하려는 데이터를 비교해 주는 거죠. 코드로 나타내면 이렇게 할 수 있습니다.
+```python
+# 원하는 위치를 찾아간다
+while temp is not None:
+      if data > temp.data:  # 삽입하려는 데이터가 현재 노드 데이터보다 크다면
+
+      else:  # 삽입하려는 데이터가 현재 노드 데이터보다 작다면
+```
+#### data가 temp.data 보다 클 경우
+data가 temp의 데이터보다 크다는 건 new_node가 temp의 오른쪽 부분 트리에 저장돼야 한다는 말입니다.
+
+이 때 temp가 오른쪽 자식이 없으면 어떻게 해야 할까요? 바로 new_node를 temp의 오른쪽 자식으로 저장하면 됩니다.
+
+이때 해야할 작업은 다음과 같습니다.
+- temp를 new_node의 부모 노드로 지정한다.
+- new_node를 temp의 오른쪽 자식으로 지정한다.
+
+temp가 오른쪽 자식이 있을 때는 어떻게 하면 될까요? temp의 오른쪽 자식으로 가서 다시 new_node와 데이터의 크기를 비교하는 작업을 또 해주면 됩니다.
+
+코드로는 이렇게 쓰면 됩니다.
+```python
+    # 원하는 위치를 찾아간다
+    while temp is not None:
+        if data > temp.data:  # 삽입하려는 데이터가 현재 노드 데이터보다 크다면
+            # 오른쪽 자식이 없으면 새로운 노드를 현재 노드 오른쪽 자식으로 만듦
+            if temp.right_child is None:
+                new_node.parent = temp
+                temp.right_child = new_node
+                return
+            # 오른쪽 자식이 있으면 오른쪽 자식으로 간다
+            else:
+                temp = temp.right_child
+```
+
+#### data가 temp.data 보다 작을 경우
+data가 temp의 데이터보다 작은 경우도 볼게요.
+```python
+    else:  # 삽입하려는 데이터가 현재 노드 데이터보다 작다면
+        # 왼쪽 자식이 없으면 새로운 노드를 현재 노드 왼쪽 자식으로 만듦
+        if temp.left_child is None:
+            new_node.parent = temp
+            temp.left_child = new_node
+            return
+        # 왼쪽 자식이 있다면 왼쪽 자식으로 간다
+        else:
+            temp = temp.left_child
+```
+data가 temp.data보다 큰 경우와 비슷하게 생각하시면 됩니다. data가 temp의 데이터보다 작다는 말은 new_node가 temp의 왼쪽 부분 트리에 저장되어야 한다는 말입니다.
+
+이 때 temp가 왼쪽 자식이 없다면 그냥 new_node를 temp의 왼쪽 자식으로 만들면 됩니다.
+
+- temp 를 new_node의 부모 노드로 만든다.
+- new_node를 temp의 왼쪽 자식으로 만든다.
+
+temp가 왼쪽 자식이 있다면 거기로 간 다음에 다시 위치를 찾아 주면 되죠.
+
+### 모범 답안
+코드를 정리하면 이렇게 되겠죠? (코드가 너무 길어서 insert() 메소드만 보여드립니다.)
+```python
+    def insert(self, data):
+        """이진 탐색 트리 삽입 메소드"""
+        new_node = Node(data)  # 삽입할 데이터를 갖는 노드 생성
+
+        # 트리가 비었으면 새로운 노드를 root 노드로 만든다
+        if self.root is None:
+            self.root = new_node
+            return
+
+        # 코드를 쓰세요
+        temp = self.root  # 저장하려는 위치를 찾기 위해 사용할 변수. root 노드로 초기화한다
+
+        # 원하는 위치를 찾아간다
+        while temp is not None:
+            if data > temp.data:  # 삽입하려는 데이터가 현재 노드 데이터보다 크다면
+                # 오른쪽 자식이 없으면 새로운 노드를 현재 노드 오른쪽 자식으로 만듦
+                if temp.right_child is None:
+                    new_node.parent = temp
+                    temp.right_child = new_node
+                    return
+                # 오른쪽 자식이 있으면 오른쪽 자식으로 간다
+                else:
+                    temp = temp.right_child
+            else:  # 삽입하려는 데이터가 현재 노드 데이터보다 작다면
+                # 왼쪽 자식이 없으면 새로운 노드를 현재 노드 왼쪽 자식으로 만듦
+                if temp.left_child is None:
+                    new_node.parent = temp
+                    temp.left_child = new_node
+                    return
+                # 왼쪽 자식이 있다면 왼쪽 자식으로 간다
+                else:
+                    temp = temp.left_child
+```
+
+### 테스트 코드
+작성한 코드가 제대로 돌아가는지 확인해 볼게요.
+```python
+# 빈 이진 탐색 트리 생성
+bst = BinarySearchTree()
+
+# 데이터 삽입
+bst.insert(7)
+bst.insert(11)
+bst.insert(9)
+bst.insert(17)
+bst.insert(8)
+bst.insert(5)
+bst.insert(19)
+bst.insert(3)
+bst.insert(2)
+bst.insert(4)
+bst.insert(14)
+
+# 이진 탐색 트리 출력
+bst.print_sorted_tree()
+```
+
+### 실습 결과
+```
+2
+3
+4
+5
+7
+8
+9
+11
+14
+17
+19
+```
+
+[main3_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/30b51af7659c54f7eac05855fa3a52e1b49bc643/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_05.py) 참고
