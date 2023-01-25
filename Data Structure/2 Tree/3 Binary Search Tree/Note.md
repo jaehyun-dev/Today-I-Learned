@@ -25,4 +25,4 @@
  이진 트리 노드 클래스에서 부모 노드 레퍼런스를 추가해주면 됨  
  더블리 링크드 리스트에서 앞과 뒤 노드의 레퍼런스를 저장했듯이, 이진 탐색 트리 노드는 왼쪽 자식, 오른쪽 자식, 부모 노드까지 총 3개의 레퍼런스를 가짐  
  
- [main3_02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/6d8732f13c6e250bc8646547b68d73afecd58ffc/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_02.py) 
+ [main3_02.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/6d8732f13c6e250bc8646547b68d73afecd58ffc/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_02.py) 참고
