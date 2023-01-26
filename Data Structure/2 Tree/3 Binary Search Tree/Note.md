@@ -412,4 +412,4 @@ None
 ```
 원하는 노드가 있으면 잘 찾아오고, 없으면 None을 리턴하는 걸 확인할 수 있습니다.
 
-[main3_07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/f16b975b1ed7b49e43badf63d3d02f8218ab7cba/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_05.py) 참고
+[main3_07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/d1f761601f723e4db82d15a85ed3ea5f746aaa93/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_07.py) 참고
