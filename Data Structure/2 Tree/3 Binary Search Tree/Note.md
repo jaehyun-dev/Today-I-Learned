@@ -413,3 +413,95 @@ None
 원하는 노드가 있으면 잘 찾아오고, 없으면 None을 리턴하는 걸 확인할 수 있습니다.
 
 [main3_07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/d1f761601f723e4db82d15a85ed3ea5f746aaa93/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_07.py) 참고
+
+<br/><br/>
+
+## 08. find_min 메소드
+
+### 실습 설명
+이번 실습에서 다룰 메소드는 이진 탐색 트리의 기본 연산은 아닌데요. 좀 색다른 연산입니다. 이진 탐색 트리에서 가장 작은 노드를 찾아주는 메소드죠.
+
+정적 메소드 find_min()은 파라미터로 node를 받습니다. node를 뿌리로 갖는 부분 트리 안에서 가장 작은 노드를 리턴해 주죠. 이게 무슨 말인지 조금 헷갈리실 수 있으신데요.
+
+예를 들어서 이런 이진 탐색 트리가 있다고 합시다. 그럼 find_min() 메소드의 파라미터로 root 노드를 리턴해 주면 트리 전체에서 가장 작은 노드가 리턴되는 거죠. 여기서는 1이 저장된 노드겠죠? 5가 저장된 노드를 find_min() 메소드의 파라미터로 넘기면 이 노란색 박스 안에 있는 부분 트리 안에서 가장 작은 노드, 그러니까 이번에도 1이 저장된 노드가 리턴됩니다. 하나만 더 볼게요. 14가 저장된 노드를 find_min() 메소드의 파라미터로 넘기면 이 빨간색 박스 안에 있는 부분 트리 안에서 가장 작은 노드 12가 리턴됩니다.
+
+![image](https://bakey-api.codeit.kr/files/2398/CA3pKj?name=1.png)  
+주어진 노드를 뿌리로 갖는 부분 트리에서 가장 작은 노드를 리턴해 주는 정적 메소드 find_min()을 완성해 보세요!
+
+### 실습 결과
+```
+2
+8
+```
+
+<br/><br/>
+
+### 해설
+먼저 이번에도 도우미 변수 temp를 정의합니다. 맨 처음에는 파라미터로 받은, 부분 트리의 root 노드로, 초기화합니다.
+```python
+temp = node  # 도우미 변수. 파라미터 node로 초기화
+```
+temp보다 작은 노드가 있으면 어디 있을까요? 이진 탐색 트리의 속성을 생각해 보세요. temp의 왼쪽 부분 트리에 있겠죠? 그럼 temp의 왼쪽 자식으로 내려갑니다. (temp = temp.left_child) 이런 식으로요.
+
+그럼 새로운 temp보다 작은 노드가 있으면 어디 있을까요? 이때도 temp의 왼쪽 부분 트리에 있습니다. 또 temp의 왼쪽 자식으로 내려갑니다.
+
+언제 더 이상 temp보다 작은 노드가 없다고 확신할 수 있을까요?
+
+바로 temp가 더 이상 왼쪽 자식이 없을 때입니다. 바로 그때의 temp가 파라미터 node를 뿌리로 갖는 부분 트리에서 가장 작은 노드라고 확신할 수 있습니다. 코드로 나타내면 이렇게 되죠.
+```python
+# temp가 node를 뿌리로 갖는 부분 트리에서 가장 작은 노드일 때까지 왼쪽 자식 노드로 간다
+while temp.left_child is not None:
+    temp = temp.left_child
+```
+더이상 왼쪽 자식이 없을 때 while문을 빠져나와서 현재 temp에 저장된 노드를 리턴하면 되겠죠?
+```python
+    return temp
+```
+
+### 모범 답안
+코드를 정리하면 이렇게 됩니다 (전체 코드가 너무 길어서 find_min() 메소드만 보여드립니다)
+```python
+@staticmethod
+def find_min(node):
+    """(부분)이진 탐색 트리의 가장 작은 노드 리턴"""
+    # 코드를 쓰세요
+    temp = node  # 도우미 변수. 파라미터 node로 초기화
+
+    # temp가 node를 뿌리로 갖는 부분 트리에서 가장 작은 노드일 때까지 왼쪽 자식 노드로 간다
+    while temp.left_child is not None:
+        temp = temp.left_child      
+
+    return temp  
+```
+
+### 테스트 코드
+코드가 제대로 돌아가는지 확인해 볼게요.
+```python
+# 빈 이진 탐색 트리 생성
+bst = BinarySearchTree()
+
+# 데이터 삽입
+bst.insert(7)
+bst.insert(11)
+bst.insert(9)
+bst.insert(17)
+bst.insert(8)
+bst.insert(5)
+bst.insert(19)
+bst.insert(3)
+bst.insert(2)
+bst.insert(4)
+bst.insert(14)
+
+print(bst.find_min(bst.root).data)  # 전체 이진 탐색 트리에서 가장 작은 노드
+print(bst.find_min(bst.root.right_child).data)  # root 노드의 오른쪽 부분 트리에서 가장 작은 노드
+```
+
+### 실습 결과
+결과가 원하는 대로 나오는 걸 확인할 수 있습니다.
+```
+2
+8
+```
+
+[main3_08.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/74e2a827f595b217e573d0b78ad6c0315f0d659f/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_08.py) 참고
