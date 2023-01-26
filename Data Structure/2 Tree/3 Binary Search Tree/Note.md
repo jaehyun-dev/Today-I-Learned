@@ -291,3 +291,125 @@ bst.print_sorted_tree()
 ### 탐색 시간 복잡도
 트리의 높이를 h라고 하면, 가장 깊은 노드를 찾는 경우 시간이 가장 오래 걸림  
 탐색 시간 복잡도: $O(h + 1) = O(h)$
+
+<br/><br/>
+
+## 07. 이진 탐색 트리 탐색 구현
+
+### 실습 설명
+이번 과제에서는 이진 탐색 트리 탐색 연산을 구현해 볼게요.
+
+탐색 연산을 일반화하면 이렇게 나타낼 수 있었는데요.  
+1. root 노드부터 노드의 데이터와 탐색하려는 데이터를 비교합니다.
+2. 탐색하려는 데이터가 더 크면 노드의 오른쪽 자식으로, 작으면 왼쪽 자식으로 갑니다.
+3. 데이터를 찾을 때까지 위 단계들을 반복합니다.
+
+BinarySearchTree 클래스의 search() 메소드를 써서 탐색 연산을 구현해 볼게요. search는 self 이외에 파라미터로 data를 받고, 트리 안에서 data를 갖는 노드를 찾아서 리턴합니다. data를 갖는 노드가 트리에 없으면 None을 리턴합니다.
+
+### 실습 결과
+```
+7
+19
+2
+None
+```
+
+<br/><br/>
+
+### 해설
+삽입할 때와 마찬가지로 temp 변수를 이용해서 원하는 노드를 찾아갈 건데요. root 노드로 초기화합니다.
+```python
+temp = self.root  # 탐색용 변수, root 노드로 초기화
+```
+반복문을 이용해서 탐색을 합니다.
+```python
+# 원하는 데이터를 갖는 노드를 찾을 때까지 돈다
+while temp is not None:
+```
+반복문을 돌면서 data와 temp의 데이터를 계속 비교할 건데요. 세 가지 경우가 있겠죠?  
+1. data == temp.data
+2. data < temp.data
+3. data > temp.data
+
+```python
+# 원하는 데이터를 갖는 노드를 찾을 때까지 돈다
+while temp is not None:
+    # 원하는 데이터를 갖는 노드를 찾으면 리턴
+    if data == temp.data:
+        return temp
+    # 원하는 데이터가 노드의 데이터보다 크면 오른쪽 자식 노드로 간다
+    if data > temp.data:
+        temp = temp.right_child
+    # 원하는 데이터가 노드의 데이터보다 작으면 왼쪽 자식 노드로 간다
+    else:
+        temp = temp.left_child
+```
+원하는 데이터를 갖는 노드를 찾으면 해당 노드를 리턴합니다.
+
+원하는 데이터가 temp의 데이터보다 크면 오른쪽 자식으로 가서 다시 탐색합니다. (새로운 temp로 반복문이 다시 돌아간다.)
+
+원하는 데이터가 temp의 데이터보다 작으면 왼쪽 자식으로 가서 다시 탐색합니다. (새로운 temp로 반복문이 다시 돌아간다.)
+
+반복문이 끝날 때까지 원하는 노드를 찾지 못했다는 건 트리 안에 원하는 데이터를 갖는 노드가 없다는 뜻이겠죠? 이때는 그냥 None을 리턴합니다.  
+```python
+    return None
+```
+
+### 모범 답안
+코드를 정리하면 이렇게 되겠죠? (코드가 너무 길어서 search() 메소드만 보여드립니다.)
+```python
+def search(self, data):
+    """이진 탐색 트리 탐색 메소드, 찾는 데이터를 갖는 노드가 없으면 None을 리턴한다"""
+    temp = self.root  # 탐색용 변수, root 노드로 초기화
+
+    # 원하는 데이터를 갖는 노드를 찾을 때까지 돈다
+    while temp is not None:
+        # 원하는 데이터를 갖는 노드를 찾으면 리턴
+        if data == temp.data:
+            return temp
+        # 원하는 데이터가 노드의 데이터보다 크면 오른쪽 자식 노드로 간다
+        if data > temp.data:
+            temp = temp.right_child
+        # 원하는 데이터가 노드의 데이터보다 작으면 왼쪽 자식 노드로 간다
+        else:
+            temp = temp.left_child
+
+    return None # 원하는 데이터가 트리에 없으면 None 리턴
+```
+
+### 테스트 코드
+코드가 제대로 돌아가는지 확인해 볼게요.
+```python
+# 빈 이진 탐색 트리 생성
+bst = BinarySearchTree()
+
+# 데이터 삽입
+bst.insert(7)
+bst.insert(11)
+bst.insert(9)
+bst.insert(17)
+bst.insert(8)
+bst.insert(5)
+bst.insert(19)
+bst.insert(3)
+bst.insert(2)
+bst.insert(4)
+bst.insert(14)
+
+# 노드 탐색과 출력
+print(bst.search(7).data)
+print(bst.search(19).data)
+print(bst.search(2).data)
+print(bst.search(20))
+```
+
+### 실습 결과
+```
+7
+19
+2
+None
+```
+원하는 노드가 있으면 잘 찾아오고, 없으면 None을 리턴하는 걸 확인할 수 있습니다.
+
+[main3_07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/f16b975b1ed7b49e43badf63d3d02f8218ab7cba/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_05.py) 참고
