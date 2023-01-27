@@ -28,11 +28,14 @@ class BinarySearchTree:
         parent_node = node_to_delete.parent  # 삭제할 노드의 부모 노드
 
         # 경우 1: 지우려는 노드가 leaf 노드일 때
-        # 여기에 코드를 작성하세요
-        if data > parent_node.data:
-            parent_node.right_child = None
-        else:
-            parent_node.left_child = None
+        if node_to_delete.left_child is None and node_to_delete.right_child is None:
+            if self.root is node_to_delete:
+                self.root = None
+            else:  # 일반적인 경우
+                if node_to_delete is parent_node.left_child:
+                    parent_node.left_child = None
+                else:
+                    parent_node.right_child = None
 
     @staticmethod
     def find_min(node):
@@ -123,3 +126,29 @@ bst.delete(2)
 bst.delete(4)
 
 bst.print_sorted_tree()
+
+'''실행 결과
+3
+5
+7
+8
+9
+11
+14
+17
+19
+'''
+
+'''모범 답안 보기 전 작성 코드
+    def delete(self, data):
+        """이진 탐색 트리 삭제 메소드"""
+        node_to_delete = self.search(data)  # 삭제할 노드를 가지고 온다
+        parent_node = node_to_delete.parent  # 삭제할 노드의 부모 노드
+
+        # 경우 1: 지우려는 노드가 leaf 노드일 때
+        # 여기에 코드를 작성하세요
+        if data > parent_node.data:
+            parent_node.right_child = None
+        else:
+            parent_node.left_child = None
+'''
