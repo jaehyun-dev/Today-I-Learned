@@ -659,3 +659,187 @@ bst.print_sorted_tree()
 leaf 노드 2와 4가 잘 삭제되는 걸 확인할 수 있습니다.
 
 [main3_10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/dd85e1ab3ab4929903efa4b0a809aa3058ae7788/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_10.py) 참고
+
+<br/><br/>
+
+## 11. 이진 탐색 트리 삭제 구현 II
+
+### 실습 설명
+이번 실습에서는 이진 탐색 트리 삭제 연산 중 두 번째 경우, 하나의 자식만 있는 노드를 삭제하는 경우를 코드로 구현해 볼게요. 이 경우는 영상에서 본 것과 같이 “삭제하는 노드의 위치를 자식 노드가 대신 차지한다”를 구현해 주기만 하면 되는데요.
+
+사실 생각보다 많은 작업들을 해야 합니다.
+
+코드를 쓰면서 삭제하려는 노드가 root 노드인지, 삭제하려는 노드가 부모의 왼쪽 자식인지 오른쪽 자식인지, 삭제하려는 노드의 자식이 왼쪽에 있는지 오른쪽에 있는지, 이런걸 다 생각해 줘야 하는데요. 어떤 경우든 “삭제하는 노드의 위치를 자식 노드가 대신 차지한다”는 원칙만 잘 기억한다면 좀 더 쉽게 문제에 접근할 수 있습니다.
+
+세부적인 경우의 수가 많아서 헷갈리시면 꼭 힌트를 참고하세요.
+
+delete() 메소드는 지우려는 데이터 data를 파라미터로 받습니다. 그리고 data를 갖는 노드를 트리에서 삭제합니다. 일단 코드에는 이전 과제에서 구현한 leaf 노드를 삭제하는 부분은 작성돼 있습니다.
+
+자식이 하나만 있는 노드를 삭제하는 부분의 코드를 직접 작성해 보세요.
+
+### 실습 결과
+```
+2
+3
+4
+7
+8
+11
+14
+17
+19
+```
+
+<br/><br/>
+
+### 해설
+#### 삭제하려는 노드가 오른쪽 자식만 가지는 경우
+먼저 삭제하려는 노드가 오른쪽 자식만 가지는 경우를 어떻게 찾을 수 있을까요?
+```python
+elif node_to_delete.left_child is None:  # 지우려는 노드가 오른쪽 자식만 있을 때:
+```
+이전 과제에서 leaf 노드를 지우는 경우에 관한 코드를 작성할 때, 이미 왼쪽 자식도 없고, 오른쪽 자식도 없는 경우를 처리했습니다. 따라서 그 다음부터 elif를 위 한줄처럼 써주면 자식이 하나만 있고, 그게 오른쪽 자식인 경우를 찾아낼 수 있습니다.
+
+자, 이제 이 경우 안에서도 더 나눠지는 세부 경우들을 나누어 생각해 봅시다.
+
+삭제하려는 노드가 root 노드인 세부 경우부터 봅시다.
+```python
+# 지우려는 노드가 root 노드일 때
+if node_to_delete is self.root:
+    self.root = node_to_delete.right_child
+    self.root.parent = None
+```
+삭제하려는 노드가 root 노드인 경우, 그냥 root 노드의 오른쪽 자식을 새로운 root 노드로 만듭니다. 그리고 새로운 root 노드의 부모 노드를 None이라고 지정합니다. 그럼 더 이상 이전의 root 노드는 트리에서 찾을 수 없게 됩니다. 지워지는 거죠.
+
+다음으로는 삭제하려는 노드가 root 노드가 아닌 그냥 일반 노드이면서 어떤 부모 노드의 왼쪽 자식인 경우를 생각해 보세요.
+```python
+# 지우려는 노드가 부모의 왼쪽 자식일 때
+elif node_to_delete is parent_node.left_child:
+    parent_node.left_child = node_to_delete.right_child
+    node_to_delete.right_child.parent = parent_node
+```
+이때는 삭제하려는 노드의 오른쪽 자식을, 부모 노드의 새로운 왼쪽 자식으로 설정해 주고, 삭제하려는 노드의 오른쪽 자식의 부모를, 삭제하려는 노드의 부모 노드로 설정해 줍니다.
+
+정리하면 지금 부모 노드와 삭제하려는 노드의 오른쪽 자식을 연결한 겁니다. 이 작업을 하고 나면 삭제하려는 노드를 가리키는 레퍼런스가 사라지게 되고, 오른쪽 자식이 이 노드를 대체한 셈이 됩니다.
+
+삭제하려는 노드가 어떤 부모 노드의 오른쪽 자식인 경우도 한 번 생각해 볼까요?
+```python
+# 지우려는 노드가 부모의 오른쪽 자식일 때
+else:
+    parent_node.right_child = node_to_delete.right_child
+    node_to_delete.right_child.parent = parent_node
+```
+이때는 삭제하려는 노드의 오른쪽 자식을, 부모 노드의 새로운 오른쪽 자식으로 설정해 주고, 삭제하려는 노드의 오른쪽 자식의 부모를, 삭제하려는 노드의 부모 노드로 설정해 줍니다.
+
+정리하면 지금 부모 노드와 삭제하려는 노드의 오른쪽 자식을 연결한 겁니다. 이 작업을 하고 나면 삭제하려는 노드를 가리키는 레퍼런스가 사라지게 되고, 오른쪽 자식이 이 노드를 대체한 셈이 됩니다. 방금 전과 원리는 같습니다. 다만 차이는 위에 볼드 처리한 것처럼 삭제하려는 노드의 오른쪽 자식이 새로운 부모 노드의 왼쪽 자식이 되는지, 오른쪽 자식이 되는지의 차이만 있습니다.
+
+말 그대로 삭제하려는 노드(A)의 오른쪽 노드가 A를 그대로 대체해야 하니까 A가 원래 어떤 부모 노드의 왼쪽 자식이었는지, 오른쪽 자식이었는지 여부를 그대로 이어 받아야 하는거죠.
+
+#### 지우려는 노드가 왼쪽 자식만 있는 경우
+위에서는 삭제하려는 노드가 오른쪽 자식만 있는 경우만 다뤘습니다. 
+삭제하려는 노드가 왼쪽 자식만 있는 경우도 똑같이 처리해 주면 됩니다. 어려울 것은 없습니다. 방금 전과 같은 세부 경우들에서 각각 어떤 부분이 달라질지만 파악하고 수정해서 그대로 따라 써주면 되니까요.
+```python
+elif node_to_delete.right_child is None:  # 지우려는 노드가 왼쪽 자식만 있을 때:
+    # 지우려는 노드가 root 노드일 때
+    if node_to_delete is self.root:
+        self.root = node_to_delete.left_child
+        self.root.parent = None
+    # 지우려는 노드가 부모의 왼쪽 자식일 때
+    elif node_to_delete is parent_node.left_child:
+        parent_node.left_child = node_to_delete.left_child
+        node_to_delete.left_child.parent = parent_node
+    # 지우려는 노드가 부모의 오른쪽 자식일 때
+    else:
+        parent_node.right_child = node_to_delete.left_child
+        node_to_delete.left_child.parent = parent_node
+```
+위 코드처럼 작성해 주면 되죠.
+
+### 모범 답안
+이번 과제는 생각해야 하는 경우의 가짓수가 많아서 굉장히 어렵게 느껴지셨을 수도 있습니다. 하지만 이번 경우의 본질은 결국 “삭제하려는 노드의 위치를 자식 노드가 대신 차지한다” 입니다. 구현 코드 전체를 살펴보겠습니다.
+```python
+def delete(self, data):
+    """이진 탐색 트리 삭제 메소드"""
+    node_to_delete = self.search(data)  # 삭제할 노드를 가지고 온다
+    parent_node = node_to_delete.parent  # 삭제할 노드의 부모 노드
+
+    # 경우 1: 지우려는 노드가 leaf 노드일 때
+    if node_to_delete.left_child is None and node_to_delete.right_child is None:
+        if self.root is node_to_delete:
+            self.root = None
+        else:  # 일반적인 경우
+            if node_to_delete is parent_node.left_child: 
+                parent_node.left_child = None
+            else:
+                parent_node.right_child = None
+
+    # 경우 2: 지우려는 노드가 자식이 하나인 노드일 때:
+    elif node_to_delete.left_child is None:  # 지우려는 노드가 오른쪽 자식만 있을 때:
+        # 지우려는 노드가 root 노드일 때
+        if node_to_delete is self.root:
+            self.root = node_to_delete.right_child
+            self.root.parent = None
+        # 지우려는 노드가 부모의 왼쪽 자식일 때
+        elif node_to_delete is parent_node.left_child:
+            parent_node.left_child = node_to_delete.right_child
+            node_to_delete.right_child.parent = parent_node
+        # 지우려는 노드가 부모의 오른쪽 자식일 때
+        else:
+            parent_node.right_child = node_to_delete.right_child
+            node_to_delete.right_child.parent = parent_node
+
+    elif node_to_delete.right_child is None:  # 지우려는 노드가 왼쪽 자식만 있을 때:
+        # 지우려는 노드가 root 노드일 때
+        if node_to_delete is self.root:
+            self.root = node_to_delete.left_child
+            self.root.parent = None
+        # 지우려는 노드가 부모의 왼쪽 자식일 때
+        elif node_to_delete is parent_node.left_child:
+            parent_node.left_child = node_to_delete.left_child
+            node_to_delete.left_child.parent = parent_node
+        # 지우려는 노드가 부모의 오른쪽 자식일 때
+        else:
+            parent_node.right_child = node_to_delete.left_child
+            node_to_delete.left_child.parent = parent_node
+```
+이렇게 정리할 수 있습니다.
+
+### 테스트 코드
+코드가 제대로 돌아가는지 확인해 볼게요.
+```python
+# 빈 이진 탐색 트리 생성
+bst = BinarySearchTree()
+
+# 데이터 삽입
+bst.insert(7)
+bst.insert(11)
+bst.insert(9)
+bst.insert(17)
+bst.insert(8)
+bst.insert(5)
+bst.insert(19)
+bst.insert(3)
+bst.insert(2)
+bst.insert(4)
+bst.insert(14)
+
+# 자식이 하나만 있는 노드 삭제
+bst.delete(5)
+bst.delete(9)
+```
+
+### 실습 결과
+```
+2
+3
+4
+7
+8
+11
+14
+17
+19
+```
+자식이 하나밖에 없는 5와 9가 제대로 삭제되는 걸 확인할 수 있습니다.
+
+[main3_11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/bd54e870e21fb0f1cbf82940431ad1b4611035c2/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_11.py) 참고
