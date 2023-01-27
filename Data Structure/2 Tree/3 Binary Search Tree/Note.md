@@ -518,3 +518,144 @@ print(bst.find_min(bst.root.right_child).data)  # root 노드의 오른쪽 부�
     - 삭제하려는 노드의 자식 노드가 부모 노드의 자리를 차지하면 됨
     - 삭제하려는 노드의 부모 노드의 자식 노드 레퍼런스를 삭제하려는 노드의 자식 노드로 지정하고,
     - 삭제하려는 노드의 자식 노드의 부모 노드 레퍼런스를 삭제하려는 노드의 부모 노드로 지정하면 됨
+
+<br/><br/>
+
+## 10. 이진 탐색 트리 삭제 구현 I
+
+### 실습 설명
+이번 실습에서는 이진 탐색 트리 삭제 연산 중 첫 번째 경우인 leaf 노드를 삭제하는 경우를 코드로 구현해 볼게요. leaf 노드를 삭제하는 알고리즘을 일반화하면 이렇게 표현할 수 있는데요.
+
+1. 먼저 search() 메소드를 사용해서 삭제하려는 데이터의 노드를 받아 옵니다.
+2. 삭제하려는 노드가 부모 노드의 왼쪽 자식이면
+    - 부모의 왼쪽 자식을 None으로 바꿔 줍니다
+3. 삭제하려는 노드가 부모 노드의 오른쪽 자식이면
+    - 부모의 오른쪽 자식을 None으로 바꿔 줍니다
+
+이걸 한번 구현해 보는 거죠!
+
+delete() 메소드는 파라미터로 지우려는 데이터 data를 받습니다. 그리고 data를 갖는 노드를 트리에서 삭제합니다. 일단 코드에는 삭제하려는 노드를 탐색하는 것과 탐색해서 찾은 노드의 부모 노드를 변수에 지정하는 부분까지는 이미 나와있습니다.
+
+leaf 노드를 삭제하는 부분의 나머지 코드를 직접 작성해 보세요.
+
+**삭제하려는 노드가 root_node인 경우도 생각해서 코드를 작성해 보세요!**
+
+### 실습 결과
+```
+3
+5
+7
+8
+9
+11
+14
+17
+19
+```
+
+<br/><br/>
+
+### 해설
+```python
+if node_to_delete.left_child is None and node_to_delete.right_child is None:
+```
+지우려는 노드가 자식이 하나도 없으면 leaf 노드라는 걸 알 수 있습니다. 그 다음은 지우려는 노드가 leaf 노드이면서 root 노드인 경우부터 처리해 봅시다.
+```python
+# 경우 1: 지우려는 노드가 leaf 노드일 때
+if node_to_delete.left_child is None and node_to_delete.right_child is None:
+    # 지우려는 노드가 root 노드일 때
+    if self.root is node_to_delete:
+        self.root = None
+```
+이때는 그냥 root 변수가 None을 가리키게 합니다. 그럼 더 이상 트리 안에 아무 노드도 없게 되죠.
+
+root 노드가 아닌 일반적인 경우에는 아래 경우들을 처리해야 합니다.
+- 삭제하려는 노드가 부모 노드의 왼쪽 자식이면
+    1. 부모의 왼쪽 자식을 None으로 바꿔 줍니다
+- 삭제하려는 노드가 부모 노드의 오른쪽 자식이면
+    1. 부모의 오른쪽 자식을 None으로 바꿔 줍니다
+
+왼쪽 자식인 경우부터 볼게요.
+```python
+# 경우 1: 지우려는 노드가 leaf 노드일 때
+if node_to_delete.left_child is None and node_to_delete.right_child is None:
+    if self.root is node_to_delete:
+        self.root = None
+    else:  # 일반적인 경우
+        if node_to_delete is parent_node.left_child: 
+            parent_node.left_child = None
+```
+오른쪽 자식인 경우도 똑같이 해주면 되겠죠?
+```python
+# 경우 1: 지우려는 노드가 leaf 노드일 때
+if node_to_delete.left_child is None and node_to_delete.right_child is None:
+    if self.root is node_to_delete:
+        self.root = None
+    else:  # 일반적인 경우
+        if node_to_delete is parent_node.left_child: 
+            parent_node.left_child = None
+        else:
+            parent_node.right_child = None
+```
+그냥 parent_node의 오른쪽 자식을 None으로 만듭니다.
+
+### 모범 답안
+위에서 본 코드를 정리하면 이렇게 됩니다.
+```python
+def delete(self, data):
+    """이진 탐색 트리 삭제 메소드"""
+    node_to_delete = self.search(data)  # 삭제할 노드를 가지고 온다
+    parent_node = node_to_delete.parent  # 삭제할 노드의 부모 노드
+
+    # 경우 1: 지우려는 노드가 leaf 노드일 때
+    if node_to_delete.left_child is None and node_to_delete.right_child is None:
+        if self.root is node_to_delete:
+            self.root = None
+        else:  # 일반적인 경우
+            if node_to_delete is parent_node.left_child: 
+                parent_node.left_child = None
+            else:
+                parent_node.right_child = None
+```
+
+### 테스트 코드
+작성한 코드가 제대로 돌아가는지 확인해 볼게요.
+```python
+# 빈 이진 탐색 트리 생성
+bst = BinarySearchTree()
+
+# 데이터 삽입
+bst.insert(7)
+bst.insert(11)
+bst.insert(9)
+bst.insert(17)
+bst.insert(8)
+bst.insert(5)
+bst.insert(19)
+bst.insert(3)
+bst.insert(2)
+bst.insert(4)
+bst.insert(14)
+
+# leaf 노드 삭제
+bst.delete(2)
+bst.delete(4)
+
+bst.print_sorted_tree()
+```
+
+### 실습 결과
+```
+3
+5
+7
+8
+9
+11
+14
+17
+19
+```
+leaf 노드 2와 4가 잘 삭제되는 걸 확인할 수 있습니다.
+
+[main3_10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/dd85e1ab3ab4929903efa4b0a809aa3058ae7788/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_10.py) 참고
