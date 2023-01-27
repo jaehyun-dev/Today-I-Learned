@@ -2056,3 +2056,14 @@ A.
 5. n까지 범위 안에서 모두 이루어졌다면, 남아있는 숫자들이 n 이내의 소수가 된다.
 
 https://blog.naver.com/PostView.naver?blogId=ndb796&logNo=221233595886&redirect=Dlog&widgetTypeCall=true&directAccess=false
+
+23.01.27
+## Q. 커널 트릭에 대해 설명해주세요.(머신러닝)  
+
+A.  
+input space가 있을 때 샘플을 선형 모델로 분류할 수 없는 경우, 비선형 모델을 만드는 대신 선형 모델로 해결할 수 있는 feature space를 만드는 방법(feature map)이 있다.  
+그러나 feature map을 찾는 것은 매우 어렵고, 합수로 feature space를 만드는 연산량과 내적 연산량이 너무 많다는 문제점이 있다.  
+커널(kernel)은 이러한 문제점을 해결하기 위해 고안된 것으로, 커널이 일정 조건(Mercer's Theorem)을 만족하면 문제를 해결하기 위한 커널 함수가 존재하게 된다.  
+이때 이 함수들을 이용한 linear technique를 Kernel Trick(커널 트릭)이라고 한다.
+
+https://sonsnotation.blogspot.com/2020/11/11-1-kernel.html
