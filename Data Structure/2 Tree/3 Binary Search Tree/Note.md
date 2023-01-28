@@ -843,3 +843,15 @@ bst.delete(9)
 자식이 하나밖에 없는 5와 9가 제대로 삭제되는 걸 확인할 수 있습니다.
 
 [main3_11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/bd54e870e21fb0f1cbf82940431ad1b4611035c2/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_11.py) 참고
+
+<br/><br/>
+
+23.01.28
+
+## 12. 이진 탐색 트리 삭제 II
+- 경우 3: 삭제하려는 데이터의 노드가 두 개의 자식이 있을 때:
+- 삭제하려는 노드의 오른쪽 부분 트리 중 가장 작은 노드를 successor라고 함
+- 삭제하려는 노드의 데이터를 successor의 데이터로 바꾸고, successor 노드를 삭제함
+- successor 노드는 leaf 노드이거나 오른쪽 자식 노드만 가질 수 있음
+- 만약 왼쪽 자식이 있다면, successor 노드가 삭제하려는 노드의 오른쪽 부분 트리(모든 노드가 부모 노드보다 데이터가 큼) 중 가장 작은 데이터를 갖는 노드라는 정의에 모순
+- leaf 노드이거나 하나의 자식 노드만 갖는 경우는 이진 탐색 트리 삭제 I에서 모두 다룸
