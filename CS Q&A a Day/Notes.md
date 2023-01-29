@@ -2113,3 +2113,19 @@ A.
 - 완전성을 증명할 수 없기 때문에 변조가 가능하다.
 
 https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network#http%EC%9D%98-get%EA%B3%BC-post-%EB%B9%84%EA%B5%90
+
+23.01.30
+## Q. 페이지 교체 알고리즘에 대해 아는대로 설명해주세요.(운영체제)  
+
+A.  
+- 가상 메모리는 요구 페이지 기버을 통해 필요한 페이지만 메모리에 적재하고 사용하지 않는 부분은 그대로 둠
+- 하지만 필요한 페이지만 올려도 메모리는 결국 가득 차게 되고, 올라와있던 페이지가 사용이 다 된 후에도 자리만 차지하고 있을 수 있음
+- 따라서 메모리가 가득 차면, 추가로 페이지를 가져오기 위해서 안 쓰는 페이지는 out하고, 해당 공간에 현재 필요한 페이지를 in 시켜야 함
+- 여기서 어떤 페이지를 out 시켜야 할지 정해야 함(이때 out 되는 페이지를 victim page라고 부름).
+- 기왕이면 수정이 되지 않는 페이지를 선택해야 좋음(만약 수정되면 메인 메모리에서 내보낼 때, 하드디스크에서 또 수정을 진행해야 하므로 시간이 오래 걸림)
+- FIFO 알고리즘: 메모리에 가장 먼저 올라온 페이지를 out시키는 방법
+- OPT 알고리즘: 앞으로 가장 사용하지 않을 페이지를 out시키는 방법
+- LRU 알고리즘: 최근에 사용하지 않은 페이지를 out시키는 방법
+- 교체 방식: 메모리 상의 모든 프로세스 페이지에 대해 교체하는 Global 방식, 메모리 상의 프로세스 페이지에서만 교체하는 Local 방식
+
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/Page%20Replacement%20Algorithm.md
