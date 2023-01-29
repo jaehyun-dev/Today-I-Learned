@@ -855,3 +855,209 @@ bst.delete(9)
 - successor 노드는 leaf 노드이거나 오른쪽 자식 노드만 가질 수 있음
 - 만약 왼쪽 자식이 있다면, successor 노드가 삭제하려는 노드의 오른쪽 부분 트리(모든 노드가 부모 노드보다 데이터가 큼) 중 가장 작은 데이터를 갖는 노드라는 정의에 모순
 - leaf 노드이거나 하나의 자식 노드만 갖는 경우는 이진 탐색 트리 삭제 I에서 모두 다룸
+
+<br/><br/>
+
+23.01.29
+
+## 13. 이진 탐색 트리 삭제 구현 III
+
+### 실습 설명
+이번 실습에서는 이진 탐색 트리 삭제 연산에서 마지막 경우, 두 개의 자식이 모두 있는 노드를 삭제하는 경우를 코드로 구현해 볼게요. 영상에서 봤던 세 번째 경우에 해야할 작업을 순서대로 나타내면 아래와 같습니다.
+1. 지우려는 노드의 successor를 받아옵니다. (find_min() 메소드 활용)
+2. 삭제하려는 노드 데이터에 successor의 데이터를 저장합니다.
+3. successor 노드를 삭제합니다.
+
+이렇게 해주면 됐는데요. 이때 3번째 단계에서 successor 노드를 삭제할 때  successor 노드가 부모 노드의 오른쪽 자식인지 왼쪽 자식인지, successor 노드가 오른쪽 자식을 가지는지 아닌지를 고려해야 합니다. 참고로, 이전 영상에서 successor 노드가 왼쪽 자식을 가질 수는 없다고 했죠? 그래서 그 경우는 생각할 필요가 없습니다.
+
+코드를 직접 구현하기가 많이 어려우시면 힌트를 꼭 참고하세요!
+
+delete() 메소드는 지우려는 데이터 data를 파라미터로 받습니다. 그리고 data를 갖는 노드를 트리에서 삭제합니다. 현재 코드에는 저번 과제에서 구현했던, 자식이 하나만 있는 노드를 삭제하는 부분까지 작성돼 있습니다.
+
+자식이 두 개 있는 노드를 삭제하는 부분의 코드를 직접 작성해 보세요.
+
+실습 결과
+```
+2
+3
+4
+5
+8
+9
+14
+17
+19
+```
+
+<br/><br/>
+
+### 해설
+이 세 단계를 어떻게 코드로 나타낼 수 있을지 봅시다.
+1. 지우려는 노드의 successor를 받아옵니다. (find_min() 메소드 활용).
+2. 삭제하려는 노드 데이터에 successor의 데이터를 저장합니다.
+3. successor 노드를 삭제합니다.
+
+successor는 특정 노드보다 큰 노드 중 가장 작은 노드입니다. 과제에서 작성한 find_min() 메소드를 쓰면 successor를 쉽게 찾을 수 있는데요. node_to_delete의 오른쪽 부분 트리에 있는 모든 노드는 node_to_delete보다 큰 데이터를 가집니다. 이 중에서 가장 작은 데이터를 가지는 노드를 고르면 되겠죠? find_min() 메소드에 node_to_delete의 오른쪽 자식을, 파라미터로 넘기고 호출해서 successor를 찾아봅시다.
+
+코드로는 이렇게 해주면 되죠.
+
+가장 먼저 경우 1과 경우 2가 아닌 모든 경우가 경우 3이기 때문에, else문으로 나머지 경우들과 구별해서 처리하겠습니다.
+```python
+else:
+```
+경우 3에 해당하는 모든 코드는 이 else문 안에 작성하면 됩니다.
+```python
+successor = self.find_min(node_to_delete.right_child)  # 삭제하려는 노드의 `successor` 노드 받아오기
+```
+그 다음으로 삭제하려는 노드의 데이터에, successor의 데이터를 저장하겠습니다. 이렇게 하면 자연스럽게 그 노드가 삭제되는 것과 동일한 효과를 가지겠죠? 이건 간단합니다.
+```python
+node_to_delete.data = successor.data  # 삭제하려는 노드의 데이터에 successor의 데이터 저장
+```
+마지막으로 successor 노드를 삭제하면 되는데요. 이 때는 successor 노드의 상황에 맞게 고려해야 할 몇 가지가 있습니다. 일단, successor 노드가 존재하는 위치는 크게 2 가지로 나눌 수 있습니다.
+
+A. 삭제하려는 노드의 오른쪽 부분 트리 내에서, 어떤 부모 노드의 왼쪽 자식으로 있는 경우
+\*successor는 이때 어떤 부모 노드의 오른쪽 자식으로 있을 수 없습니다, 그렇다면 애초에 successor가 아니었겠죠?
+
+B. 삭제하려는 노드의 바로 밑에 있는 오른쪽 자식인 경우
+
+인데요. 어떤 successor든 이 2가지 상황 중 한 가지에 꼭 해당하게 됩니다. 
+그리고 이 2가지 상황에 따라 다르게 처리하면 됩니다.
+
+아래 코드를 보면 if, else문을 써서 두 가지 상황에 맞는 처리를 해주고 있습니다. 각 상황 내에서는 이제 successor의 자식에 대해서 고려하면 됩니다.
+```python
+# successor 노드 트리에서 삭제
+if successor is successor.parent.left_child:  # successor 노드가 어떤 부모 노드의 왼쪽 자식일 때
+    successor.parent.left_child = successor.right_child
+else:  # successor 노드가 삭제하려는 노드의 바로 오른쪽 자식일 때
+    successor.parent.right_child = successor.right_child
+```
+영상에서 얘기했듯이 successor 노드는 왼쪽 자식을 가질 수 없습니다. 왼쪽 자식이 있었다면 애초에 successor가 될 수 없을 테니까요.
+
+그렇기 때문에 위에서 보여드린 각 2가지 상황 안에서는 (1) successor 노드가 오른쪽 자식을 갖고 있거나 (2) successor 노드가 아예 자식이 없는 상황만을 생각하면 됩니다.
+
+하지만 코드로 (1)과 (2)를 구현할 때는 굳이 if, else문으로 구분할 필요가 없습니다.
+
+그냥 위 코드 중 아래 두 코드처럼 successor.right_child를 successor의 부모의, 새 자식으로 대입해주기만 하면 됩니다.
+```python
+successor.parent.left_child = successor.right_child
+successor.parent.right_child = successor.right_child
+```
+왜냐하면 successor 노드가 아예 자식이 없는 경우라면 successor.right_child가 None을 저장하고 있어서 leaf 노드를 삭제할 때처럼 그냥 부모의 자식을 None으로 만들어 주는 것이니까요.
+
+이렇게 하면 successor 노드의 오른쪽 자식이(None일 수도 있음) successor의 위치를 차지하게 되고, successor는 트리에서 삭제됩니다.
+
+자, 여기서 아직 끝은 아닙니다. 마지막으로 하나만 더 구현해 줄게요.
+
+(1) successor가 오른쪽 자식을 갖고 있는 경우
+
+위의 경우를 위한 한 가지 처리가 더 필요합니다. 이제 successor의 오른쪽 자식의 부모 노드로, successor의 부모로 새롭게 지정해야 합니다. successor가 삭제되었으니 그 오른쪽 자식이 그 자리를 대체하려면 당연히 그래야겠죠?
+```python
+if successor.right_child is not None:  # successor 노드가 오른쪽 자식이 있을 떄
+    successor.right_child.parent = successor.parent
+```
+이렇게 해주면 됩니다.
+
+### 모범 답안
+마지막 경우도 delete() 메소드에 정리해서 넣겠습니다.
+```python
+    def delete(self, data):
+        """이진 탐색 트리 삭제 메소드"""
+        node_to_delete = self.search(data)  # 삭제할 노드를 가지고 온다
+        parent_node = node_to_delete.parent  # 삭제할 노드의 부모 노드
+
+        # 경우 1: 지우려는 노드가 leaf 노드일 때
+        if node_to_delete.left_child is None and node_to_delete.right_child is None:
+            if self.root is node_to_delete:
+                self.root = None
+            else:  # 일반적인 경우
+                if node_to_delete is parent_node.left_child: 
+                    parent_node.left_child = None
+                else:
+                    parent_node.right_child = None
+
+        # 경우 2: 지우려는 노드가 자식이 하나인 노드일 때:
+        elif node_to_delete.left_child is None:  # 지우려는 노드가 오른쪽 자식만 있을 때:
+            # 지우려는 노드가 root 노드일 때
+            if node_to_delete is self.root:
+                self.root = node_to_delete.right_child
+                self.root.parent = None
+            # 지우려는 노드가 부모의 왼쪽 자식일 때
+            elif node_to_delete is parent_node.left_child:
+                parent_node.left_child = node_to_delete.right_child
+                node_to_delete.right_child.parent = parent_node
+            # 지우려는 노드가 부모의 오른쪽 자식일 때
+            else:
+                parent_node.right_child = node_to_delete.right_child
+                node_to_delete.right_child.parent = parent_node
+
+        elif node_to_delete.right_child is None:  # 지우려는 노드가 왼쪽 자식만 있을 때:
+            # 지우려는 노드가 root 노드일 때
+            if node_to_delete is self.root:
+                self.root = node_to_delete.left_child
+                self.root.parent = None
+            # 지우려는 노드가 부모의 왼쪽 자식일 때
+            elif node_to_delete is parent_node.left_child:
+                parent_node.left_child = node_to_delete.left_child
+                node_to_delete.left_child.parent = parent_node
+            # 지우려는 노드가 부모의 오른쪽 자식일 때
+            else:
+                parent_node.right_child = node_to_delete.left_child
+                node_to_delete.left_child.parent = parent_node
+
+        # 경우 3: 지우려는 노드가 2개의 자식이 있을 때
+        else:
+            successor = self.find_min(node_to_delete.right_child)  # 삭제하려는 노드의 successor 노드 받아오기
+
+            node_to_delete.data = successor.data  # 삭제하려는 노드의 데이터에 successor의 데이터 저장
+
+            # successor 노드 트리에서 삭제
+            if successor is successor.parent.left_child:  # successor 노드가 오른쪽 자식일 때
+                successor.parent.left_child = successor.right_child
+            else:  # successor 노드가 왼쪽 자식일 때
+                successor.parent.right_child = successor.right_child        
+        
+            if successor.right_child is not None:  # successor 노드가 오른쪽 자식이 있을 떄
+                successor.right_child.parent = successor.parent
+```
+
+### 테스트 코드
+자식이 2개 있는 노드를 제대로 삭제할 수 있는지 확인해 볼게요.
+```python
+# 빈 이진 탐색 트리 생성
+bst = BinarySearchTree()
+
+# 데이터 삽입
+bst.insert(7)
+bst.insert(11)
+bst.insert(9)
+bst.insert(17)
+bst.insert(8)
+bst.insert(5)
+bst.insert(19)
+bst.insert(3)
+bst.insert(2)
+bst.insert(4)
+bst.insert(14)
+
+# 자식이 두 개 다 있는 노드 삭제
+bst.delete(7)
+bst.delete(11)
+
+bst.print_sorted_tree()
+```
+
+### 실습 결과
+```
+2
+3
+4
+5
+8
+9
+14
+17
+19
+```
+원하는 대로 7과 11이 잘 삭제된 걸 확인할 수 있습니다.
+
+[main3_13.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/e8370f9a76b38dc8ec4a461b38ac3b3cad993acf/Data%20Structure/2%20Tree/3%20Binary%20Search%20Tree/main3_13.py) 참고
