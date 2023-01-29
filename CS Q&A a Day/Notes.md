@@ -2103,3 +2103,13 @@ A.
 - 릴레이션이 제4정규형을 만족하면서 후보키를 통하지 않는 조인 종속을 제거한 정규형
 
 https://hongcoding.tistory.com/147
+
+23.01.29
+## Q. http의 문제점이 무엇이라고 생각하시나요?(네트워크)  
+
+A.  
+- HTTP는 평문 통신이기 때문에 도청이 가능하다.
+- 통신 상대를 확인하지 않기 때문에 위장이 가능하다.
+- 완전성을 증명할 수 없기 때문에 변조가 가능하다.
+
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network#http%EC%9D%98-get%EA%B3%BC-post-%EB%B9%84%EA%B5%90
