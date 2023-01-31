@@ -2129,3 +2129,12 @@ A.
 - 교체 방식: 메모리 상의 모든 프로세스 페이지에 대해 교체하는 Global 방식, 메모리 상의 프로세스 페이지에서만 교체하는 Local 방식
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/Page%20Replacement%20Algorithm.md
+
+23.01.31
+## Q. Array와 ArrayList의 차이점에 대해 설명해주세요.(자료구조)  
+
+A.  
+Array: 고정 길이이므로, 정해진 길이의 배열을 모두 채우면, 새로운 데이터를 추가하고 싶을 경우 새로운 배열을 만들어주어야 함
+ArrayList: 가변 길이이므로, 정해진 길이의 배열을 모두 채우면, 추가로 공간을 만들어 저장할 수 있음
+
+https://velog.io/@humblechoi/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-Array-vs-ArrayList
