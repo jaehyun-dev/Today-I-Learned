@@ -2162,3 +2162,5 @@ A.
 - 이를 지나치게 많이 하면 오버피팅이 됨
 - 오버피팅을 막기 위한 전략으로 가지치기(Pruning)가 있음  
 - 가자치기는 최대 깊이나 터미널 노드의 최대 개수, 혹은 한 노드가 분할하기 위한 최소 데이터 수를 제한함
+
+https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-4-%EA%B2%B0%EC%A0%95-%ED%8A%B8%EB%A6%ACDecision-Tree
