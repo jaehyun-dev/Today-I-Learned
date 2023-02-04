@@ -170,3 +170,187 @@ init으로 초기화할 때 필요한 정보 넣으면 됨
 주의할 점은 만약 SNS 유저와 같이 동명이인이 있을 때 겹치는 key 값을 쓰면 안 되므로, email 등 고윳값을 사용해야 함
 
 [main1_06.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/3d422baa0b2f0b068448cb41953468ce3b0b9cc8/Data%20Structure/3%20Graph/1%20Graph/main1_06.py) 참고  
+
+<br/><br/>
+
+## 07. 그래프 노드 만들어보기
+
+### 실습 설명
+지하철 역 정보를 저장하고 있는 텍스트 파일 stations.txt를 사용할 건데요. 안에 데이터가 어떤 형식으로 저장돼 있는지 봅시다. stations.txt의 가장 위 줄을 가지고 올게요.
+```
+소요산 - 동두천 - 보산 -  동두천중앙 - 지행 -  덕정 -  덕계 -  양주 -  녹양 -  가능 -  의정부 - 회룡 -  망월사 - 도봉산 - 도봉 -  방학 -  창동 -  녹천 -  월계 -  성북 -  석계 -  신이문 - 외대앞 - 회기 -  청량리 - 제기동 - 신설동 - 동묘앞 - 동대문 - 종로5가 -  종로3가 -  종각 -  시청 -  서울역 - 남영 -  용산 -  노량진 - 대방 -  신길 -  영등포 - 신도림 - 구로 -  구일 -  개봉 -  오류동 - 온수 -  역곡 -  소사 -  부천 -  중동 -  송내 -  부개 -  부평 -  백운 -  동암 -  간석 -  주안 -  도화 -  제물포 - 도원 -  동인천 - 인천 -  광명 -  가산디지털단지 - 독산 -  금천구청 -  석수 -  관악 -  안양 -  명학 -  금정 -  군포 -  당정 -  의왕 -  성균관대 -  화서 -  수원 -  세류 -  병점 -  세마 -  오산대 - 오산 -  진위 -  송탄 -  서정리 - 지제 -  평택 -  성환 - 직산 - 두정 -  천안 -  봉명 -  쌍용 -  아산 -  배방 -  온양온천 -  신창 -  서동탄
+```
+이 줄이 너무 길어서 줄바꿈이 있는 거처럼 보이실 수도 있는데요. 이게 다 한 줄입니다. 내용을 살펴보면 서울 지하철 1호선 노선 데이터가 있죠? 소요산역부터 서동탄역까지 순서대로 저장돼 있고, "-"로 구별돼 있습니다.
+
+stations.txt 파일의 각 줄은 하나의 지하철 노선의 데이터를 저장하고 있습니다. 이번 과제에서는 이 텍스트 파일의 바탕으로 서울 지하철역 노드들을 만들어 볼게요.
+
+#### StationNode 클래스
+본격적으로 시작하기 전에 기본으로 제공되는 코드를 설명드리겠습니다.
+```python
+class StationNode:
+    """간단한 지하철 역 노드 클래스"""
+    def __init__(self, station_name):
+        self.station_name = station_name
+```
+먼저 제공되는 클래스는 지하철 역 노드 클래스입니다. 이미 영상에서 그래프역 노드들 클래스로 만드는 걸 보셨는데요. 저희는 그보다 간단한 지하철역 노드를 사용할게요. 각 노드 인스턴스는 변수로 역 이름만을 저장하고 있습니다.
+
+#### create_station_nodes() 함수
+다음에는 함수 create_station_nodes()를 볼게요. 함수 create_station_nodes()는 파라미터로 input_file을 받습니다. input_file은 문자열이고, 지하철 데이터를 저장하고 있는 파일의 이름입니다. 이 파일의 정보로 지하철 노드들을 만들고, 딕셔너리에 저장해서 리턴합니다.
+```python
+def create_station_nodes(input_file):
+    """input_file에서 데이터를 읽어 와서 지하철 그래프 노드들을 리턴하는 함수"""
+    stations = {}  # 지하철 역 노드들을 담을 딕셔너리
+
+    # 파라미터로 받은 input_file 파일을 연다
+    with open(input_file) as stations_raw_file:
+        for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+            subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+
+            for name in subway_line:
+                station_name = name.strip()  # 앞 뒤 띄어쓰기 없애기
+
+                # 여기에 코드를 작성하세요
+
+    return stations
+```
+먼저 파이썬에서 텍스트 파일을 열고 사용하는 게 익숙하지 않으신 분들이 계실 텐데요. 파일은 열고 안에 있는 내용을 전처리하는 부분의 코드는 제공해 드립니다. 한 줄씩 설명드릴게요.
+```python
+stations = {}  # 지하철 역 노드들을 담을 딕셔너리
+```
+먼저 stations라는 빈 딕셔너리를 만듭니다. stations.txt 파일에서 데이터로 그래프 노드로 만든 후 여기에 저장할 건데요. 마지막 줄을 보면 이 딕셔너리를 리턴해 줍니다.
+```python
+# 파라미터로 받은 input_file 파일을 연다
+with open(input_file) as stations_raw_file:
+```
+이 코드는 파라미터로 받은 input_file 파일을 열어줍니다. 파라미터로 받는 input_file은 문자열 타입인데요. 그 이름을 갖는 파일을 열어주는 거죠. 그리고 이 파일을 with문 안에서는 stations_raw_file로 불러준다는 말입니다.
+```python
+for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+```
+연 파일을 for문을 사용해서 살펴봅니다. 변수 line에는 반복문을 한 번 돌 때마다 파일의 한 줄이 위부터 차례대로 저장됩니다.
+```python
+subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+```
+이건 데이터 전처리 코드인데요. line에는 이런 문자열이 저장돼 있습니다.
+```
+소요산 - 동두천 - 보산 -  동두천중앙 - 지행 -  덕정 -  덕계 -  양주 -  녹양 -  가능 -  의정부 - 회룡 -  망월사 - 도봉산 - 도봉 -  방학 -  창동 -  녹천 -  월계 -  성북 -  석계 -  신이문 - 외대앞 - 회기 -  청량리 - 제기동 - 신설동 - 동묘앞 - 동대문 - 종로5가 -  종로3가 -  종각 -  시청 -  서울역 - 남영 -  용산 -  노량진 - 대방 -  신길 -  영등포 - 신도림 - 구로 -  구일 -  개봉 -  오류동 - 온수 -  역곡 -  소사 -  부천 -  중동 -  송내 -  부개 -  부평 -  백운 -  동암 -  간석 -  주안 -  도화 -  제물포 - 도원 -  동인천 - 인천 -  광명 -  가산디지털단지 - 독산 -  금천구청 -  석수 -  관악 -  안양 -  명학 -  금정 -  군포 -  당정 -  의왕 -  성균관대 -  화서 -  수원 -  세류 -  병점 -  세마 -  오산대 - 오산 -  진위 -  송탄 -  서정리 - 지제 -  평택 -  성환 - 직산 - 두정 -  천안 -  봉명 -  쌍용 -  아산 -  배방 -  온양온천 -  신창 -  서동탄
+```
+strip() 메소드를 사용하면 앞 뒤 띄어쓰기를 없애 줍니다. 그리고 split() 메소드는 파라미터로 받은 "-"를 기준으로 데이터들을 나눠 주죠. "소요산", "동두천","보산"… 이런 역 이름 문자열이 담긴 리스트를 리턴합니다. 이 리스트를subway_line 리스트에 저장했습니다.
+```python
+for name in subway_line:
+    station_name = name.strip()  # 앞 뒤 띄어쓰기 없애기
+```
+다음은 제공된 코드의 마지막 부분인데요. subway_line 리스트에 저장된 각 역을 도는 코드입니다. name은 "소요산 ", " 동두천 ", " 보산 " 이런식으로 앞이나 뒤 또는 둘 다 띄어쓰기가 포함된 문자열입니다. 그러니까 마지막으로 strip() 메소드를 사용해서 전처리해 줍니다. 이러면 이제 station_name에는 역 이름 자체만 남아 있겠죠?
+
+이 역 이름을 갖고 그래프 노드를 만들고 딕셔너리에 저장해 주는 코드를 쓰면 됩니다. 영상에서 본 것처럼 문자열 역 이름을 key로, 그리고 노드 인스턴스를 value로 저장합니다.
+
+### 실습 결과
+(전체 결과는 너무 길어서, 일부만 예시로 보여 드립니다.)
+```
+가능
+가락시장
+가산디지털단지
+가양
+가좌
+가평
+간석
+간석오거리
+갈매
+갈산
+강남
+강남구청
+강동
+강동구청
+강변
+...
+```
+
+### 해설
+
+#### create_station_nodes() 함수 완성하기
+```python
+def create_station_nodes(input_file):
+    """input_file에서 데이터를 읽어 와서 지하철 그래프 노드들을 리턴하는 함수"""
+    stations = {}  # 지하철 역 노드들을 담을 딕셔너리
+
+    # 파라미터로 받은 input_file 파일을 연다
+    with open(input_file) as stations_raw_file:
+        for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+            subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+
+            for name in subway_line:
+                station_name = name.strip()  # 앞 뒤 띄어쓰기 없애기
+
+                # 여기에 코드를 작성하세요
+
+    return stations
+```
+파일의 각 줄에는 하나의 지하철 노선이 저장돼 있잖아요? 어떤 역들은 여러 개의 호선에 속해 있습니다. 그럼 분명히 반복문을 돌면서 여러번 나오는 역들이 생길 텐데요. 한 번 저장한 역이 또 나오면 굳이 다시 저장할 필요는 없습니다.
+
+station_name을 이미 딕셔너리 key로 저장했는지 확인하고 저장을 안 했을 경우만 새로 인스턴스를 만들어서 저장해 줍니다.
+```python
+# 지하철 역 이름이 이미 저장한 key 인지 확인
+if station_name not in stations:
+```
+그 다음에는 stations 딕셔너리에 station_name을 key로, 새로만든 역 인스턴스를 value로 저장해 주면 되겠죠?
+```python
+# 지하철 역 이름이 이미 저장한 key 인지 확인
+if station_name not in stations:
+    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 노드 인스턴스를 value로 저장한다
+```
+
+### 모범 답안
+create_station_nodes() 함수를 정리하면 이렇게 됩니다.
+```python
+def create_station_nodes(input_file):
+    """input_file에서 데이터를 읽어 와서 지하철 그래프 노드들을 리턴하는 함수"""
+    stations = {}  # 지하철 역 노드들을 담을 딕셔너리
+
+    # 파라미터로 받은 input_file 파일을 연다
+    with open(input_file) as stations_raw_file:
+        for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+            subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+
+            for name in subway_line:
+                station_name = name.strip()  # 앞 뒤 띄어쓰기 없애기
+
+                # 지하철 역 이름이 이미 저장한 key 인지 확인
+                if station_name not in stations:
+                    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+                    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 노드 인스턴스를 value로 저장한다
+
+    return stations
+```
+
+### 테스트 코드
+코드가 제대로 돌아가는지 한번 확인해 볼게요.
+```python
+stations = create_station_nodes("./stations.txt")  # stations.txt 파일로 그래프 노드들을 만든다
+
+# stations에 저장한 역들 이름 출력 (체점을 위해 역 이름 순서대로 출력)
+for station in sorted(stations.keys()):
+    print(stations[station].station_name)
+```
+
+### 실습 결과
+원하는 대로 결과가 나오는 걸 확인할 수 있습니다. (전체 결과는 너무 길어서, 일부만 예시로 보여 드립니다.)
+```
+가능
+가락시장
+가산디지털단지
+가양
+가좌
+가평
+간석
+간석오거리
+갈매
+갈산
+강남
+강남구청
+강동
+강동구청
+강변
+...
+```
+
+[main07.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/27eb378acda0505584889d326db0e61b02aae67f/Data%20Structure/3%20Graph/1%20Graph/main1_07.py) 참고  
