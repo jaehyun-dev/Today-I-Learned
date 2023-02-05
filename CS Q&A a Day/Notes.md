@@ -2203,3 +2203,20 @@ TCP는 정확한 전송을 보장해야 하므로 통신하기에 앞서 논리�
 이렇게 4번의 통신의 완료로 연결이 해제되기에 4 way handshake이다.
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/TCP%203%20way%20handshake%20%26%204%20way%20handshake.md
+
+23.02.05
+## Q. 세마포어(Semaphore)와 뮤텍스(Mutex)의 차이점에 대해 설명해주세요.(운영체제)  
+
+A.  
+**세마포어(Semaphore)**  
+- 멀티프로그래밍 환경에서 공유 자원에 대한 접근을 제한하는 방법
+- 공유된 자원에 여러 프로세스가 동시에 접근하면 문제가 발생할 수 있기에, 공유된 자원의 데이터는 한 번에 하나의 프로세스만 접근할 수 있도록 제한을 두기 위함
+- 여러 프로세스가 데이터를 공유하며 수행될 때, 각 프로세스에서 공유 데이터를 접근하는 프로그램 코드 부분인 임계 구역을 이용하여 제한
+
+**뮤텍스(Mutex)**  
+- 임계 구역을 가진 스레드들의 실행시간이 서로 겹치지 않고 각각 단독으로 실행되게 하는 기술
+- 상호 배제(**Mut**ual **Ex**clusion)의 약자
+- 해당 접근을 조율하기 위해 lock과 unlock을 사용함
+- 상태가 0, 1로 이진 세마포어로 부르기도 함
+
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/Semaphore%20%26%20Mutex.md
