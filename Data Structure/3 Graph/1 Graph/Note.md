@@ -499,3 +499,228 @@ print(adjacency_matrix)
 ### 정리
 - 각 노드의 엣지를 리스트에 저장하는 방법
 - 각 노드에 스스로 인접한 노드들에 대한 레퍼런스를 저장하여 엣지를 구현하는 방법
+
+<br/><br/>
+
+## 11. 인접 리스트 연습
+
+### 실습 설명
+이번 과제에서는 그래프 노드 만들기 과제처럼 텍스트 파일에서 데이터를 읽어와서 이걸로 인접 리스트를 만들어 볼게요. 노드를 만들 때 썼던 함수를 이름만 바꿔서 인접 리스트를 추가하는 코드만 추가해주시면 됩니다.
+
+인접 리스트를 구현하기 위해서 노드 클래스에 코드를 조금 추가했는데요. 실습을 시작하기 전에 어떻게 바뀌었는지 보고 갈게요.
+
+#### __init__() 메소드
+```python
+class StationNode:
+    """간단한 지하철 역 노드 클래스"""
+    def __init__(self, station_name):
+        self.station_name = station_name
+        self.adjacent_stations = []  # 인접 리스트
+```
+\_\_init\_\_ 메소드는 크게 바뀌지 않았습니다. 그냥 영상에서 본 대로 인접 리스트 변수 adjacent_station을 만들어 줬습니다.
+
+#### add_connection() 메소드
+```python
+def add_connection(self, other_station):
+    """지하철 역 노드 사이 엣지 저장하기"""
+    self.adjacent_stations.append(other_station)
+    other_station.adjacent_stations.append(self)
+```
+add_connection() 메소드는 파라미터로 다른 역 노드 other_station을 받습니다. 지하철 그래프는 무방향 그래프잖아요? 현재 지하철 역 self와 연결하려는 지하철역 other_stations의 인접 리스트에 서로를 저장해 줍니다.
+
+#### __str__() 메소드
+```python
+def __str__(self):
+    """지하철 노드 문자열 메소드. 지하철 역 이름과 연결된 역들을 모두 출력해 준다"""
+    res_str = f"{self.station_name}: "  # 리턴할 문자열
+
+    # 리턴할 문자열에 인접한 역 이름들 저장
+    for station in self.adjacent_stations:
+        res_str += f"{station.station_name} "
+
+    return res_str
+```
+이제 지하철 역 노드는 역 이름말고 더 많은 데이터를 저장하고 있잖아요? 이걸 잘 출력할 수 있는 문자열 메소드를 정의했습니다. 이제 지하철 역을 출력하면 역 이름과 역과 : 뒤에 연결된 모든 역 이름을 같이 볼 수 있습니다.
+
+#### stations.txt 파일
+텍스트 파일은 저번에 했던 거랑 똑같이, stations.txt 파일을 사용할게요. stations.txt은 줄마다 한 지하철 노선을 저장하고 있는데요. 이런 형식이었죠?
+
+소요산 - 동두천 - 보산 -  동두천중앙 - 지행 -  덕정 -  덕계 -  양주 -  녹양 -  가능 -  의정부 - 회룡 -  망월사 - 도봉산 - 도봉 -  방학 -  창동 -  녹천 -  월계 -  성북 -  석계 -  신이문 - 외대앞 - 회기 -  청량리 - 제기동 - 신설동 - 동묘앞 - 동대문 - 종로5가 -  종로3가 -  종각 -  시청 -  서울역 - 남영 -  용산 -  노량진 - 대방 -  신길 -  영등포 - 신도림 - 구로 -  구일 -  개봉 -  오류동 - 온수 -  역곡 -  소사 -  부천 -  중동 -  송내 -  부개 -  부평 -  백운 -  동암 -  간석 -  주안 -  도화 -  제물포 - 도원 -  동인천 - 인천 -  광명 -  가산디지털단지 - 독산 -  금천구청 -  석수 -  관악 -  안양 -  명학 -  금정 -  군포 -  당정 -  의왕 -  성균관대 -  화서 -  수원 -  세류 -  병점 -  세마 -  오산대 - 오산 -  진위 -  송탄 -  서정리 - 지제 -  평택 -  성환 - 직산 - 두정 -  천안 -  봉명 -  쌍용 -  아산 -  배방 -  온양온천 -  신창 -  서동탄
+
+전에는 그냥 노선들과 노선 안에 있는 역들을 돌면서 한 역을 하나의 노드로 만들기만 했는데, 이번에는 - 앞과 뒤에 있는 노드들을 서로 연결시켜 볼게요.
+
+create_subway_graph()는 파라미터로 텍스트 파일 이름을 문자열 input_file로 받습니다. 그리고 인접 리스트로 구현된 지하철 그래프를 딕셔너리로 리턴하죠. 이미 있는 함수에 코드를 조금 추가해서 create_subway_graph() 함수를 완성해 보세요!!
+
+### 실습 결과
+(전체 결과는 너무 길어서, 일부만 예시로 보여 드립니다.)
+```
+가능: 녹양 의정부 
+가락시장: 수서 경찰병원 송파 문정 
+가산디지털단지: 광명 독산 남구로 철산 
+가양: 양천향교 증미 
+가좌: 홍대입구 디지털미디어시티 
+가평: 상천 굴봉산 
+간석: 동암 주안 
+간석오거리: 부평삼거리 인천시청 
+갈매: 망우 별내역 
+갈산: 작전 부평구청 
+강남: 역삼 교대 양재 
+강남구청: 청담 학동 압구정로데오 선정릉 
+강동: 천호 길동 
+강동구청: 천호 몽촌토성 
+강변: 구의 잠실나루 
+강촌: 백양리 김유정 
+...
+```
+
+<br/><br/>
+
+### 해설
+```python
+# 코드를 추가하세요
+def create_subway_graph(input_file):
+    """input_file에서 데이터를 읽어 와서 지하철 그래프를 리턴하는 함수"""
+    stations = {}  # 지하철 역 노드들을 담을 딕셔너리
+
+    # 파라미터로 받은 input_file 파일을 연다
+    with open(input_file) as stations_raw_file:
+        for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+            subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+
+            for name in subway_line:
+                station_name = name.strip()  # 앞 뒤 띄어쓰기 없애기
+
+                # 지하철 역 이름이 이미 저장한 key 인지 확인
+                if station_name not in stations:
+                    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+                    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 노드 인스턴스를 value로 저장한다
+
+    return stations
+```
+저희가 사용하는 인풋 파일은 이런 형식이잖아요?
+
+소요산 - 동두천 - 보산 -  동두천중앙 - 지행 -  덕정 -  덕계 -  양주 -  녹양 -  가능 -  의정부 - 회룡 -  망월사 - 도봉산 - 도봉 -  방학 -  창동 -  녹천 -  월계 -  성북 -  석계 -  신이문 - 외대앞 - 회기 -  청량리 - 제기동 - 신설동 - 동묘앞 - 동대문 - 종로5가 -  종로3가 -  종각 -  시청 -  서울역 - 남영 -  용산 -  노량진 - 대방 -  신길 -  영등포 - 신도림 - 구로 -  구일 -  개봉 -  오류동 - 온수 -  역곡 -  소사 -  부천 -  중동 -  송내 -  부개 -  부평 -  백운 -  동암 -  간석 -  주안 -  도화 -  제물포 - 도원 -  동인천 - 인천 -  광명 -  가산디지털단지 - 독산 -  금천구청 -  석수 -  관악 -  안양 -  명학 -  금정 -  군포 -  당정 -  의왕 -  성균관대 -  화서 -  수원 -  세류 -  병점 -  세마 -  오산대 - 오산 -  진위 -  송탄 -  서정리 - 지제 -  평택 -  성환 - 직산 - 두정 -  천안 -  봉명 -  쌍용 -  아산 -  배방 -  온양온천 -  신창 -  서동탄
+
+그리고 이 역들을 하나씩 살펴봤는데요. 두 역을 서로 연결하기 위해서는 하나의 역을 볼 때, 앞과 뒤의 역 데이터를 갖고 있어야 되죠? 이를 저장할 변수 하나를 정의해 줍니다.
+```python
+# 파라미터로 받은 input_file 파일을 연다
+with open(input_file) as stations_raw_file:
+    for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+        previous_station = None  # 엣지를 저장하기 위한 도우미 변수. 현재 보고 있는 역 전 역을 저장한다
+        subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+```
+변수 이름은 previous_station이고, 지하철 역들을 돌면서 바로 전에 봤던 역 인스턴스를 저장합니다.
+```python
+# 지하철 역 이름이 이미 저장한 key 인지 확인
+if station_name not in stations:
+    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 인스턴스를 value로 저장한다
+```
+이 부분에서 새로운 역 인스턴스를 만들고, 역 이름을 key로, 역 인스턴스를 value로 저장하잖아요? 이때 만든 새 역 인스턴스를 current_station에 담고 있는데요. 전 역 데이터를 previous_station에 저장하고 있으니까
+```python
+current_station.add_connection(previous_station) 이렇게 하면 두 역을 연결시킬 수 있습니다.
+```
+근데 이걸 그대로 쓰기 전에 아래 두 가지 내용을 먼저 생각해 주세요.
+1. 현재 역이 이미 stations에 저장돼 있어서 새로운 노드를 만들지 않은 경우
+2. 그리고 previous_stations에 전 역 데이터를 저장하는 방법
+
+현재 역이 이미 stations에 저장돼 있어서 새로운 노드를 만들지 않은 경우부터 생각합시다. 현재 역이 이미 stations에 저장돼 있으면 그냥 저장한 데이터를 가지고 와서  current_station에 일단 담아야 합니다.
+```python
+# 지하철 역 이름이 이미 저장한 key 인지 확인
+if station_name not in stations:
+    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 인스턴스를 value로 저장한다
+
+else:
+    current_station = stations[station_name]  # 이미 저장한 역이면 stations에서 역 인스턴스를 갖고 온다
+```
+previous_stations에 전 역 데이터를 저장하는 방법도 생각해 보세요.
+
+반복문을 돌 때마다 current_station에 저장된 지하철역을 맨 마지막에 previous_station에 저장하면 됩니다.
+```python
+# 지하철 역 이름이 이미 저장한 key 인지 확인
+if station_name not in stations:
+    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 인스턴스를 value로 저장한다
+
+else:
+    current_station = stations[station_name]  # 이미 저장한 역이면 stations에서 역 인스턴스를 갖고 온다
+
+# 여기에 코드를 작성하세요
+
+previous_station = current_station  # 현재 역을 전 역으로 저장
+```
+이렇게 하면 지하철 호선 가장 앞에 있는 역일 때를 제외하고는 항상 previous_station에 바로 전에 있는 역이 저장되어 있을 겁니다.
+
+이제 previous_station과 current_station만 add_connection() 메소드를 써서 연결하면 되겠죠?
+```python
+if previous_station is not None:
+    current_station.add_connection(previous_station)  # 현재 역과 전 역의 엣지를 연결한다
+지하철 호선의 첫 번째 역을 볼 때는 previous_station에 None이 저장돼 있습니다. 첫 번째 역이 아닐 때는 current_station과 previous_station를 연결해줍니다.
+```
+
+### 모범 답안
+작성한 코드를 정리하면 이렇게 됩니다.
+```python
+def create_subway_graph(input_file):
+    """input_file에서 데이터를 읽어 와서 지하철 그래프를 리턴하는 함수"""
+    stations = {}  # 지하철 역 노드들을 담을 딕셔너리
+
+    # 파라미터로 받은 input_file 파일을 연다
+    with open(input_file) as stations_raw_file:
+        for line in stations_raw_file:  # 파일을 한 줄씩 받아온다
+            previous_station = None  # 엣지를 저장하기 위한 도우미 변수. 현재 보고 있는 역 전 역을 저장한다
+            subway_line = line.strip().split("-")  # 앞 뒤 띄어쓰기를 없애고 "-"를 기준점으로 데이터를 나눈다
+
+            for name in subway_line:
+                station_name = name.strip()  # 앞 뒤 띄어쓰기 없애기
+
+                # 지하철 역 이름이 이미 저장한 key 인지 확인
+                if station_name not in stations:
+                    current_station = StationNode(station_name)  # 새로운 인스턴스를 생성하고
+                    stations[station_name] = current_station  # dictionary에 역 이름은 key로, 역 인스턴스를 value로 저장한다
+
+                else:
+                    current_station = stations[station_name]  # 이미 저장한 역이면 stations에서 역 인스턴스를 갖고 온다
+
+                if previous_station is not None:
+                    current_station.add_connection(previous_station)  # 현재 역과 전 역의 엣지를 연결한다
+
+                previous_station = current_station  # 현재 역을 전 역으로 저장
+
+    return stations
+```
+
+### 테스트 코드
+작성한 코드가 제대로 돌아가는지 확인해 봅시다
+```python
+stations = create_subway_graph("./stations.txt")  # stations.txt 파일로 그래프를 만든다
+
+# stations에 저장한 역 인접 역들 출력 (채점을 위해 역 이름 순서대로 출력)
+for station in sorted(stations.keys()):
+        print(stations[station])
+```
+
+### 실습 결과
+각 역과 역에 연결된 다른 역들이 잘 출력되죠? (전체 결과는 너무 길어서, 일부만 예시로 보여 드립니다.)
+```
+가능: 녹양 의정부 
+가락시장: 수서 경찰병원 송파 문정 
+가산디지털단지: 광명 독산 남구로 철산 
+가양: 양천향교 증미 
+가좌: 홍대입구 디지털미디어시티 
+가평: 상천 굴봉산 
+간석: 동암 주안 
+간석오거리: 부평삼거리 인천시청 
+갈매: 망우 별내역 
+갈산: 작전 부평구청 
+강남: 역삼 교대 양재 
+강남구청: 청담 학동 압구정로데오 선정릉 
+강동: 천호 길동 
+강동구청: 천호 몽촌토성 
+강변: 구의 잠실나루 
+강촌: 백양리 김유정 
+...
+```
+
+[main1_11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/226c615598ca348e553938d771f7b4bbfdc9240c/Data%20Structure/3%20Graph/1%20Graph/main1_11.py) 참고
