@@ -56,3 +56,6 @@
         - 처음 방문하거나 스택에 없는 노드면:
             - 옅은 회색 표시를 해준다
             - 스택에 넣어준다
+
+## 10. DFS로 연결된 역 찾기
+[main2_10.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/fededdb3cb85cdb7578ccdf15806759138020f3d/Data%20Structure/3%20Graph/2%20Graph%20Search/main2_10.py) 참고
