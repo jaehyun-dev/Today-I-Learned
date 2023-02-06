@@ -28,3 +28,12 @@
 ## 05. BFS로 연결된 역 찾기
 
 [main2_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/353558ffcd0136a3001d25b66ce1b0c5324d89c7/Data%20Structure/3%20Graph/2%20Graph%20Search/main2_05.py) 참고
+
+## 06. BFS 알고리즘 시간 복잡도 분석
+
+### 정리
+전처리: $O(V)$
+큐에서 노드 넣고 빼기: $O(V)$
+인접한 노드들을 도는데 걸리는 시간: $O(E)$
+
+이걸 다 더해보면 $O(2V + E)$인데, 앞의 2는 무시해도 되니까 총 $O(V + E)$의 시간 복잡도가 걸린다고 할 수 있습니다.
