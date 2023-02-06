@@ -482,6 +482,8 @@ print(adjacency_matrix)
 
 <br/><br/>
 
+23.02.05
+
 ## 10. 엣지 구현 II: 인접 리스트
 
 그래프의 엣지를 구현하는 또 다른 방법, 인접 리스트  
@@ -726,6 +728,8 @@ for station in sorted(stations.keys()):
 [main1_11.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/226c615598ca348e553938d771f7b4bbfdc9240c/Data%20Structure/3%20Graph/1%20Graph/main1_11.py) 참고
 
 <br/><br/>
+
+23.02.06
 
 ## 12. 인접 행렬 vs 인접 리스트  
 
