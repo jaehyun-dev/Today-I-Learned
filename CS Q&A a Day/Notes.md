@@ -2220,3 +2220,19 @@ A.
 - 상태가 0, 1로 이진 세마포어로 부르기도 함
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/Semaphore%20%26%20Mutex.md
+
+23.02.06
+## Q. 그래프와 트리의 차이점에 대해 설명해주세요.(자료구조)
+
+A.  
+**트리**  
+- 계층적 관계를 나타내는 자료구조
+- root 노드부터 leaf 노드까지 상하 관계, 순서가 있다
+- 사이클을 허용하지 않는다
+
+**그래프**  
+- 연결 관계를 나타내는 자료구조
+- 모든 노드는 동등한 위치이고 순서나 상하 관계가 없다
+- 사이클이 생길 수 있다
+
+https://bigsong.tistory.com/33
