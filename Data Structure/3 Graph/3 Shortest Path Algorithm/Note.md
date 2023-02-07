@@ -53,3 +53,9 @@ BFS는 원래 그래프를 탐색하는 방법이지만, 조금만 수정하면 
 - 만약 더 짧은 거리가 있었다면, 그 이전 거리 단계에서 접근했어야 함
 - 경로에 포함된 모든 노드가 위의 논리를 따르고, 그 최단 경로는 predecessor를 통해 오는 것
 - 따라서 BFS로 찾은 경로는 최단 경로이게 됨
+
+<br/><br/>
+
+## 05. BFS 최단 경로용으로 바꾸기
+
+[main3_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/55c068892341b71a5d695e918682c1072fa0d55e/Data%20Structure/3%20Graph/3%20Shortest%20Path%20Algorithm/main3_05.py) 참고
