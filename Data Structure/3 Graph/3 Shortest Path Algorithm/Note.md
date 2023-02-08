@@ -59,3 +59,23 @@ BFS는 원래 그래프를 탐색하는 방법이지만, 조금만 수정하면 
 ## 05. BFS 최단 경로용으로 바꾸기
 
 [main3_05.py](https://github.com/jaehyun-dev/Today-I-Learned/blob/55c068892341b71a5d695e918682c1072fa0d55e/Data%20Structure/3%20Graph/3%20Shortest%20Path%20Algorithm/main3_05.py) 참고
+
+<br/><br/>
+
+23.02.08
+
+## 06. Dijkstra 알고리즘 변수들
+
+### Dijkstra 알고리즘
+- 가중치 그래프의 최단 경로를 찾는 알고리즘
+- 노드에 distance, predecessor, complete 세 가지 변수를 저장해야 함
+
+#### distance
+- 특정 노드까지의 "최단 거리 예상치"(현재까지 아는 정보로 계산한 최단 거리)
+
+#### predecessor
+- 현재까지 최단 경로에서 바로 직전의 노드
+
+#### complete
+- 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수
+- 처음에 False, 확실한 최단 경로 찾으면 True로 수정
