@@ -85,4 +85,14 @@ BFS는 원래 그래프를 탐색하는 방법이지만, 조금만 수정하면 
 ## 07. 엣지 Relaxation
 - 새로 찾은 경로의 distance가 현재 distance보다 작은지 확인하고 업데이트 해주는 것
 - distance와 predecessor를 업데이트
-- A에서 B로 가는 경로를 확인해서 업데이트하면, 엣지 (A, B)를 relax한다고 표현
+- A와 B 사이의 엣지를 확인해서 업데이트하면, 엣지 (A, B)를 relax한다고 표현
+
+<br/><br/>
+
+## 08. Dijkstra 알고리즘
+- 시작점의 distance를 0으로, predecessor를 None으로 초기화
+- 모든 노드가 complete일 때까지:
+  - complete하지 않은 노드 중 distance가 가장 작은 노드 선택
+  - 이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서:
+    - 각 엣지를 relax한다
+  - 현재 노드를 complete 처리한다
