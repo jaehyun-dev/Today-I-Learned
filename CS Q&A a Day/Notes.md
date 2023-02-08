@@ -2266,5 +2266,5 @@ A.
 - bias를 높임으로 variance를 낮출 수 있고, 반대의 경우도 가능하다
 - 즉, bias와 variance는 한 가지를 선택하면 한 가지를 다소 포기해야 한다
 
-https://opentutorials.org/module/3653/22071
+https://opentutorials.org/module/3653/22071  
 https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff
