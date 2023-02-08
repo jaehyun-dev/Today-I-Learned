@@ -2251,3 +2251,20 @@ Minimum Cut은 최소 비용으로 Cut하는 것을 의미한다.
 이때, 그래프에서 Minimum Cut을 하는 것이 네트워크 유량을 최대화하는 것과 같다.  
 
 https://www.crocus.co.kr/755
+
+23.02.08
+## Q. 편향(Bias)과 분산(Variance)에 대해 tradeoff와 연관지어 설명해주세요.(머신러닝)  
+
+A.  
+**편향(Bias)**  
+- 예측값들과 정답이 대체로 멀리 떨어져 있으면 결과의 편향(bias)이 높다고 말함
+
+**분산(Variance)**  
+- 예측값들이 자기들끼리 대체로 멀리 흩어져 있으면 결과의 분산(Variance)이 높다고 말함
+
+**Bias-variance tradeoff**  
+- bias를 높임으로 variance를 낮출 수 있고, 반대의 경우도 가능하다
+- 즉, bias와 variance는 한 가지를 선택하면 한 가지를 다소 포기해야 한다
+
+https://opentutorials.org/module/3653/22071
+https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff
