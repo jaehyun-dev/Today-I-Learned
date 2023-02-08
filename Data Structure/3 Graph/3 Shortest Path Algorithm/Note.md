@@ -79,3 +79,10 @@ BFS는 원래 그래프를 탐색하는 방법이지만, 조금만 수정하면 
 #### complete
 - 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수
 - 처음에 False, 확실한 최단 경로 찾으면 True로 수정
+
+<br/><br/>
+
+## 07. 엣지 Relaxation
+- 새로 찾은 경로의 distance가 현재 distance보다 작은지 확인하고 업데이트 해주는 것
+- distance와 predecessor를 업데이트
+- A에서 B로 가는 경로를 확인해서 업데이트하면, 엣지 (A, B)를 relax한다고 표현
