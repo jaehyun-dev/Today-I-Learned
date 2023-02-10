@@ -2282,3 +2282,15 @@ https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff
 3. 삭제 이상: 어떤 정보를 삭제하면, 유용한 다른 정보까지 삭제되어버리는 이상
 
 https://kosaf04pyh.tistory.com/294
+
+23.02.10
+## Q. 로드 밸런싱과 로드 밸런서에 대해 연관지어 설명해주세요.(네트워크)  
+
+A.  
+**로드 밸런싱(Load Balancing)**  
+- 둘 이상의 CPU 또는 저장장치와 같은 컴퓨터 자원들에게 작업을 나누는 것
+- 여러 서버에 균등하게 트래픽을 분산시켜주는 것
+- 분산식 웹 서비스로, 여러 서버에 부하(Load)를 나누어주는 역할
+- 로드 밸런서(Load Balancer)를 클라이언트와 서버 사이에 두고, 부하가 일어나지 않도록 여러 서버에 분산시켜주는 방식
+
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/%EB%A1%9C%EB%93%9C%20%EB%B0%B8%EB%9F%B0%EC%8B%B1(Load%20Balancing).md
