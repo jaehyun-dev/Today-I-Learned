@@ -2294,3 +2294,50 @@ A.
 - 로드 밸런서(Load Balancer)를 클라이언트와 서버 사이에 두고, 부하가 일어나지 않도록 여러 서버에 분산시켜주는 방식
 
 https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/%EB%A1%9C%EB%93%9C%20%EB%B0%B8%EB%9F%B0%EC%8B%B1(Load%20Balancing).md
+
+23.02.11
+## Q. HTTP 응답 상태 코드 종류를 설명해주세요.(네트워크)
+
+A.  
+**202 Accepted**
+- 요청을 수신하였지만 그에 응하여 행동할 수 없습니다. 이 응답은 요청 처리에 대한 결과를 이후에 HTTP로 비동기 응답을 보내는 것에 대해서 명확하게 명시하지 않습니다. 이것은 다른 프로세스에서 처리 또는 서버가 요청을 다루고 있거나 배치 프로세스를 하고 있는 경우를 위해 만들어졌습니다.
+
+**301 Moved Permanently**
+- 이 응답 코드는 요청한 리소스의 URI가 변경되었음을 의미합니다. 새로운 URI가 응답에서 아마도 주어질 수 있습니다.
+
+**404 Not Found**
+- HTTP 404 Not Found 클라이언트 오류 응답 코드는 서버가 요청받은 리소스를 찾을 수 없다는 것을 의미합니다. 404 페이지를 띄우는 링크는 대체로 브로큰 링크(broken link) 또는 데드 링크(dead link)라고 부르며, link rot 대상일 수도 있습니다.
+
+**500 Internal Server Error**
+- 하이퍼텍스트 전송 프로토콜 (HTTP) 500 Internal Server Error 서버 에러 응답 코드는 요청을 처리하는 과정에서 서버가 예상하지 못한 상황에 놓였다는 것을 나타냅니다.
+- 이 에러 응답은 "서버 에러를 총칭하는"(catch-all) 구체적이지 않은 응답입니다. 종종, 서버 관리자들은 미래에 같은 에러를 발생하는 것을 방지하기 위해 500 상태 코드 같은 에러 응답들에 더 많은 자세한 내용을 남겨 둡니다.
+
+https://developer.mozilla.org/ko/docs/Web/HTTP/Status/202
+
+## Q. Code, Data, Stack, Heap에 대해 설명해주세요.(운영체제)
+
+A.  
+프로세스가 차지하고 있는 메모리 영역은 Code, Data, Heap, Stack의 영역으로 나누어져 있고, 이들을 각각 Segment라고 부름
+
+정적 세그먼트  
+1. **Code**
+- 메모리 맵의 제일 아래 text 부분
+- 작성한 코드가 들어가는 부분(기계어도 포함)
+- read only 영역이라 쓰기 작업이 들어오면 access violation이 발생
+- 프로세스가 종료될 때까지 계속 유지됨
+
+2. **Data**
+- 전역변수(global), 정적변수(static), 배열(array), 구조체(structure) 등이 저장됨
+
+동적 세그먼트  
+3. **Heap**  
+- 프로그래머가 동적으로 사용하는 영역
+- malloc, free, new, delete에 의하여 할당 또는 반환되는 영역
+
+4. **Stack**  
+- 지역변수, 매개변수, 복귀 번지 등이 저장되어있는 프로그램이 자동으로 사용하는 임시 메모리
+- 함수 호출 시 생성되고, 종료 시 반환됨
+- LIFO 정책 사용함
+- 다른 세그먼트들은 하위 영역으로부터 할당되지만 Stack 세그먼트는 상위 영역부터 할당됨
+
+https://adevspoon.com/?code=-MCclhOrqxWhGB9ImkuH8FuEbOMTPZw3uGmhU1TA6mVgB32ex20ZL-T5ggUjwXBdGCemKQopyNgAAAGGQJaOxA
