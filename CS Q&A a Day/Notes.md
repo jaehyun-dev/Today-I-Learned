@@ -2324,15 +2324,16 @@ A.
 - 메모리 맵의 제일 아래 text 부분
 - 작성한 코드가 들어가는 부분(기계어도 포함)
 - read only 영역이라 쓰기 작업이 들어오면 access violation이 발생
-- 프로세스가 종료될 때까지 계속 유지됨
+- 프로세스가 종료될 때까지 계속 유지됨  
 
-2. **Data**
-- 전역변수(global), 정적변수(static), 배열(array), 구조체(structure) 등이 저장됨
+2. **Data**  
+- 전역변수(global), 정적변수(static), 배열(array), 구조체(structure) 등이 저장됨  
 
 동적 세그먼트  
+
 3. **Heap**  
 - 프로그래머가 동적으로 사용하는 영역
-- malloc, free, new, delete에 의하여 할당 또는 반환되는 영역
+- malloc, free, new, delete에 의하여 할당 또는 반환되는 영역  
 
 4. **Stack**  
 - 지역변수, 매개변수, 복귀 번지 등이 저장되어있는 프로그램이 자동으로 사용하는 임시 메모리
