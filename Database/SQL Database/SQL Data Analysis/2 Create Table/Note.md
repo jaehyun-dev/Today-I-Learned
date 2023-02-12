@@ -62,3 +62,12 @@ Workbench에서 PK 박스를 선택하면 NN 박스도 자동으로 선택됨
 ### NN 박스 체크의 의미
 - 이 컬럼에 Null 값이 있으면 안 된다는 뜻
 - Primary Key 컬럼은 반드시 Not Null이어야 함
+
+<br/><br/>
+
+## 06. Primary Key와 Auto Increment 속성
+### AI
+- Auto Increment의 약자
+- 자동 증가라는 뜻
+- AI 속성을 적용하면, DBMS에서 자동으로 증가하는 값을 넣어줌(1씩 증가하는 정수)
+- 보통 Surrogate Key 컬럼에 적용되며 MySQL이 자동으로 관리한다는 의미
