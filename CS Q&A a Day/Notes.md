@@ -2344,7 +2344,7 @@ A.
 https://adevspoon.com/?code=-MCclhOrqxWhGB9ImkuH8FuEbOMTPZw3uGmhU1TA6mVgB32ex20ZL-T5ggUjwXBdGCemKQopyNgAAAGGQJaOxA
 
 23.02.12
-## Q. O(n)의 시간복잡도로 히을 구성하는 방법에 대해 설명해주세요.(자료구조)  
+## Q. O(n)의 시간복잡도로 힙을 구성하는 방법에 대해 설명해주세요.(자료구조)  
 
 A.  
 **Sift Down Operation**  
