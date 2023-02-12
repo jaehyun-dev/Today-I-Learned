@@ -131,3 +131,9 @@ SQL 문을 실행했을 때, 실행이 잘 되었는지 등에 관한 정보를 
 <br/><br/>
 
 ## 10. 테이블 생성하기 퀴즈
+1. CSV 파일이라고 할 때, CSV는 Comma Separated Values의 줄임말입니다.
+2. 문자열형을 나타내는 데이터 타입은? TEXT
+3. 테이블에서 특정 row 하나를 식별하기 위한 용도로 사용되는 컬럼으로, 기본키라고도 말하는 이 키는? Primary Key
+4. Primary Key에는 개체의 속성을 직접적으로 나타내는 Natural Key와, 개체의 속성을 직접적으로 나타내지는 않지만 Primary Key 용도로 사용하기 위해 인위적으로 생성한 Surrogate Key가 있습니다.
+5. NULL과 숫자 0 또는 비어있는 문자열('')은 그 의미가 전혀 다릅니다. 숫자 0이나 비어있는 문자열('')은 그 자체로 하나의 값이기 때문에 NULL과는 전혀 다릅니다. 착각하시면 안 됩니다!
+6. Surrogate Key의 각 정수값이 유일한 상태가 유지되도록 DBMS에 자동 관리를 맡기고 싶다면 Surrogate Key에 Auto Increment 설정을 해주면 됩니다. (하지만 Surrogate Key에는 꼭 정수가 아니더라도 UUID 등의 값을 둬서 유일한 상태를 유지하기도 합니다. 이런 경우에는 굳이 Auto Increment 설정이 필요하지 않습니다.)
