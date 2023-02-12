@@ -2342,3 +2342,15 @@ A.
 - 다른 세그먼트들은 하위 영역으로부터 할당되지만 Stack 세그먼트는 상위 영역부터 할당됨
 
 https://adevspoon.com/?code=-MCclhOrqxWhGB9ImkuH8FuEbOMTPZw3uGmhU1TA6mVgB32ex20ZL-T5ggUjwXBdGCemKQopyNgAAAGGQJaOxA
+
+23.02.12
+## Q. O(n)의 시간복잡도로 히을 구성하는 방법에 대해 설명해주세요.(자료구조)  
+
+A.  
+**Sift Down Operation**  
+- 주어진 노드의 child nodes 중 key가 큰 값(or 작은 값)과 비교연산을 수행해 property를 만족하거나, 그렇지 않으면 leaf에 도달할 때까지 swap하는 과정
+1. data set에 주어졌을 때, 앞에서부터 순차적으로 완전이진트리를 만든다
+2. leaf 노드를 제외한 노드들을 자식 노드들과 비교연산을 수행하여 swap을 한다
+3. 힙 속성을 만족할 때까지 2를 반복한다
+
+https://leeminju531.tistory.com/33
