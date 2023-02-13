@@ -33,3 +33,11 @@ SELECT * FROM copang_main.member WHERE email = 'taehos@hanmail.net';
 2. SQL문 안에는 공백이나 개행 등을 자유롭게 넣을 수 있음(가독성 향상)
 3. SQL문에서 예약어(SELECT, FROM 등)는 대문자로 쓰기(관례)
 4. 데이터베이스 이름은 상황 따라 생략도 가능(USE로 데이터베이스 지정하고 생략 가능)
+
+<br/><br/>
+
+## 04. 조건을 나타내는 다양한 방법
+- 부등호(<, >): 작거나 큰 범위 설정
+- BETWEEN A AND B: A부터 B까지 범위 설정
+- NOT: 뒤의 조건이 아닌 범위 설정
+- DATE 형식의 데이터도 부등호, BETWEEN 사용하여 범위 설정할 수 있음
