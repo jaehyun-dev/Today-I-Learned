@@ -41,3 +41,13 @@ SELECT * FROM copang_main.member WHERE email = 'taehos@hanmail.net';
 - BETWEEN A AND B: A부터 B까지 범위 설정
 - NOT: 뒤의 조건이 아닌 범위 설정
 - DATE 형식의 데이터도 부등호, BETWEEN 사용하여 범위 설정할 수 있음
+
+<br/><br/>
+
+## 05. 문자열 패턴 매칭 조건
+### LIKE, %
+```SQL
+SELECT * FROM member WHERE address LIKE '서울%';
+```
+- address 데이터의 문자열의 첫 부분이 '서울'로 시작하고 그 뒤에 임의의 길이를 가진 문자열 있는 모든 데이터 조회
+- '%ABC%': 문자열 'ABC'가 포함된 모든 문자열
