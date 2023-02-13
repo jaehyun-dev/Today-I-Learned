@@ -58,3 +58,27 @@ SELECT * FROM member WHERE address LIKE '서울%';
 1. 같지 않음(!=, <>)
 2. 이 중에 있는~ (IN(A, B, C))
 3. 한 글자를 나타내는 _
+
+<br/><br/>
+
+## 07. DATE 데이터 타입 관련 함수
+### 1. 연도, 월, 일 추출하기
+YEAR, MONTH, DAYOFMONTH
+
+### 2. 날짜 간의 차이 구하기
+DATEDIFF(A, B)
+
+오늘 날짜: CURDATE()
+
+### 3. 날짜 더하기 뺴기
+- DATE_ADD(A, INTERVAL 300 DAY)
+- DATE_SUB(B, INTERVAL 250 DAY)
+
+### 4. UNIX Timestamp 값
+- 특정 날짜의 특정 시간을 1970년 1월 1일을 기준으로, 총 몇 초가 지났는지 나타낸 값
+- UNIX_TIMESTAMP(A): A를 UNIX Timestamp 값으로 변환
+- FROM_UNIXTIME(B): B를 일반적인 날짜 시간으로 변환
+
+### 5. 기타
+- 날짜, 시간 관련 데이터 타입 : https://dev.mysql.com/doc/refman/8.0/en/date-and-time-types.html
+- 날짜, 시간 관련 함수 : https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html
