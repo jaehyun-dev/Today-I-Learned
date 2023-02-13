@@ -12,7 +12,8 @@
 - '테이블의 데이터를', '조회할 때' 사용하는 구문
 ```SQL
 SELECT * FROM copang_main.member;
-```  
+```
+
 - \*는 모든 것 지칭. \* 대신 email, age, address 등 컬럼 이름 넣으면 해당 데이터만 보임  
 - 즉 SELECT 바로 뒤에는 보고 싶은 컬럼의 이름들을 적어주는 위치
 - From 다음에는 데이터를 조회하고 싶은 테이블의 이름을 써주는 위치
@@ -24,3 +25,11 @@ SELECT * FROM copang_main.member;
 SELECT * FROM copang_main.member WHERE email = 'taehos@hanmail.net';
 ```
 - 특정 조건을 만족하는 로우들만 조회할 때 사용
+
+<br/><br/>
+
+## 03. SQL 작성 형식에 관한 이야기
+1. SQL문 끝에는 항상 세미콜론(;)을 써줘야 함
+2. SQL문 안에는 공백이나 개행 등을 자유롭게 넣을 수 있음(가독성 향상)
+3. SQL문에서 예약어(SELECT, FROM 등)는 대문자로 쓰기(관례)
+4. 데이터베이스 이름은 상황 따라 생략도 가능(USE로 데이터베이스 지정하고 생략 가능)
