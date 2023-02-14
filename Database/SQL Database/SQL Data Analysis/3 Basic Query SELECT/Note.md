@@ -82,3 +82,31 @@ DATEDIFF(A, B)
 ### 5. 기타
 - 날짜, 시간 관련 데이터 타입 : https://dev.mysql.com/doc/refman/8.0/en/date-and-time-types.html
 - 날짜, 시간 관련 함수 : https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html
+
+<br/><br/>
+
+2023.02.14
+
+## 08. 여러 개의 조건 걸기
+### AND
+```SQL
+SELECT * FROM member
+WHERE gender = 'm'
+    AND address LIKE '서울%'
+    AND age BETWEEN 25 and 29;
+```
+
+### OR
+```SQL
+SELECT * FROM member
+WHERE MONTH(sign_up_day) BETWEEM 3 AND 5
+    OR MONTH(sign_up_day) BETWEEN 9 AND 11;
+```
+
+### AND OR
+```SQL
+SELECT * FROM member
+WHERE (gender = 'm' AND height >= 180)
+    OR (gender = 'f' AND height >= 170);
+```
+먼저 실행해야 할 부분은 괄호로 묶어주면 좋음
