@@ -2364,3 +2364,23 @@ A.
 2. 동적 프로그래밍(DP)를 활용하여, 분할하는 각 구간에 대해서 전체 오차를 계산하여 가장 작은 값(최소 오차)을 구한다
 
 https://bab2min.tistory.com/629
+
+23.02.14
+## Q. MLE와 MAP의 차이에 대해 설명해주세요.(머신러닝)
+
+A.  
+Bayes's Rule  
+### $p(θ|x) = \frac{p(\theta) f(x|\theta)}{p(x)}$   
+
+Posterior, Prior, Likelihood
+- Posterior: $p(\theta|x)$, 즉 위 수식의 좌변. 관측치 $x$가 주어졌을 때 $\theta$를 가지는 확률. 관측치가 주여진(변수가 존재하는) 확률모형
+- Prior: $p(\theta)$, $\theta$로 구성된 확률모형. 관측치 $x$를 통해 특정하고자 하는 함수
+- Likelihood: $p(x|\theta)$, parms이 주어졌을 때 $x$ 관측치를 얻을 확률모형  
+
+MLE(Maximum Likelihood Estimation)
+- Likelihood를 Maximize시켜 추정치를 얻는 방법
+
+MAP(Maximum A Posteriori)
+- Posteriori를 Maximize시켜 추정치를 얻는 방법
+
+https://niceguy1575.medium.com/mle%EC%99%80-map%EC%9D%98-%EC%B0%A8%EC%9D%B4-7d2cc0bee9c
