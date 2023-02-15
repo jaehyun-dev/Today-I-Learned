@@ -2384,3 +2384,34 @@ MAP(Maximum A Posteriori)
 - Posteriori를 Maximize시켜 추정치를 얻는 방법
 
 https://niceguy1575.medium.com/mle%EC%99%80-map%EC%9D%98-%EC%B0%A8%EC%9D%B4-7d2cc0bee9c
+
+23.02.15  
+## Q. 데이터베이스의 트랜잭션에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+**트랜잭션(Transaction)**  
+- 데이터베이스의 상태를 변환시키는 하나의 논리적 기능을 수행하기 위한 작업의 단위 또는 한꺼번에 모두 수행되어야 할 일련의 연산들을 의미
+
+**특징**  
+- 데이터베이스 시스템에서 병행 제어 및 회복 작업 시 처리되는 작업의 논리적 단위
+- 사용자가 시스템에 대한 서비스 요구 시 시스템에 응답하기 위한 상태 변환 과정의 작업 단위
+- 하나의 트랜잭션은 Commit되거나 Rollback 됨
+
+**성질**  
+- Atomicity(원자성)
+- Consistency(일관성)
+- Isolation(독립성, 격리성)
+- Durability(영속성, 지속성)
+
+**연산**
+- Commit
+- Rollback
+
+**상태**
+- 활동(Active)
+- 실패(Failed)
+- 철회(Aborted)
+- 부분 완료(Partially Committed)
+- 완료(Committed)
+
+https://coding-factory.tistory.com/226
