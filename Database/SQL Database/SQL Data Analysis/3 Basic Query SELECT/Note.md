@@ -200,3 +200,10 @@ WHERE (age BETWEEN 20 AND 29) AND (MONTH(sign_up_day) = 7);
 - TEXT 타입 컬럼의 숫자값들을 숫자형 타입으로 보고 정렬하려면, ORDER BY CAST(data AS signed)와 같이 쓸 수 있음
 - signed는 양수 음수 포함하는 정수, decimal은 실수
 - 숫자를 문자처럼 비교하려면 char
+
+<br/><br/>
+
+## 15. 데이터 일부만 추려보기
+- 쿼리문 마지막에 LIMIT a 추가하면 현재 조회된 로우들 중에서 a개만 추려서 보여달라는 뜻  
+- LIMIT a, b: a번째 로우부터 시작해서 b개만 추려서 보여달라는 뜻
+- row는 0번째부터 시작
