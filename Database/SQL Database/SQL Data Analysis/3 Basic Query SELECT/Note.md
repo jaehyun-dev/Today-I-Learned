@@ -153,3 +153,12 @@ Unix Timestamp는 1970년 1월 1일을 기준으로 특정 날짜, 시간까지 
 
 질문 6  
 WHERE 절에서 AND가 OR보다 더 먼저 실행된다는 사실을 잘 기억하세요. 그리고 되도록이면 먼저 실행되기를 원하는 조건은 괄호로 묶는 것이 좋습니다.
+
+<br/><br/>
+
+## 11. 데이터 조회 실습
+```MySQL
+SELECT * 
+FROM member 
+WHERE (age BETWEEN 20 AND 29) AND (MONTH(sign_up_day) = 7);
+```
