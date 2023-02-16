@@ -175,3 +175,17 @@ WHERE (age BETWEEN 20 AND 29) AND (MONTH(sign_up_day) = 7);
 - 테이블에 적용된 기본 설정에서 Table collation 항목이 utf8mb4_0900_ai_ci로 설정되어 있으면 대소문자 구분되지 않음
 - ci는 case-insensitive의 약자로 문자열이 동일한지 확인할 때, 대소문자를 구별하지 않겠다는 뜻
 - LIKE와 표현식 사이에 BINARY를 입력하면 대소문자 구분할 수 있음(알파벳은 같지만 0과 1이 정확히 일치하지 않음)
+
+<br/><br/>
+
+## 13. 데이터 정렬해서 보기
+### 정렬
+- 'row들을', '특정 컬럼을 기준으로', '순서대로 출력'하는 것
+- SELECT ~~ ORDER BY column_name;
+- 기본적으로 작은 순서대로 오름차순
+- MySQL은 NULL을 가장 작은 값으로 처리
+- ORDER BY column_name ASC; ascending의 약자, 오름차순. 생략 가능
+- ORDER BY column_name DESC; descending의 약자, 내림차순
+- WHERE이 먼저 나오고 그 다음 ORDER가 나와야 함
+- 콤마로 구분해서 여러 column을 기준으로 정렬할 수도 있음
+- 이름을 먼저 쓴 컬럼을 우선으로 해서 정렬이 차례대로 수행됨
