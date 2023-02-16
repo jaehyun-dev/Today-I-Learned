@@ -243,3 +243,21 @@ LIMIT은 크게
 세 번째 row가 2 ...
 
 이라는 사실을 잘 기억하셔야 합니다.
+
+<br/><br/>
+
+## 17. 데이터 정렬 실습
+```MySQL
+SELECT * 
+FROM review 
+ORDER BY star ASC, registration_date DESC LIMIT 5;
+```
+또는
+```MySQL
+SELECT * 
+FROM review 
+ORDER BY star ASC, registration_date DESC LIMIT 0, 5;
+```
+ORDER BY star ASC, registration_date DESC 라고 써주면 별점 기준으로 오름차순, 그리고 같은 별점 안에서는 등록일자 기준으로 내림차순 정렬될 겁니다.
+
+그리고 이렇게 정렬된 row들을 대상으로 LIMIT 5 또는 LIMIT 0, 5를 적용하면 문제의 답을 구할 수 있겠죠?
