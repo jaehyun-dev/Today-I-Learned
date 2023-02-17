@@ -2435,3 +2435,25 @@ A.
 | 공개 여부 |       내/외부 접근 가능       |       외부 접근 불가능      |
 
 https://velog.io/@hidaehyunlee/%EA%B3%B5%EC%9D%B8Public-%EC%82%AC%EC%84%A4Private-IP%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90
+
+23.02.17
+## Q. 데드락이 무엇인지 설명하고 데드락의 4가지 조건에 대해 각각 설명해주세요.(운영체제)
+
+A.  
+데드락(DeadLock, 교착 상태)  
+- 두 개 이상의 프로세스나 스레드가 서로 자원을 얻지 못해서 다음 처리를 하지 못하는 상태
+- 무한히 다음 자원을 기다리게 되는 상태
+- 시스템적으로 한정된 자원을 여러 곳에서 사용하려고 할 때 발생함
+
+발생 조건
+- 데드락은 다음 4가지 조건을 모두 만족해야 발생
+1. 상호 배제(Mutual Exclusion)
+    - 자원은 한 번에 한 프로세스만 사용할 수 있음
+2. 점유 대기(Hold and Wait)
+    - 최소한 하나의 자원을 점유하고 있으면서 다른 프로세스에 할당되어 사용하고 있는 자원을 추가로 점유하기 위해 대기하는 프로세스가 존재햐아 함
+3. 비선점(No Preemption)
+    - 다른 프로세스에 할당된 자원은 사용이 끝날 때까지 강제로 빼앗을 수 없음
+4. 순환 대기(Circuit Wait)
+    - 프로세스의 집합에서 순환 형태로 자원을 대기하고 있어야 함
+
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/DeadLock.md
