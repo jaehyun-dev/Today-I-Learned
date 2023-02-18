@@ -117,3 +117,17 @@ COALESCE에는 2개의 인자가 들어가는데, 첫 번째 인자는 그 값�
 
 퀴즈 4  
 해설: COALESCE() 함수를 사용하면 NULL을 다른 값으로 변환해서 표시할 수 있습니다.
+
+<br/><br/>
+
+## 07. 데이터 분석 실습
+### 해설
+일단 comment 컬럼이 NULL이 아닌 row들만 조회하고 그 row들의 개수, 그리고 그 row들의 별점의 평균값을 구해야 합니다. 별점 평균값을 반올림하려면 ROUND() 산술 함수를 사용하면 되겠죠?
+
+### 모범 답안
+```MySQL
+SELECT COUNT(*),
+       ROUND(AVG(star)) 
+FROM review 
+WHERE comment IS NOT NULL; 
+```
