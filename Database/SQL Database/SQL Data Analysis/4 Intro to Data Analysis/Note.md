@@ -53,3 +53,31 @@ SELECT AVG(height) FROM member;
 ### 집계 함수와 산술 함수의 차이
 1. 집계 함수는 특정 컬럼의 여러 row의 값들을 동시에 고려해서 실행되는 함수
 2. 산술 함수는 특정 컬럼의 각 row의 값마다 실행되는 함수
+
+<br/><br/>
+
+## 03. NULL을 다루는 방법
+
+### NULL값 다루기
+특정 컬럼에 NULL이 있는 row를 추출하기
+```MySQL
+SELECT * FROM member WHERE address IS NULL;
+```
+
+특정 컬럼 값이 NULL이 아닌 row만 보려면
+```MySQL
+SELECT * FROM member WHERE address IS NOT NULL;
+```
+값이 들어있는 row들만 출력됨  
+
+이처럼 NULL값 제외하려면 IS NOT NULL 쓰면 됨
+
+### COALESCE
+- 개발자가 아닌 다른 직군 사람들이 NULL의 의미를 이해하지 못할 수 있으니, NULL을 다른 단어로 바꿔줘야 할 수도 있음
+- NULL을 다른 단어로 바꾸는 여러 방법이 있는데 그 중 하나는 COALESCE(합치다)
+```MySQL
+SELECT
+    COALESCE(height, '####')
+FROM member;
+```
+COALESCE에는 2개의 인자가 들어가는데, 첫 번째 인자는 그 값을 살펴보고, NULL이 아니면 그대로, NULL이라면 두 번째 인자를 출력
