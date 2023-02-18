@@ -81,3 +81,14 @@ SELECT
 FROM member;
 ```
 COALESCE에는 2개의 인자가 들어가는데, 첫 번째 인자는 그 값을 살펴보고, NULL이 아니면 그대로, NULL이라면 두 번째 인자를 출력
+
+<br/><br/>
+
+## 04. NULL에 관해 알아야하는 사실
+### 1. IS NULL 과 = NULL은 다릅니다.
+- IS NULL을 = NULL로 적는 경우가 있는데, NULL은 어떤 값이 아니기 때문에 등호로 비교할 수 없음  
+- IS NULL이라는 키워드가 존재하는 이유  
+- = NULL로 적으면 모든 row가 TRUE가 될 수 없기 때문에 아무 row도 출력되지 않음
+- != NULL, <> NULL 등도 IS NOT NULL로 적어야 함
+
+### 2. NULL에는 어떤 연산을 해도 결국 NULL이다.
