@@ -215,3 +215,20 @@ CASE
 END
 ```
 의 형식으로 작성한다는 사실을 잘 기억하세요.
+
+<br/><br/>
+
+## 12. 컬럼 자유롭게 다루기 실습
+```MySQL
+SELECT name,
+       price,
+       price/cost,
+       (CASE 
+            WHEN price/cost >= 1 AND price/cost < 1.5 THEN 'C. 저효율 메뉴'
+            WHEN price/cost >= 1.5 AND price/cost < 1.7 THEN 'B. 중효율 메뉴'
+            WHEN price/cost >= 1.7 THEN 'A. 고효율 메뉴'
+        END) AS efficiency
+FROM pizza_price_cost
+ORDER BY efficiency DESC, price ASC
+LIMIT 6;
+```
