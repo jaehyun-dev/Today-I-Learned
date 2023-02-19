@@ -195,3 +195,23 @@ END
 FROM member;
 ```
 CASE도 하나의 컬럼이 됨
+
+<br/><br/>
+
+## 11. 컬럼 자유롭게 다루기 퀴즈
+
+질문 1  
+해설: 컬럼에 alias를 붙일 때는 '원래의 컬럼 이름'과, alias 사이에 AS 또는 스페이스를 써주면 됩니다.
+
+질문 2  
+해설:  
+CASE() 함수는
+```MySQL
+CASE
+    WHEN 조건1 THEN 해당 조건이 TRUE일 때 보여줄 값
+    WHEN 조건2 THEN 해당 조건이 TRUE일 때 보여줄 값
+    WHEN 조건3 THEN 해당 조건이 TRUE일 때 보여줄 값
+    ELSE 그 밖의 모든 경우
+END
+```
+의 형식으로 작성한다는 사실을 잘 기억하세요.
