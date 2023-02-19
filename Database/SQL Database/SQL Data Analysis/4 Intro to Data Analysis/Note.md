@@ -150,3 +150,30 @@ FROM member;
 ```
 
 식 중에 하나라도 NULL이면 결괏값도 NULL로 표시됨
+
+<br/><br/>
+
+## 09. 컬럼에 alias 붙이기
+
+### Alias(별명, 멸칭)
+원래의 컬럼 이름을 다른 이름으로 교체하는 방법(alias 붙이기)
+```MySQL
+SELECT
+    email,
+    height AS 키,
+    weight AS 몸무게,
+    weight / ( (height/100) * (height/100) ) AS BMI
+FROM member;
+```
+AS 안 쓰고 컬럼 이름 뒤에 스페이스 하나 띄우고 alias 써도 됨  
+되도록이면 AS 쓰는 게 안 헷갈림
+
+### CONCAT
+concatenate(연결하다)의 줄임말  
+```MySQL
+SELECT
+    email,
+    CONCAT(height, 'cm', ', ', weight, 'kg') AS '키와 몸무게',
+    weight / ( (height/100) * (height/100) ) AS BMI
+FROM member;
+```
