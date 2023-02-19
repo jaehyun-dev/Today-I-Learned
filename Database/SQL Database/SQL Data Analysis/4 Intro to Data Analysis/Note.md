@@ -131,3 +131,22 @@ SELECT COUNT(*),
 FROM review 
 WHERE comment IS NOT NULL; 
 ```
+
+<br/><br/>
+
+2023.02.19
+
+## 08. 컬럼끼리 계산하기
+컬럼끼리 산술계산 할 수 있음
+- +(더하기)
+- -(뺴기)
+- \*(곱하기)
+- /(나누기)
+- %(나머지 구하기)
+
+```MySQL
+SELECT email, height, weight, weight / ( (height/100) * (height/100) )
+FROM member;
+```
+
+식 중에 하나라도 NULL이면 결괏값도 NULL로 표시됨
