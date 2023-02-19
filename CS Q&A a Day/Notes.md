@@ -2473,3 +2473,11 @@ A.
 3. 계산이 빨라야 함
 
 https://j3sung.tistory.com/759
+
+23.02.19
+## Q. 이분 매칭(Bipartite Matching)문제를 포드-폴커슨(Ford-Fulkerson) 알고리즘을 통해 해결하는 방식을 제안해주세요.(알고리즘)
+
+A.  
+그래프에 Sink와 Target을 정한 후, sink에서 지원자A로 가는 edge weight = 무한, 직업에서 Target으로의 edge weight은 1로 설정하고 더이상 target으로 가는 residual graph가 없을 때까지 dfs또는 bfs로 탐색하면 된다.
+
+https://adevspoon.com/?code=RJ-ZeDk_KCvV37KV7UsFJvgqAgDgP63oAPWu6IQBAYwJyngbxW1akaR1q0lRhV9NvUejVAo9cxcAAAGGZ4_g1w
