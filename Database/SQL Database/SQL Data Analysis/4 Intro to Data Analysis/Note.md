@@ -177,3 +177,21 @@ SELECT
     weight / ( (height/100) * (height/100) ) AS BMI
 FROM member;
 ```
+
+<br/><br/>
+
+## 10. 컬럼의 값 변환해서 보기
+
+### CASE
+```MySQL
+SELECT ..., 
+
+CASE
+    WHEN ... THEN ___
+    WHEN ... THEN ___
+    ELSE ___
+END
+
+FROM member;
+```
+CASE도 하나의 컬럼이 됨
