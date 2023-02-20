@@ -232,3 +232,21 @@ FROM pizza_price_cost
 ORDER BY efficiency DESC, price ASC
 LIMIT 6;
 ```
+
+<br/><br/>
+
+2023.02.20
+
+## 13. 고유값만 보기
+### DISTINCT()
+컬럼의 로우들에 다양한 값이 있는데 중복 없이 고윳값만 보여줌
+```MySQL
+SELECT DISTINCT(gender) FROM member;
+```
+
+### SUBSTRING
+- 문자열의 입루를 추출하는 함수
+```MySQL
+SELECT DISTINCT(SUBSTRING(address, 1, 2)) FROM member;
+```
+- address 컬럼에 있는 값에서 가장 첫 번째 문자부터 시작해서 총 두 개의 문자를 추출하라는 뜻
