@@ -302,3 +302,33 @@ Group BY
 ```
 컬럼을 가공하여 원하는 적절한 그루핑 가능함  
 그루핑 기준을 여러 개 사용할 수 있고, 세분화된 그루핑이 가능함
+
+<br/><br/>
+
+## 17. 그루핑해서 보기 III
+### HAVING
+```MySQL
+SELECT
+    SUBSTRING(address, 1, 2) AS region,
+    gender,
+    COUNT(*)
+FROM member
+Group BY
+    SUBSTRING(address, 1, 2),    
+    gender
+HAVING region = '서울';
+```
+- 지역을 '서울'로 가지고 있는 그룹만 보여주기
+- HAVING 뒤에 조건을 추가하여 원하는 그룹만 볼 수 있음
+
+### WHERE과 HAVING의 차이점
+- WHERE: 테이블에서 맨 처음 로우들을 조회할 때 조건을 설정하기 위한 구문
+- HAVING: 이미 조회된 로우들을 다시 그루핑하여 생성된 그룹들 중에서 다시 필터링을 할 때 쓰는 구문
+
+### 특정 그룹을 제외하고 싶으면
+```MySQL
+HAVING region IS NOT NULL
+```
+과 같이 쓸 수 있음
+
+그루핑 후 정렬하면 더 깔끔하게 볼 수  
