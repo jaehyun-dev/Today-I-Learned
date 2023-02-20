@@ -270,3 +270,19 @@ SELECT emal, LPAD(age, 10, '0') FROM member;
 
 ### 4. TRIM(), LTRIM(), RTRIM() 함수
 - 문자열의 왼쪽, 오른쪽 공백(스페이스)을 제거하는 함수
+
+
+<br/><br/>
+
+## 15. 그루핑해서 보기 I
+```MySQL
+SELECT
+    gender,
+    COUNT(*),
+    AVG(height),
+    MIN(weight)
+FROM member
+GROUP BY gender;
+```
+특정 칼럼을 기준으로 그루핑을 하면, 처음에는 DISTINCT 함수처럼 고윳값만 보이지만, 사실 해당 그룹으로 묶인 row가 안에 다 들어가있는 상황.  
+그루핑을 한 후 집계함수 등을 쓰면 그룹별로 특성을 파악할 수 있음
