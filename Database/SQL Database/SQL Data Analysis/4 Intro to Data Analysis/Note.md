@@ -250,3 +250,23 @@ SELECT DISTINCT(gender) FROM member;
 SELECT DISTINCT(SUBSTRING(address, 1, 2)) FROM member;
 ```
 - address 컬럼에 있는 값에서 가장 첫 번째 문자부터 시작해서 총 두 개의 문자를 추출하라는 뜻
+
+<br/><br/>
+
+## 14. 문자열 관련 함수들
+### 1. LENGTH() 함수
+- 문자열의 길이를 구해줌
+
+### 2. UPPER(), LOWER() 함수
+- 문자열을 모두 대문자 또는 소문자로 바꿔서 보여줌
+
+### 3. LPAD(), RPAD() 함수
+- LEFT(또는 RIGHT) + PADDING(채우기라는 뜻)의 줄임말
+```MySQL
+SELECT emal, LPAD(age, 10, '0') FROM member;
+```
+- age 왼쪽에 0을 10개 붙여라
+- 문자열에 숫자 넣으면 자동으로 문자열로 형 변환 됨
+
+### 4. TRIM(), LTRIM(), RTRIM() 함수
+- 문자열의 왼쪽, 오른쪽 공백(스페이스)을 제거하는 함수
