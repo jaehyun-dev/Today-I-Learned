@@ -2481,3 +2481,17 @@ A.
 그래프에 Sink와 Target을 정한 후, sink에서 지원자A로 가는 edge weight = 무한, 직업에서 Target으로의 edge weight은 1로 설정하고 더이상 target으로 가는 residual graph가 없을 때까지 dfs또는 bfs로 탐색하면 된다.
 
 https://adevspoon.com/?code=RJ-ZeDk_KCvV37KV7UsFJvgqAgDgP63oAPWu6IQBAYwJyngbxW1akaR1q0lRhV9NvUejVAo9cxcAAAGGZ4_g1w
+
+23.02.20
+## Q. 엔트로피(Entropy)와 크로스 엔트로피(Corss-Entropy)에 대해 설명해주세요.(머신러닝)  
+
+A.  
+**엔트로피(Entropy)**  
+- 불확실성의 척도. 엔트로피가 높을수록 정보가 많고, 확률이 낮다는 것을ㅇ ㅢ미
+- 어떤 데이터가 나올지 예측하기 어려운 정도
+
+**크로스 엔트로피(Corss-Entropy)**  
+- 실제 분포 q에 대하여 알지 못하는 상태에서, 모델링을 통하여 구한 분포인 p를 통하여 q를 예측하는 것
+- 실제값과 예측값의 차이를 줄이기 위한 엔트로피
+
+https://melonicedlatte.com/machinelearning/2019/12/20/204900.html
