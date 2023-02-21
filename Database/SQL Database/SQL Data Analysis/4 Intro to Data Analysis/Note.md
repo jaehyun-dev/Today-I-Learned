@@ -369,3 +369,16 @@ WHERE 절은 SELECT 문에서 맨 처음에 row들을 필터링 할 때 쓰이�
 질문 5  
 해설: FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY - LIMIT  
 SELECT 문 안의 각 절이 실행되는 순서는 그것의 작성 순서와는 다릅니다. 각 절의 실행 순서를 모르는 상태에서는 SQL 문이 조금만 길어지고 복잡해져도 혼동하기 쉽습니다. 각 절의 실행 순서를 정확하게 숙지하고 SQL 문을 본다면 그 의미가 자연스럽게 잘 이해될 겁니다.
+
+<br/><br/>
+
+## 20. 그루핑해서 보기 실습
+```MySQL
+SELECT category, 
+       main_month, 
+       COUNT(*) AS '영화 수', 
+       SUM(view_count) AS '총 관객 수' 
+FROM 2020_movie_report
+GROUP BY category, main_month
+HAVING main_month = 5 AND SUM(view_count) >= 3000000;
+```
