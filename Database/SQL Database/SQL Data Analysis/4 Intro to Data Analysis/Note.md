@@ -425,3 +425,15 @@ ORDER BY region ASC, gender DESC;
 5. SELECT: 모든 컬럼 또는 특정 컬럼들을 조회합니다. SELECT 절에서 컬럼 이름에 alias를 붙인 게 있다면, 이 이후 단계(ORDER BY, LIMIT)부터는 해당 alias를 사용할 수 있습니다.
 6. ORDER BY: 각 row를 특정 기준에 따라서 정렬합니다.
 7. LIMIT: 이전 단계까지 조회된 row들 중 일부 row들만을 추립니다.
+
+<br/><br/>
+
+## 23. WITH ROLLUP에 관해 더 알아보기(심화)
+
+### 1. GROUP BY 뒤 기준들의 순서에 따라 WITH ROLLUP 의 결과도 달라집니다.
+- WITH ROLLUP은 GROUP BY 뒤에 나오는 그루핑 기준의 등장 순서에 맞춰서 계층적인 부분 총계를 보여줌  
+- GROUP BY 뒤에 나오는 그루핑 기준의 등장 순서에 따라 WITH ROLLUP이 출력하는 결과가 달라짐
+
+### 2. NULL임을 나타내기 위해 쓰인 NULL vs. 부분 총계을 나타내기 위해 쓰인 NULL
+- GROUPING() 함수를 통해 원래 있는 NULL을 나타내는 건지, 부분 총계임을 나타내기 위해 쓰인 NULL인 건지 구분할 수 있음
+- 실제로 NULL을 나타내기 위해 쓰인 NULL인 경우에는 0, 부분 총계를 나타내기 위해 표시된 NULL은 1을 리턴해주는 함수
