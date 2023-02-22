@@ -382,3 +382,25 @@ FROM 2020_movie_report
 GROUP BY category, main_month
 HAVING main_month = 5 AND SUM(view_count) >= 3000000;
 ```
+
+<br/><br/>
+
+2023.02.22
+
+## 21. 그루핑해서 보기 IV(심화)
+
+### WITH ROLLUP
+- 세부 그룹들을 좀 더 큰 단위의 그룹으로 중간중간에 합쳐주는 역할
+- GROUP BY 기준 여러 개 쓰면, 먼저 쓴 컬럼 기준으로 합쳐줌
+
+```MySQL
+SELECT SUBSTRING(address, 1, 2) as region,
+       gender,
+       COUNT(*)
+FROM member
+GROUP BY SUBSTRING(address, 1, 2), gender WITH ROLLUP
+HAVING region IS NOT NULL
+ORDER BY region ASC, gender DESC;
+```
+![image](https://bakey-api.codeit.kr/files/3205/wpdwwW?name=rollup_first.png)  
+
