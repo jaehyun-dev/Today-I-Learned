@@ -2510,3 +2510,24 @@ A.
 - 인덱스를 잘못 사용할 경우 오히려 성능이 저하되는 역효과가 발생할 수 있음
 
 https://mangkyu.tistory.com/96
+
+23.02.22
+## Q. REST API에 대해 설명해주세요.(네트워크)
+
+A.  
+**REST API(Represnatational State Trnasfer API)**
+
+**구성**  
+- 자원(Resource) - URI
+- 행위(Verb) - HTTP METHOD
+- 표현(Representations)
+
+**특징**  
+- Uniform(유니폼 인터페이스)
+- Stateless(무상태성)
+- Cacheable(캐시 가능)
+- Self-descriptiveness(자체 표현 구조)
+- Client - Server 구조
+- 계층형 구조
+
+https://meetup.nhncloud.com/posts/92
