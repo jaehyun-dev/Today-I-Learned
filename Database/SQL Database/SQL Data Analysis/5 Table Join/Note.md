@@ -10,3 +10,16 @@
 ### 새로운 테이블 추가
 - CSV 파일을 테이블로 만든 뒤 id 컬럼을 Primary Key로, Auto Increment 설정
 - 날짜 컬럼의 데이터 타입을 DATE로 변경
+
+<br/><br/>
+
+## 02. 테이블 간의 연결고리
+- item: 의류 상품 정보
+- item_new
+- member: 회원 정보
+- review: 별점, 댓글
+- stock: 재고 수량 정보
+
+item의 id 컬럼에 해당하는 값이 stock의 item_id 컬럼과 연결되어야 함  
+다른 값이 들어가면 안 됨  
+이를 방지하기 위해 설정을 해줄 필요가 있음
