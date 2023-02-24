@@ -2543,3 +2543,12 @@ A.
 - 프로세스가 할당받은 자원을 이용하는 실행 흐름의 단위
 
 https://velog.io/@raejoonee/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
+23.02.24
+## Q. 블룸 필터(Bloom filter)에 대해 설명해주세요.(자료구조)
+
+A.  
+- 원소가 집합에 속하는지 여부를 검사하는 데 사용하는 확률적 자료구조
+- set, bitmap, hash 함수 등을 이용하여 Encoding과 Decoding 과정을 거쳐 어떤 원소가 집합에 포함되는지 판별할 수 있음
+
+https://jeongchul.tistory.com/605
