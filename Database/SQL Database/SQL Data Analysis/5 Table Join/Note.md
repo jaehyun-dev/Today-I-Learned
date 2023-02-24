@@ -36,3 +36,9 @@ item의 id 컬럼에 해당하는 값이 stock의 item_id 컬럼과 연결되어
 
 - 참조하는 테이블을 자식 테이블,
 - 참조되는 테이블을 부모 테이블이라고 함
+
+<br/><br/>
+
+## 04. Foreign Key 설정하기
+- Foreign Key 이름 설정, Reference Table 설정, 참조하는 Column 설정, 참조되는 Column 설정
+- Foreign Key 설정하면, 나중에 참조하는 컬럼에 참조되는 컬럼에 없는 이상한 값이 삽입되려고 할 때 MySQL이 에러를 발생시켜줌
