@@ -138,3 +138,36 @@ SELECT p.name,
        COALESCE(s.sales_volume, '판매량 정보 없음') AS '판매량'
 FROM pizza_price_cost AS p LEFT OUTER JOIN sales AS s ON p.id = s.menu_id;
 ```
+
+<br/><br/>
+
+## 12. 결합 연산과 집합 연산
+
+### (1) A ∩ B (INTERSECT 연산자 사용)
+```MySQL
+SELECT * FROM member_A
+INTERSECT 
+SELECT * FROM member_B
+```
+
+### (2) A - B (MINUS 연산자 또는 EXCEPT 연산자 사용)
+```MySQL
+SELECT * FROM member_A 
+MINUS
+SELECT * FROM member_B
+```
+
+### (3) B - A (MINUS 연산자 또는 EXCEPT 연산자 사용)
+```MySQL
+SELECT * FROM member_B
+MINUS
+SELECT * FROM member_A
+```
+
+### (4) A U B (UNION 연산자 사용)
+```MySQL
+SELECT * FROM member_A
+UNION
+SELECT * FROM member_B
+```
+INTERSECT, MINUS, UNION 중에서 MySQL에서는 버전 8.0 기준으로 UNION 연산자만 지원함(다른 DBMS인 오라클에서는 3가지 연산자 모두를 지원함)
