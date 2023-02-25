@@ -70,3 +70,10 @@ ON item.id = stock.item_id
 왼쪽 테이블의 컬럼에 있는데 오른쪽 테이블 컬럼에 없는 값은 NULL로 처리되어 연결됨  
 
 RIGHT OUTER JOIN 하면 오른쪽 테이블을 기준으로 합쳐짐
+
+<br/><br/>
+
+## 06. 조인할 때 테이블에 alias 붙이기
+- 컬럼 뿐만 아니라 테이블에도 alias 붙일 수 있음  
+- FROM '테이블' AS 'alias'(또는 FROM '테이블' 'alias')
+- 다른 부분의 테이블 이름 전부 alias로 바꿔줘야 함
