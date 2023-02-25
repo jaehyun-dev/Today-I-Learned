@@ -122,3 +122,19 @@ Foreign key 관계가 개념적으로 성립하더라도, Workbench 등의 프�
 해설:  
 LEFT OUTER JOIN과 RIGHT OUTER JOIN을 보통, 묶어서 OUTER JOIN이라고 합니다. OUTER JOIN을 할 때는 항상 어느 테이블이 기준이 되는지 주의해야 합니다.  
 INNER JOIN은 두 테이블 다 조인 기준을 만족하는 컬럼 값이 있는 row들만 보여줍니다.  
+
+<br/><br/>
+
+## 11. Foreign Key와 조인 실습
+
+### 해설
+일단 pizza_price_cost 테이블을 기준으로 sales 테이블을 LEFT OUTER JOIN하세요. 이때 기준 테이블의 id 컬럼과 sales 테이블의 menu_id 컬럼을 조인 기준으로 하면 되겠죠?
+
+그 다음 COLEASE() 함수로 sales_volume 컬럼이 NULL이면 '판매량 정보 없음'이라고 표시하고 이 컬럼에는 AS로 '판매량'이라는 alias를 붙이세요.
+
+### 모범 답안
+```MySQL
+SELECT p.name, 
+       COALESCE(s.sales_volume, '판매량 정보 없음') AS '판매량'
+FROM pizza_price_cost AS p LEFT OUTER JOIN sales AS s ON p.id = s.menu_id;
+```
