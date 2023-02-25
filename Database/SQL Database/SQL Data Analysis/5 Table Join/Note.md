@@ -42,3 +42,31 @@ item의 id 컬럼에 해당하는 값이 stock의 item_id 컬럼과 연결되어
 ## 04. Foreign Key 설정하기
 - Foreign Key 이름 설정, Reference Table 설정, 참조하는 Column 설정, 참조되는 Column 설정
 - Foreign Key 설정하면, 나중에 참조하는 컬럼에 참조되는 컬럼에 없는 이상한 값이 삽입되려고 할 때 MySQL이 에러를 발생시켜줌
+
+<br/><br/>
+
+2023.02.25
+
+## 05. 다른 종류의 테이블 조인하기 I
+
+### JOIN
+- 연결하다, 합치다
+- 여러 테이블을 합쳐서 하나로 보이게 만드는 것
+```MySQL
+SELECT
+    item.id,
+    item.name,
+    stock.item_id,
+    stock.inventory_count
+FROM item LEFT OUTER JOIN stock
+ON item.id = stock.item_id
+```
+#### LEFT OUTER JOIN
+- 왼쪽의 item 테이블을 기준으로 해서 stock 테이블을 합치라는 뜻
+
+#### ON
+- 합칠 때 기준, item 테이블의 id 컬럼과 stock 테이블의 item_id 컬럼의 값을 비교해서 서로 값이 같은 로우끼리 가로 방향으로 연결하라는 뜻
+
+왼쪽 테이블의 컬럼에 있는데 오른쪽 테이블 컬럼에 없는 값은 NULL로 처리되어 연결됨  
+
+RIGHT OUTER JOIN 하면 오른쪽 테이블을 기준으로 합쳐짐
