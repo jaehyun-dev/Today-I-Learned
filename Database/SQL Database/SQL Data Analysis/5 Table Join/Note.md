@@ -91,3 +91,11 @@ RIGHT OUTER JOIN 하면 오른쪽 테이블을 기준으로 합쳐짐
 ### INNER JOIN
 - OUTER JOIN과 달리 기준되는 테이블 없이, 두 테이블 모두 기준 컬럼에 일치하는 값이 있는 로우들만 연결됨
 - 집합으로 차면 교집합
+
+
+<br/><br/>
+
+## 09. Foreign Key가 아닌 컬럼 기준으로 조인을 하기도 합니다.
+
+조인을 할 때 보통 Foreign Key를 기준으로 하는 것은 맞지만, 그렇다고 꼭 Foreign Key만을 기준으로 해야하는 것은 아닙니다. 꼭 Foreign Key가 존재하지 않더라도 서로 같은 의미를 나타내는 컬럼들을 기준으로 조인하기도 하죠.  
+이 경우 OUTER JOIN과 INNER JOIN의 결괏값 달라짐.  
