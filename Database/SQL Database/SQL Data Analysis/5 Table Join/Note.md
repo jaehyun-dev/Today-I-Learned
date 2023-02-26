@@ -171,3 +171,38 @@ UNION
 SELECT * FROM member_B
 ```
 INTERSECT, MINUS, UNION 중에서 MySQL에서는 버전 8.0 기준으로 UNION 연산자만 지원함(다른 DBMS인 오라클에서는 3가지 연산자 모두를 지원함)
+
+
+<br/><br/>
+
+2023.02.26
+
+## 13. 같은 종류의 테이블 조인하기
+같은 종류의 테이블인데 최신화가 된 경우, 기존 테이블에 있던 게 누락됐을 수도 있고, 없던 게 추가됐을 수도 있음
+
+### LEFT OUTER JOIN
+기존 테이블을 기준으로 삼기 때문에, 기존에 있었지만 새 테이블에 없는 로우 찾을 수 있음
+```MySQL
+SELECT
+    old.id AS old_id,
+    old.name AS old_name,
+    new.id AS new_id,
+    new.name AS new_name
+FROM item AS old RIGHT OUTER JOIN item_new AS new
+ON old.id = new.id;
+```
+
+### RIGHT OUTER JOIN
+새 테이블을 기준으로 삼기 때문에, 기존에 없었지만 새 테이블에 생긴 로우 찾을 수 있음
+
+### INNER JOIN
+기존 테이블과 새 테이블 모두 존재하는 로우 찾을 수 있음
+
+### UNION
+양쪽의 모든 로우를 중복없이 한번씩 조회하여 볼 수 있음
+```MySQL
+SELECT * FROM item
+UNION
+SELECT * FROM item_new;
+```
+
