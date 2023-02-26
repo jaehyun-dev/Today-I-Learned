@@ -272,3 +272,19 @@ FROM
 ### 2. 1:1 관계 , 1:n 관계
 - 하나의 상품에는 여러 개의 리뷰가 달릴 수 있는데, 이런 걸 1:n 관계라고 함
 - 상품과 재고량과 같은 1:1 관계와 다르게, 1:n 중 1에 해당하는 테이블의 row는 조인 결과에서 여러 번 등장할 수 있음
+
+<br/><br/>
+
+## 18. 의미있는 데이터 추출하기 I
+여성 회원들의 평균 평점이 높은 순으로 정렬하기
+```MySQL
+SELECT i.id, i.name, AVG(star)
+FROM
+    item AS i LEFT OUTER JOIN review AS r
+        ON r.item_id = i.id
+    LEFT OUTER JOIN member AS m
+        ON r.mem_id = m.id
+WHERE m.gender = 'f'
+GROUP BY i.id, i.name
+ORDER BY AVG(star) DESC;
+```
