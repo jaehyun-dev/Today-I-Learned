@@ -206,3 +206,16 @@ UNION
 SELECT * FROM item_new;
 ```
 
+<br/><br/>
+
+## 14. ON 대신 USING을 쓸 수도 있어요
+```MySQL
+SELECT
+    old.id AS old_id,
+    old.name AS old_name,
+    new.id AS new_id,
+    new.name AS new_name
+FROM item AS old RIGHT OUTER JOIN item_new AS new
+USING(id);
+```
+JOIN하려는 두 테이블에서 조인 조건으로 사용되는 컬럼들의 이름이 같으면 USING() 안에 컬럼 이름 써도 됨
