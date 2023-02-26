@@ -288,3 +288,29 @@ WHERE m.gender = 'f'
 GROUP BY i.id, i.name
 ORDER BY AVG(star) DESC;
 ```
+
+<br/><br/>
+
+## 19. 의미있는 데이터 추출하기 II
+리뷰가 최소 2개 이상인 아이템만 추출, 같은 평점이면 리뷰 수 많은 순으로 정렬하여 조회
+```MySQL
+SELECT i.id, i.name, AVG(star), COUNT(*)
+FROM
+    item AS i LEFT OUTER JOIN review AS r
+        ON r.item_id = i.id
+    LEFT OUTER JOIN member AS m
+        ON r.mem_id = m.id
+WHERE m.gender = 'f'
+GROUP BY i.id, i.name
+HAVING COUNT(*) > 1
+ORDER BY
+    AVG(star) DESC,
+    COUNT(*) DESC;
+```
+
+남성 회원에게 적용하고 싶으면, m.gender = 'm'으로만 바꾸면 됨  
+
+평점이 가장 안 좋은 item_id 2번 아이템의 리뷰 조회
+```MySQL
+SELECT * FROM review WHERE item_id = 2;
+```
