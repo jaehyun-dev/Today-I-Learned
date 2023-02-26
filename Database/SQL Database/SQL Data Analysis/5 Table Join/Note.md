@@ -336,3 +336,63 @@ SELECT * FROM review WHERE item_id = 2;
 
 질문 4  
 해설: UNION과 UNION ALL은 두 테이블을 합친다는 공통점은 있지만, 두 테이블의 중복 row를 제거하는지 여부에 따른 차이가 있습니다. 참고로, UNION은 중복 row를 제거하는 작업이 하나 더 추가되기 때문에 UNION ALL보다 실행완료까지의 시간이 미세하게나마 더 걸린다는 특징이 있습니다.
+
+<br/><br/>
+
+## 21. 여러 테이블 조인하기 실습
+
+### 해설
+(1) 일단 세 테이블을 이너 조인(INNER JOIN)하세요.
+```MySQL
+FROM review AS r INNER JOIN item AS i ON r.item_id = i.id
+INNER JOIN member AS m ON r.mem_id = m.id
+```
+(2) 그리고 item 테이블의 gender 컬럼의 값이 u인 row들만 선별하세요.
+```MySQL
+WHERE i.gender = 'u'
+```
+(3) item 테이블의 registration_date 컬럼에서 연도를 추출해서 이것(상품 등록 연도)을 기준으로 row들을 그루핑하세요.
+```MySQL
+GROUP BY YEAR(i.registration_date)
+```
+(4) 각 그룹 내 row 개수가 10개 이상인 그룹들만 추리세요.
+```MySQL
+HAVING COUNT(*) >= 10
+```
+(5) 결과를 별점 평균값을 기준으로 내림차순 정렬하세요.
+```MySQL
+ORDER BY AVG(star) DESC;
+```
+(6) 컬럼은 총 세 개를 조회하세요.
+1. 상품 등록 연도 컬럼('등록 연도'라는 alias를 붙이세요.)
+2. 각 그룹 내 row의 개수('리뷰 개수'라는 alias를 붙이세요.)
+3. 각 그룹별 별점 평균값('별점 평균값'이라는 alias를 붙이세요.)
+
+```MySQL
+SELECT YEAR(i.registration_date) AS '등록 연도', 
+       COUNT(*) AS '리뷰 개수', 
+       AVG(star) AS '별점 평균값'
+```
+
+별로 어렵지 않죠? 이 SQL 문을 실행한 결과는 다음과 같습니다.
+
+![a](https://user-images.githubusercontent.com/71001479/221415715-a52e9181-a59d-4b9a-bc01-3c5e13f11728.png)
+
+2019년도에 해당하는 그룹만 보이는군요. 아마 HAVING COUNT(\*) >= 10 절 때문인 것 같은데요. 이 부분을 제거하고 다시 실행해보면,
+
+![b](https://user-images.githubusercontent.com/71001479/221415736-3bf7facc-95c2-4311-a528-4df9c62b6b58.png)
+
+이렇게 2018년도 그룹도 볼 수 있습니다. 2018년에 등록된 상품에 비해, 2019년에 등록된 상품들의 총 리뷰 수가 좀더 많긴 하지만 별점 평균값은 조금 떨어졌네요. 리뷰 수가 많아졌다는 건 그만큼 판매량이 많아졌다는 뜻이라 좋은 의미지만, 대신 별점 평균값이 떨어지지 않도록 잘 관리해야겠네요.
+
+### 모범 답안
+```MySQL
+SELECT YEAR(i.registration_date) AS '등록 연도', 
+       COUNT(*) AS '리뷰 개수', 
+       AVG(star) AS '별점 평균값'
+FROM review AS r INNER JOIN item AS i ON r.item_id = i.id
+INNER JOIN member AS m ON r.mem_id = m.id
+WHERE i.gender = 'u'
+GROUP BY YEAR(i.registration_date)
+HAVING COUNT(*) >= 10
+ORDER BY AVG(star) DESC;
+```
