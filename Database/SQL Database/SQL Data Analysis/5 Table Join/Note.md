@@ -232,3 +232,28 @@ JOIN하려는 두 테이블에서 조인 조건으로 사용되는 컬럼들의 
 ### 2. UNION 과 UNION ALL
 - UNION ALL은 UNION처럼 두 테이블의 합집합을 보여준다는 점은 같습니다. 하지만 겹치는 것을 중복 제거하지 않고, 겹치는 것들을 그대로 둘다 보여준다는 차이점이 있죠.
 - UNION 연산과 UNION ALL 연산은 둘다 합집합을 구하되, 전자는 중복을 제거해서 보여주고, 후자는 그런 작업없이 두 테이블을 합친 결과를 그대로 보여준다는 차이가 있습니다.
+
+<br/><br/>
+
+## 16. 서로 다른 3개의 테이블 조인하기
+```MySQL
+SELECT
+    i.name, i.id,
+    r.item_id, r.star, r.comment, r.mem_id,
+    m.id, m.email
+FROM
+    item AS i LEFT OUTER JOIN review AS r
+        ON r.item_id = i.id
+    LEFT OUTER JOIN member AS m
+        ON r.mem_id = m.id;
+```
+```MySQL
+    item AS i LEFT OUTER JOIN review AS r
+        ON r.item_id = i.id
+```
+이 부분이 먼저 JOIN되어 하나의 테이블로 합쳐지고, 그게 다시
+```MySQL
+    LEFT OUTER JOIN member AS m
+        ON r.mem_id = m.id;
+```
+이 부분과 JOIN되어 세 테이블이 하나로 합쳐짐
