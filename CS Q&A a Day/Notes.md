@@ -2553,7 +2553,7 @@ A.
 
 https://jeongchul.tistory.com/605
 
-23.02.24
+23.02.25
 ## Q. 배낭 문제(knapsack Problem)에 대해 설명하고 이를 해결하는 알고리즘을 제시하세요.(알고리즘)
 
 A.  
@@ -2562,3 +2562,13 @@ A.
 - 이차원배열을 통해, 각 아이템을 배낭에 넣었을 경우 담긴 가격의 합을 그 전 아이템까지의 합과 비교해가며 최대값을 찾는 DP의 메모이제이션 기법으로 해결할 수 있다
 
 https://propercoding.tistory.com/50
+
+23.02.26
+## Q. K-fold Cross Validation에 대해 설명해주세요.(머신러닝)
+
+A.  
+**K-fold Cross Validation**
+- K개의 fold를 만들어서 진행하는 교차검증
+- 총 데이터 개수가 적은 데이터 셋에 대하여 정확도를 향상시킬 수 있음
+- 기존에 Training/Validation/Test 세 개의 집단으로 분류하는 것보다, Training과 Test로만 분류할 때 학습 데이터 셋이 더 많기 때문
+- 데이터 수가 적은데 검증과 테스트에 데이터를 더 뺏기면 underfitting 등 성능이 미달되는 모델이 학습됨
