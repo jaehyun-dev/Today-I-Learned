@@ -2582,3 +2582,20 @@ A.
 - 데이터베이스가 항상 만족하기를 바라는 조건을 직접적으로 표현한 것으로, 보통 두 개 이상의 테이블에 영향을 미치는 제약조건을 명시하기 위해 사용됨
 
 https://libertegrace.tistory.com/entry/Database-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
+
+23.02.28
+## Q. http 상태코드(status code)의 의미를 설명해주세요.(네트워크)
+
+A.  
+**HTTP 상태 코드(Status Code)**
+- 클라이언트가 보낸 HTTP 요청에 대한 서버의 응답 코드로, 상태 코드에 따라 요청의 성공/실패 여부를 판단함  
+
+**분류**  
+- 1xx(Informational): 조건부 응답
+- 2xx(Successful): 성공
+- 3xx(Redirection): 리다이렉션 완료
+- 4xx(Client Error): 요청 오류
+- 5xx(Server Error): 서버 오류
+
+https://developer.mozilla.org/ko/docs/Web/HTTP/Status  
+https://velog.io/@sangyeon217/http-status-code
