@@ -38,3 +38,21 @@ FROM copang_main.item;
     (SELECT MAX(price) FROM item)
 ```
 이 부분이 SELECT 절에 쓰인 서브쿼리. item 테이블 중 가장 비싼 상품의 가격을 보여줌.
+
+<br/><br/>
+
+2023.03.01
+
+## 03. WHERE 절에 있는 서브쿼리 I
+```MySQL
+SELECT
+    id, 
+    name, 
+    price
+FROM copang_main.item
+WHERE price > (SELECT MAX(price) FROM item);
+```
+```MySQL
+              (SELECT MAX(price) FROM item)
+```
+이 부분이 WHERE 절에 쓰인 서브쿼리. item 테이블 중 가장 비싼 상품의 가격을 보여줌.
