@@ -2599,3 +2599,14 @@ A.
 
 https://developer.mozilla.org/ko/docs/Web/HTTP/Status  
 https://velog.io/@sangyeon217/http-status-code
+
+23.03.01  
+## Q. 디스크 캐시와 메모리(램) 캐시의 차이점에 대해 설명해주세요.(운영체제)
+
+A.  
+**디스크 캐시**  
+- 하드디스크에 접근하는 시간을 개선하기 위해 RAM에 저장하는 기법
+- 하드디스크에 접근하는 것보다 RAM에 접근하는 것이 더 빠르기 때문
+
+**캐시 메모리**  
+- 램에 접근하지 않고 더 빠른 시간으로 접근할 수 있는 CPU 칩 안에 있는 작지만 빠른 메모리(L1, L2, L3)
