@@ -56,3 +56,21 @@ WHERE price > (SELECT MAX(price) FROM item);
               (SELECT MAX(price) FROM item)
 ```
 이 부분이 WHERE 절에 쓰인 서브쿼리. item 테이블 중 가장 비싼 상품의 가격을 보여줌.
+
+<br/><br/>
+
+2023.03.02
+
+## 04. WHERE 절에 있는 서브쿼리 II
+
+- 서브쿼리에 값 하나를 리턴하는 경우만 있는 것은 아님
+```MySQL
+SELECT * FROM item
+WHERE id IN
+(
+SELECT item_id
+FROM review
+GROUP BY item_id HAVING COUNT(*) >= 3
+);
+```
+review 테이블에서, 리뷰가 3개 이상인 로우들을 SELECT 한 다음, 해당 목록에 있는 id를 item 테이블에서 SELECT 하여 보여주는 것
