@@ -74,3 +74,28 @@ GROUP BY item_id HAVING COUNT(*) >= 3
 );
 ```
 review 테이블에서, 리뷰가 3개 이상인 로우들을 SELECT 한 다음, 해당 목록에 있는 id를 item 테이블에서 SELECT 하여 보여주는 것
+
+<br/><br/>
+
+2023.03.03
+
+## 05. ANY(SOME), ALL
+
+### 1. ANY의 의미(+SOME)
+- ANY가 WHERE 절에서 사용될 때는, 서브쿼리의 결과에 있는 각 row의 값들 중 하나라도 조건을 만족하는 경우가 있으면 TRUE를 리턴한다는 뜻입니다.  
+- SOME도 서브쿼리의 결과에 있는 각 row의 값들 중 하나라도 조건을 만족하면 TRUE를 리턴합니다.
+```MySQL
+SELECT * FROM FOR_TEST.codeit_theater
+    WHERE view_count > ANY(SELECT view_count FROM FOR_TEST.codeit_theater WHERE category = 'ACTION')
+        AND category != 'ACTION'
+```
+view_count가 ACTION 카테고리에 있는 영화들의 view_count 중 어느 하나보다 더 높으면서 카테고리가 ACTION이 아닌 영화를 보여줌
+
+### 2. ALL의 의미
+- ALL은 모든 경우에 대해서 해당 조건이 성립해야 TRUE를 리턴합니다.
+```MySQL
+SELECT * FROM FOR_TEST.codeit_theater
+    WHERE view_count > ALL(SELECT view_count FROM FOR_TEST.codeit_theater WHERE category = 'ACTION')
+        AND category != 'ACTION'
+```
+view_count가 ACTION 카테고리에 있는 모든 영화들의 view_count보다 더 높으면서 카테고리가 ACTION이 아닌 영화를 보여줌
