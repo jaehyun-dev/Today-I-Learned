@@ -99,3 +99,48 @@ SELECT * FROM FOR_TEST.codeit_theater
         AND category != 'ACTION'
 ```
 view_count가 ACTION 카테고리에 있는 모든 영화들의 view_count보다 더 높으면서 카테고리가 ACTION이 아닌 영화를 보여줌
+
+<br/><br/>
+
+2023.03.04
+
+## 06. 서브쿼리 기초 퀴즈
+
+질문 1  
+해설: 다른 SQL 문의 일부로 쓰이는 SELECT 문을 서브쿼리라고 합니다. 이때 전체 SQL 문을 outer query, 서브쿼리를 inner query라고도 합니다.
+
+질문 2  
+해설: SELECT 절에서 서브쿼리를 사용하는 방법을 묻는 문제입니다. 평균값을 구하는 집계 함수는 AVG() 죠?
+
+질문 3  
+해설:  
+서브쿼리와 LIMIT을 함께 사용하는 응용 문제입니다.
+정답을 넣고 완성한 서브쿼리는 다음과 같은데요.
+```MySQL
+SELECT SUBSTRING(address, 1, 2) 
+FROM member 
+GROUP BY SUBSTRING(address, 1, 2) 
+ORDER BY COUNT(*) DESC 
+LIMIT 1;
+```
+이 서브쿼리는
+1. 주요 지역별로 회원들을 그루핑한 후에,
+2. 그룹들을 각 그룹당 row 개수대로 내림차순 정렬하고,
+3. 그 중에서도 1등만 추립니다.
+
+그럼 회원들이 가장 많이 살고 있는 주요 지역 이름을 알 수 있겠죠?
+이 전체 SQL 문을 Workbench에서 직접 실행해보시고, 어떤 주요 지역의 회원들이 조회되는지 확인해보세요.
+
+전체 SQL 문 :
+```MySQL
+SELECT * 
+FROM member 
+WHERE SUBSTRING(address, 1, 2) =
+    (
+        SELECT SUBSTRING(address, 1, 2) 
+        FROM member 
+        GROUP BY SUBSTRING(address, 1, 2) 
+        ORDER BY COUNT(*) DESC 
+        LIMIT 1
+    );
+```
