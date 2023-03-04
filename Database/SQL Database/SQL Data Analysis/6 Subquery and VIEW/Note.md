@@ -144,3 +144,29 @@ WHERE SUBSTRING(address, 1, 2) =
         LIMIT 1
     );
 ```
+
+<br/><br/>
+
+## 07. 서브쿼리 기초 실습
+### 해설
+```MySQL
+SELECT * 
+FROM review 
+WHERE item_id IN 
+     (
+      SELECT id 
+      FROM item 
+      WHERE registration_date < '2018-12-31'
+     );
+```
+지금 정답에 있는 서브쿼리는 아래와 같이 실행됩니다.
+
+![a](https://user-images.githubusercontent.com/71001479/222886664-6355698e-cdd4-431c-ac63-c5c7f2c7a550.png)
+
+실행 결과를 보니 하나의 컬럼에 여러 row 형식인 결과를 리턴하죠?  
+그러니까 정답의 전체 SQL 문은 아래 코드와 같은 의미라고 생각하시면 됩니다.
+```MySQL
+SELECT * 
+FROM review 
+WHERE item_id IN (1, 3);
+```
