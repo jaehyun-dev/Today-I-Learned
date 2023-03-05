@@ -170,3 +170,27 @@ SELECT *
 FROM review 
 WHERE item_id IN (1, 3);
 ```
+
+<br/><br/>
+
+2023.03.05
+
+## 08. FROM 절에 있는 서브쿼리
+
+- 서브쿼리로 컬럼 하나가 아니라 테이블 형태로 여러 컬럼과 여러 로우를 뽑아낼 수 있는데, 이걸 derived table이라고 함  
+- derived table은 반드시 alias를 붙여줘야 함
+```MySQL
+SELECT
+    AVG(review_count),
+    MAX(review_count),
+    MIN(review_count)
+FROM
+(SELECT
+    SUBSTRING(address, 1, 2) AS region,
+    COUNT(*) AS review_count
+FROM review AS r LEFT OUTER JOIN member AS m
+ON r.mem_id = m.id
+GROUP BY SUBSTRING(address, 1, 2)
+HAVING region IS NOT NULL
+    AND region != '안드') AS review_count_summary;
+```
