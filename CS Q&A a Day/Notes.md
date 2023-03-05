@@ -2652,3 +2652,19 @@ Accuracy, Recall, Precision은 머신 러닝과 데이터 분석에서 사용되
 이 세 가지 성능 지표는 서로 보완적이므로, 문제에 따라 적절한 지표를 선택해야 합니다. 예를 들어, 암 진단에서는 Recall이 중요하지만, 스팸 필터링에서는 Precision이 더 중요할 수 있습니다.
 
 [출처] ChatGPT
+
+23.03.05
+## Q. RDB과 nosql의 차이점을 설명해주세요.(데이터베이스)
+
+A.  
+RDB(Realational DataBase)
+- 관계형 데이터베이스. 관계형 데이터 모델을 기초로 두고 모든 데이터를 2차원 테이블 형태로 표현하는 데이터베이스
+- 테이블 간 관계를 맺고 모여있는 집합체로, foreign key를 이용해 join을 할 수 있다
+- 정해진 스키마에 따라 데이터를 저장해야 하므로 명확한 데이터 구조를 보장함
+
+NoSQL(Not Only SQL(Structured Query Language))
+- RDB 형태의 관계형 데이터베이스가 아닌, 다른 형태의 데이터 저장 기술
+- 테이블 간 관계를 저장하지 않으며, 테이블 간 join이 불가능함
+- 스키마가 없기 때문에 유연하며 자유로운 데이터 구조를 가질 수 있음
+
+https://khj93.tistory.com/entry/Database-RDBMS%EC%99%80-NOSQL-%EC%B0%A8%EC%9D%B4%EC%A0%90#:~:text=NoSQL%EC%9D%B4%EB%9E%80(Not%20Only%20SQL,%EA%B4%80%EA%B3%84%EB%A5%BC%20%EC%A0%95%EC%9D%98%ED%95%98%EC%A7%80%20%EC%95%8A%EC%8A%B5%EB%8B%88%EB%8B%A4.
