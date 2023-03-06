@@ -2668,3 +2668,13 @@ NoSQL(Not Only SQL(Structured Query Language))
 - 스키마가 없기 때문에 유연하며 자유로운 데이터 구조를 가질 수 있음
 
 https://khj93.tistory.com/entry/Database-RDBMS%EC%99%80-NOSQL-%EC%B0%A8%EC%9D%B4%EC%A0%90#:~:text=NoSQL%EC%9D%B4%EB%9E%80(Not%20Only%20SQL,%EA%B4%80%EA%B3%84%EB%A5%BC%20%EC%A0%95%EC%9D%98%ED%95%98%EC%A7%80%20%EC%95%8A%EC%8A%B5%EB%8B%88%EB%8B%A4.
+
+23.03.06
+## Q. CDN에 대해서 설명해주세요.(네트워크)
+
+A.  
+**CDN(콘텐츠 전송 네트워크)**  
+- 지리적으로 분산된 여러 개의 서버
+- 웹 페이지, 이미지, 비디오 등의 콘텐츠를 사용자의 물리적 위치와 가까운 프록시 서버에 캐싱하여 전송함으로써 전송 속도를 높임
+
+https://www.akamai.com/ko/our-thinking/cdn/what-is-a-cdn
