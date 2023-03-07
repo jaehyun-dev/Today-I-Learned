@@ -209,3 +209,34 @@ HAVING region IS NOT NULL
 
 ### 3. 하나의 테이블 형태의 결과(여러 column, 여러 row)를 리턴하는 서브쿼리
 테이블 형태의 값을 리턴하는 서브쿼리입니다. 이런 서브쿼리로 일시적으로 탄생한 테이블을 **derived table**이라고 한다고 했죠?(Oracle에서는 inline view라고도 합니다) 이런 서브쿼리로 생겨난 derived table은 마치 원래 있던 테이블인 것처럼 사용하면 됩니다. 대신, **derived table에는 alias를 붙여줘야 한다는 규칙이 있습니다.**
+
+<br/><br/>
+
+2023.03.07
+
+## 10. EXISTS, NOT EXISTS와 상관 서브쿼리
+
+서브쿼리는  
+- 비상관 서브쿼리
+- 상관 서브쿼리
+
+로 분류할 수 있음  
+
+### 비상관 서브쿼리(Non-correlated Subquery)
+- 그 자체만으로도 실행이 가능한 서브쿼리 
+- 서브쿼리가 그것을 둘러싼 outer query와 별개로, 독립적으로 실행될 수 있음
+```MySQL
+SELECT * FROM item
+    WHERE id IN (SELECT item_id FROM review GROUP BY item_id HAVING COUNT(*) >= 3);
+```
+
+### 상관 서브쿼리(Correlated Subquery)
+- outer query와 상관 관계가 있는 서브쿼리
+- 서브쿼리가 outer query에 적힌 테이블 이름 등과 상관 관계를 갖고 있어서 그 단독으로는 실행되지 못함
+```MySQL
+SELECT * FROM item
+    WHERE EXISTS (SELECT * FROM review WHERE review.item_id = item.id);
+```
+- item 테이블 각 row의 id(item.id) 값과 같은 값을 item_id(review.item_id) 컬럼에 가진 review 테이블의 row(가/들이) 있는지 조회하여,
+- 만약에 존재하면(EXISTS 하면)
+- WHERE 절은 TRUE가 되고, 최종 조회 결과에 담김
