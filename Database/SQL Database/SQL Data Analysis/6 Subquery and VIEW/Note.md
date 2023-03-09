@@ -256,3 +256,23 @@ SELECT * FROM item
 질문 3  
 해설: 하나의 단일 값을 스칼라라고 하는데요. 스칼라(scalar)라는 단어는 원래 물리, 수학 분야에서 쓰이는 단어입니다. 스칼라의 좀더 자세한 정의는 다음과 같습니다.  
 \*스칼라 : 하나의 수치만으로 완전히 표시되는 양으로 벡터 등과 같은 방향의 구별이 없는 수량이다. 예를 들면, 질량, 밀도 따위를 나타내는 수이다.
+
+<br/><br/>
+
+2023.03.09
+
+## 12. 서브쿼리 종합 실습
+
+```MySQL
+SELECT
+    MAX(copang_report.price) AS max_price,
+    AVG(copang_report.star) AS avg_star,
+    COUNT(DISTINCT(copang_report.email)) AS distinct_email_count
+FROM
+    (SELECT price, star, email
+    FROM
+        member AS m INNER JOIN review AS r
+        ON m.id = r.mem_id
+        INNER JOIN item AS i
+        ON r.item_id = i.id) AS copang_report;
+```
