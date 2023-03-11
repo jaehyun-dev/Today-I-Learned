@@ -2742,3 +2742,9 @@ A.
 - 관측값을 고정하고 그때의 확률분포에 대한 확률을 구한다
 
 https://jjangjjong.tistory.com/41
+
+23.03.11
+## Q. 트랜잭션의 각 격리 수준에 대해서 설명하고, 각 수준에서 일어날 수 있는 문제에 대해 설명해주세요.(데이터베이스)
+
+A.  
+[23.01.03 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-%EA%B0%81-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%98%EA%B3%A0-%EA%B0%81-%EC%88%98%EC%A4%80%EC%97%90%EC%84%9C-%EC%9D%BC%EC%96%B4%EB%82%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EB%AC%B8%EC%A0%9C%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
