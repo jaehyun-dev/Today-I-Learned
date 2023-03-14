@@ -2781,3 +2781,17 @@ A.
 - 임계 구역은 지정된 시간이 지난 후 종료됨
 
 https://velog.io/@lovi0714/%EC%9E%84%EA%B3%84-%EC%98%81%EC%97%AD-Critical-Section
+
+23.03.14
+## Q. Hash Table에 대해 설명해주세요.(자료구조)  
+
+A.  
+해시 함수  
+- 입력값을 원하는 범위의 자연수로 바꿔주는 함수
+
+해시 테이블(Hash Table)
+- 해시 함수와 배열을 같이 사용하는 자료구조
+- key를 바로 인덱스로 하지 않고, 해시 함수에 넣어 return된 값을 인덱스로 사용
+
+https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/5%20Hash%20Table/Note.md#03-%ED%95%B4%EC%8B%9C-%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B0%9C%EB%85%90  
+https://ablue-1.tistory.com/68
