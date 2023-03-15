@@ -351,3 +351,36 @@ SELECT 이하 서브쿼리문으로 조회된 테이블을 뷰로 만드는 SQL�
 
 질문 3  
 해설: CREATE VIEW '뷰 이름' AS SELECT 문;을 사용하면 뷰를 생성할 수 있습니다.
+
+<br/><br/>
+
+2023.03.14
+
+## 18. 뷰와 데이터 분석 실무 실습
+
+### 해설
+(1) 컬럼 구조 살펴보기
+```MySQL
+DESCRIBE employee;
+```
+DESCRIBE로 일단 컬럼 구조만 간단히 살펴보면 됩니다. 물론, 그냥 SELECT * FROM employee;를 실행해서 살펴봐도 되지만, row 수가 많은 테이블인 경우에는 시간이 조금 걸릴 수도 있다는 점, 참고하세요.
+
+(2) 뷰 생성하기
+```MySQL
+CREATE VIEW v_emp AS 
+    SELECT id,
+           name,
+           age, 
+           department, 
+           phone_num, 
+           hire_date 
+    FROM employee;
+```
+CREATE VIEW 으로 뷰를 생성하면 됩니다. 이때 SELECT 문은 민감한 정보인 address(직원의 주소) 컬럼과 rating_grade(인사고과 점수) 컬럼을 제외한 컬럼들만 조회하는 내용으로 적으면 되겠죠?
+
+(3) 만들어진 뷰 조회하기
+```MySQL
+SELECT * 
+FROM v_emp;
+```
+뷰는 '가상 테이블'입니다. 이제 v_emp 라는 뷰를 마치 원래 있던 테이블인 것처럼 자유롭게 조회할 수 있습니다. 뷰가 잘 만들어졌는지 확인해보세요.
