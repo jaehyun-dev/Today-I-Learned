@@ -2795,3 +2795,18 @@ A.
 
 https://github.com/jaehyun-dev/Today-I-Learned/blob/main/Data%20Structure/1%20Basic%20Data%20Structures/5%20Hash%20Table/Note.md#03-%ED%95%B4%EC%8B%9C-%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B0%9C%EB%85%90  
 https://ablue-1.tistory.com/68
+
+23.03.15
+## Q. Interval Partitioning 문제에 대해 설명하고 이를 해결하기 위한 알고리즘을 제시해주세요.(알고리즘)
+
+A.  
+Interval Partitioning
+- 각각 정해진 시간 동안 공간을 점유하는 여러 interval을 한 공간에 대해 서로 겹치지 않게 분배하려고 할 때 준비해야 하는 최소한의 공간을 구하는 문제
+- 예) n개의 강의에 대해서 모든 수업을 시간과 강의실이 겹치지 않도록 최소한의 강의실을 배정하려면 몇 개의 강의실이 있어야 하는가?
+
+Greedy Algorithm
+- 각 interval i에는 시작하는 시각 s_i와 끝나는 시각 f_i가 있다.
+- 모든 interval을 s에 대해 정렬한다
+- 1번 interval이 준비된 공간 중 하나에 들어가면 순차적으로 할당하고, 그렇지 않다면 새로운 공간을 준비한다
+
+https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Greedy-Algorithm-Interval-Partitioning
