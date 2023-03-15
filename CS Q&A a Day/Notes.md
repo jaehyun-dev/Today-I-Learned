@@ -2807,6 +2807,6 @@ Interval Partitioning
 Greedy Algorithm
 - 각 interval i에는 시작하는 시각 s_i와 끝나는 시각 f_i가 있다.
 - 모든 interval을 s에 대해 정렬한다
-- 1번 interval이 준비된 공간 중 하나에 들어가면 순차적으로 할당하고, 그렇지 않다면 새로운 공간을 준비한다
+- 1번 interval부터 마지막 interval까지, 준비된 공간 중 하나에 들어가면 순차적으로 할당하고, 그렇지 않다면 새로운 공간을 준비한다
 
 https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Greedy-Algorithm-Interval-Partitioning
