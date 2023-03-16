@@ -384,3 +384,57 @@ SELECT *
 FROM v_emp;
 ```
 뷰는 '가상 테이블'입니다. 이제 v_emp 라는 뷰를 마치 원래 있던 테이블인 것처럼 자유롭게 조회할 수 있습니다. 뷰가 잘 만들어졌는지 확인해보세요.
+
+
+<br/><br/>
+
+2023.03.15
+
+## 19. 데이터베이스 현황 파악
+
+데이터베이스의 현황을 파악하려면 일단 기본적으로 회사의 서버에
+- 어떤 데이터베이스들이 있는지
+- 각 데이터베이스 안에 어떤 테이블들이 있는지
+- 각 테이블의 컬럼 구조는 어떻게 되는지
+- 테이블들 간의 Foreign Key 관계는 어떤지
+
+등을 조사해야함
+
+### 1. 존재하는 데이터베이스들 파악
+```MySQL
+SHOW DATABASES;
+```
+- 사용자가 만든 데이터베이스 외에 information_schema / mysql / performance_schema / sys 는 MySQL이라는 DBMS의 구동을 위해 원래부터 존재하는 기본 데이터베이스들
+
+### 2. 한 데이터베이스 안의 테이블(뷰도 포함)들 파악
+```MySQL
+SHOW FULL TABLES IN 'database name';
+```
+- 한 데이터베이스 안에 어떤 테이블, 어떤 뷰들이 있는지 파악할 수 있음
+
+### 3. 한 테이블의 컬럼 구조 파악
+```MySQL
+DESCRIBE 'table name';
+```
+- SELECT * FROM '테이블 이름';을 실행하는 대신, 간단하게 컬럼 구조만 살펴볼 수 있음  
+- 각 컬럼의 이름(Field)과 데이터 타입(Type), Not Null 속성 유무(Null), Primary Key 여부(Key) 등이 표시되어 테이블의 컬럼 구조만 깔끔하게 파악할 수 있음
+
+### 4. Foreign Key(외래키) 파악
+```MySQL
+SELECT
+    i.TABLE_SCHEMA, i.TABLE_NAME, i.CONSTRAINT_TYPE, i.CONSTRAINT_NAME,
+    k.REFERENCED_TABLE_NAME, k.REFERENCED_COLUMN_NAME
+
+FROM information_schema.TABLE_CONSTRAINTS i
+LEFT JOIN information_schema.KEY_COLUMN_USAGE k ON i.CONSTRAINT_NAME = k.CONSTRAINT_NAME
+WHERE i.CONSTRAINT_TYPE = 'FOREIGN KEY';
+```
+- 테이블들 간의 관계를 파악하려면 데이터베이스에 존재하는 Foreign Key들을 파악해야함  
+- 위 SQL 문은 MySQL가 직접 관리하는 기본 데이터베이스에서 Foreign Key 관련 정보를 꺼내오는 SQL 문  
+- Foreign Key 관련 정보를 조회하는 SQL 문은 DBMS의 기본 데이터베이스에서 그 정보를 가져오는 것이기 때문에 DBMS마다 그 차이가 큼
+- 그런데 두 테이블의 각 컬럼 간에 Foreign Key 관계가 성립한다고 해도 관리자가 그것을 Foreign Key로 설정하지 않는 경우도 많음
+- 관리자의 실수때문에 그런 것일 수도 있고, 데이터베이스의 성능을 고려해서 의도적으로 그렇게 하는 경우도 있음
+- Foreign Key 관계가 논리적으로 성립해도 실제로 DBMS 상에서 설정되어 있지 않은 경우도 많음
+- 따라서 Foreign Key들을 정확하게 파악하려면, 해당 회사의 데이터베이스를 설계한 분의 설명을 듣거나, 본인이 직접 데이터의 관계 및 흐름을 파악해서 스스로 파악할 수밖에 없음
+- 이런 방법들보다도 훨씬 효율적인 방법은 그 회사에서 이미 사용되고 있는 기존의 SQL 문들을 자세하게 살펴보는 것
+- 그럼 이 회사에서 필요로 하는 데이터의 성격은 어떤 것인지, 필요한 데이터들은 주로 어느 테이블에 있는지 등과 같은 정보를 빠르게 파악할 수 있음
