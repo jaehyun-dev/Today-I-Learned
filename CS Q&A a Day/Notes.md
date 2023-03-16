@@ -2810,3 +2810,42 @@ Greedy Algorithm
 - 1번 interval부터 마지막 interval까지, 준비된 공간 중 하나에 들어가면 순차적으로 할당하고, 그렇지 않다면 새로운 공간을 준비한다
 
 https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Greedy-Algorithm-Interval-Partitioning
+
+23.03.16
+## Q. Cost Function, Loss Function, Object Function에 대해 설명하고 각각의 종류에 대해 설명해주세요.(머신러닝)
+
+A.  
+Cost Function, Loss Function, Object Function은 머신 러닝 모델 학습에서 사용되는 함수  
+각각의 함수는 모델이 예측하는 값과 실제 값 사이의 차이를 계산하는 데 사용됨
+
+Cost Function (비용 함수)
+- 모델의 매개변수를 조정하여 예측 값과 실제 값 사이의 차이를 최소화하는 데 사용되는 함수
+- 모델이 예측한 값과 실제 값의 차이를 계산하여 평균화함
+- 비용 함수는 전체 데이터셋에 대해 계산되므로, 비용 함수를 최소화하는 것은 모델이 더 정확한 예측을 하도록 학습하는 것을 의미함
+- 종류:
+    - 평균 제곱 오차 (Mean Squared Error, MSE)
+    - 평균 절대 오차 (Mean Absolute Error, MAE)
+    - 평균 제곱근 오차 (Root Mean Squared Error, RMSE)
+
+Loss Function (손실 함수)
+- 모델이 한 샘플에 대해 예측한 값과 실제 값 사이의 차이를 계산하는 함수
+- 모델의 예측이 얼마나 잘못되었는지를 측정함
+- 일반적으로 모델의 학습 과정에서 각 샘플마다 손실 함수의 값이 계산되고, 이 값은 비용 함수를 계산하는 데 사용됨
+- 종류
+    - 이진 교차 엔트로피 (Binary Cross-Entropy)
+    - 다중 클래스 교차 엔트로피 (Categorical Cross-Entropy)
+    - 로그 손실 (Log Loss)
+
+Objective Function (목적 함수)
+- 비용 함수와 손실 함수를 모두 포함하는 함수
+- 모델의 매개변수를 조정하여 예측 값과 실제 값 사이의 차이를 최소화하는 데 사용됨
+- 일반적으로 모델의 학습 과정에서 목적 함수를 최소화하는 것이 목표
+- 종류:
+    - 평균 제곱 오차 (Mean Squared Error, MSE)
+    - 교차 엔트로피 (Cross-Entropy)
+    - 로그 우도 (Log Likelihood)
+
+[출처]
+ChatGPT
+
+https://velog.io/@regista/%EB%B9%84%EC%9A%A9%ED%95%A8%EC%88%98Cost-Function-%EC%86%90%EC%8B%A4%ED%95%A8%EC%88%98Loss-function-%EB%AA%A9%EC%A0%81%ED%95%A8%EC%88%98Objective-Function-Ai-tech
