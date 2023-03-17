@@ -2849,3 +2849,27 @@ Objective Function (목적 함수)
 ChatGPT
 
 https://velog.io/@regista/%EB%B9%84%EC%9A%A9%ED%95%A8%EC%88%98Cost-Function-%EC%86%90%EC%8B%A4%ED%95%A8%EC%88%98Loss-function-%EB%AA%A9%EC%A0%81%ED%95%A8%EC%88%98Objective-Function-Ai-tech
+
+23.03.17
+## Q. Read Committed와 Repeatable Read 수준의 차이를 설명해주세요.(데이터베이스)
+
+A.  
+Read Committed와 Repeatable Read는 모두 데이터베이스에서 사용되는 트랜잭션 격리 수준 중 일부
+
+Read Committed (RC)
+- 다른 트랜잭션에서 변경한 데이터를 볼 수 없는 격리 수준
+- 다른 트랜잭션이 커밋하기 전까지는 변경 내용이 적용되지 않음
+- Dirty Read 문제는 발생하지 않지만, Non-Repeatable Read와 Phantom Read 문제가 발생할 수 있음
+
+Repeatable Read (RR)
+- 동일한 쿼리를 실행할 때 결과가 항상 일관된 격리 수준
+- 한 번 읽은 데이터를 다시 읽을 때, 항상 같은 값을 반환함
+- 다른 트랜잭션에서 새로운 데이터를 추가하는 것은 허용하지만, 기존 데이터를 수정하거나 삭제하는 것은 허용하지 않음
+- Dirty Read와 Non-Repeatable Read 문제가 발생하지 않지만, Phantom Read 문제가 발생할 수 있습니다.
+
+Read Committed와 Repeatable Read는 데이터의 일관성과 동시성 처리에 관련된 문제를 해결하기 위해 사용됨  
+두 격리 수준은 각각 Dirty Read, Non-Repeatable Read, Phantom Read 문제를 다르게 해결하고 있으며, 애플리케이션에 따라 적합한 격리 수준을 선택해야 함
+
+[출처] ChatGPT
+
+https://tillog.netlify.app/posts/transaction
