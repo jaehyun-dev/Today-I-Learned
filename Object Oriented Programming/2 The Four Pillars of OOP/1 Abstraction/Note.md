@@ -54,3 +54,20 @@
 ```
 
 ![image](https://user-images.githubusercontent.com/71001479/226637831-0b1d7774-b977-4fac-8b79-8972b9bb8171.png)
+
+<br/><br/>
+
+2023.03.22
+
+## 06. 추상화 잘 쓰기: 문서화 결과
+class 중간중간에 있는 docstring 읽는 것보다 더 편한 방법  
+```python
+help(class_name)
+```
+클래스에 있는 docstring 한 번에 보여줌
+
+![image](https://user-images.githubusercontent.com/71001479/226938046-b7243037-314a-4cd2-87fc-b903e9c1ae71.png)  
+
+list 클래스의 docstring:  
+![image](https://user-images.githubusercontent.com/71001479/226938260-45c5712c-87f7-48f3-81b2-f989036e529b.png)
+
