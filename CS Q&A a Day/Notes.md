@@ -2975,3 +2975,29 @@ A.
 [출처] ChatGPT
 
 https://bblackscene21.tistory.com/11
+
+23.03.22
+## Q. L1, L2 정규화에 대해 설명해주세요.(머신러닝)
+
+A.  
+딥러닝 모델 과적합을 막는 방법에는 세 가지가 있음
+- batch normalization(배치 정규화)
+- weigt regularization(정규화)
+- dropout(학습 당시 랜덤으로 절반의 뉴런만 사용하기)
+
+이중 weight regularization에 해당하는 것이 L1, L2 정규화
+
+학습을 진행할 때, 학습 데이터에 따라 특정 weight의 값이 커지게 될 수 있음  
+그러면 과적합이 일어날 가능성이 아주 높은데, 이를 방지하기 위해 L1, L2 정규화를 사용함  
+
+L1 정규화  
+![image](https://user-images.githubusercontent.com/71001479/226781170-fa5c0ca5-1c18-422c-9dc5-12afbb57bf20.png)
+
+cost function에 가중치의 절댓값을 더하여 중요한 가중치만 남김
+
+L2 정규화  
+![image](https://user-images.githubusercontent.com/71001479/226781434-6c5c061a-0ff5-4236-aced-c70ecd869ae3.png)
+
+cost function에 제곱한 가중치 값을 더하여 cost와 가중치가 줄어드는 방식으로 학습하여 특정 가중치가 비이상적으로 커지는 상황을 방지함
+
+https://huidea.tistory.com/154
