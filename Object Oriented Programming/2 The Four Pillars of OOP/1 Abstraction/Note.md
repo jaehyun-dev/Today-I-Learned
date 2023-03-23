@@ -71,3 +71,57 @@ help(class_name)
 list 클래스의 docstring:  
 ![image](https://user-images.githubusercontent.com/71001479/226938260-45c5712c-87f7-48f3-81b2-f989036e529b.png)
 
+<br/><br/>
+
+2023.03.23
+
+## 07. 문서화 스타일
+
+흔히 사용하는 3가지 포맷:
+
+```python
+def find_suggestion_videos(self, number_of_suggestions=5):
+```
+
+### Google docstring:
+```python
+"""유저에게 추천할 영상을 찾아준다
+Parameters:
+  number_of_suggestions (int): 추천하고 싶은 영상 수
+    (기본값은 5)
+    
+Returns:
+  list: 추천할 영상 주소가 담긴 리스트
+"""
+```
+
+### reStructuredText (파이썬 공식 문서화 기준):
+```
+"""유저에게 추천할 영상을 찾아준다
+    
+:param number_of_suggestions: 추천하고 싶은 영상 수
+  (기본값은 5)
+:type number_of_suggestions: int
+:returns: 추천할 영상 주소가 담긴 리스트
+:rtype: list
+"""
+```
+
+### NumPy/SciPy (통계, 과학 분야에서 쓰이는 Python 라이브러리):
+```python
+"""유저에게 추천할 영상을 찾아준다
+    
+Parameters
+----------
+number_of_suggestions: int
+  추천하고 싶은 영상 수 (기본값은 5)
+    
+Returns
+-------
+list 
+  추천할 영상 주소가 담긴 리스트
+"""
+```
+
+프로그램을 함께 만드는 팀원들과 문서화 포맷에 관해 미리 약속하고 잘 지킬 것  
+일관성 있게 사용한다면 나중에 프로그램 수정할 때 도움 됨
