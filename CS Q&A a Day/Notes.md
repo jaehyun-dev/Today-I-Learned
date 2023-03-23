@@ -3001,3 +3001,14 @@ L2 정규화
 cost function에 제곱한 가중치 값을 더하여 cost와 가중치가 줄어드는 방식으로 학습하여 특정 가중치가 비이상적으로 커지는 상황을 방지함
 
 https://huidea.tistory.com/154
+
+23.03.23
+
+## Q. Dirty Read 현상과 이 현상이 발생하는 레벨에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+Dirty Read  
+- 다른 트랜잭션이 아직 Commit 되지 않은 데이터를 읽어들이고, Rollback 후의 값을 다시 읽어 최종 결괏값이 달라지는 현상
+- 4가지 격리 수준 중 첫 번째 단계인 Read Uncommitted 레벨에서 발생함
+
+http://blog.skby.net/dirty-read/
