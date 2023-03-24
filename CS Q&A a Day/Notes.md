@@ -3012,3 +3012,22 @@ Dirty Read
 - 4가지 격리 수준 중 첫 번째 단계인 Read Uncommitted 레벨에서 발생함
 
 http://blog.skby.net/dirty-read/
+
+23.03.24
+## Q. 캐시 교체 알고리즘에 대해 설명해주세요.(네트워크)
+
+A.  
+캐시  
+- 데이터나 값을 미리 복사해놓는 임시 장소
+- 자주 쓰는 데이터를 캐시에 복사해두면, 빠른 속도로 접근이 가능하다
+- 용량 크기에 제한이 있기 때문에, 새로운 캐시를 넣기 위해서는 기존의 데이터를 삭제해야 함
+
+케시 교체 알고리즘
+- 새로운 캐시를 저장하기 위해 어떤 데이터 파일을 캐시에서 삭제할지 결정하는 알고리즘
+
+종류
+- FIFO(First In First Out): 가장 먼저 들어간 캐시를 교체
+- LFU(Least Frequently Used): 사용 횟수가 가장 적은 캐시를 교체
+- LRU(Least Recently Used): 가장 오랫동안 사용되지 않은 캐시를 교체
+
+https://gengmi.tistory.com/entry/Cache-%EC%BA%90%EC%8B%9C-%EB%8F%99%EC%9E%91%EA%B3%BC-%EC%BA%90%EC%8B%9C-%EA%B5%90%EC%B2%B4-%EC%A0%95%EC%B1%85
