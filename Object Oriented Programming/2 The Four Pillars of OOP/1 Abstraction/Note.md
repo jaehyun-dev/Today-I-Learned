@@ -125,3 +125,79 @@ list
 
 프로그램을 함께 만드는 팀원들과 문서화 포맷에 관해 미리 약속하고 잘 지킬 것  
 일관성 있게 사용한다면 나중에 프로그램 수정할 때 도움 됨
+
+<br/><br/>
+
+2023.03.24
+
+## 08. User 클래스 문서화하기
+```python
+class User:
+    """SNS의 유저를 나타내는 클래스"""
+    count = 0
+
+    def __init__(self, name, email, pw):
+        """이름, 이메일, 비밀번호를 인스턴스 변수로 갖고, 인스턴스가 생성될 때마다 클래스 변수 count를 1씩 증가시킨다."""
+        self.name = name
+        self.email = email
+        self.pw = pw
+
+        User.count += 1
+
+    def say_hello(self):
+        """유저의 이름을 포함한 인사 메시지를 출력한다."""
+        print("안녕하세요! 저는 {}입니다!".format(self.name))
+
+    def __str__(self):
+        """유저 정보를 정의된 문자열 형태로 리턴한다."""
+        return "사용자: {}, 이메일: {}, 비밀번호: ******".format(self.name, self.email)
+
+    @classmethod
+    def number_of_users(cls):
+        """총 유저 수를 출력하는 클래스 메소드"""
+        print("총 유저 수는: {}입니다".format(cls.count))
+
+help(User)
+```
+```
+Help on class User in module __main__:
+
+class User(builtins.object)
+ |  User(name, email, pw)
+ |  
+ |  SNS의 유저를 나타내는 클래스
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, name, email, pw)
+ |      이름, 이메일, 비밀번호를 인스턴스 변수로 갖고, 인스턴스가 생성될 때마다 클래스 변수 count를 1씩 증가시킨다.
+ |  
+ |  __str__(self)
+ |      유저 정보를 정의된 문자열 형태로 리턴한다.
+ |  
+ |  say_hello(self)
+ |      유저의 이름을 포함한 인사 메시지를 출력한다.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  number_of_users() from builtins.type
+ |      총 유저 수를 출력하는 클래스 메소드
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  count = 0
+```
+
+신경써서 이름을 잘 짓고 문서화하는 것이 객체 지향 프로그래밍 추상화를 잘하는 첫 걸음  
+좋은 개발자가 되고 다른 개발자들과 협업을 잘하기 위해 필수적
