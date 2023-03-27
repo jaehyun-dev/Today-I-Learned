@@ -3053,3 +3053,12 @@ A.
 - 중위 순회를 하면 값을 정렬된 순서로 읽을 수 있음
 
 https://ratsgo.github.io/data%20structure&algorithm/2017/10/22/bst/
+
+23.03.27
+## Q. Minimizing Lateness 문제에 대해 설명하고 이를 해결하기 위한 알고리즘을 제시하세요.(알고리즘)
+
+A.  
+여러 태스크에 대해 소요 시간과 마감 기한이 주어졌을 때, 태스크를 마친 시간이 마감 기한을 얼만큼 넘겼는지를 나타내는 lateness를 최소화하도록 스케줄링 하는 문제  
+greedy algorithm으로 해결하며, 마감이 가장 가까운 태스크부터 처리하도록 스케줄링(EDD rule, Earliest Due Date ruel)하면 lateness를 최소화할 수 있음
+
+https://hyunw.kim/blog/2018/09/18/Algorithm_Analysis09_GreedyAlgorithm3.html
