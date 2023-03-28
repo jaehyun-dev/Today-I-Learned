@@ -3062,3 +3062,16 @@ A.
 greedy algorithm으로 해결하며, 마감이 가장 가까운 태스크부터 처리하도록 스케줄링(EDD rule, Earliest Due Date ruel)하면 lateness를 최소화할 수 있음
 
 https://hyunw.kim/blog/2018/09/18/Algorithm_Analysis09_GreedyAlgorithm3.html
+
+23.03.28
+## Q. SGD 알고리즘과 모멘텀(Momentum)에 대해 설명해주세요.(머신러닝)
+
+A.  
+SGD(Stochastic Gradient Descent, 확률적 경사 하강법) 알고리즘  
+- 데이터 전체가 아닌 분할된 일부분만을 보고 업데이트를 하는 것
+
+모멘텀(Momemtum)  
+- 데이터를 분할 하여 경사 하강법을 사용하면 전역 최솟값(Global Minima)에 도달하지 못하고 지역 최솟값(Local Munima)에 빠지게 되는데, 이를 해결하기 위한 방법
+- 기존에 업데이트에 사용했던 기울기의 일정 퍼센테이지를 남겨서 현재의 기울기와 더하여 업데이트에 사용하는 방식
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=2011topcit&logNo=220563609607
