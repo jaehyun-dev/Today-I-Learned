@@ -37,3 +37,12 @@ print(kyusik.__resident_id)
 ```
 AttributeError: 'Citizen' object has no attribute '__resident_id'
 ```
+
+<br/><br/>
+
+2023.03.29
+
+## 03. 밑줄 두 개(__)와 특수 메소드들
+
+\_\_init\_\_, \_\_str\_\_ 메소드 등 이름 앞뒤에 모두 밑줄 2개(__)가 있으면 일반 메소드와 동일하게 사용할 수 있음  
+__resident_id 처럼 이름 앞에만 밑줄 2개가 있으면 외부에서 접근할 수 없음
