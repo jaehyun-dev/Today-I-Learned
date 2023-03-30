@@ -46,3 +46,31 @@ AttributeError: 'Citizen' object has no attribute '__resident_id'
 
 \_\_init\_\_, \_\_str\_\_ 메소드 등 이름 앞뒤에 모두 밑줄 2개(__)가 있으면 일반 메소드와 동일하게 사용할 수 있음  
 __resident_id 처럼 이름 앞에만 밑줄 2개가 있으면 외부에서 접근할 수 없음
+
+
+<br/><br/>
+
+2023.03.30
+
+## 04. 객체의 메소드를 통해 변수 접근하기 I
+
+숨겨진 변수는 클래스 밖에서 접근 불가. 접근할 수 있는 메소드를 따로 만들어 해결할 수 있음.  
+외부에서 접근 불가능한 변수나 메소드에 접근할 수 있는 메소드를 만드는 것  
+= 캡슐화의 2번째 정의: 객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것  
+
+```python
+class Citizen:
+  drinking_age = 19  # 음주 가능 나이
+
+  def __init__(self, name, age, resident_id):
+    self.name = name
+    self.__age = age
+    self.__resident_id = resident_id
+```
+\_\_age, \_\_resident_id에는 접근할 수 없음  
+이때 클래스 안에  
+```python
+  def can_drink(self):
+    return self.__age > Citizen drinking_age
+```  
+이렇게 메소드를 만들어주면 클래스 밖에서도 \_\_age에 관하여 알 수 있음
