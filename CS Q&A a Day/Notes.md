@@ -3087,3 +3087,9 @@ FORCE 정책을 따르면 트랜잭션이 커밋되면 수정되었던 페이지
 반면에 ¬FORCE 정책을 따른다면 커밋한 트랜잭션의 내용이 디스크 상의 데이터베이스 상에 반영되어 있지 않을 수 있기 때문에 반드시 REDO 복구가 필요하게 됨
 
 https://d2.naver.com/helloworld/407507
+
+23.03.30
+## Q. 고정IP와 유동IP에 대해서 설명해주세요.(네트워크)
+
+A.  
+[22.09.14 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B3%A0%EC%A0%95ip%EC%99%80-%EC%9C%A0%EB%8F%99ip%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
