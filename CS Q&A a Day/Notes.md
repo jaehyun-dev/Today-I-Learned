@@ -3099,3 +3099,9 @@ A.
 
 A.  
 [22.11.02 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8E%98%EC%9D%B4%EC%A7%95%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+23.04.01
+## Q. Red-Black Tree에 대해 설명해주세요.(자료구조)  
+
+A.  
+[22.10.23 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-red-black-tree%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
