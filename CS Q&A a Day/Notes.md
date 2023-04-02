@@ -3105,3 +3105,13 @@ A.
 
 A.  
 [22.10.23 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-red-black-tree%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
+
+23.04.02
+## Q. Interval Scheduling 문제에 대해 설명하고 이를 해결하기 위한 알고리즘을 제시해주세요.(알고리즘)  
+
+A.  
+**Interval Scheduling**  
+- 어떤 일 j가 s_j에서 시작해서 f_j에서 끝난다고 할 때, 다른 일들과 수행 시간이 겹치지 않으면서 주어진 일들을 최대한 많이 할 수 있는 조합을 찾는 스케줄링 문제
+- greedy algorithm으로 해결하며, 주어진 일들 중 가장 일찍 끝나는 일부터 수행한다
+
+https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Greedy-Algorithm-Interval-Scheduling
