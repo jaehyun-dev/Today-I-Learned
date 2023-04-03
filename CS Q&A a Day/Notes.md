@@ -3071,7 +3071,7 @@ SGD(Stochastic Gradient Descent, 확률적 경사 하강법) 알고리즘
 - 데이터 전체가 아닌 분할된 일부분만을 보고 업데이트를 하는 것
 
 모멘텀(Momemtum)  
-- 데이터를 분할 하여 경사 하강법을 사용하면 전역 최솟값(Global Minima)에 도달하지 못하고 지역 최솟값(Local Munima)에 빠지게 되는데, 이를 해결하기 위한 방법
+- 데이터를 분할 하여 경사 하강법을 사용하면 전역 최솟값(Global Minima)에 도달하지 못하고 지역 최솟값(Local Minima)에 빠지게 되는데, 이를 해결하기 위한 방법
 - 기존에 업데이트에 사용했던 기울기의 일정 퍼센테이지를 남겨서 현재의 기울기와 더하여 업데이트에 사용하는 방식
 
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=2011topcit&logNo=220563609607
@@ -3115,3 +3115,13 @@ A.
 - greedy algorithm으로 해결하며, 주어진 일들 중 가장 일찍 끝나는 일부터 수행한다
 
 https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Greedy-Algorithm-Interval-Scheduling
+
+23.04.03
+## Q. Local Minima 문제에 대해 설명하고 이를 해결하기 위한 방안을 설명해주세요.(머신러닝)
+
+A.  
+Local Minima 문제
+- loss를 최소화 하기 위해 경사를 따라 내려가던 중 원하는 목표(global minimum, 전역 최솟값)가 아닌 곳(local minimum, 지역 최솟값)에서 loss값이 제일 작다고 판별하게 되는 문제
+- Momentum, Adagrad, Adam 등을 통해 해결할 수 있음  
+
+https://variety82p.tistory.com/entry/Local-Minima-%EB%AC%B8%EC%A0%9C%EC%97%90%EB%8F%84-%EB%B6%88%EA%B5%AC%ED%95%98%EA%B3%A0-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%B4-%EC%9E%98-%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EB%8A%94
