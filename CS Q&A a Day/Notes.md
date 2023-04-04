@@ -3125,3 +3125,15 @@ Local Minima 문제
 - Momentum, Adagrad, Adam 등을 통해 해결할 수 있음  
 
 https://variety82p.tistory.com/entry/Local-Minima-%EB%AC%B8%EC%A0%9C%EC%97%90%EB%8F%84-%EB%B6%88%EA%B5%AC%ED%95%98%EA%B3%A0-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%B4-%EC%9E%98-%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EB%8A%94
+
+23.04.04
+## Q. 트랜잭션 격리수준(isolation level)이 필요한 이유에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+- 설계한 애플리케이션에서 사용하는 DBMS, 사용하는 트랜잭션, 설계한 테이블 등 다앙한 상황에 맞춰 필요에 따라 선택하기 위해  
+- 효율적인 트랜잭션 처리를 위해
+- 격리수준이 높을수록 데이터의 일관성은 높아지지만, 동시성 처리에 대한 부담도 늘어나게 됨
+- 트랜잭션에서 필요한 데이터 일관성의 정도에 따라 요구되는 격리수준이 달라짐
+- 적절한 격리수준을 선택하기 위해 시스템의 요구사항과 데이터 일관성을 고려해야 함
+
+https://namuhuchutong.tistory.com/3
