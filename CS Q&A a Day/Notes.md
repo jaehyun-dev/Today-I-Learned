@@ -3137,3 +3137,14 @@ A.
 - 적절한 격리수준을 선택하기 위해 시스템의 요구사항과 데이터 일관성을 고려해야 함
 
 https://namuhuchutong.tistory.com/3
+
+23.04.06
+## Q. DHCP란 무엇인가요?
+
+A.  
+DHCP(Dynamic Host Configuration Protocol)
+- 호스트의 IP주소와 각종 TCP/IP 프로토콜의 기본 설정을 클라이언트에게 자동적으로 제공해주는 프로토콜
+- 네크워크에 사용되는 IP주소를 DHCP서버가 중압집중식으로 관리하는 클라이언트/서버 모델을 사용하게 됨
+- 네트워크 안의 컴퓨터에 자동으로 네입 서버 주소, IP주소, 게이트웨이 주소를 할당해주는 것을 의미하고, 해당 클라이언트에게 일정 기간 임대를 하는 동적 주소 할당 프로토콜
+
+https://jwprogramming.tistory.com/35
