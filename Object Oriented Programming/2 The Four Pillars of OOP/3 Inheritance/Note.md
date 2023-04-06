@@ -112,3 +112,12 @@ print(issubclass(Cashier, object)) # 출력: True
 print(issubclass(Manager, Employee)) # 출력: True
 print(issubclass(Employee, list)) # 출력: False
 ```
+
+<br/><br/>
+
+2023.04.06
+
+## 06. 상속 II(오버라이딩)  
+
+### 오버라이딩
+부모 클래스를 상속한 후, 각 클래스에 맞게 수정하는 것  
