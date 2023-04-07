@@ -120,4 +120,29 @@ print(issubclass(Employee, list)) # 출력: False
 ## 06. 상속 II(오버라이딩)  
 
 ### 오버라이딩
-부모 클래스를 상속한 후, 각 클래스에 맞게 수정하는 것  
+- 부모 클래스를 상속한 후, 각 클래스에 맞게 수정하는 것  
+- 자식 클래스에서, 물려받은 같은 이름의 메소드(또는 변수)를 내용을 바꿔 정의하면 됨
+
+### super 함수
+- 자식 클래스에서 부모 클래스의 메소드를 사용하고 싶을 때 쓰는 함수
+- super 함수로 부모 클래스의 메소드를 사용할 때는 self 파라미터를 넘겨줄 필요 없음
+
+```python
+class Employee:
+    def __init__(self, name, wage):
+        self.name = name
+        self.wage = wage
+
+class Cashier(Employee):
+    def __init__(self, name, wage, number_sold):
+        super().__init__(name, wage)
+        self.number_sold = number_sold
+```
+
+<br/><br/>
+
+2023.04.07
+
+## 07. 상속 III(mro)
+
+###
