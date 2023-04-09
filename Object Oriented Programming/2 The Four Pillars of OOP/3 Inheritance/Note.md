@@ -172,3 +172,77 @@ mro에 나와있는 순서대로, 메소드 검색 방향은 자식 클래스부
 - 상속 후 클래스에 맞게 오버라이딩 해줄 수 있음
 - 중복되지 않았던 자신만의 메소드와 변수는 똑같이 추가하면 됨
 - 상속을 적용하면 더 적은 코드로 비슷한 특징을 가진 새로운 클래스를 편하게 만들 수 있음
+
+<br/><br/>
+
+## 10. 배달도 해 주세요
+```python
+class Employee:
+    """직원 클래스"""
+    company_name = "코드잇 버거"
+    raise_percentage = 1.03
+    
+    def __init__(self, name, wage):
+        """인스턴스 변수 설정"""
+        self.name = name
+        self.wage = wage
+
+    def raise_pay(self):
+        """직원 시급을 인상하는 메소드"""
+        self.wage *= self.raise_percentage
+
+    def __str__(self):
+        """직원 정보를 문자열로 리턴하는 메소드"""
+        return Employee.company_name + " 직원: " + self.name
+```
+```python
+class DeliveryMan:
+    """배달원 클래스"""
+    company_name = "코드잇 버거"
+    raise_percentage = 1.03
+
+    def __init__(self, name, wage, on_standby):
+        self.name = name
+        self.wage = wage
+        self.on_standby = on_standby
+
+    def raise_pay(self):
+        """시급을 인상한다"""
+        self.wage *= self.raise_percentage
+
+    def deliver(self, address):
+        """배달원이 대기 중이면 주어진 주소로 배달을 보내고 아니면 설명 메시지를 출력한다"""
+        if self.on_standby:
+            print(address + "로 배달 나갑니다!")
+            self.on_standby = False
+        else:
+            print("이미 배달하러 나갔습니다!")
+
+    def back(self):
+        """배달원을 복귀 처리한다"""
+        self.on_standby = True
+
+    def __str__(self):
+        return DeliveryMan.company_name + " 배달원: " + self.name
+```
+```python
+class DeliveryMan(Employee):
+    def __init__(self, name, wage, on_standby):
+    super().__init__(name, wage)
+    self.on_standby = on_standby
+    
+    def __str__(self):
+    return DeliveryMan.company_name + " 배달원: " + self.name
+    
+    def deliver(self, address):
+    """배달원이 대기 중이면 주어진 주소로 배달을 보내고 아니면 메시지를 출력한다"""
+    if self.on_standby:
+        print(address + "로 배달 나갑니다!")
+        self.on_standby = False
+    else:
+        print("이미 배달하러 나갔습니다!")
+
+    def back(self):
+        """배달원을 복귀 처리한다"""
+        self.on_standby = True
+```
