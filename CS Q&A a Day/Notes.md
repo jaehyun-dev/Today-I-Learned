@@ -3179,3 +3179,9 @@ A.
 
 [출처] ChatGPT  
 https://reakwon.tistory.com/30
+
+23.04.09
+## Q. 다익스트라 알고리즘(Dijkstra's Algorithm)에 대해 설명해주세요.(알고리즘)
+
+A.  
+[22.11.04 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98dijkstras-algorithm%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
