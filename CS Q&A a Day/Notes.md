@@ -3185,3 +3185,29 @@ https://reakwon.tistory.com/30
 
 A.  
 [22.11.04 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98dijkstras-algorithm%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.04.10
+## Q. Optimizer의 종류에 대해 설명해주세요.(머신러닝)
+
+A.  
+Gradient Descent(GD, 경사하강법)
+- 경사를 따라 내려가면서 업데이트 시킨다.
+
+Stochastic Gradient Secent(SGD, 확률적 경사하강법)
+- full-batch가 아닌 mini batch로 학습을 진행하는 것
+
+Momentum
+- SGD에 momentum 개념 추가한 것
+
+AdaGrad
+- 학습을 통해 크게 변동이 있었던 가중치에 대해서는 학습률을 감소시키고 학습을 통해 아직 가중치의 변동이 별로 없었던 가중치는 학습률을 증가시켜서 학습이 되게끔 함
+
+RMSProp
+- AdaGrad는 간단한 convex function에서 잘 동작하지만, 복잡한 다차원 곡면 function에서는 global minimum에 도달하기 전에 학습률이 0에 수렴할 수 있는 문제를 보완함
+- 가중치 기울기를 단순 누적시키는 게 아니라 최신 기울기들이 더 반영되도록 함
+- hyper parameter p를 추가하여 h가 무한히 커지지 않게 함
+
+Adam
+- momentumr과 RMSProp을 융합한 방법
+
+https://ganghee-lee.tistory.com/24
