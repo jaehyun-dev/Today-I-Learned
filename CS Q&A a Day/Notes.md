@@ -3211,3 +3211,17 @@ Adam
 - momentumr과 RMSProp을 융합한 방법
 
 https://ganghee-lee.tistory.com/24
+
+23.04.11
+## Q. Phantom Read 현상과 이 현상이 발생하는 레벨에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+Phantom Read  
+- 한 트랜잭션 내 같은 쿼리를 두 번 수행 시, 없었던 레코드가 두 번째 쿼리에서 발생하는 현상
+- A 트랜잭션에서 Read, B 트랜잭션에서 Write, A 트랜잭션에서 Read를 순차적으로 수행했을 때 A 트랜잭션의 첫 번째와 두 번째 Read 결과가 달라짐
+- Repeatable Read 이하 레벨에서 Phantom Read가 발생할 수 있음
+- Repeatable Read는 한 트랜잭션이 읽은 데이터를 다른 트랜잭션이 수정하지 못하도록 하지만, 새로운 레코드를 추가하거나 삭제하는 경우는 제약이 적용되지 않기 때문에 Phantom Read가 발생할 수 있음
+- Read Committed, Read Uncommitted 레벨은 Repeatable Read 레벨보다 덜 엄격한 격리 수준이기 때문에 마찬가지로 Phantom Read가 발생할 수 있음
+
+[출처] ChatGPT  
+http://blog.skby.net/phantom-read/
