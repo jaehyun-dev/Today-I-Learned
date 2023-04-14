@@ -3270,3 +3270,9 @@ A.
     - 다단계 큐와 비슷하나 프로세스들이 큐를 이동할 수 있음
 
 https://www.uname.in/252
+
+23.04.14
+## Q. 모바일 기기용 주소록에 BST와 HashTable중 어떤 자료구조를 사용하는 것이 좋은가요? 이유와 함께 설명해주세요.(자료구조)
+
+A.  
+[22.10.20 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EA%B8%B0%EA%B8%B0%EC%9A%A9-%EC%A3%BC%EC%86%8C%EB%A1%9D%EC%97%90-bst%EC%99%80-hashtable-%EC%A4%91-%EC%96%B4%EB%96%A4-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%B4-%EC%A2%8B%EC%9D%80%EA%B0%80%EC%9A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%ED%95%A8%EA%BB%98-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
