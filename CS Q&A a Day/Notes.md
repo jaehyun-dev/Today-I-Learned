@@ -3276,3 +3276,22 @@ https://www.uname.in/252
 
 A.  
 [22.10.20 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EA%B8%B0%EA%B8%B0%EC%9A%A9-%EC%A3%BC%EC%86%8C%EB%A1%9D%EC%97%90-bst%EC%99%80-hashtable-%EC%A4%91-%EC%96%B4%EB%96%A4-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%B4-%EC%A2%8B%EC%9D%80%EA%B0%80%EC%9A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%ED%95%A8%EA%BB%98-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
+
+23.04.15
+## Q. Stable Matching 문제를 해결하는 Gale-Shapley 알고리즘에 대해 설명해주세요.(알고리즘)
+
+A.  
+Stable Mathing 문제
+- N명의 남자와 N명의 여자가 각각 이성 선호도를 나타내는 리스트를 갖고 있을 때, 이 리스트를 활용하여 stable한 matching이 이뤄질 수 있도록 하는 문제
+- 불안정한 커플의 조건은, 남자 m의 선호도 리스트에서 현재 아내보다 다른 여자 w가 더 우위에 있고, 동시에 여자 w의 선호도 리스트에서 현재 남편보다 m이 더 우위에 있는 것
+
+Gale-Shapley 알고리즘  
+- 임의의 미혼 남자를 한 명 뽑는다
+- 뽑은 남자는 자신의 선호도 리스트에서 지금까지 프로포즈하지 않은 여자 중 가장 선호도가 높은 여자에게 프로포즈한다
+- 프로포즈를 받은 여자는 약혼자가 없다면 프로포즈를 승낙하여 약혼한다
+- 만약 약혼자가 있다면 두 남성 중 더 선호하는 사람과 약혼한다(현재 약혼자보다 프로포즈 받은 남자를 더 선호하면 파혼 후 약혼)
+- 여자의 원래 약혼자는 다시 미혼이 남자가 된다
+- 미혼 남자가 모두 약혼했다면 모두 동시에 결혼시키고 알고리즘을 종료한다
+- 미혼 남자 모두 한 번씩 알고리즘에 참여하므로 O(N)만큼의 시간이 걸리고, 남자의 선호도 리스트 탐색에 O(N)이 걸리고, 여자의 선호도 리스트 탐색에 O(1)이 걸려 총 O(N^2)이 걸린다
+
+https://cubistkang.tistory.com/62
