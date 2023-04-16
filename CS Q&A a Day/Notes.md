@@ -3295,3 +3295,26 @@ Gale-Shapley 알고리즘
 - 미혼 남자 모두 한 번씩 알고리즘에 참여하므로 O(N)만큼의 시간이 걸리고, 남자의 선호도 리스트 탐색에 O(N)이 걸리고, 여자의 선호도 리스트 탐색에 O(1)이 걸려 총 O(N^2)이 걸린다
 
 https://cubistkang.tistory.com/62
+
+23.04.16
+## Q. Overfitting이 발생하는 이유와 해결방법에 대해 설명해주세요.(머신러닝)
+
+A.  
+Overfitting  
+- 학습 데이터(Training Set)에 대해 과하게 학습된 상황
+- 학습 데이터 이외의 데이터에 대해선 모델이 잘 동작하지 못함
+- 학습 데이터가 부족하거나, 데이터의 특성에 비해 모델이 너무 복잡한 경우 발생함
+
+발생 이유  
+- Model Capacity
+    - 모델이 더 복잡한 형상을 나타낼 수 있는 정도
+    - Model Capacity를 늘리려면 layer를 더 deep하게 쌓거나 layer당 hidden unit 개수를 늘리면 됨
+    - 하지만 Model Capacity를 무한정 늘리면 Overfitting이 발생함
+
+해결방법  
+- Model Capacity 낮추기: 모델이 학습 데이터에 비해 과하게 복잡하지 않도록, hidden layer 크기를 줄이거나 layer 개수를 줄이는 등 모델을 간단하게 만듦
+- Dropout: 학습을 할 때 일부 뉴런을 끄고 학습함
+- L1/L2 정규화(L1/L2 Regularization)
+- 학습 데이터 늘리기(Data Augmentation)
+
+https://22-22.tistory.com/35
