@@ -3318,3 +3318,14 @@ Overfitting
 - 학습 데이터 늘리기(Data Augmentation)
 
 https://22-22.tistory.com/35
+
+23.04.17
+## Q. Non-Repeatable Read 현상과 이 현상이 발생하는 레벨에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+Non-Repeatable Read  
+- 한 트랜잭션 내에서 같은 쿼리를 두 번 수행했는데 그 사이에 수정 또는 삭제가 일어나 두 쿼리의 결괏값이 다르게 나타나는 것
+- Phantom Read와의 차이점은 데이터가 늘어나는 것(행의 개수 변화)이 아닌 데이터 값만 변경되는 것
+- Read Uncommitted, Read Committed에서 발생함
+
+https://bae9086.tistory.com/109
