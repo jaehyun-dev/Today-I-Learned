@@ -228,3 +228,27 @@ print 함수에 들어가는 파라미터 개수가 다양한 것처럼, 여러 
 
 ## 12. 간단한 주행 시뮬레이터 설명
 예시) 여러 교통 수단(일반 자동차, 스포츠카, 자전거 등) 주행, 정지, 현재 속도 문자열 출력 등
+
+<br/><br/>
+
+## 13. 교통 수단
+
+```python
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        """추상 메소드 start: 교통 수단의 주행을 시작한다"""
+        pass
+
+    @property
+    @abstractmethod
+    def speed(self):
+        """변수 _speed(교통 수단의 속도)에 대한 추상 getter 메소드"""
+        pass
+
+    def stop(self):
+        """일반 메소드 stop: 교통 수단의 속도를 0으로 바꾼다"""
+        self.speed = 0
+```
