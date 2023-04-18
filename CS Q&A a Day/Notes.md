@@ -3329,3 +3329,16 @@ Non-Repeatable Read
 - Read Uncommitted, Read Committed에서 발생함
 
 https://bae9086.tistory.com/109
+
+23.04.18
+## XSS 공격에 대해서 설명해주세요.(네트워크)
+
+A.  
+XSS(Cross Site Scripting)  
+- 게시판이나 웹 메일 등에 JavaScript와 같은 스크립트 코드를 삽입해 개발자가 고려하지 않은 기능이 작동하게 하는 치명적일 수 있는 공격
+- 대부분의 웹 해킹 공격 기법과는 다르게 클라이언트, 즉 사용자를 대상으로 한 공격
+- 공격을 위한 스크립트를 포함한 URL 또는 게시글 URL을 사용자에게 노출하여 서버에 전송하게 하여 공격함
+- 사용자의 쿠키 정보, 세션 ID 또는 시스템 관리자 권한을 획득하거나, 악성코드 다운로드, 거짓 페이지 노출 등의 피해를 입힐 수 있음
+- PHP의 eregi 함수를 활용한 script 문자 필터링, htmlentities 함수를 활용한 entity 변환 등으로 방지
+
+https://4rgos.tistory.com/1
