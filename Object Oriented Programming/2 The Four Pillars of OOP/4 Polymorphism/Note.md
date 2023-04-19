@@ -372,3 +372,22 @@ print(bicycle)
 print(car)
 print(sports_car)
 ```
+
+<br/><br/>
+
+2023.04.19
+
+## 15. 주행 시뮬레이터 만들기
+```python
+    def __str__(self):
+        """갖고 있는 교통 수단들의 현재 속도를 문자열로 리턴한다"""
+        res = ''
+        
+        for vehicle in self.vehicles:
+            res += str(vehicle) + "\n"
+        
+        return res
+```
+
+\_\_str\_\_은 문자열 반환해야 함  
+for문 안에 바로 return 넣으면 첫 번째 vehicle return 하고 끝나니까, res 만들어서 이어줘야 함
