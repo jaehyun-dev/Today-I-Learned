@@ -3354,3 +3354,9 @@ A.
 5. FIFO 스케줄링: 프로세스들은 Ready 큐에 도착한 순서대로 CPU를 할당 받음. 작업 완료 시간을 예측하기 매우 용이함. 하지만 덜 중요한 작업이 중요한 작업을 기다리게 할 수도 있음
 
 https://www.uname.in/252
+
+23.04.20
+## Q. AVL 트리에 대해서 설명해주세요.(자료구조)
+
+A.  
+[22.11.24 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-avl-%ED%8A%B8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
