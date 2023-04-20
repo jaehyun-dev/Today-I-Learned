@@ -391,3 +391,18 @@ print(sports_car)
 
 \_\_str\_\_은 문자열 반환해야 함  
 for문 안에 바로 return 넣으면 첫 번째 vehicle return 하고 끝나니까, res 만들어서 이어줘야 함
+
+<br/><br/>
+
+2023.04.20
+
+## 16. 파이썬 EAFP 코딩 스타일과 다형성
+```python
+def add_shape(self, shape):
+    if isinstance(shate, Shape):
+        self.shapes.append(shape)
+```
+어떤 작업 전에 확인을 거치는 코딩 스타일: LBYL(Look Before You Leap, 뛰기 전에 살펴보라)
+그와 상반되는 코딩 스타일: EAFP(Easier to Ask for Forgiveness than Permission, 허락보다 용서가 쉽다)  
+try, except문  
+일단 하고 문제가 발생하면 처리
