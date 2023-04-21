@@ -3360,3 +3360,13 @@ https://www.uname.in/252
 
 A.  
 [22.11.24 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-avl-%ED%8A%B8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
+
+23.04.21
+## Q. 동적 계획법(Dynamic Programming)을 Memoization 개념을 이용하여 설명해주세요.(알고리즘)
+
+A.  
+- 재귀적 알고리즘에서 같은 연산이 중복되는 결점을 보완하기 위해 고안된 알고리즘  
+- 처음 진행되는 연산은 기록해두고, 이미 진행했던 연산은 기록된 값을 가져옴
+- Memoization: 동일한 문제를 반복해야 하는 경우, 한 번 계산된 결과를 저장해두었다가 활용하는 방식으로 중복 계산을 줄이는 방법
+
+https://velog.io/@chelsea/1-%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95Dynamic-Programming-DP
