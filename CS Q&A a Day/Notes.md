@@ -3371,7 +3371,7 @@ A.
 
 https://velog.io/@chelsea/1-%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95Dynamic-Programming-DP
 
-23.04.22
+23.04.23
 ## Q. Underfitting이 발생하는 이유와 해결방법에 대해 설명해주세요.(머신러닝)
 
 A.  
