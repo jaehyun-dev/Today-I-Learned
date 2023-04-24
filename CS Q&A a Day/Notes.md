@@ -3387,3 +3387,15 @@ Underfitting(과소적합)
     - 데이터 양을 늘림
 
 https://22-22.tistory.com/35
+
+23.04.24
+## Q. Read Uncommitted를 lock과 같이 설명해주세요.(데이터베이스)
+
+A.  
+- 데이터베이스 트랜잭션은 독립적인 수행이 필요하기 때문에, locking을 통해 트랜잭션이 DB를 다루는 동안 다른 트랜잭션이 관여하지 못하도록 막을 필요가 있음  
+- locking을 너무 완벽하게 하면 성능이 떨어지고, 느슨하게 하면 잘못된 결과가 나올 수 있기 때문에 필요에 따라 그에 맞는 격리 수준을 설정해야 함
+- 격리 수준(Isolation Level)에는 4가지 단계가 있음
+- Read Uncommitted는 가장 낮은 격리 수준
+- SELECT 문장이 수행되는 동안 해당 데이터에 Shared Lock이 걸리지 않기 때문에, 처리 중이거나 아직 Commit하지 않은 데이터를 다른 트랜잭션이 읽는 것이 가능
+
+https://velog.io/@bbkyoo/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80Transaction-Isolation-Level
