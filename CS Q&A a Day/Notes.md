@@ -3399,3 +3399,18 @@ A.
 - SELECT 문장이 수행되는 동안 해당 데이터에 Shared Lock이 걸리지 않기 때문에, 처리 중이거나 아직 Commit하지 않은 데이터를 다른 트랜잭션이 읽는 것이 가능
 
 https://velog.io/@bbkyoo/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80Transaction-Isolation-Level
+
+23.04.25
+## Q. VPN과 VPC에 대해서 설명해주세요(네트워크)
+
+A.  
+VPN(Virtual Private Network)
+- 가상 사설망
+- 물리적인 네트워크가 아닌, 가상에서 같은 이더넷 내에 있게끔 취급해주는 네트워크
+
+VPC(Virtual Private Cloud)
+- VM(Virtual Machine) 여러 개가 거대한 컴퓨터 안에 들어가 있는 것
+- VPS와 다르게 탄력적, 유동적임
+- 트래픽이 갑자기 증가하게 되면 그만한 자원을 제공할 수 있음
+
+https://2kiju.tistory.com/55
