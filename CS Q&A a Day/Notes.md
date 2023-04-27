@@ -3453,3 +3453,14 @@ A.
     - 문제가 발생했을 때 공유된 자원에 여러 개의 프로세스가 동시에 접근하면 안 되므로 한 번에 하나의 프로세스만 접근 가능하도록 만들어줌
 
 https://12bme.tistory.com/287
+
+23.04.27
+## Q. Stack 2개로 Queue를 구현하는 방법을 설명해주세요.(자료구조)
+
+A.  
+- Stack1과 Stack2로 구분한다
+- 데이터를 입력받으면 Stack1에 넣는다
+- 만약 Stack2가 비어있으면, Stack1에서 가장 위 데이터를 pop하여 Stack2에 넣는다
+- 데이터를 출력하려면, Stack2에서 가장 위 데이터를 pop하여 return한다
+
+https://velog.io/@wonhee010/Stack-2%EA%B0%9C%EB%A1%9C-Queue-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
