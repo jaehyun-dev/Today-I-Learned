@@ -3464,3 +3464,16 @@ A.
 - 데이터를 출력하려면, Stack2에서 가장 위 데이터를 pop하여 return한다
 
 https://velog.io/@wonhee010/Stack-2%EA%B0%9C%EB%A1%9C-Queue-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+
+23.04.28
+## Q. Weighted Interval Scheduling 문제에 대해 설명하고 이를 해결하기 위한 알고리즘을 제시하세요.(알고리즘)
+
+A.  
+Weighted Interval Scheduling  
+- n개의 일이 주어지고 각각의 일을 j라고 할 때, s_j에서 시작해서 f_j에 끝나며 v_j의 weight를 가지고 있는 경우 최대한 일을 겹치지 않는 선에서 weight의 합을 최대로 만드는 문제  
+- Dynamic Programming으로 해결
+- 끝나는 시간을 기준으로 일을 정렬
+- j라는 일을 선택한 경우와 선택하지 않은 경우에 대해서 weight의 합이 큰 경우를 선택하며 최적의 해를 탐색
+- i번째 일이 j번째 일보터 먼저 일어났을 경우, i와 j가 compatible 하다는 것은 f_i가 s_j보다 작거나 같다는 것을 의미
+
+https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Dynamic-Programming-Weighted-Interval-Scheduling
