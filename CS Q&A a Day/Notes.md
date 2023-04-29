@@ -3477,3 +3477,22 @@ Weighted Interval Scheduling
 - i번째 일이 j번째 일보터 먼저 일어났을 경우, i와 j가 compatible 하다는 것은 f_i가 s_j보다 작거나 같다는 것을 의미
 
 https://velog.io/@claude_ssim/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Dynamic-Programming-Weighted-Interval-Scheduling
+
+23.04.29
+## Q. Normalization과 Regularization의 차이에 대해 설명해주세요.(머신러닝)
+
+A.  
+#### Normalization
+- 값의 범위(scale)를 0~1 사이의 값으로 바꾸는 것
+- 학습 전에 scaling하는 것
+    - 머신러닝에서 scale이 큰 feature의 영향이 비대해지는 것을 방지
+    - 딥러닝에서 Local Minima에 빠질 위험 감소(학습 속도 향상)
+
+#### Regularization
+- weight를 조정하는데 규제(제약)를 거는 기법
+- Overfitting을 막기위해 사용함
+- L1 regularization, L2 regularizaion 등의 종류가 있음
+    - L1: LASSO(라쏘), 마름모
+    - L2: Lidge(릿지), 원
+
+https://realblack0.github.io/2020/03/29/normalization-standardization-regularization.html
