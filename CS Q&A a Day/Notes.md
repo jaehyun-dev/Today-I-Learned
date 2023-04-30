@@ -3496,3 +3496,9 @@ A.
     - L2: Lidge(릿지), 원
 
 https://realblack0.github.io/2020/03/29/normalization-standardization-regularization.html
+
+23.04.30
+## Q. 로깅을 이용한 데이터베이스의 회복에 대해서 간략히 설명해주세요.(데이터베이스)
+
+A.  
+[22.11.21 질문 및 답변]https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A1%9C%EA%B9%85%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%ED%9A%8C%EB%B3%B5%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EA%B0%84%EB%9E%B5%ED%9E%88-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4
