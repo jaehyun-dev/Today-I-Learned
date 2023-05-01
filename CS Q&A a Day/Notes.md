@@ -3502,3 +3502,17 @@ https://realblack0.github.io/2020/03/29/normalization-standardization-regulariza
 
 A.  
 [22.11.21 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A1%9C%EA%B9%85%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%ED%9A%8C%EB%B3%B5%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EA%B0%84%EB%9E%B5%ED%9E%88-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+23.05.01
+## Q. CSRF 공격에 대해서 설명해주시고 해결방법에 대해 말씀해주세요.(네트워크)  
+
+A.  
+CSRF 공격(Cross Site Request Forgery)  
+- 웹 어플리케이션 취약점 중 하나로 인터넷 사용자(희생자)가 자신의 의지와는 무관하게 공격자가 의도한 행위(수정, 삭제, 등록 등)를 특정 웹사이트에 요청하게 만드는 공격
+- CSRF를 통해 해커는 희생자의 권한을 도용하여 중요 기능을 실행하는 것이 가능
+
+해결방법  
+- Referrer 검증: Back-end 단에서 request의 referrer를 확인하여 domain이 일치하는 지 검증하는 방법
+- Security Token 사용 (A.K.A CSRF Token): 사용자의 세션에 임의의 난수 값을 저장하고 사용자의 요청마다 해당 난수값을 포함시켜 전송한 후, Back-end 단에서 요청을 받을 때마다 세션에 저장된 토큰값과 요청 파라미터에 전달되는 토큰값이 일치하는지 검증하는 방법
+
+https://itstory.tk/entry/CSRF-%EA%B3%B5%EA%B2%A9%EC%9D%B4%EB%9E%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-CSRF-%EB%B0%A9%EC%96%B4-%EB%B0%A9%EB%B2%95
