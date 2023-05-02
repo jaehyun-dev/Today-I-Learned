@@ -3516,3 +3516,14 @@ CSRF 공격(Cross Site Request Forgery)
 - Security Token 사용 (A.K.A CSRF Token): 사용자의 세션에 임의의 난수 값을 저장하고 사용자의 요청마다 해당 난수값을 포함시켜 전송한 후, Back-end 단에서 요청을 받을 때마다 세션에 저장된 토큰값과 요청 파라미터에 전달되는 토큰값이 일치하는지 검증하는 방법
 
 https://itstory.tk/entry/CSRF-%EA%B3%B5%EA%B2%A9%EC%9D%B4%EB%9E%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-CSRF-%EB%B0%A9%EC%96%B4-%EB%B0%A9%EB%B2%95
+
+23.05.02
+## Q. PCB(Process Control Block)이란 무엇인가요?
+
+A.  
+PCB(Process Control Block)  
+- 운영체제가 프로세스를 제어하기 위해 정보를 저장해 놓는 곳으로, 프로세스의 상태 정보를 저장하는 구조체이다.
+- 프로세스 상태 관리와 문맥교환(Context Switching)을 위해 필요하다.
+- PCB는 프로세스 생성 시 만들어지며 주기억장치에 유지된다.
+
+https://dev-mystory.tistory.com/119
