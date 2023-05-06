@@ -3569,3 +3569,16 @@ Logistci Regression(로지스틱 회귀)
 - 전자상거래: 광고 및 판촉 캠페인 전략 최적화
 
 https://www.tibco.com/ko/reference-center/what-is-logistic-regression
+
+23.05.06
+## Q. STEAL과 ¬STEAL 정책의 차이점과 UNDO 복구가 무조건적으로 필요한 정책은 둘 중 어느 것인지 설명해주세요.(데이터베이스)
+
+A.  
+- 아직 완료되지 않은 트랜잭션이 수정한 페이지들도 디스크에 출력될 수 있으므로, 만약 해당 트랜잭션이 어떤 이유든 정상적으로 종료할 수 없게 되면 트랜잭션이 변경한 페이지들은 원상복구 되어야 하고, 이런 복구를 UNDO라고 함
+- 수정된 페이지를 디스크에 쓰는 시점을 기준으로 STEAL과 ¬STEAL 정책으로 나뉨
+- STEAL: 수정된 페이지를 언제든지 디스크에 쓸 수 있는 정책
+- ¬STEAL: 수정된 페이지들을 최소한 트랜잭션 종료 시점(EOT, End of Transaction)까지는 버퍼에 유지하는 정책
+- UNDO 복구가 무조건적으로 필요한 정책은 STEAL 정책(수정된 페이지가 어떠한 시점에도 디스크에 써질 수 있기 때문에)
+
+https://d2.naver.com/helloworld/407507  
+([23.03.29 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-force%EC%99%80-force-%EC%A0%95%EC%B1%85%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EA%B3%BC-redo%EB%B3%B5%EA%B5%AC%EA%B0%80-%EB%AC%B4%EC%A1%B0%EA%B1%B4%EC%A0%81%EC%9C%BC%EB%A1%9C-%ED%95%84%EC%9A%94%ED%95%9C-%EC%A0%95%EC%B1%85%EC%9D%80-%EB%91%98-%EC%A4%91-%EC%96%B4%EB%8A%90-%EA%B2%83%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4) 참고)
