@@ -3610,3 +3610,9 @@ A.
     - 프로세스 1개 이상 중단, 자원 선점하기 등을 통해 순환 대기에서 벗어나 데드락으로부터 회복
 
 https://chanhuiseok.github.io/posts/cs-2/
+
+22.05.09
+## Q. 트리 순회 방식인 전위 순회, 중위 순회, 후위 순회에 대해 설명해주세요.(자료구조)
+
+A.  
+[22.12.01 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%A6%AC-%EC%88%9C%ED%9A%8C-%EB%B0%A9%EC%8B%9D%EC%9D%B8-%EC%A0%84%EC%9C%84-%EC%88%9C%ED%9A%8C-%EC%A4%91%EC%9C%84-%EC%88%9C%ED%9A%8C-%ED%9B%84%EC%9C%84-%EC%88%9C%ED%9A%8C%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
