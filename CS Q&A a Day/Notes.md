@@ -3611,7 +3611,7 @@ A.
 
 https://chanhuiseok.github.io/posts/cs-2/
 
-22.05.09
+23.05.09
 ## Q. 트리 순회 방식인 전위 순회, 중위 순회, 후위 순회에 대해 설명해주세요.(자료구조)
 
 A.  
@@ -3624,7 +3624,7 @@ A.
 [22.10.17 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%B5%9C%EC%86%8C-%EC%8A%A4%ED%8C%A8%EB%8B%9D-%ED%8A%B8%EB%A6%ACminimum-spanning-tree%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%8A%B9%EC%A7%95-%EC%82%AC%EC%9A%A9-%EC%82%AC%EB%A1%80%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  
 https://gmlwjd9405.github.io/2018/08/28/algorithm-mst.html
 
-22.05.11
+23.05.11
 ## Q. Batch Normalization에 대해서 설명해주세요.(머신러닝)
 
 A.  
@@ -3635,3 +3635,14 @@ A.
 - 학습 시의 미니배치를 한 단위로 정규화함으로써 분포의 평균이 0, 분산이 1이 되도록 정규화함
 
 https://sacko.tistory.com/44
+
+23.05.12
+## Q. 데이터베이스 REDO에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+- 트랜잭션은 ACID 특성을 지켜야 함
+- A: Atomicity(원자성), C: Consistency(일관성), I: Isolation(고립성), D: Durability(지속성)
+- REDO 로그: 데이터베이스에 문제가 생겨 정보가 손상됐을 때, 이를 복구하기 위해 필요한 변경 이력 데이터 로그
+- 오래된 데이터를 최신 데이터로 만들기(롤 포워드, roll-forward) 위해 필요함
+
+https://loosie.tistory.com/527
