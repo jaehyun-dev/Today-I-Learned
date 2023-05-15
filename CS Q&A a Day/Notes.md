@@ -3691,3 +3691,9 @@ A.
 - 각 작업들이 독립적이거나, 작업 별 지연이 큰 경우 효율적임
 
 https://private.tistory.com/24
+
+23.05.15
+## Q. 단일 연결리스트와 원형 연결리스트를 구별하는 방법에 대해 설명해주세요.(자료구조)
+
+A.  
+[22.10.11 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8B%A8%EC%9D%BC-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%99%80-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EA%B5%AC%EB%B3%84%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
