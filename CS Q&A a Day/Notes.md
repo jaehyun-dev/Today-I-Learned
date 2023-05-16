@@ -3697,3 +3697,9 @@ https://private.tistory.com/24
 
 A.  
 [22.10.11 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8B%A8%EC%9D%BC-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%99%80-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EA%B5%AC%EB%B3%84%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+23.05.16
+## Q. 크루스칼 알고리즘(Kruskal's Algorithm)에 대해 설명해주세요.(알고리즘)
+
+A.  
+[22.10.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%81%AC%EB%A3%A8%EC%8A%A4%EC%B9%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98kruskals-algorithm%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
