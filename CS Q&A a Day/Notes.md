@@ -3703,3 +3703,16 @@ A.
 
 A.  
 [22.10.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%81%AC%EB%A3%A8%EC%8A%A4%EC%B9%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98kruskals-algorithm%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.05.17
+## Q. 활성함수(Activation Function)에서 ReLU 함수를 사용하는 이유에 대해 설명해주세요.(머신러닝)
+
+A.  
+ReLU 함수  
+- h = max(0, a) where a = Wx + b
+
+ReLU 함수를 사용하는 이유
+- Sparsity(a가 0보다 작을 때): sparse 하다는 것은 벡터를 표시하는 값들 중 0이 많은 수를 차지하는 것. 활성화 값(a)이 0보다 작은 뉴런들이 많을수록 sparse하다. ReLU 함수를 사용하면 sigmoid 함수에 비해 더 sparse한 형태를 만들고, 뉴런의 활성화값이 0인 경우 다음 레이어로 연결되는 weight를 곱하더라도 결괏값이 0이기에, 이는 연산량을 월등히 줄여줌
+- Vanishing Gradient(a가 0보다 클 때): sigmoid의 gradient는 x의 절댓값이 증가하는 만큼 작아지게 되는 것에 비해, ReLU의 역함수는 1이므로 ReLU의 경우에는 gradient로 상수를 갖게 되고, 일정한 gradient값은 빠르게 학습하는 것을 도와줌
+
+https://joonable.tistory.com/2
