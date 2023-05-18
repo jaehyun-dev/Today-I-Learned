@@ -3716,3 +3716,14 @@ ReLU 함수를 사용하는 이유
 - Vanishing Gradient(a가 0보다 클 때): sigmoid의 gradient는 x의 절댓값이 증가하는 만큼 작아지게 되는 것에 비해, ReLU의 역함수는 1이므로 ReLU의 경우에는 gradient로 상수를 갖게 되고, 일정한 gradient값은 빠르게 학습하는 것을 도와줌
 
 https://joonable.tistory.com/2
+
+23.05.18
+## Q. 데이터베이스 UNDO에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+- 트랜잭션은 ACID 특성을 지켜야 함
+- A: Atomicity(원자성), C: Consistency(일관성), I: Isolation(고립성), D: Durability(지속성)
+- UNDO 정보: 데이터베이스의 데이터 정보가 변경됐을 때, 이를 원래대로 되돌리기 위해 필요한 정보
+- 변경을 취소하고 과거의 상태로 되돌리는 롤백(rollback)을 위해 필요함
+
+https://loosie.tistory.com/527
