@@ -3727,3 +3727,17 @@ A.
 - 변경을 취소하고 과거의 상태로 되돌리는 롤백(rollback)을 위해 필요함
 
 https://loosie.tistory.com/527
+
+23.05.19
+## Q. 도메인의 CNAME과 A레코드에 대해서 설명해주세요.(네트워크)
+
+A.  
+CNAME(Canonical Name)
+- 하나의 도메인에 도메인 별칭을 부여하는 방식(도메인의 또 다른 도메인 이름)
+- 도메인에 도메인이 매핑되어 있기 때문에 IP의 변경에 직접적인 영향을 받지 않음
+
+A레코드(A Record)
+- 도메인 이름(Domain Name)에 IP주소(IP Address)를 매핑하는 방법
+- 직접적으로 IP가 할당되어 있기 때문에 IP가 변경되면 직접적으로 도메인에 영향을 미침
+
+https://coding-start.tistory.com/348
