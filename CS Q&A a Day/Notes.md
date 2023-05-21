@@ -3741,3 +3741,20 @@ A레코드(A Record)
 - 직접적으로 IP가 할당되어 있기 때문에 IP가 변경되면 직접적으로 도메인에 영향을 미침
 
 https://coding-start.tistory.com/348
+
+23.05.21
+## Q. (Blocking)과 논-블로킹(Non-blocking)의 차이점에 대해 설명해주세요.(운영체제)
+
+A.  
+블로킹(Blocking)
+- 동기 작업 중에 I/O를 받아 오기 전까지 프로그램을 멈추어 비동기 수행을 할 수 있게 하는 것
+- Blocking 시간에 다른 작업을 할 수 있게 됨
+- Thread가 Blocking 된다는 것은 CPU가 점유되어 실행되지 못함을 의미함
+
+논-블로킹(Non-Blocking)
+- Wait 하지 않고 작업이 그냥 수행됨
+- 자신이 호출되었을 때 즉 System call을 받았을 때 제어권을 바로 자신을 호출한 쪽으로 넘겨 다른 작업을 할 수 있도록 하는 것을 의미
+- Thread가 Waiting하지 않으므로 CPU 제어는 그대로임
+
+https://luv-n-interest.tistory.com/1121  
+https://jaehoney.tistory.com/242  
