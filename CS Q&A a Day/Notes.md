@@ -3758,3 +3758,14 @@ A.
 
 https://luv-n-interest.tistory.com/1121  
 https://jaehoney.tistory.com/242  
+
+
+23.05.22
+## Q. 원형 큐(Circular Queue)에 대해 설명해주세요.(자료구조)
+
+A.  
+- 선형 큐의 문제점을 보완하기 위한 자료구조
+- 선형 큐의 문제점은 rear이 가리키는 포인터가 배열의 마지막 인덱스를 가리키고 있을 때 앞쪽에서 Dequeue로 발생한 배열의 빈 공간을 활용할 수 없다는 점
+- 원형 큐는 포인터 증가 방식이 (rear + 1) % arraysize 형식으로 변환하기 때문에 배열의 첫 인덱스부터 다시 데이터의 삽입이 가능해짐
+
+https://lktprogrammer.tistory.com/59
