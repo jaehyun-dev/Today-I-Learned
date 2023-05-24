@@ -3774,3 +3774,13 @@ https://lktprogrammer.tistory.com/59
 
 A.  
 [22.11.14 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%94%84%EB%A6%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98prims-algorithm%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.05.24
+## Q. Back Propagation에 대해 설명해주세요.(머신러닝)
+
+A.  
+Back Propagation(역전파) 알고리즘
+- Output Layer에서 시작하여 직전 레이어로 이동하면서 Cost를 구하는 최적화 알고리즘
+- Chain Rule을 이용하여 Forward Propagtion에 비해 연산량을 현저히 줄이게 됨
+
+https://box-world.tistory.com/19
