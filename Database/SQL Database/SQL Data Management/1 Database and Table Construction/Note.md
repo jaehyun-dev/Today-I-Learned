@@ -37,3 +37,21 @@ USE 이용해서 지정해주거나, 왼쪽 네비게이터에서 데이터베�
 USE 사용하면 어느 데이터베이스 사용할 건지 지정할 수 있음  
 SELECT문 쓸 때 어느 데이터베이스인지 앞에 이름 지정 안 하고 바로 테이블 이름부터 쓸 수 있음  
 만약 USE 쓴 데이터베이스 외의 데이터베이스 조회하려면 (데이버테이스 이름).(테이블 이름)으로 조회할 수 있음  
+
+<br/><br/>
+
+## 04. 테이블 생성하기
+MySQL 워크벤치에서 버튼을 이용하여 테이블 생성에 필요한 것 지정하고 Apply 버튼 누르면, 다음과 같은 SQL문이 생성됨  
+```SQL
+CREATE TABLE `course_rating`.`student` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(20) NULL,
+  `student_number` INT NULL,
+  `major` VARCHAR(15) NULL,
+  `email` VARCHAR(50) NULL,
+  `phone` VARCHAR(15) NULL,
+  `admission_date` DATE NULL,
+  PRIMARY KEY (`id`))
+COMMENT = '		';
+```  
+이 SQL문 실행한 것과 같은 결과  
