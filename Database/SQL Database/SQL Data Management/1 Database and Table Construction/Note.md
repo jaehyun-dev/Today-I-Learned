@@ -151,3 +151,12 @@ CREATE TABLE `course_rating`.`student` (    # course_rating 데이터베이스�
   PRIMARY KEY (`id`))    # id 컬럼을 Primary key로 지정. 이 줄 대신, 'id' 컬럼의 속성에 PRIMARY KEY 추가해도 됨 
 COMMENT = '		';
 ```  
+
+<br/><br/>
+
+## 08. 백틱과 따옴표 이야기
+SQL문 컬럼 이름에 \` 붙어있고, \`기호의 정식 명칭은 백틱(backtick)  
+DBMS에서는 데이터베이스, 테이블, 컬럼 등과 같은 구성요소를 보통 object(객체)라고 하고, 이런 object에 붙여준 이름을 identifier(식별자)라고 함  
+MySQL에서 백틱은 해당 단어가 identifier임을 나타내는 기호  
+백틱을 쓰면 어느 단어가 사용자가 직접 이름을 지은 부분인지 확실하게 나타낼 수 있고, SQL 문법에 정해진 키워드로 이름을 지을 때는 백틱 필수  
+작은따옴표, 큰따옴표는 문자열 값을 나타낼 때 사용
