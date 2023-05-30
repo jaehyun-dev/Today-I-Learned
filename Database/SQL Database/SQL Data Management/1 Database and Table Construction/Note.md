@@ -134,3 +134,20 @@ COMMENT = '		';
 ### ! SQL 실행기를 사용할 때의 주의사항
 - 코드잇의 'SQL 실행기'는 사용자가 이미 하나의 데이터베이스를 선택했다고 가정한 상태에서 작동함 
 - 따라서 테이블을 나타낼 때는, 테이블 이름만 적어야 하고, 데이터베이스 이름은 적으면 안 됨
+
+<br/><br/>
+
+## 07. CREATE TABLE문 설명
+```SQL
+CREATE TABLE `course_rating`.`student` (    # course_rating 데이터베이스에 student 테이블을 생성하라
+  # 각 컬럼의 이름과 데이터 타입, 속성
+  `id` INT NOT NULL AUTO_INCREMENT,    
+  `name` VARCHAR(20) NULL,    # NULL은 생략 가능
+  `student_number` INT NULL,
+  `major` VARCHAR(15) NULL,
+  `email` VARCHAR(50) NULL,
+  `phone` VARCHAR(15) NULL,
+  `admission_date` DATE NULL,
+  PRIMARY KEY (`id`))    # id 컬럼을 Primary key로 지정. 이 줄 대신, 'id' 컬럼의 속성에 PRIMARY KEY 추가해도 됨 
+COMMENT = '		';
+```  
