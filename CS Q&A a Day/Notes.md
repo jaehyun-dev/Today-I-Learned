@@ -3873,3 +3873,9 @@ A.
     - 단순하게 입력을 원점에 맞추고 정규화한 다음, 정규화된 데이터에 대해서 두 개의 새로운 파라미터를 사용하여 스케일과 시프트를 수행함
 
 https://casa-de-feel.tistory.com/m/36
+
+23.05.31
+## Q. WAL이 무엇이고 왜 필요한지 설명해주세요.(데이터베이스)
+
+A.  
+[22.09.26 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-wal%EC%9D%B4-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%9C%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)  
