@@ -3920,3 +3920,20 @@ double-ended queue의 줄임말로, 큐의 단점을 보완한 자료구조
 
 A.  
 [22.11.09 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%B9%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98kahns-algorithm%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.06.05
+## Q. 퍼셉트론(Perceptron)의 개념과 학습 방법에 대해 설명해주세요.(머신러닝)
+
+A.  
+퍼셉트론(Perceptron)  
+- 인공 신경망 모형의 하나
+- 다수의 신호(Input)을 입력받아서 하나의 신호(Output)를 출력함
+- 가중치(weight)가 각각의 입력신호에 부여되어 입력신호와 계산을 하고 신호의 총합이 정해진 입계값($\theta\$, theta, 세타)을 넘어섰을 때 1을 출력함
+- 각 입력신호에는 고유한 weight가 부여되며 weight가 클수록 해당 신호가 중요하다고 볼 수 있음
+- 기계학습이 하는 일은 이 weight(입력을 조절하니 매개변수로도 볼 수 있음)의 값을 정하는 작업이라고 할 수 있음
+
+퍼셉트론 학습 방법
+- 처음에는 임의로 설정된 weight로 시작함
+- 학습 데이터를 퍼셉트론 모형에 입력하여 분류가 잘못됐을 때 weight를 개선해나감
+
+https://sacko.tistory.com/m/10
