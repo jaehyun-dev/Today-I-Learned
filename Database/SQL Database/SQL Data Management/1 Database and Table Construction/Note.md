@@ -255,3 +255,12 @@ UPDATE student
     SET major = '멀티미디어학과', name = '차소원'
     WHERE id = 2;
 ```
+
+<br/><br/>
+
+## 15. 컬럼의 기존 값을 기준으로 갱신하기
+```MySQL
+UPDATE final_exam_result SET score = score + 3;
+```
+score의 기존값(원래 점수)에서 3점을 더한 값으로 갱신  
+컬럼 이름을 활용해서, 기존 값을 기반으로 갱신할 수 있음
