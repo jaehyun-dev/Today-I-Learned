@@ -202,3 +202,19 @@ USE [데이터베이스 이름];은 해당 데이터베이스를 사용하겠다
 질문 3  
 정답 : 1번  
 MySQL에서 SQL 문을 쓸 때 어떤 단어가 SQL 상의 키워드가 아닌 테이블 이름, 컬럼 이름 등이라는 것을 분명하게 나타내고 싶을 때는 백틱(backtick, \`)을 써주면 됩니다.
+
+<br/><br/>
+
+## 12. 데이터베이스와 테이블 생성 실습 I
+```MySQL
+CREATE TABLE animal_info (
+    id INT NOT NULL AUTO_INCREMENT,
+    type VARCHAR(30) NOT NULL,
+    name VARCHAR(10) NOT NULL,
+    age TINYINT NOT NULL,
+    sex CHAR(1) NOT NULL,
+    weight DOUBLE NOT NULL,
+    feature VARCHAR(500) NULL,
+    entry_date DATE NOT NULL,
+    PRIMARY KEY(id));
+```
