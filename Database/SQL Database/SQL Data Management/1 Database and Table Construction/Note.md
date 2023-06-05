@@ -237,3 +237,21 @@ INSERT INTO food_menu
 3. AUTO_INCREMENT 속성 등이 있어서 DBMS에서 자동으로 값이 입력되는 컬럼에는 사용자가 직접 값을 넣어도 되고, 넣지 않아도 된다.  
 
 이 사실들만 잘 기억하고 있으면 INSERT INTO문을 쉽게 사용할 수 있습니다.
+
+<br/><br/>
+
+## 14. 테이블의 row 갱신하기
+```MySQL
+UPDATE student SET major = '멀티미디어학과' WHERE id = 2;
+```
+- UPDATE student: student 테이블을 갱신(업데이트)하라
+- SET major = '멀티미디어학과': major를 '멀티미디어학과'로 설정해서 갱신하라
+- WHERE id = 2: id가 2인 row에 대해서
+
+WHERE 절 조건 없으면 모든 row에 대해서 갱신됨  
+여러 개 column 값 갱신하고 싶으면 콤마(,)로 구분하여 써주면 됨
+```MySQL
+UPDATE student
+    SET major = '멀티미디어학과', name = '차소원'
+    WHERE id = 2;
+```
