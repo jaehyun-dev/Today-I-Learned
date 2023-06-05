@@ -218,3 +218,22 @@ CREATE TABLE animal_info (
     entry_date DATE NOT NULL,
     PRIMARY KEY(id));
 ```
+
+<br/><br/>
+
+## 13. 데이터베이스와 테이블 생성 실습 II
+```MySQL
+INSERT INTO food_menu
+    (menu, price, ingredient)
+    VALUES
+    ('라볶이', 5000, '라면, 떡, 양파..'),
+    ('치즈김밥', 3000, '치즈, 김, 단무지..'),
+    ('돈까스', 8000, '국내산 돼지고기, 양배추..'),
+    ('오므라이스', 7000, '계란, 당근..');
+```
+지금까지 배웠던 INSERT INTO문 사용 규칙을 한번 정리해 볼까요?
+1. INSERT INTO 문 뒤에 값을 넣을 컬럼 이름들을 나열해 준다.
+2. 만약 모든 컬럼에 값을 넣을 거라면 1번 항목을 생략해도 된다.
+3. AUTO_INCREMENT 속성 등이 있어서 DBMS에서 자동으로 값이 입력되는 컬럼에는 사용자가 직접 값을 넣어도 되고, 넣지 않아도 된다.  
+
+이 사실들만 잘 기억하고 있으면 INSERT INTO문을 쉽게 사용할 수 있습니다.
