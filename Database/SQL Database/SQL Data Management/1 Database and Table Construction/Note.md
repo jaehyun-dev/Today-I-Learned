@@ -264,3 +264,15 @@ UPDATE final_exam_result SET score = score + 3;
 ```
 score의 기존값(원래 점수)에서 3점을 더한 값으로 갱신  
 컬럼 이름을 활용해서, 기존 값을 기반으로 갱신할 수 있음
+
+<br/><br/>
+
+2023.06.07
+
+## 16. 테이블의 row 삭제하기
+```MySQL
+DELETE FROM student WHERE id = 4;
+```
+- DELETE FROM student: student 테이블에서 삭제하라
+- WHERE id = 4: id 컬럼의 값이 4인 로우를
+- WHERE 쓰지 않으면 모든 로우 삭제
