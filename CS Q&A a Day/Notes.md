@@ -3963,3 +3963,20 @@ A.
 
 A.  
 [23.03.25 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EB%8B%A8%ED%8E%B8%ED%99%94%EB%A5%BC-%ED%95%B4%EA%B2%B0%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+23.06.10
+## Q. 스택(Stack)을 구현함에 있어 링크드리스트로 구현하는 것과 배열로 구현하는 것의 차이점을 설명해주세요.(자료구조)
+
+A.  
+스택(Stack)
+- 후입선출(LIFO, Last In First Out) 형태의 선형 자료구조
+
+배열(Array)을 이용한 구현
+- 데이터를 저장할 배열, 스택의 최대 크기를 저장할 변수, 스택의 입출력 데이터를 가리키는 top을 관리하기 위한 변수가 필요함
+- 처음 생성한 크기를 바꿀 수 없다는 단점이 있음
+
+링크드리스트(Linked List, 연결 리스트)를 이용한 구현
+- Node 클래스를 이용해 데이터를 추가할 때마다 다음 노드에 저장하여 연결하여
+- 전체 길이가 정해져 있지 않기 때문에 스택이 다 찼는지 여부를 체크할 필요가 없음
+
+https://m.blog.naver.com/simjunbo/220023493124
