@@ -50,3 +50,10 @@ ALTER TABLE student MODIFY major INT;
 - Modify column_name data_type: column_name 컬럼의 데이터 타입을 data_type로 수정, 변경하라
 - 컬럼 데이터 타입 변경하려면 먼저 변경하려는 데이터 타입의 값으로 컬럼 값들을 변경해줘야 함
 - MySQL이 엄격하지 않은 편이라 가능
+
+<br/><br/>
+
+## 04. 혹시 UPDATE가 안되는 분이라면?
+- MySQL Workbench에서 safe update mode 사용 중이면 모든 row의 특정 컬럼을 갱신하거나 WHERE절에 Primary Key가 사용되지 않은 UPDATE문이 실행되지 않음
+- 설정에서 해제해주면 됨
+- DBMS의 특정 모드가 어떻게 설정되어있느냐에 따라 같은 SQL문이라도 실행 결과가 달라질 수 있음
