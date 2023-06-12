@@ -16,3 +16,20 @@ DESCRIBE 뒤에 확인하고 싶은 테이블 이름을 쓰면 해당 테이블�
 - Extra : AUTO_INCREMENT 등의 기타 속성
 
 DESC로 줄여써도 됨
+
+<br/><br/>
+
+## 02. 컬럼 추가와 컬럼의 이름 변경
+시간이 흐르면서 테이블에 저장해야 할 정보들이 조금씩 변하기 때문에 컬럼 구조는 바뀔 수 있음  
+
+```MySQL
+ALTER TABLE student ADD gender CHAR(1) NULL;
+```
+- ALTER TABLE: 테이블 변경하라
+- ADD: 컬럼 추가하라
+
+```MySQL
+ALTER TABLE student 
+    RENAME COLUMN student_number TO registration_number;
+```
+- RENAME COLUMN A to B: A 컬럼 이름을 B로 바꿔라
