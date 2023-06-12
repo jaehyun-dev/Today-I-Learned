@@ -33,3 +33,20 @@ ALTER TABLE student
     RENAME COLUMN student_number TO registration_number;
 ```
 - RENAME COLUMN A to B: A 컬럼 이름을 B로 바꿔라
+
+<br/><br/>
+
+## 03. 컬럼 삭제와 컬럼의 데이터 타입 변경
+#### 컬럼 삭제하기
+```MySQL
+ALTER TABLE student DROP admission_date;
+```
+- Drop column_name: 컬럼 삭제하라
+
+#### 컬럼 데이터 타입 변경하기
+```MySQL
+ALTER TABLE student MODIFY major INT;
+```
+- Modify column_name data_type: column_name 컬럼의 데이터 타입을 data_type로 수정, 변경하라
+- 컬럼 데이터 타입 변경하려면 먼저 변경하려는 데이터 타입의 값으로 컬럼 값들을 변경해줘야 함
+- MySQL이 엄격하지 않은 편이라 가능
