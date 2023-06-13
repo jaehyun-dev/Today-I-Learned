@@ -76,3 +76,13 @@ ALTER TABLE student MODIFY major INT;
 
 질문 5  
 해설: 테이블의 기존 컬럼의 데이터 타입을 변경할 때는 ALTER TABLE `테이블 이름` MODIFY `새로 설정할 컬럼 정보`; 형식의 SQL 문을 실행하면 됩니다. 꼭 데이터 타입 뿐만 아니라 NOT NULL, AUTO INCREMENT 같은 컬럼의 속성을 변경할 때도 MODIFY를 사용하는데요. 속성을 변경하는 방법은 곧바로 이후 영상에서 배울 겁니다.
+
+<br/><br/>
+
+## 06. 컬럼 구조 변경 실습
+```MySQL
+ALTER TABLE shoes RENAME COLUMN name TO model;
+ALTER TABLE shoes MODIFY size DOUBLE NOT NULL;
+ALTER TABLE shoes DROP COLUMN brand;
+ALTER TABLE shoes ADD stock INT NOT NULL;
+```
