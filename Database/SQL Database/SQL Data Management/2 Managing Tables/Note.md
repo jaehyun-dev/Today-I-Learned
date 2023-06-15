@@ -86,3 +86,13 @@ ALTER TABLE shoes MODIFY size DOUBLE NOT NULL;
 ALTER TABLE shoes DROP COLUMN brand;
 ALTER TABLE shoes ADD stock INT NOT NULL;
 ```
+
+<br/><br/>
+
+2023.06.15
+
+## 07. 컬럼에 NOT NULL 속성 주기
+```MySQL
+ALTER TABLE student MODIFY name VARCHAR(20) NOT NULL;
+```
+ALTER, MODIFY 뒤에 컬럼의 데이터 타입과 함께 속성을 쓰면 그 속성 추가할 수 있음  
