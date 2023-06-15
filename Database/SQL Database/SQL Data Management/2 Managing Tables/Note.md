@@ -96,3 +96,11 @@ ALTER TABLE shoes ADD stock INT NOT NULL;
 ALTER TABLE student MODIFY name VARCHAR(20) NOT NULL;
 ```
 ALTER, MODIFY 뒤에 컬럼의 데이터 타입과 함께 속성을 쓰면 그 속성 추가할 수 있음  
+
+<br/><br/>
+
+## 08. 컬럼에 DEFAULT 속성 주기
+```MySQL
+ALTER TABLE student MODIFY major INT NOT NULL DEFAULT 101;
+```
+값을 주지 않더라도 기본값이 들어가기를 바라는 컬럼이 있다면 DEFAULT 속성을 통해 기본값을 주면 됨
