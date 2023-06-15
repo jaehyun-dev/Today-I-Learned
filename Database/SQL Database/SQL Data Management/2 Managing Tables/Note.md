@@ -104,3 +104,19 @@ ALTER, MODIFY 뒤에 컬럼의 데이터 타입과 함께 속성을 쓰면 그 �
 ALTER TABLE student MODIFY major INT NOT NULL DEFAULT 101;
 ```
 값을 주지 않더라도 기본값이 들어가기를 바라는 컬럼이 있다면 DEFAULT 속성을 통해 기본값을 주면 됨
+
+<br/><br/>
+
+## 09. DATETIME, TIMESTAMP 타입의 컬럼에 값을 넣는 2가지 방식
+### 1. NOW() 함수 사용하기 
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/c3a10ecb-c963-4736-b003-3cc3391506a2)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/76b3bd64-228c-4b0c-a088-1bf641381264)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/07875fdd-2c3f-48a6-9d41-12ca83dea129)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/735afc98-7334-4197-b437-2283d33e460e)  
+
+### 2. 컬럼에 DEFAULT CURRENT_TIMESTAMP / ON UPDATE CURRENT_TIMESTAMP 속성 설정하기 
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/cd3eb053-fb09-46bc-b213-4e9c5dccfc0b)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/bea1224f-86bc-466a-a987-7d93c6b1ecc6)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/ce51da4b-f70b-4e29-b0be-04cddaf5c59b)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/d2e60fdf-b3dc-4ffb-84d5-dbc14923d6c2)  
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/092f5ea3-81f2-4909-b2ee-40131b65ac1f)
