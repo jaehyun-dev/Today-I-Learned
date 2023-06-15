@@ -4034,3 +4034,9 @@ A.
 - 캐시를 이용하여 전송시간 단축, 불필요한 외부와의 연결 및 트래픽 감소, 네트워크 병목 현상 방지가 가능함
 
 https://yunyoung1819.tistory.com/9
+
+23.06.15
+## Q. 비선점 스케줄링의 종류에 대해 설명해주세요.(운영체제)
+
+A.  
+[23.04.19 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#%EB%B9%84%EC%84%A0%EC%A0%90-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%EC%9D%98-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
