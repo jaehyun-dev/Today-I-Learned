@@ -4040,3 +4040,24 @@ https://yunyoung1819.tistory.com/9
 
 A.  
 [23.04.19 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#%EB%B9%84%EC%84%A0%EC%A0%90-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%EC%9D%98-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+23.06.16
+## Q. 스택(Stack)의 개념, 연산, 예시에 대해 설명해주세요.(자료구조)
+
+A.  
+개념
+- 한 쪽 끝에서만 자료를 넣고 뺄 수 있는 LIFO(Last In First Out) 형식의 자료 구조
+
+연산
+- pop(): 스택에서 가장 위에 있는 항목을 제거
+- push(item): item 하나를 스택의 가장 윗 부분에 추가
+- peek(): 스택의 가장 위에 있는 항목을 return
+- isEmpty(): 스택이 비어 있을 때 True를 return
+
+예시
+- 백트래킹 재귀 알고리즘
+- 웹 브라우저 방문기록(뒤로가기)
+- 실행 취소
+- 역순 문자열 만들기
+
+https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html
