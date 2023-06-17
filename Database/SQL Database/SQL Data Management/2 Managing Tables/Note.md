@@ -120,3 +120,13 @@ ALTER TABLE student MODIFY major INT NOT NULL DEFAULT 101;
 ![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/ce51da4b-f70b-4e29-b0be-04cddaf5c59b)  
 ![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/d2e60fdf-b3dc-4ffb-84d5-dbc14923d6c2)  
 ![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/092f5ea3-81f2-4909-b2ee-40131b65ac1f)
+
+<br/><br/>
+
+## 10. 컬럼에 UNIQUE 속성 주기
+Workbench에서 UQ 속성 = UNIQUE 속성  
+그 컬럼에 같은 값을 가진 또 다른 로우가 추가되는 걸 막을 수 있음  
+```MySQL
+ALTER TABLE student MODIFY registration_number INT NOT NULL UNIQUE;
+```
+student 테이블의 registration_number 컬럼에 UNIQUE 속성 주는 SQL문
