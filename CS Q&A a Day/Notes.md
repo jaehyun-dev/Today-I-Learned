@@ -4061,3 +4061,83 @@ A.
 - 역순 문자열 만들기
 
 https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html
+
+23.06.17
+## Q. 정렬 알고리즘을 모두 이야기하고 각각의 시간 복잡도와 공간 복잡도에 대해 설명해주세요.(알고리즘)
+
+A.  
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-57pk" rowspan="2">정렬 종류</th>
+    <th class="tg-mr14" colspan="3">시간 복잡도</th>
+    <th class="tg-57pk" rowspan="2">공간 복잡도</th>
+  </tr>
+  <tr>
+    <th class="tg-tj68">평균(Average)</th>
+    <th class="tg-4ufn">최선(Best)</th>
+    <th class="tg-4ufn">최악(Worst)</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-yxh0"><span style="color:#333">선택 정렬</span></td>
+    <td class="tg-bea3">O(n^2)</td>
+    <td class="tg-bea3">O(n^2)</td>
+    <td class="tg-bea3">O(n^2)</td>
+    <td class="tg-bea3">O(n^2)</td>
+  </tr>
+  <tr>
+    <td class="tg-yxh0"><span style="color:#333">버블 정렬</span></td>
+    <td class="tg-citn">O(n^2)</td>
+    <td class="tg-citn">O(n)</td>
+    <td class="tg-citn">O(n^2)</td>
+    <td class="tg-citn">O(n)</td>
+  </tr>
+  <tr>
+    <td class="tg-yxh0"><span style="color:#333">삽입 정렬</span></td>
+    <td class="tg-bea3">O(n^2)</td>
+    <td class="tg-bea3">O(n)</td>
+    <td class="tg-bea3">O(n^2)</td>
+    <td class="tg-bea3">O(n^2)</td>
+  </tr>
+  <tr>
+    <td class="tg-kez1"><span style="background-color:#DCDDDD">합병 정렬</span></td>
+    <td class="tg-citn">O(n×log n)</td>
+    <td class="tg-citn">O(n×log n)</td>
+    <td class="tg-citn">O(n×log n)</td>
+    <td class="tg-citn">O(n×log n)</td>
+  </tr>
+  <tr>
+    <td class="tg-kez1"><span style="background-color:#DCDDDD">퀵 정렬</span></td>
+    <td class="tg-bea3">O(n×log n)</td>
+    <td class="tg-bea3">O(n×log n)</td>
+    <td class="tg-bea3">O(n^2)</td>
+    <td class="tg-bea3">O(n×log n)</td>
+  </tr>
+  <tr>
+    <td class="tg-kez1"><span style="background-color:#DCDDDD">힙 정렬</span></td>
+    <td class="tg-citn">O(n×log n)</td>
+    <td class="tg-citn">O(n×log n)</td>
+    <td class="tg-citn">O(n×log n)</td>
+    <td class="tg-citn">O(n×log n)</td>
+  </tr>
+  <tr>
+    <td class="tg-kez1"><span style="background-color:#DCDDDD">쉘 정렬</span></td>
+    <td class="tg-2uhg"><span style="background-color:#F0F0F0">O(N^1.25)</span></td>
+    <td class="tg-2uhg"><span style="background-color:#F0F0F0">O(N^1.25)</span></td>
+    <td class="tg-2uhg"><span style="background-color:#F0F0F0">O(N^1.25)</span></td>
+    <td class="tg-bea3">O(n)</td>
+  </tr>
+  <tr>
+    <td class="tg-yxh0"><span style="color:#333">기수 정렬</span></td>
+    <td class="tg-tsok"><span style="color:#000">O(dn)</span></td>
+    <td class="tg-tsok"><span style="color:#000">O(dn)</span></td>
+    <td class="tg-tsok"><span style="color:#000">O(dn)</span></td>
+    <td class="tg-citn"> </td>
+  </tr>
+</tbody>
+</table>
+
+https://yabmoons.tistory.com/250  
+https://coding-factory.tistory.com/615
