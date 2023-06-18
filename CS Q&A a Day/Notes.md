@@ -4141,3 +4141,18 @@ A.
 
 https://yabmoons.tistory.com/250  
 https://coding-factory.tistory.com/615
+
+23.06.18
+## Q. 기울기 소실 문제(Gradient Vanishing Problem)와 해결 방법에 대해 설명해주세요.(머신러닝)
+
+A.  
+기울기 소실 문제(Gradient Vanishing Problem)  
+- Back Propagation에서 계산 결과와 정답과의 오차를 통해 가중치를 수정하는데, 입력층으로 갈수록 기울기가 작아져 가중치들이 업데이트 되지 않아 최적의 모델을 찾을 수 없는 문제
+
+해결 방법  
+- ReLU(Rectified Linear Unit, 경사함수) 도입
+- Leaky ReLU 도입
+- 배치 정규화(Batch Normalization)
+- Resnet(Residual Network)
+
+https://velog.io/@yunyoseob/Gradient-Vanishing-%EA%B8%B0%EC%9A%B8%EA%B8%B0-%EC%86%8C%EC%8B%A4
