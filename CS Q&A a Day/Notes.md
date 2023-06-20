@@ -4156,3 +4156,13 @@ A.
 - Resnet(Residual Network)
 
 https://velog.io/@yunyoseob/Gradient-Vanishing-%EA%B8%B0%EC%9A%B8%EA%B8%B0-%EC%86%8C%EC%8B%A4
+
+23.06.20
+## Q. 웹소켓이란 무엇인가요?(네트워크)
+
+A.  
+웹소켓
+- Transport Protocol의 일종으로, 서버와 클라이언트 간의 효율적인 양방향 통신을 실현하기 위한 구조
+- 단순한 API로 구성되어 있으며, 하나의 HTTP 접속으로 양방향 메시지를 자유롭게 주고받을 수 있음
+
+https://choseongho93.tistory.com/266
