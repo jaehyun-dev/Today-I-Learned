@@ -4213,3 +4213,14 @@ A.
 - 중간 결과를 저장할 bucket 공간이 필요함
 
 https://gyoogle.dev/blog/algorithm/Radix%20Sort.html
+
+23.06.25
+## Q. 활성함수(activation function)을 비선형 함수를 사용하는 이유에 대해 설명해주세요.(머신러닝)
+
+A.  
+1. XOR 문제 해결
+    - 직선으로 해결할 수 없는 결정경계 문제 해결
+2. 입력 피처의 왜곡
+    - 타겟 함수의 곡률(curvature)을 바꿀 수 있게 해줌으로써, 이후의 레이어에서 선형으로 분리할 수 있도록 만들어줌
+
+https://myeonghak.github.io/deeplearning/Deep-Learning-%EB%B9%84%EC%84%A0%ED%98%95-%ED%95%A8%EC%88%98%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%9C%EA%B0%81%EC%A0%81-%EC%84%A4%EB%AA%85/
