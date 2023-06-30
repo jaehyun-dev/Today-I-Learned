@@ -4281,3 +4281,13 @@ A.
 
 A.  
 [22.09.28 질문 및 답](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8B%A4%EC%84%AF-%EA%B0%80%EC%A7%80-%EC%A0%90%EA%B7%BC-%ED%91%9C%EA%B8%B0%EB%B2%95%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+23.06.30
+## Q. 이분탐색(Binary Search) 알고리즘에 대해 설명해주세요.(알고리즘)
+
+A.  
+이분 탐색(Binary Search)
+- 결정 문제(Decision Problem)의 답이 이분적일 때 사용할 수 있는 탐색 기법
+- 경계를 포함하는 구간 [lo, hi]를 잡은 뒤 구간의 길이를 절반씩 줄여나가며 lo, hi이 경계 지점에 위치하도록 하는 것
+
+https://www.acmicpc.net/blog/view/109
