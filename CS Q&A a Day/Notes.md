@@ -4291,3 +4291,11 @@ A.
 - 경계를 포함하는 구간 [lo, hi]를 잡은 뒤 구간의 길이를 절반씩 줄여나가며 lo, hi이 경계 지점에 위치하도록 하는 것
 
 https://www.acmicpc.net/blog/view/109
+
+23.07.01
+## Q. 퍼셉트론(Perceptron)의 한계점에 대해 설명해주세요.(머신러닝)
+
+A.  
+XOR GATE에서 A와 B 중 1개씩만 1인 경우 직선을 그어 결괏값이 1인 값을 구분할 수 없다는 점
+
+https://gggggeun.tistory.com/m/103
