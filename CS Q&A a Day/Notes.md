@@ -4299,3 +4299,18 @@ A.
 XOR GATE에서 A와 B 중 1개씩만 1인 경우 직선을 그어 결괏값이 1인 값을 구분할 수 없다는 점
 
 https://gggggeun.tistory.com/m/103
+
+23.07.02
+## Q. 트랜잭션 스케줄링이 non-serial함과 serializable함의 차이점에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+serial schedule(직렬 스케줄)
+- 여러 트랜잭션들의 집합을 한번에 한 트랜잭션씩 차례대로 수행
+
+non-serial schedule(비직렬 스케줄)
+- 여러 트랜잭션들을 동시에 수행
+
+serializable schedule(직렬 가능 스케줄)
+- 비직렬 스케줄의 결과가 직렬 스케줄의 결과와 동등
+
+https://woochan-autobiography.tistory.com/627#2.%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4
