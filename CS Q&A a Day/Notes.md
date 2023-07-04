@@ -4344,3 +4344,16 @@ long polling
     - 데이터가 주어지는 즉시 반응하고 보내므로 요청간격이 줄어든다면 polling보다 훨씬 데이터를 많이 보내게 됨
 
 https://kamang-it.tistory.com/entry/Webhttp%ED%86%B5%EC%8B%A0%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%96%91%EB%B0%A9%ED%96%A5-%ED%86%B5%EC%8B%A0%EA%B8%B0%EB%B2%95-long-polling
+
+23.07.04
+## Q. 운영체제와 커널의 차이점에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.11.06 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EC%99%80-%EC%BB%A4%EB%84%90%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)  
+
+- 운영체제는 시스템의 자원을 관리하는 시스템 프로그램이며, 커널은 운영체제의 중요한 부분(프로그램)
+- 커널은 시스템의 소프트웨어와 하드웨어 간의 인터페이스 역할을 하는 반면 운영체제는 사용자와 컴퓨터 간의 인터페이스 역할을 함
+- 운영체제는 단일 및 다중 프로그래밍 일괄 처리 시스템, 분산 운영 체제, 실시간 운영 체제로 더 분류되는 반면 커널은 모놀리식 커널과 마이크로 커널로 분류됨
+- 커널은 메모리 관려, 프로세스 관리, 작업 관리 및 디스크 관리를 담당하는 반면 운영 체제는 커널의 책임 외에도 시스템의 보호 및 보안을 담당함
+
+https://ko.gadget-info.com/difference-between-kernel
