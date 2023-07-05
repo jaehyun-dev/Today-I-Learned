@@ -4357,3 +4357,5 @@ A.
 - 커널은 메모리 관려, 프로세스 관리, 작업 관리 및 디스크 관리를 담당하는 반면 운영 체제는 커널의 책임 외에도 시스템의 보호 및 보안을 담당함
 
 https://ko.gadget-info.com/difference-between-kernel
+
+23/123
