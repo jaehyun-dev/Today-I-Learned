@@ -4369,3 +4369,18 @@ A.
 
 A.  
 [22.10.28 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%89%98-%EC%A0%95%EB%A0%ACshell-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.07.08
+## Q. 활성함수(activation function)의 정의와 종류에 대해 설명해주세요.(머신러닝)
+
+A.  
+정의  
+- 신경망 회로에서, 한 노드에 대해 입력값을 다음 노드에 보낼지 말지에 대해 결정하는 함수.
+
+종류
+- Step Function
+- Sigmoid Function
+- tanh 함수
+- ReLU 함수
+
+https://m.blog.naver.com/good5229/221752705030
