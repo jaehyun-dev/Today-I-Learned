@@ -4455,3 +4455,8 @@ https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
 
 A. 
 [22.11.02 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8E%98%EC%9D%B4%EC%A7%95%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+23.07.12
+## Q. 인접행렬과 인접리스트의 장단점에 대해 설명해주세요.(자료구조)
+
+[22.12.25 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q&A%20a%20Day/Notes.md#q-%EC%9D%B8%EC%A0%91%ED%96%89%EB%A0%AC%EA%B3%BC-%EC%9D%B8%EC%A0%91%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
