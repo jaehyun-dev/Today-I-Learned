@@ -4462,8 +4462,43 @@ A.
 A.  
 [22.12.25 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q&A%20a%20Day/Notes.md#q-%EC%9D%B8%EC%A0%91%ED%96%89%EB%A0%AC%EA%B3%BC-%EC%9D%B8%EC%A0%91%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
 
-22.10.07
+23.07.13
 ## Q. 퀵 정렬(Quick Sort)의 구현 방식, 시간복잡도, 공간복잡도, 장단점에 대해 설명해주세요.
 
 A.  
 [22.10.07 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%80%B5-%EC%A0%95%EB%A0%ACquick-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+23.07.14
+## Q. 하이퍼파라미터의 종류에 대해 아는 대로 이야기해주세요.(머신러닝)
+
+A.  
+하이퍼파라미터(Hyperparameter)
+- 머신러닝에서 하이퍼파라미터는 최적의 훈련 모델을 구현하기 위해 모델에 설정하는 변수로 학습률(Learning Rate), 에포크 수(훈련 반복 횟수), 가중치 초기화 등을 결정할 수 있음. 또한 하이퍼파라미터 튜닝 기법을 적용하여 훈련 모델의 최적값들을 찾을 수 있음
+
+하이퍼파라미터의 특징
+- 모델의 매개 변수를 추정하는 데 도움이 되는 프로세스에서 사용됨
+- 하이퍼파라미터는 개발자에 의해 수동으로 설정할 수 있음(임의 조정 가능)
+- 학습 알고리즘의 샘플에 대한 일반화를 위해 조절됨
+
+하이퍼파라미터의 예
+- 학습률
+- 손실 함수
+- 일반화 파라미터
+- 미니배치 크기
+- 에포크 수
+- 가중치 초기화
+- 은닉층의 개수
+- k-NN의 k값
+
+하이퍼파라미터의 튜닝 기법
+- 그리드 탐색
+- 랜덤 탐색
+- 베이지안 최적화
+- 휴리스틱 탐색
+
+정리
+- 모델 파라미터는 새로운 샘플이 주어지면 무엇을 예측할지 결정하기 위해 사용하는 것이며 학습 모델에 의해 결정
+- 하이퍼파라미터는 학습 알고리즘 자체의 파라미터로 모델이 새로운 샘플에 잘 일반화되도록 하이퍼파라미터들의 최적값을 찾으나, 데이터 분석 결과로 얻어지는 값이 아니므로 절대적인 최적값은 존재하지 않고, 사용자가 직접 설정
+
+https://ittrue.tistory.com/m/42  
+[23.06.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%95%98%EC%9D%B4%ED%8D%BC%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%ED%8A%9C%EB%8B%9D-%EA%B8%B0%EB%B2%95-%EC%A2%85%EB%A5%98%EB%A5%BC-3%EA%B0%80%EC%A7%80-%EC%9D%B4%EC%83%81-%EC%9D%B4%EC%95%BC%EA%B8%B0%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D)
