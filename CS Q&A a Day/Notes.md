@@ -4514,3 +4514,9 @@ A.
 
 A.  
 [23.03.06 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-cdn%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
+
+23.07.17
+## Q. 파일접근 방식인 순차접근과 임의접근에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.10.06 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8C%8C%EC%9D%BC%EC%A0%91%EA%B7%BC-%EB%B0%A9%EC%8B%9D%EC%9D%B8-%EC%88%9C%EC%B0%A8%EC%A0%91%EA%B7%BC%EA%B3%BC-%EC%9E%84%EC%9D%98%EC%A0%91%EA%B7%BC%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
