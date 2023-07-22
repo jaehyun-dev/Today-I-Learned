@@ -4533,7 +4533,7 @@ A.
 A.  
 [22.10.19 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%9E%99-%EC%A0%95%EB%A0%ACheap-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 
-23.0721
+23.07.21
 ## Q. 회귀(Regression) 모델의 성과를 측정하는 지표에 대해 설명해주세요.(머신러닝)
 
 A.  
@@ -4547,3 +4547,9 @@ A.
     - MSE, RMSE의 단점을 보완
 
 https://bigdaheta.tistory.com/53
+
+23.07.22
+## Q. 트랜잭션의 원자성에 대해서 예를 들어 설명해주세요.(데이터베이스)
+
+A.  
+[22.09.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-%EC%9B%90%EC%9E%90%EC%84%B1%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%98%88%EB%A5%BC-%EB%93%A4%EC%96%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
