@@ -4553,3 +4553,20 @@ https://bigdaheta.tistory.com/53
 
 A.  
 [22.09.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-%EC%9B%90%EC%9E%90%EC%84%B1%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%98%88%EB%A5%BC-%EB%93%A4%EC%96%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+23.07.23
+## Q. 인증과 인가의 차이점에 대해 설명해주세요.(네트워크)
+
+A.  
+인증(Authentication)  
+- 어떤 개체(사용자 또는 장치)의 신원을 확인하는 과정
+
+인가(Authorization)
+- 어떤 개체가 어떤 리소스에 접근할 수 있는지 또는 어떤 동작을 수행할 수 있는지를 검증하는 것, 즉 접근 권한을 얻는 일
+
+인가 vs 인증
+- 인증은 인가로 이어지지만 인가는 인증으로 이어지지는 않음
+- 신원증명이 접근 권한을 승인하기에 충분하다고해도, 인가가 개체를 식별하는 데 사용할 수 있는 건 아님
+- ex) 비행기 탑승권의 경우 본인 확인(인증)과 탑승 허가(인가) 모두 가능하지만, 공연 티켓은 입장 허용(인가)은 되지만 본인 확인(인증)은 안 됨
+
+https://dextto.tistory.com/234
