@@ -4570,3 +4570,9 @@ A.
 - ex) 비행기 탑승권의 경우 본인 확인(인증)과 탑승 허가(인가) 모두 가능하지만, 공연 티켓은 입장 허용(인가)은 되지만 본인 확인(인증)은 안 됨
 
 https://dextto.tistory.com/234
+
+23.07.24
+## Q. 멀티프로그래밍과 멀티태스킹의 차이점에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.09.27 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EA%B3%BC-%EB%A9%80%ED%8B%B0%ED%83%9C%EC%8A%A4%ED%82%B9%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
