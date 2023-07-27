@@ -4588,3 +4588,15 @@ A.
 
 A.  
 [22.10.04 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B1%B0%ED%92%88-%EC%A0%95%EB%A0%ACbubble-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+23.07.27
+## Q. Learning rate가 학습에 중요한 이유에 대해 설명해주세요.(머신러닝)
+
+A.  
+학습률(Learning rate)  
+- 경사하강법 알고리즘은 기울기에 학습률(Learning rate) 또는 보폭(Step size)이라 불리는 스칼라를 곱해 다음 지점을 결정
+- Local minimum에 효율적으로 도달할 수 있도록, 너무 크지도 작지도 않은 적절한 학습률을 세팅해야 함
+- 학습률이 큰 경우: 데이터가 무질서하게 이탈하며, 최저점에 수렴하지 못함
+- 학습률이 작은 경우: 학습시간이 매우 오래 걸리며, 최저점에 도달하지 못함
+
+https://bioinformaticsandme.tistory.com/m/130
