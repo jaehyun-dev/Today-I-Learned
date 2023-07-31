@@ -4646,3 +4646,7 @@ https://lewis-kku.tistory.com/34
 https://lewis-kku.tistory.com/19  
 https://ko.wikipedia.org/wiki/OAuth  
 ChatGPT 답변
+
+23.07.31
+
+Q. 기아상태와 교착상태의 차이점에 대해 설명해주세요.(운영체제)
