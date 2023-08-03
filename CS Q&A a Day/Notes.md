@@ -4665,3 +4665,33 @@ http://www.tcpschool.com/cpp/cpp_container_sequence
 
 A.  
 [22.10.13 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%95%A9%EB%B3%91-%EC%A0%95%EB%A0%ACmerge-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.08.03
+## Q. Batch Gradient Descent, Stochastic Gradient Descent, Mini-batch Gradient Descent 알고리즘의 차이점과 각각의 장단점에 대해 설명해주세요.(머신러닝)
+
+A.  
+Batch(배치)  
+- 일괄적으로 처리되는 집단. 한 번에 여러 개의 데이터를 묶어서 입력하는 것
+- GPU의 병렬 연산 기능을 최대한 효율적으로 사용하기 위해 쓰는 방법
+- Iteration 1회당 사용되는 training data set의 묶음
+- Iteration: 정해진 batch size를 사용하여 학습(forward-backward)를 반복하는 횟수
+
+Batch Gradient Descent(BGD)  
+- 전체 데이터 셋에 대한 에러를 구한 뒤 기울기를 한 번만 계산하여 모델의 parameter를 업데이트 하는 방법
+- 전체 데이터에 대해 업데이트가 한 번에 이루어지기 때문에 SGD보다 업데이트 횟수가 적고 전체적인 계산 횟수가 적음
+- 한 스텝에 모든 학습 데이터 셋을 사용하므로 학습이 오래 걸림
+
+Stochastic Gradient Descent(SGD)  
+- 추출된 데이터 한 개에 대해서 error gradient를 계산하고, Gradient descent 알고리즘을 적용하는 방법
+- Shooting이 일어나기 때문에 local optimal에 빠질 리스크가 적고 step에 걸리는 시간이 짧기 때문에 수렴속도가 상대적으로 빠름
+- global optimal을 찾지 못할 가능성이 있고 데이터를 한 개씩 처리하기 때문에 GPU의 성능을 전부 활용할 수 없음
+
+Mini-batch Gradient Descent(MBGD)  
+- 전체 데이터 셋에서 뽑은 Mini-batch 안의 데이터 m개에 대해서 각 데이터에 대한 기울기를 m개 구한 뒤, 그것의 평균 기울기를 통해 모델을 업데이트 하는 방법
+- BGD와 SGD의 장점만 모은 알고리즘으로, 전체 데이터 셋을 여러 개의 mini-batch로 나누어, 한 개의 mini-batch마다 기울기를 구하고 모델을 업데이트 하는 방법
+- BGD보다 local optimal에 빠질 리스크가 적고 SGD보다 병렬처리에 유리함
+- 전체 학습데이터가 아닌 일부분의 학습데이터만 사용하기 때문에 메모리 사용이 BGD보다 적음
+- batch szie(mini-batch size)를 설정해야 함
+- 에러에 대한 정보를 mini-batch 크기만큼 축적해서 계산해야 하기에 SGD보다 메모리 사용이 높음
+
+https://light-tree.tistory.com/133
