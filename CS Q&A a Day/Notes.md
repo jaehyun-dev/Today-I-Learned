@@ -4695,3 +4695,16 @@ Mini-batch Gradient Descent(MBGD)
 - 에러에 대한 정보를 mini-batch 크기만큼 축적해서 계산해야 하기에 SGD보다 메모리 사용이 높음
 
 https://light-tree.tistory.com/133
+
+23.08.06
+## Q. 스풀링(Spooling)에 대해서 설명해주세요.(운영체제)
+
+A.  
+스풀링(Spooling)
+- Simultaneous Peripheral Operation On-Line의 약자
+- 디스크를 매우 큰 버퍼처럼 사용하는 것
+- 입력장치에서 미리 읽어들여 출력장치가 받을 수 있을 때까지 출력 파일을 저장함
+- 한 작업의 입출력을 수행하면서 다른 작업의 계산도 할 수 있음
+- 많은 작업의 입출력과 계산을 함께 할 수 있고, CPU 대기 시간을 줄일 수 있음
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jk130694&logNo=220677926732
