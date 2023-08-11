@@ -4720,3 +4720,21 @@ A.
 
 A.  
 [22.10.15 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%ACinsertion-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.08.11
+## Q. 분류(Classification) 모델의 성과를 측정하는 지표에 대해 설명해주세요.(머신러닝)
+
+A.  
+1) 정확도(Accuracy)
+    - 전체 데이터 중에 정확하게 예측한 데이터의 수
+2) 오차 행렬(Confusion Matrix)
+    - 분류의 예측 범주와 실제 데이터의 분류 범주를 교차 표(Cross Table) 형태로 정리한 행렬
+    - 이진 분류의 예측 오류가 얼마인지와, 어떠한 유형의 예측 오류가 발생하고 있는지 함께 나타냄
+3) 정밀도(Precision)
+    - 양성으로 판단한 것 중 진짜 양성의 비율
+4) 재현율(Recall) = 민감도(Sensitivity)
+    - 진짜 양성인 것들 중 올바르게 양성으로 판단한 비율
+5) F1 Score
+    - 정밀도와 재현율을 결합하여 만든 지표로, 정밀도와 재현율이 어느 한 쪽으로 치우치지 않는 수치를 나타냄
+
+https://bigdaheta.tistory.com/53
