@@ -4744,3 +4744,19 @@ https://bigdaheta.tistory.com/53
 
 A.  
 [22.11.28 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-%EC%97%B0%EC%82%B0-%EC%A4%91-rollback%EC%9D%98-%EA%B0%9C%EB%85%90%EC%9D%84-%EA%B0%84%EB%9E%B5%ED%9E%88-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+23.08.13
+## Q. 로드 밸런서의 역할에 대해 설명해주세요.(네트워크)
+
+A.  
+Server에 Client의 요청이 과도하게 많아지면 모두 응답하지 못하고 동작을 멈추게 됨
+
+해결 방법
+- Scale-up: Server가 더 빠르게 동작하기 위해 하드웨어 성능을 올리는 방법
+- Scale-out: 하나의 Server보다는 여러 대의 Server가 나눠서 일을 하는 방법
+
+로드 밸런서(Load Balancer)  
+- 여러 대의 Server에게 균등하게 Traffic을 분산시켜주는 서비스(Scale-out)
+- 하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러 대의 서버가 분산처리하여 서버의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결
+
+https://nesoy.github.io/articles/2018-06/Load-Balancer
