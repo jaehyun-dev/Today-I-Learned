@@ -4778,3 +4778,9 @@ A.
 - 힙에서 데이터를 추출할 때는, 루트 노드를 추출한 후 heapify를 통해 우선순위를 유지함
 
 https://chanhuiseok.github.io/posts/ds-4/
+
+23.08.16
+## Q. 선택 정렬(Selection Sort)의 구현 방식, 시간복잡도, 공간복잡도, 장단점에 대해 설명해주세요.(알고리즘)
+
+A.  
+[22.10.25 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%84%A0%ED%83%9D-%EC%A0%95%EB%A0%ACselection-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
