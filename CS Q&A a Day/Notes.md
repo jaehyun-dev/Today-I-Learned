@@ -4784,3 +4784,21 @@ https://chanhuiseok.github.io/posts/ds-4/
 
 A.  
 [22.10.25 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%84%A0%ED%83%9D-%EC%A0%95%EB%A0%ACselection-sort%EC%9D%98-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+23.08.17
+## Q. 파라미터와 하이퍼 파라미터의 차이에 대해 설명해주세요.(머신러닝)
+
+A.  
+파라미터(Parameter, 매개변수)
+- 모델 내부에서 데이터로부터 결정되는 변수
+- 평균, 표준편차 등 데이터를 통해 구해지고 모델 내부적으로 결정되는 값
+
+하이퍼 파라미터(Hyper parameter)
+- 모델링할 때 사용자가 직접 세팅해주는 값
+- learning rate, 서포트 벡터 머신의 C, sigma 값, KNN에서 K값 등
+
+파라미터와 하이퍼 파라미터의 차이  
+- 모델 내에서 자체적으로 결정되는 값은 파라미터
+- 사용자가 직접 설정하는 값은 하이퍼 파라미터
+
+https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-13-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0Parameter%EC%99%80-%ED%95%98%EC%9D%B4%ED%8D%BC-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0Hyper-parameter
