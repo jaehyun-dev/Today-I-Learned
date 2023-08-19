@@ -4808,3 +4808,18 @@ https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-13-%ED%8C%
 
 A.  
 [22.12.16 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%97%90%EC%84%9C-savepoint%EC%99%80-truncate%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+23.08.19
+## Q. CORS의 Credentialed Request은 무엇이고 언제 사용하면 좋을까요?(네트워크)
+
+A.  
+CORS(Cross-Origin Resource Sharing)  
+- 교차 출처 리소스 공유
+- 한 도메인에서 로드되어 다른 도메인에 있는 리소스와 상호작용하는 클라이언트 웹 애플리케이션에 대한 방법
+
+Credentialed Request
+- 브라우저(클라이언트)에서 리소스 요청에 인증과 관련된 정보를 담아 보내는 것
+- 교차 출처 간 통신에서 좀 더 보안을 강화하고 싶을 때 사용하는 방법
+
+https://aws.amazon.com/ko/what-is/cross-origin-resource-sharing/  
+https://evan-moon.github.io/2020/05/21/about-cors/
