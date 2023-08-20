@@ -4823,3 +4823,14 @@ Credentialed Request
 
 https://aws.amazon.com/ko/what-is/cross-origin-resource-sharing/  
 https://evan-moon.github.io/2020/05/21/about-cors/
+
+23.08.20
+## Q. 캐시의 지역성에 대해서 설명해주세요.(운영체제)
+
+A.  
+- 캐시가 효율적으로 동작하려면, 캐시에 저장할 데이터가 지역성을 가져야 함
+- 지역성이란 데이터 접근이 시간적 혹은 공간적으로 가깝게 일어나는 것을 말함
+- 시간 지역성: 최근에 참조된 주소의 내용은 곧 다음에 다시 참조되는 특성
+- 공간 지역성: 대부분의 실제 프로그램이 참조된 주소와 인접한 주소의 내용이 다시 참조되는 특성
+
+https://dbstndi6316.tistory.com/222
