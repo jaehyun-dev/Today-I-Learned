@@ -4834,3 +4834,13 @@ A.
 - 공간 지역성: 대부분의 실제 프로그램이 참조된 주소와 인접한 주소의 내용이 다시 참조되는 특성
 
 https://dbstndi6316.tistory.com/222
+
+23.08.21
+## Q. 큐(Queue)를 구현함에 있어 링크드리스트로 구현하는 것과 배열로 구현하는 것의 차이점을 설명해주세요.(자료구조)
+
+A.  
+링크드리스트로 구현하면
+- 배열과 달리 큐의 크기를 미리 지정하지 않아도 됨
+- front보다 작은 인덱스 공간을 낭비하지 않아도 됨
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=simjunbo&logNo=220023590920
