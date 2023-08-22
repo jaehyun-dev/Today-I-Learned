@@ -4844,3 +4844,17 @@ A.
 - front보다 작은 인덱스 공간을 낭비하지 않아도 됨
 
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=simjunbo&logNo=220023590920
+
+23.08.22
+## Q. 최단거리 알고리즘인 다익스트라와 밸만포드의 차이점과 특징을 설명해주세요.(알고리즘)
+
+A.  
+다익스트라(Dijkstra)
+- Greedy 알고리즘
+- 그래프 내의 특정 정점에 갈 수 있는 모든 정점까지의 최단경로를 구하는 알고리즘
+- 인접한 정점으로 가는 간선의 가중치를 비교하여 더 작은 값으로 갱신
+
+밸만-포드(Bellman-Ford)
+- 밸만포드는 다익스트라와 달리 간선의 가중치가 음수인 경우에도 사용 가능함
+
+https://lackofwillpower.tistory.com/25
