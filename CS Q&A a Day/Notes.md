@@ -4858,3 +4858,14 @@ A.
 - 밸만포드는 다익스트라와 달리 간선의 가중치가 음수인 경우에도 사용 가능함
 
 https://lackofwillpower.tistory.com/25
+
+23.08.23
+## Q. 경사 하강 알고리즘(Gradient descent)에 대해 설명해주세요.(머신러닝)
+
+A.  
+경사 하강 알고리즘(Gradient descent algorithm)
+- 비용함수(Cost Function)를 최소화하는 $\theta$를 찾기 위한 알고리즘으로 기울기에 따라 $\theta$를 반복적으로 갱신하면서 비용을 최소화시키는 $\theta$에 도달함
+- Learning rate는 알고리즘의 학습 속도를 결정함
+- 갱신 직전 값과 갱신 값이 같을 때 종료됨
+
+https://box-world.tistory.com/m/7
