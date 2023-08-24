@@ -4869,3 +4869,10 @@ A.
 - 갱신 직전 값과 갱신 값이 같을 때 종료됨
 
 https://box-world.tistory.com/m/7
+
+
+23.08.24
+## Q. 트랜잭션의 연산 중 COMMIT의 개념을 간략히 설명해주세요.(데이터베이스)
+
+A.  
+[22.12.04 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-%EC%97%B0%EC%82%B0-%EC%A4%91-commit%EC%9D%98-%EA%B0%9C%EB%85%90%EC%9D%84-%EA%B0%84%EB%9E%B5%ED%9E%88-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
