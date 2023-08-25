@@ -4876,3 +4876,17 @@ https://box-world.tistory.com/m/7
 
 A.  
 [22.12.04 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%98-%EC%97%B0%EC%82%B0-%EC%A4%91-commit%EC%9D%98-%EA%B0%9C%EB%85%90%EC%9D%84-%EA%B0%84%EB%9E%B5%ED%9E%88-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.08.25
+## Q. CORS의 preflight request에 대해 설명해주세요.(네트워크)
+
+A.  
+Preflight Request  
+- Preflight 방식은 일반적으로 웹 애플리케이션을 개발할 때 가장 자주 마주치는 시나리오
+- 브라우저는 요청을 한 번에 보내지 않고 예비 요청과 본 요청으로 나누어서 서버로 전송함
+- 이때 브라우조거 본 요청을 보내기 전에 보내는 예비 요청을 Preflight 방식이라고 부름
+- 이 예비 요청에는 HTTP 메소드 중 OPTIONS 메소드가 사용됨
+- 예비 요청의 역할은 본 요청을 보내기 전에 브라우저 스스로 이 요청을 보내는 것이 안전한지 확인하는 것
+
+https://evan-moon.github.io/2020/05/21/about-cors/
