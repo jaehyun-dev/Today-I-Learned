@@ -4929,3 +4929,17 @@ RAID(Redundant Array of Inexpensive/Independent Disk)
     - 일반적인 표준 RAID 구성들을 여러 개를 다시 RAID로 묶어서 구현하는 방식(RAID 0 + 1 등)
   
 https://www.stevenjlee.net/2020/03/01/%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-raid-%EA%B5%AC%ED%98%84-%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC/
+
+
+23.08.27
+## Q. 이진트리와 이진탐색트리의 차이점을 설명해주세요.(자료구조)
+
+A.  
+이진트리(Binary Tree)  
+- 각 노드가 최대 두 개의 자식 노드를 가질 수 있는 비선형 자료구조
+
+이진탐색트리(Binary Search Tree, BST)
+- 이진탐색을 위한 이진트리
+- 왼쪽 자식 노드는 부모 노드보다 작고, 오른쪽 자식 노드는 부모 노드보다 크다는 규칙을 만족
+
+https://velog.io/@main_door/%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%ED%8A%B8%EB%A6%AC
