@@ -4996,3 +4996,10 @@ A.
 - 네트워크 상에서 자신이 아닌 다른 상대방들의 패킷 교환을 엿듣는 행위, 즉 네트워크 트래픽 도청(eavesdropping)
 
 https://limkydev.tistory.com/191
+
+
+23.08.31
+## Q. 메모리와 스토리지의 차이점은 무엇인가요?(운영체제)
+
+A.  
+[23.03.07 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%94%EB%AA%A8%EB%A6%AC%EC%99%80-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
