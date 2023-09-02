@@ -5026,3 +5026,25 @@ A.
   - 따라서, 노드의 개수에 비해 간선의 개수가 많은 그래프의 경우 비효율적임
 
 https://sarah950716.tistory.com/12
+
+
+23.09.02
+## Q. 지도 학습(Supervised Learning), 비지도 학습(Unsupervised Learning), 강화학습(Reinforecement Learning)의 차이에 대해 설명해주세요.(머신러닝)
+
+A.  
+지도 학습(Supervised Learning)
+- 정답이 있는 데이터를 활용해 데이터를 학습시키는 방법
+- 입력값(X data)이 주어지면 입력값에 대한 Label(Y data)를 주어 학습시킴
+- 분류, 회귀 등
+
+비지도 학습(Unsupervised Learning)
+- 지도 학습과 달리 정답 라벨이 없는 데이터를 비슷한 특징끼리 군집화하여 새로운 데이터에 대한 결과를 예측하는 방법
+- 라벨링 되어있지 않은 데이터로부터 패턴이나 형태를 찾게끔 하여 학습시킴
+- 클러스터링(Clustering), 차원축소(Dimentionality Reduction), Hidden Markov Model 등
+
+강화학습(Reinforcement Learning)
+- 자신이 한 행동에 대해 보상(reward)을 받으며 학습하는 방법
+- 예를 들어 게임의 경우, 자신이 게임 환경의 현재 상태에서 높은 점수를 얻는 행동을 찾아가며 전략을 세우는 것
+- DQN, A3C 등
+
+https://ebbnflow.tistory.com/m/165
