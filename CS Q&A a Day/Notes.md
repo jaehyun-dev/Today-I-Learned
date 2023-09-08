@@ -809,7 +809,7 @@ https://www.weeklyps.com/entry/%ED%94%84%EB%A6%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC
 ## Q. 데이터 사전(data dictionary)에 대해서 설명해주세요.(데이터베이스)
 
 A. 데이터 사전(Data Dictionary)이란?
-- 데이터 사전이란 대부분 읽기전용으로 제공되는 테이블 및 부들의 집합으로 데이터베이스 전반에 대한 정보를 제공한다.
+- 데이터 사전이란 대부분 읽기전용으로 제공되는 테이블 및 뷰들의 집합으로 데이터베이스 전반에 대한 정보를 제공한다.
 - 오라클 데이터베이스는 명령이 실행될 때마다 데이터 사전을 Access 한다.
 - DB작업 동안 Oracle은 데이터 사전을 읽어 객체의 존재여부와 사용자에게 적합한 Access 권한이 있는지를 확인한다. 또한 Oracle은 데이터 사전을 계속 갱신하여 데이터베이스 구조, 감사, 사용자권한, 데이터 등의 변경사항을 반영한다.
 
@@ -5114,3 +5114,10 @@ A.
 - 딥러닝은 알고리즘을 계층으로 구성하여 자체적으로 배우고 지능적인 결정을 내릴 수 있는 '인공 신경망'을 만듦
 
 https://www.zendesk.kr/blog/machine-learning-and-deep-learning/
+
+
+23.09.08
+## Q. 데이터 사전(data dictionary)에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+[22.11.15 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%A0%84data-dictionary%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
