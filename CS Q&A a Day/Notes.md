@@ -5136,3 +5136,10 @@ CORS(Cross-Origin Resource Sharing, 교차 출처 리소스 공유)
 - CORS는 웹페이지상에서 자바스크립트를 이용하여 XHR(XMLHttpRequest)을 다른 도메인으로 발생시킬 수 있도록 해주는 기능을 가지고 있고 XHR 기반 cross-origin HTTP 요청을 이용하여 자원을 공유해야 하는 브라우저와 서버 간의 안전한 교차 출처 요청 및 데이터 전송을 지원함
 
 https://velog.io/@jesop/SOP%EC%99%80-CORS
+
+
+23.09.10
+## Q. 페이징(Paging)과 세그멘테이션(segmentation)을 사용하는 이유와 차이점에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.11.23 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8E%98%EC%9D%B4%EC%A7%95paging%EA%B3%BC-%EC%84%B8%EA%B7%B8%EB%A9%98%ED%85%8C%EC%9D%B4%EC%85%98segmentation%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
