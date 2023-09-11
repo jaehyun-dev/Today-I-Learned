@@ -5143,3 +5143,14 @@ https://velog.io/@jesop/SOP%EC%99%80-CORS
 
 A.  
 [22.11.23 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8E%98%EC%9D%B4%EC%A7%95paging%EA%B3%BC-%EC%84%B8%EA%B7%B8%EB%A9%98%ED%85%8C%EC%9D%B4%EC%85%98segmentation%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.09.11
+## Q. 머신 러닝(Machine Learning)이란 무엇인가요?(머신러닝)
+
+A.  
+머신 러닝(Machine Learning)
+- 컴퓨터를 인간처럼 학습시킴으로써 컴퓨터가 스스로 학습할 수 있도록 도와주는 알고리즘이나 기술을 개발하는 분야
+- 인공지능을 구현하는 대표적인 방법 중 하나
+
+https://modulabs.co.kr/blog/machine-learning/
