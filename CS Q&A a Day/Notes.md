@@ -5154,3 +5154,10 @@ A.
 - 인공지능을 구현하는 대표적인 방법 중 하나
 
 https://modulabs.co.kr/blog/machine-learning/
+
+
+23.09.12
+## Q. 데이터베이스의 반정규화의 정의와 그 종류에 대해서 간략하게 설명해주세요.(데이터베이스)
+
+A.  
+[23.01.10 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EB%B0%98%EC%A0%95%EA%B7%9C%ED%99%94%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EA%B7%B8-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EA%B0%84%EB%9E%B5%ED%95%98%EA%B2%8C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
