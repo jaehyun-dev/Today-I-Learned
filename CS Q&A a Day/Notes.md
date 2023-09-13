@@ -5161,3 +5161,10 @@ https://modulabs.co.kr/blog/machine-learning/
 
 A.  
 [23.01.10 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EB%B0%98%EC%A0%95%EA%B7%9C%ED%99%94%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EA%B7%B8-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EA%B0%84%EB%9E%B5%ED%95%98%EA%B2%8C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.09.13
+## Q. 쿠키와 세션의 차이에 대해 설명해주세요.(네트워크)
+
+A.  
+[22.11.29 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%BF%A0%ED%82%A4%EC%99%80-%EC%84%B8%EC%85%98%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
