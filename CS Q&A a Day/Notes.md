@@ -5176,3 +5176,13 @@ A.
 A.  
 [22.12.06 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EB%8B%A8%ED%8E%B8%ED%99%94memory-fragmentation%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)  
 https://kosaf04pyh.tistory.com/40
+
+
+23.09.15
+## Q. 제2정규형의 조건에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+제2 정규형(2NF)
+- 제1 정규형이면서, 기본키(primary key)에 속하지 않은 속성 모두가 기본키에 완전 함수 종속인 정규형
+
+https://rebro.kr/160
