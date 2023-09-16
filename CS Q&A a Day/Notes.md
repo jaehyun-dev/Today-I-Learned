@@ -5186,3 +5186,16 @@ A.
 - 제1 정규형이면서, 기본키(primary key)에 속하지 않은 속성 모두가 기본키에 완전 함수 종속인 정규형
 
 https://rebro.kr/160
+
+
+23.09.16
+## Q. 브라우저에 www.google.com을 검색하면 일어나는 과정을 상세하게 말씀해보세요.(네트워크)
+
+A.  
+- 웹 사이트를 호스팅하는 웹 서버의 위치 조회
+- 웹 서버에 연결
+- 특정 페이지를 가져오기 위한 요청 전송
+- 웹 서버의 응답을 처리
+- 사용자가 웹 사이트와 상호 작용할 수 있도록 페이지를 렌더링
+
+https://aws.amazon.com/ko/blogs/korea/what-happens-when-you-type-a-url-into-your-browser/
