@@ -5202,15 +5202,7 @@ https://aws.amazon.com/ko/blogs/korea/what-happens-when-you-type-a-url-into-your
 
 
 23.09.17
-## Q. Race Condition
+## Q. Race Condition 해결을 위한 충족조건 3가지를 설명해주세요.(운영체제)
 
 A.
-Mutual Exclusion(상호 배제)
-
-어떤 프로세스가 임계 영역을 수행 중이면 다른 모든 프로세스들은 그 임계 영역에 들어가지 못하게 막는 것
-Progress(진행)
-
-임계 영역에 들어간 프로세스가 있지 않은 상태에서 임계 영역에 들어가려는 프로세스가 있으면 들어가게 해주어야 함. 즉, 임계영역에 있는 프로그레스 외에는 다른 프로세스가 임계 영역에 진입하는 것을 방해하면 안 됨
-Bound Waiting(한정 대기)
-
-기아(starvation) 상태를 방지하기 위해 프로세스가 임계 영역에 들어가려고 요청한 후부터 다른 프로세스들이 임계 영역에 들어가는 횟수에 한계가 있어야 함. 임계 영역에 한 번 들어갔다 나온 프로세스는 다음에 들어갈 때 제한을 둠
+[23.04.07 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-race-condition-%ED%95%B4%EA%B2%B0%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B6%A9%EC%A1%B1%EC%A1%B0%EA%B1%B4-3%EA%B0%80%EC%A7%80%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
