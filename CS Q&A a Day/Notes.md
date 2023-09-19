@@ -5213,3 +5213,17 @@ A.
 
 A.  
 [23.01.28 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A0%95%EA%B7%9C%ED%99%94%EC%99%80-%EA%B7%B8-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.09.19
+## Q. 에러탐지 기술 중 checksum방식에 대해서 설명해주세요.(네트워크)
+
+A.  
+체크섬(checksum)
+- 중복 검사의 한 형태로, 송신된 자료의 무결성을 보호하는 단순한 방법
+- 통신에서 CRC, 즉 순환 중복 검사를 체크섬이라고도 말함
+- 엄밀히 따지면 나열된 데이터를 더하여 체크섬 숫자를 얻고, 정해진 비트 수의 모듈러로 정해진 비트 수로 재구성함
+- 기본적인 메시지 구성 요소를 추가해 결괏값을 저장함으로써 동작함
+- 만약 체크섬이 맞아 떨어지지 않는다면 메시지가 손상되었다고 결론내릴 수 있음
+
+https://hojak99.tistory.com/246
