@@ -5227,3 +5227,10 @@ A.
 - 만약 체크섬이 맞아 떨어지지 않는다면 메시지가 손상되었다고 결론내릴 수 있음
 
 https://hojak99.tistory.com/246
+
+
+23.09.20
+## Q. Race Condition이 발생하는 경우는 언제인가요?(운영체제)
+
+A.  
+[22.10.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-race-condition%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0%EB%8A%94-%EC%96%B8%EC%A0%9C%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
