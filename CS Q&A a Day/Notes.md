@@ -5258,3 +5258,22 @@ A.
 2. 최초 응답속도 최적화
 
 https://code-lab1.tistory.com/137
+
+
+23.09.22
+## Q. 방화벽의 역할은 무엇일까요?(네트워크)
+
+A.  
+방화벽(防火壁, Firewall)
+- 미리 정의된 보안 규칙에 기반한, 들어오고 나가는 네트워크 트래픽을 모니터링하고 제어하는 네트워크 보안 시스템
+- 신뢰할 수 있는 내부 네트워크와 신뢰할 수 없는 외부 네트워크 간의 장벽을 구성하여, 서로 다른 네트워크를 지나는 데이터를 허용 및 거부, 검열, 수정하는 등의 기능을 갖춘 소프트웨어 또는 그런 소프트웨어를 구동시키는 하드웨어 장치
+
+방화벽의 기능
+1. 접근 통제(Access Control)
+2. 인증(Authentication)
+3. 감사 및 로그 기능(Auditing/Logging)
+4. 프라이버시 보호(Privacy Protection)
+5. 서비스 통제(Service Control)
+6. 데이터 암호화(Data Encryption)
+
+https://co-no.tistory.com/26
