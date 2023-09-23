@@ -5277,3 +5277,10 @@ A.
 6. 데이터 암호화(Data Encryption)
 
 https://co-no.tistory.com/26
+
+
+23.09.23
+## Q. Race Condition이란 무엇인가요?(운영체제)
+
+A.  
+[22.10.18 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-race-condition%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
