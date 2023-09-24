@@ -5284,3 +5284,14 @@ https://co-no.tistory.com/26
 
 A.  
 [22.10.18 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-race-condition%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.09.24
+## Q. BCNF형의 조건에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+BCNF(Boyce and Codd Normal Form)  
+- 제3 정규형을 조금 더 강화시킨 개념으로, 강한 제3 정규형이라고도 함
+- 모든 결정자는 항상 후보키가 되도록 릴레이션을 분해해주면 BCNF를 만족
+
+https://rebro.kr/160
