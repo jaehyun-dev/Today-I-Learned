@@ -5295,3 +5295,11 @@ BCNF(Boyce and Codd Normal Form)
 - 모든 결정자는 항상 후보키가 되도록 릴레이션을 분해해주면 BCNF를 만족
 
 https://rebro.kr/160
+
+
+23.09.25
+## Q. 라우터의 역할인 정적라우팅과 동적라우팅에 대해서 설명해주세요.(네트워크)
+
+A.  
+[22.09.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%9D%BC%EC%9A%B0%ED%84%B0%EC%9D%98-%EB%9D%BC%EC%9A%B0%ED%8C%85-%EA%B8%B0%EC%88%A0%EC%9D%B8-%EC%A0%95%EC%A0%81%EB%9D%BC%EC%9A%B0%ED%8C%85%EA%B3%BC-%EB%8F%99%EC%A0%81%EB%9D%BC%EC%9A%B0%ED%8C%85%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)  
+https://woodinthezoo.tistory.com/entry/Static-routung%EA%B3%BC-Dynamic-Routing%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90
