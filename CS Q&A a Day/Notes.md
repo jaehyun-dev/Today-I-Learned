@@ -103,10 +103,11 @@ https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%E
 22.09.21
 ## Q. 물리적 데이터베이스의 히프파일과 순차파일에 대해서 설명해주세요.
 
-A. **히프 파일**(Heap File)  
+A.  
+**히프 파일**(Heap File)  
 - 삽입된 순서대로 레코드를 파일 내에 배치하는 것으로서 파일의 마지막에 새로운 레코드를 삽입한다.
 
-**순서 파일**Sequential File)  
+**순차 파일**(Sequential File)  
 - 레코드 필드들 중에서 순서 필드라고 하는 한 필드 값의 순서대로 디스크에 물리적으로 정렬할 수 있다.
 
 https://swin9333.tistory.com/65
@@ -5310,3 +5311,10 @@ https://woodinthezoo.tistory.com/entry/Static-routung%EA%B3%BC-Dynamic-Routing%E
 
 A.  
 [23.04.26 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-ipcinter-process-communication%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.09.27
+## Q. 물리적 데이터베이스의 히프파일과 순차파일에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+[22.09.21 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%AC%BC%EB%A6%AC%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%ED%9E%88%ED%94%84%ED%8C%8C%EC%9D%BC%EA%B3%BC-%EC%88%9C%EC%B0%A8%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
