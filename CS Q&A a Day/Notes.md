@@ -5318,3 +5318,15 @@ A.
 
 A.  
 [22.09.21 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%AC%BC%EB%A6%AC%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%ED%9E%88%ED%94%84%ED%8C%8C%EC%9D%BC%EA%B3%BC-%EC%88%9C%EC%B0%A8%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.09.28
+## Q. 네트워크에서 IP가 필요한 이유가 무엇일까요?(네트워크)
+
+A.  
+IP(Internet Protocol)  
+- 기기간 네트워크 통신을 할 때 쓰는 프로토콜(통신 규약)
+- 서로 다른 운영체제, 프로그램, 기기 간 네트워크에서 통신할 수 있도록, 호스트에서 호스트까지의 통신을 책임짐 
+
+https://www.blog.ecsimsw.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-MAC-%EC%A3%BC%EC%86%8C%EA%B0%80-%EC%9E%88%EB%8A%94%EB%8D%B0-IP-%EC%A3%BC%EC%86%8C%EA%B0%80-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%B4?category=815836?category=815836  
+https://namu.wiki/w/IP
