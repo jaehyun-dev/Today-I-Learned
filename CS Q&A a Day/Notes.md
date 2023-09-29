@@ -5330,3 +5330,10 @@ IP(Internet Protocol)
 
 https://www.blog.ecsimsw.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-MAC-%EC%A3%BC%EC%86%8C%EA%B0%80-%EC%9E%88%EB%8A%94%EB%8D%B0-IP-%EC%A3%BC%EC%86%8C%EA%B0%80-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%B4?category=815836?category=815836  
 https://namu.wiki/w/IP
+
+
+23.09.29
+## Q. cpu 스케줄링 알고리즘의 종류와 각각에 대해 아는대로 설명해주세요.(운영체제)
+
+A.  
+[22.11.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-cpu-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%EA%B0%81%EA%B0%81%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%84%EB%8A%94%EB%8C%80%EB%A1%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
