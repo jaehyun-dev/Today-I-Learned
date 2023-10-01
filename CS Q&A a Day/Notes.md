@@ -5344,3 +5344,11 @@ A.
 
 A.  
 [22.11.05 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%B3%B4%EC%A1%B0%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%99%80-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.10.01
+## Q. 고정IP와 유동IP에 대해서 설명해주세요.(네트워크)
+
+A.  
+[22.09.14 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B3%A0%EC%A0%95ip%EC%99%80-%EC%9C%A0%EB%8F%99ip%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)  
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dly_ylb&logNo=220235242895
