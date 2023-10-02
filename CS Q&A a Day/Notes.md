@@ -5352,3 +5352,11 @@ A.
 A.  
 [22.09.14 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B3%A0%EC%A0%95ip%EC%99%80-%EC%9C%A0%EB%8F%99ip%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)  
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dly_ylb&logNo=220235242895
+
+
+23.10.02
+## Q. 멀티 프로세스와 멀티 스레드의 차이점은 무엇인가요?(운영체제)
+
+A.  
+[22.12.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4multi-process%EC%99%80-%EB%A9%80%ED%8B%B0-%EC%93%B0%EB%A0%88%EB%93%9Cmulti-thread%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)  
+https://velog.io/@dailyhyun/%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-vs-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C
