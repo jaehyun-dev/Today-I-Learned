@@ -5360,3 +5360,13 @@ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dly_ylb&logN
 A.  
 [22.12.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4multi-process%EC%99%80-%EB%A9%80%ED%8B%B0-%EC%93%B0%EB%A0%88%EB%93%9Cmulti-thread%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)  
 https://velog.io/@dailyhyun/%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-vs-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C
+
+
+# 23.10.03
+## Q. volatile에 대해 설명해주세요.(C/C++)
+
+A.  
+- C/C++ 프로그래밍 언어에서 volatile 키워드는 최적화 등 컴파일러의 재량을 제한하는 역할을 함
+- 컴파일러는 반복문이나 단순 연산 등의 결과를 어셈블리어로 컴피일하는 최적화를 하는데, 의도된 경우 volatile 키워드를 통해 각 과정을 전부 컴파일할 수 있음
+
+https://ko.wikipedia.org/wiki/Volatile_%EB%B3%80%EC%88%98
