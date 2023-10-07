@@ -5409,3 +5409,28 @@ https://corona-world.tistory.com/47
 
 A.
 [22.10.09 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C%EB%A5%BC-%EC%84%A4%EB%AA%85%ED%95%98%EB%8A%94-%EC%8B%9D%EC%82%AC%ED%95%98%EB%8A%94-%EC%B2%A0%ED%95%99%EC%9E%90-%EB%AC%B8%EC%A0%9C%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.10.07
+## Q. NULL, NUL, 0, \0으 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+NULL  
+- 헤더파일에 정의된 매크로로 null pointer constatnt
+- 컴파일러에 의해 (void*)0으로 정의
+- 0주소를 의미하기 때문에 포인터 변수를 초기화할 때 사용
+
+NUL
+- 문자열을 표현할 때는 문자열의 끝을 의미하는 문자 \0이 삽입되는데, 이 문자를 null 문자라고 하며 NUL은 이 문자의 symbol(name)
+- 아스키코드값 0에 해당하는 문자
+- 0x00 or 0x0000 (ASCII vs 2byte unicode)
+
+0  
+- 정수형 자료, 0
+- 문자 0은 아스키코드값 0x30
+
+\0  
+- 문자열을 표현할 때는 문자열의 끝을 의미하는 null 문자
+- NUL이라는 symbol 혹은 name을 가짐
+
+https://noirstar.tistory.com/16
