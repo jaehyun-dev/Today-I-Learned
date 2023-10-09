@@ -5441,3 +5441,40 @@ https://noirstar.tistory.com/16
 
 A.  
 [23.02.21 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EB%95%8C%EC%9D%98-%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.10.09
+## Q. IP는 MAC Adress와 무엇이 다른가요?(네트워크)
+
+A.  
+MAC(Media Access Control) 주소   
+- 하드웨어 인터페이스를 고유하게 정의하는 주소
+- 제조업체가 MAC 주소를 구입하여 인터페이스 하드웨어를 생산하고 인터페이스 하드웨어에 MAC 주소를 순차적으로 할당
+- 컴퓨터가 네트워크의 일부가 되는 데 사용되는 인터페이스 하드웨어인 NIC(Network Interface Card)의 ROM에 구워짐
+- MM : MM : MM : SS : SS : SS 형식의 48비트 16진수 주소
+- MM : MM : MM은 제조업체의 3바이트 주소
+- SS : SS : SS는 일련 번호의 NIC 카드
+- 네트워크 상 각 컴퓨터의 MAC 주소는 고유함
+- 컴퓨터의 NIC 카드를 교체하면 MAC 주소도 변경됨
+- OSI / TCP / IP 모델의 데이터 링크 계층에서 사용됨
+- ARP(Address Resolution Protocol)는 장치의 MAC 주소를 수신하는 데 사용되는 프로토콜
+
+IP(Internet Protocol) 주소  
+- 네트워크의 연결에 제공된 주소
+- 네트워크에서 장치를 고유하게 식별하지는 않지만, 네트워크에서 특정 연결을 지정함
+- 네트워크 관리자 또는 인터넷 서비스 공급자(ISP)가 제공함
+- 해당 네트워크에서 네트워크와 호스트 모두 식별함
+- 특히 네트워크 연결을 식별할 때 라우팅하는 동안 사용됨
+- 컴퓨터가 2 개의 네트워크에 있는 경우 두 개의 IP 주소가 있음
+- IPv4 주소는 32비트 주소, IPv6 주소는 128비트 주소
+- 네트워크에 연결할 때 장치에 동적으로 할당되므로 네트워크에 연결할 때마다 변경됨
+- 네트워크의 특정 연결에 대한 IP 주소는 RARP(Reverse Address Resolution Protocol)로 검샐할 수 있음
+
+MAC 주소와 IP 주소의 주요 차이점  
+- MAC(Media Access Control) vs IP(Internet Protocol)
+- IP 주소는 네트워크에 있는 장치에 대한 연결을 식별하는 반면 MAC 주소는 네트워크에 참여하는 장치를 식별함
+- MAC 주소는 48비트(6바이트) 16진수 주소인 반면 IP 주소는 IPv4의 32비트 주소와 IPv6 128비트 주소 두 가지 버전이 있음
+- MAC 주소는 인터페이스 하드웨어 제조업체가 지정하는 반면 IP 주소는 네트워크 관리자 또는 인터넷 서비스 공급자(ISP)가 할당함
+- ARP 프로토콜은 MAC 주소를 검색하지만 RARP 프로토콜은 IP 주소를 검색함
+
+https://ko.gadget-info.com/difference-between-mac-address
