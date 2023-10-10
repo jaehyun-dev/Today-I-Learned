@@ -5478,3 +5478,10 @@ MAC 주소와 IP 주소의 주요 차이점
 - ARP 프로토콜은 MAC 주소를 검색하지만 RARP 프로토콜은 IP 주소를 검색함
 
 https://ko.gadget-info.com/difference-between-mac-address
+
+
+23.10.10
+## Q. 데드락(Deadlock) 회피 기법인 은행원 알고리즘에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.09.29 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EB%93%9C%EB%9D%BDdeadlock-%ED%9A%8C%ED%94%BC-%EA%B8%B0%EB%B2%95%EC%9D%B8-%EC%9D%80%ED%96%89%EC%9B%90-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
