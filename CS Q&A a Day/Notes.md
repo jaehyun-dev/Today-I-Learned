@@ -5485,3 +5485,15 @@ https://ko.gadget-info.com/difference-between-mac-address
 
 A.  
 [22.09.29 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EB%93%9C%EB%9D%BDdeadlock-%ED%9A%8C%ED%94%BC-%EA%B8%B0%EB%B2%95%EC%9D%B8-%EC%9D%80%ED%96%89%EC%9B%90-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.10.11
+## Q. 증감 연산자의 prefix와 postfix의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+- prefix는 숫자에 1을 더해서 포인터를 넘겨주는 반면, postfix에서는 새로운 객체를 생성한 뒤 prefix operator를 호출하고 객체를 전달함
+- 따라서 일반적으로는 prefix가 빠르나, 일반적인 class에 해당하며 double, int 등 primitive variable에는 해당하지 않음
+- primitive variable은 compiler에서 알아서 postfix를 prefix 형태로 처리함
+- int 정의된 index의 순회는 prefix와 postfix의 차이가 없지만, iterator 클래스를 사용한 경우 postfix가 더 느림
+
+https://velog.io/@mir21c/%EC%A6%9D%EA%B0%90-%EC%97%B0%EC%82%B0%EC%9E%90-prefix-postfix-%EC%B0%A8%EC%9D%B4
