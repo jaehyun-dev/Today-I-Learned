@@ -5509,4 +5509,19 @@ A.
 - 데이터 탐색뿐 아니라, 저장, 수정, 삭제에도 항상 O(logN)의 시간 복잡도를 가짐
 
 https://helloinyong.tistory.com/296
-- 
+
+
+23.10.13
+## Q. 공공IP와 사설IP에 대해서 설명해주세요.(네트워크)
+
+A.  
+공공IP(공인IP, Public IP)
+- 서로 다른 PC가 인터넷 통신을 하기 위한 IP
+- 세상에 단 하나뿐인 IP
+
+사설IP(Private IP)
+- 내부 네트워크 상에서 각 PC 간 통신을 하기 위한 IP
+- ex) 공유기 망 구성 등
+- 내부망에서만 사용되기 때문에 서로 다른 내부망에서는 동일한 사설IP를 구성하더라도 상관없음
+
+https://sangbeomkim.tistory.com/103
