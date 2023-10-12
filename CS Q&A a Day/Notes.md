@@ -5497,3 +5497,16 @@ A.
 - int 정의된 index의 순회는 prefix와 postfix의 차이가 없지만, iterator 클래스를 사용한 경우 postfix가 더 느림
 
 https://velog.io/@mir21c/%EC%A6%9D%EA%B0%90-%EC%97%B0%EC%82%B0%EC%9E%90-prefix-postfix-%EC%B0%A8%EC%9D%B4
+
+
+23.10.12
+## Q. 데이터베이스 인덱스 수현 방법으로 b+ 트리가 red-black 트리에 비해 가지는 이점에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+포인터 접근 수의 차이로 인해 탐색 시간이 더 빠름
+- 항상 정렬된 상태로 특정 값보다 크고 작은 부등호 연산에 문제가 없음
+- 참조 포인터가 적어 방대한 데이터 양에도 빠른 메모리 접근이 가능함
+- 데이터 탐색뿐 아니라, 저장, 수정, 삭제에도 항상 O(logN)의 시간 복잡도를 가짐
+
+https://helloinyong.tistory.com/296
+- 
