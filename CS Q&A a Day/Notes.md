@@ -5525,3 +5525,10 @@ A.
 - 내부망에서만 사용되기 때문에 서로 다른 내부망에서는 동일한 사설IP를 구성하더라도 상관없음
 
 https://sangbeomkim.tistory.com/103
+
+
+23.10.14
+## Q. 데드락(Deadlock)을 해결하는 3가지 방법을 설명해주세요.(운영체제)
+
+A.  
+[23.05.08 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EB%93%9C%EB%9D%BDdeadlock%EC%9D%84-%ED%95%B4%EA%B2%B0%ED%95%98%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
