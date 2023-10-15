@@ -5532,3 +5532,18 @@ https://sangbeomkim.tistory.com/103
 
 A.  
 [23.05.08 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EB%93%9C%EB%9D%BDdeadlock%EC%9D%84-%ED%95%B4%EA%B2%B0%ED%95%98%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.10.15
+## Q. C++과 C#의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+1. C++에서는 메모리 동적 할당 후에 delete나 free로 동적 메모리 할당 해제를 해야 하지만, C#은 JAVA 언어와 유사하게 new 연산자로 할당받은 후에 해제할 필요 없이 Garbage Collector가 알아서 동적 할당 해재를 해줌
+2. C#에서는 C++과 다르게 타입을 변환해 캐스팅하는 것이 불가능함
+3. C#에서는 C++과 다르게 정적 배열을 선언할 때 일정 이상 큰 수를 집어넣으면 범위 초과 예와가 발생함
+4. C#에서는 C++과 다르게 전역 함수, 전역 변수, 프렌드 함수가 없으므로 모든 인스턴스와 메서드는 어떤 클래스의 멤버에 반드시 속해야 함
+5. C#은 Python와 유사하게 기본 자료형까지도 객체이고, 모든 객체들의 공통 조상은 System.Object임
+6. C++에는 함수 포인터가, C#에는 델리게이트가 있고, 이 둘은 호환됨. 델리게이트는 포인터와 유사한 개념
+7. C#은 C++보다 인텔리센스, 즉 소스코드 자동 완성 프로그램 연동이 잘 되어있음
+
+https://psy-er.tistory.com/127
