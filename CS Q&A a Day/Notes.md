@@ -5583,3 +5583,14 @@ https://code-lab1.tistory.com/34
 
 A.  
 [22.09.17 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%84%A0%EC%A0%90-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%EA%B3%BC-%EB%B9%84%EC%84%A0%EC%A0%90-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.10.19
+## Q. 람다(lambda) 표현식에 대해 설명해주세요.(C/C++)
+
+A.  
+C++ 람다 표현식  
+- 함수 이름이 없고 동작만 있는 함수
+- 캡처, 매개변수 선언 부분, 함수 동작 부분, 함수 호출 시 인자 등으로 구성
+
+https://blockdmask.tistory.com/491
