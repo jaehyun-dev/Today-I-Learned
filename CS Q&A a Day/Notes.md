@@ -5616,3 +5616,10 @@ IPv6는 IPv4에 비해
 등의 장점이 있음
 
 https://nordvpn.com/ko/blog/ipv4-ipv6-bigyo/
+
+
+23.10.22
+## Q. 가상 메모리(Virtual Memory)에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.11.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B0%80%EC%83%81-%EB%A9%94%EB%AA%A8%EB%A6%ACvirtual-memory%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
