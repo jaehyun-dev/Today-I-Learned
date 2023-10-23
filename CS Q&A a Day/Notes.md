@@ -5623,3 +5623,17 @@ https://nordvpn.com/ko/blog/ipv4-ipv6-bigyo/
 
 A.  
 [22.11.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B0%80%EC%83%81-%EB%A9%94%EB%AA%A8%EB%A6%ACvirtual-memory%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.10.23
+## Q. 함수 객체(Functor)에 대해 설명해주세요.(C/C++)
+
+A.  
+함수 객체(Functor)
+- 함수처럼 ()과 함께 사용할 수 있는 객체
+- 일반 함수의 이름, 함수를 지시하는 포인터, () 연산자가 오버로딩된 클래스 객체 모두 함수 객체가 될 수 있음
+- 제너레이터(generator): 매개변수 없이 호출하는 함수
+- 단항 함수(unary function): 하나의 매개변수로 호출하는 함수
+- 이항 함수(binary function): 두 개의 매개변수로 호출하는 함수
+
+https://koreanfoodie.me/935
