@@ -5655,3 +5655,16 @@ A.
 - 30% 이내에서 사용해야 좋은 선택도를 가짐
 
 https://junghn.tistory.com/entry/DB-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%99%80-%EB%84%8C%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EA%B0%9C%EB%85%90-%EC%B4%9D%EC%A0%95%EB%A6%AC
+
+
+23.10.25
+## Q. IP의 역할은 무엇인가요?(네트워크)
+
+A.  
+IP(Internet Protocol, 인터넷 프로토콜)
+- 송신 호스트와 수신 호스트가 패킷 교환 네트워크에서 정보를 주고받는 데 사용하는 정보의 규약(프로토콜)
+- OSI 네트워크 계층에서 호스트의 주소 지정과 패킷 분할 및 조립 기능을 담당함
+- 지정한 IP 주소(IP Addresss)에 데이터 전달
+- 패킷(Packet)이라는 통신 단위로 데이터 전달
+
+https://dreamcoding.tistory.com/33
