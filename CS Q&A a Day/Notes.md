@@ -5668,3 +5668,10 @@ IP(Internet Protocol, 인터넷 프로토콜)
 - 패킷(Packet)이라는 통신 단위로 데이터 전달
 
 https://dreamcoding.tistory.com/33
+
+
+23.10.26
+## Q. 버퍼링(Buffering)에 대해서 설명해주세요.(운영체제)
+
+A.  
+[22.09.16 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%B2%84%ED%8D%BC%EB%A7%81buffering%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
