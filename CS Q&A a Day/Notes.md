@@ -5675,3 +5675,21 @@ https://dreamcoding.tistory.com/33
 
 A.  
 [22.09.16 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%B2%84%ED%8D%BC%EB%A7%81buffering%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.10.27
+## Q. 순수 가상함수와 추상 클래스에 대해 설명해주세요.(C/C++)
+
+A.  
+순수 가상 함수(pure virtual function)
+- 함수의 정의가 이뤄지지 않고 선언만 이루어진 함수
+- 추상 클래스에 담기며 이를 상속받는 자식 클래스는 무조건 해당 순수 가상 함수를 override해야 함
+
+추상 클래스(abstract class)
+- 순수 가상 함수를 포함하는 클래스
+- 객체로 만들지 못하고 상속으로써만 사용됨
+- 순수 가상 함수로만 이루어진 추상 클래스를 인터페이스(interface)라 함
+
+순수 가상 함수와 추상 클래스를 활용하면 공통된 부분을 공유하는 여러 클래스를 작성할 때 강제적으로 override하도록 하여 빠뜨리는 실수를 줄일 수 있음
+
+https://hwan-shell.tistory.com/223
