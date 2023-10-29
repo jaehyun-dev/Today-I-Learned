@@ -5733,3 +5733,11 @@ https://tecoble.techcourse.co.kr/post/2021-09-18-db-index/
 ## Q. UDP는 무엇이고 언제 사용하면 좋을까요?(네트워크)
 
 A.  
+UDP(User Datagram Protocol)
+- 비연결형, 신뢰성이 없는 전송 프로토콜
+- IP데이터그램을 캡슐화하여 보내는 방법과 연결 설정을 하지 않고 보내는 방법을 제공함
+- TCP/IP 5계층에서 Transport Layer(전송계층)의 프로토콜
+- UPD는 전송 속도가 빠른 대신 신뢰성을 보장할 수 없으므로, 신뢰성보다 속도가 중요한 부문에서 사용하면 좋다
+- ex) 유튜브 등 스트리밍 어플리케이션, DNS, SNMP 등
+
+https://code-lab1.tistory.com/25
