@@ -5785,3 +5785,10 @@ Go-Back-N ARQ(Auto Repeat reQuest)
 - 윈도 크기와 대역폭 지연 결과가 모두 클 때 많은 패킷이 파이프라인에 있을 수 있으므로 패킷 하나의 오류 때문에 많은 패킷들을 불필요하게 재전송하는 단점이 있음
 
 https://dolphins-it.tistory.com/238
+
+
+23.11.03
+## Q. 인터럽트(Interrupt)의 정의와 종류에 대해 설명해주세요.(운영체제)
+
+A.  
+[22.09.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8interrupt%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
