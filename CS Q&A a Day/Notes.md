@@ -5792,3 +5792,27 @@ https://dolphins-it.tistory.com/238
 
 A.  
 [22.09.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8interrupt%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.11.04
+## Q. char*, char[], string의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+char*  
+- 문자열을 나타내며 글자 여러 개가 계속 이어진 값
+- 문자의 포인터 변수는 문자열을 담기 위해 사용됨
+- 문자열 끝에 마지막 지정 문자가 들어감
+
+char[]
+- 문자열을 포인터 변수가 아닌 배열을 통해 나타냄
+- char*와 달리 문자 하나하나 수정이 가능함
+- 크기를 정해주어야 하고, 끝에 마지막 지정 문자가 들어감
+
+string
+- char[]가 사용하는 클래스의 객체
+- string.h 라이브러리를 include하여 사용해야 함
+- cout을 통해 출력되는 결과물이 같더라도 각각 변환을 위해서 생성자나 메소드를 활용해야 함
+- char[] str의 경우 해당 배열의 크기는 strlen(str), string str의 경우에는 str.size()
+- char[]에서 사용할 수 없었던 문자열 처리를 쉽게 할 수 있도록 도와줌
+
+https://erjuer.tistory.com/57
