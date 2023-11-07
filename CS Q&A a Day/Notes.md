@@ -5846,3 +5846,10 @@ Selective Repeat ARQ(선택적 방법)
 - 데이터가 유실되었는데 다음 데이터가 또 오는 경우 이를 저장해두므로 저장 공간을 확보해야 함
 
 https://dolphins-it.tistory.com/238
+
+
+23.11.07
+## Q. context switching에 대해 설명해주세요.(운영체제)
+
+A.  
+[23.01.05 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-context-switching%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
