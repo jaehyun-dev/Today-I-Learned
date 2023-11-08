@@ -5853,3 +5853,13 @@ https://dolphins-it.tistory.com/238
 
 A.  
 [23.01.05 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-context-switching%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.11.08
+## Q. 이중 포인터를 사용하는 이유에 대해 설명해주세요.(C/C++)
+
+A.  
+- 함수에서 매개변수가 복사한 값을 활용하기 위해 이중 포인터를 사용함
+- 임의의 싱글 포인터가 가리키는 주소를 새로 지정하거나 변경할 때 사용함
+
+https://blog.naver.com/kkndsta/220554084946
