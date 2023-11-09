@@ -5863,3 +5863,10 @@ A.
 - 임의의 싱글 포인터가 가리키는 주소를 새로 지정하거나 변경할 때 사용함
 
 https://blog.naver.com/kkndsta/220554084946
+
+
+23.11.09
+## Q. Inner JOIN, Outer JOIN의 차이점에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+[22.12.28 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-inner-join-outer-join%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
