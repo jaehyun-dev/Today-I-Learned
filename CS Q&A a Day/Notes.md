@@ -5870,3 +5870,14 @@ https://blog.naver.com/kkndsta/220554084946
 
 A.  
 [22.12.28 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-inner-join-outer-join%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.11.10
+## Q. 슬라이딩 윈도우 기법이란 무엇인가요?(네트워크)
+
+A.  
+슬라이딩 윈도우(Sliding Window)
+- 수신 측에서 설정한 윈도우 크기만큼 송신 측에서 확인 응답(ACK) 없이 전송할 수 있게 하여 흐름을 동적으로 조절하는 제어 알고리즘
+- 윈도우에 포함되는 모든 패킷을 전송하고, 전송이 확인되는 대로 윈도우를 옆으로 옮겨(slide) 다음 패킷들을 전송하는 방식
+
+https://blog.skby.net/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9-%EC%9C%88%EB%8F%84%EC%9A%B0sliding-window/
