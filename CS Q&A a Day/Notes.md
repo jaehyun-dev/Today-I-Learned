@@ -5881,3 +5881,10 @@ A.
 - 윈도우에 포함되는 모든 패킷을 전송하고, 전송이 확인되는 대로 윈도우를 옆으로 옮겨(slide) 다음 패킷들을 전송하는 방식
 
 https://blog.skby.net/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9-%EC%9C%88%EB%8F%84%EC%9A%B0sliding-window/
+
+
+23.11.11
+## Q. IPC(Inter-Process Communication)가 무엇인가요?(운영체제)
+
+A.  
+[22.10.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-ipcinter-process-communication%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
