@@ -5888,3 +5888,16 @@ https://blog.skby.net/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9-%EC%9C%88%EB%8F%84%EC
 
 A.  
 [22.10.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-ipcinter-process-communication%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
+
+
+23.11.12
+## Q. 포인터에 대해 설명해주세요.(C/C++)  
+
+A.  
+포인터(Pointer)
+- 주소를 저장하는 변수
+- 기존의 변수는 값(value)을 저장하는 데 비해 포인터는 메모리 공간의 주소(address)를 저장함
+- 여기서 메모리는 컴퓨터의 RAM을 의미함
+- 변수 이름 앞에 & 연산자를 붙이면 해당 변수의 시작 주소를 반환하는데, 이것을 포인터 변수에 넘겨주면 됨
+
+https://pgh268400.tistory.com/268
