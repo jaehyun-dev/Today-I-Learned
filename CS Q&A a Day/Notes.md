@@ -5922,3 +5922,16 @@ All
 - 즉, DNO > 3과 같은 결과
 
 https://lhoris.tistory.com/136
+
+
+23.11.14
+## Q. TCP의 자동재전송 기법 중 하나인 Stop and Wait ARQ에 대해서 설명해주세요.(네트워크)
+
+A.  
+Stop And Wait(정지 대기 방식)
+- 컴퓨터 네트워크 설정에서 재전송을 기반으로 하는 신뢰적인 데이터 전송 프로토콜인 ARQ(Automatic Repeat Request)의 일종
+- 송신측 A가 B에게 1개의 프레임을 송신하게 되면 B는 해당 프레임의 에러 유무를 판단하여 A에게 ACK 혹은 NAK를 보냄
+- 구현 방식이 단순하며 송신측 내에 최대 프레임 크기의 버퍼를 1개만 잡아도 된다는 장점이 있음
+- 송신측이 ACK 혹은 NAK를 받을 때까지 다음 프레임을 받을 수 없으므로 전송 효율이 떨어진다는 단점이 있음
+
+https://dolphins-it.tistory.com/238
