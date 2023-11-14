@@ -5935,3 +5935,10 @@ Stop And Wait(정지 대기 방식)
 - 송신측이 ACK 혹은 NAK를 받을 때까지 다음 프레임을 받을 수 없으므로 전송 효율이 떨어진다는 단점이 있음
 
 https://dolphins-it.tistory.com/238
+
+
+23.11.15
+## Q. PCB(Process Control Block)이란 무엇인가요?(운영체제)
+
+A.  
+[23.05.02 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-pcbprocess-control-block%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
