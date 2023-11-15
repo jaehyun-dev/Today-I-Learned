@@ -5942,3 +5942,15 @@ https://dolphins-it.tistory.com/238
 
 A.  
 [23.05.02 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-pcbprocess-control-block%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
+
+
+23.11.16
+## Q. 포인터와 배열의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+- 포인터와 배열 모두 이름이 존재
+- 특정 메모리 공간의 주소값을 지닌다는 공통점
+- 포인터 변수는 변수이고, 배열의 이름은 가리키는 대상의 변경이 불가능한 상수
+- 배열은 상수 형태의 포인터이며 포인터 상수라고도 부름
+
+https://jjunsu.tistory.com/18
