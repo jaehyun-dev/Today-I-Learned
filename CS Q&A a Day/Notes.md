@@ -5972,3 +5972,31 @@ A.
 - 트리거를 많이 사용하면 트리거들이 연쇄되어 복잡한 상호 의존성을 야기할 수 있음
 
 https://libertegrace.tistory.com/entry/Database-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
+
+
+# 23.11.18
+## Q. TCP의 혼잡제어 구현방법인 AIMD와 SlowStart에 대해 설명해주세요.(네트워크)
+
+A.  
+혼잡(congetion)
+- 너무 많은 source가 너무 많은 data를 너무 빨리 전송해 네트워크가 이를 처리하지 못하는 상태
+- 데이터의 양이 수신 측에서 처리할 수 있는 양을 초과하게 되면 송신 측에서는 수신 측에서 처리하지 못한 데이터를 손실 데이터로 간주하고 계속 재전송하게 되므로 네트워크가 더욱더 혼잡하게 됨
+
+혼잡제어
+- 이러한 혼잡 상태를 제어하는 것
+
+AIMD(Additive Increase Multiplicative Decrease)
+- 송신 측이 transmission rate(window size)를 패킷 손실이 일어날 때까지 증가시키는 식의 접근법
+- additive increase: 송신 측의 window size를 손실을 감지할 때까지 매 RTT마다 1 MSS씩 증가시킴
+- multiplicative decrease: 손실을 감지했다면 송신측의 window size를 절반으로 감소시킴
+- window size를 1 MSS씩밖에 증가시키지 않기 때문에 네트워크의 모든 대역을 활용하여 빠른 속도로 통신하기까지 시간이 오래 걸린다는 단점이 있음
+
+Slow Start
+- 송신 측이 window size를 1부터 패킷 손실이 일어날 때까지 지수승(exponentially)으로 증가시키는 것
+- 초기 window size : 1 MSS
+- 매 RTT마다 window size를 2배로 키움(ex : 1, 2, 4, 8, 16...)
+- 패킷 손실을 감지하면 window size를 1 MSS로 줄임
+- 처음에는 window size가 1이라 속도가 느리나 지수승으로 window size가 커지므로 속도도 빠르게 증가함
+- 임계점(Threshold): 여기까지만 Slow Start를 사용하겠다는 의미
+
+https://code-lab1.tistory.com/30
