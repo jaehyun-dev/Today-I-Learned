@@ -6000,3 +6000,10 @@ Slow Start
 - 임계점(Threshold): 여기까지만 Slow Start를 사용하겠다는 의미
 
 https://code-lab1.tistory.com/30
+
+
+# 23.11.19
+## Q. 블로킹(Blocking)과 논-블로킹(Non-blocking)의 차이점에 대해 설명해주세요.(운영체제)
+
+A. 
+[23.05.21 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-blocking%EA%B3%BC-%EB%85%BC-%EB%B8%94%EB%A1%9C%ED%82%B9non-blocking%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
