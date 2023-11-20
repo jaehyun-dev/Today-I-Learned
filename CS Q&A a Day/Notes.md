@@ -6019,3 +6019,14 @@ shared_ptr
 - 잘 사용하면 메모리 해지를 제때 안 해 발생하는 메모리 릭(memory leak) 문제를 방지할 수 있음
 
 https://webnautes.tistory.com/1451
+
+
+# 23.11.21
+## Q. ON DELETE 참조 무결성 제약조건에서 CASCADE, SET DEFAULT를 사용하면 각각 어떤 현상이 일어나는지 설명해주세요.(데이터베이스)
+
+A.  
+ON DELETE
+- CASCADE: 부모 데이터 삭제 시 자식 데이터도 삭제
+- SET DEFAULT: 부모 데이터 삭제 시 자식 테이블의 참조 컬럼을 DEFAULT 값으로 업데이트
+
+https://swingswing.tistory.com/147
