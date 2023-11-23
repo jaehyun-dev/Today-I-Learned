@@ -5956,7 +5956,7 @@ A.
 https://jjunsu.tistory.com/18
 
 
-# 23.11.17
+23.11.17
 ## Q. 트리거와 트리거의 장단점에 대해서 설명해주세요.(데이터베이스)
 
 A.  
@@ -5974,7 +5974,7 @@ A.
 https://libertegrace.tistory.com/entry/Database-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
 
 
-# 23.11.18
+23.11.18
 ## Q. TCP의 혼잡제어 구현방법인 AIMD와 SlowStart에 대해 설명해주세요.(네트워크)
 
 A.  
@@ -6002,14 +6002,14 @@ Slow Start
 https://code-lab1.tistory.com/30
 
 
-# 23.11.19
+23.11.19
 ## Q. 블로킹(Blocking)과 논-블로킹(Non-blocking)의 차이점에 대해 설명해주세요.(운영체제)
 
 A. 
 [23.05.21 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-blocking%EA%B3%BC-%EB%85%BC-%EB%B8%94%EB%A1%9C%ED%82%B9non-blocking%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
 
 
-# 23.11.20
+23.11.20
 ## Q. shared_ptr에 대해 설명해주세요.(C/C++)
 
 A.  
@@ -6021,7 +6021,7 @@ shared_ptr
 https://webnautes.tistory.com/1451
 
 
-# 23.11.21
+23.11.21
 ## Q. ON DELETE 참조 무결성 제약조건에서 CASCADE, SET DEFAULT를 사용하면 각각 어떤 현상이 일어나는지 설명해주세요.(데이터베이스)
 
 A.  
@@ -6032,7 +6032,7 @@ ON DELETE
 https://swingswing.tistory.com/147
 
 
-# 23.11.22
+23.11.22
 ## Q. TCP의 특징 중 하나인 흐름제어의 역할에 대해서 설명해주세요.(네트워크)
 
 A.  
@@ -6042,3 +6042,9 @@ A.
 - 송신 측과 수신 측의 TCP 버퍼 크기 차이로 인해 생기는 데이터 처리 속도 차이를 해결하기 위해 흐름제어 기법 사용
 
 https://steady-coding.tistory.com/507
+
+23.11.23
+## Q. 커널(kernel)의 종류에 대해 설명해주세요.(운영체제)
+
+A.  
+[23.01.18 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%BB%A4%EB%84%90kernel%EC%9D%98-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
