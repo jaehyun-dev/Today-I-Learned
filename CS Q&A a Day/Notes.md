@@ -6048,3 +6048,13 @@ https://steady-coding.tistory.com/507
 
 A.  
 [23.01.18 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%BB%A4%EB%84%90kernel%EC%9D%98-%EC%A2%85%EB%A5%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.11.25
+## Q. weak_ptr에 대해 설명해주세요.(C/C++)
+
+A.  
+- std::weak_ptr는 C++ 언어에서 스마트 포인터의 한 종류로, 다른 스마트 포인터인 std::shared_ptr와 함께 사용되어 메모리 관리를 수행함
+- std::weak_ptr은 메모리 누수를 방지하기 위해 사용되는데, 특히 순환 참조에 의한 문제를 해결하는 데 도움이 됨
+
+[출처: ChatGPT]
