@@ -6058,3 +6058,31 @@ A.
 - std::weak_ptr은 메모리 누수를 방지하기 위해 사용되는데, 특히 순환 참조에 의한 문제를 해결하는 데 도움이 됨
 
 [출처: ChatGPT]
+
+
+23.11.26
+## Q. WHERE id IN ~ 문과 WHERE id EXISTS 문의 차이에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+IN
+- 값이 존재하는지 확인 후 값을 반환
+- 특정 값을 입력해도 됨
+```SQL
+SELECT *
+FROM A
+WHERE A.COL1 IN (SELECT B.COL1 FROM B)
+
+SELECT *
+FROM A
+WHERE A.COL1 IN (1, 2)
+```
+
+EXISTS
+- 값이 존재하는지 확인 후 TRUE, FALSE를 반환
+- JOIN을 활용한 서브쿼리를 사용해야 함
+- JOIN과 유사하지만 값의 유무를 확인할 경우 사용함
+```SQL
+SELECT *
+FROM A
+WHERE EXISTS (SELECT 1 FROM B WHERE A.COL1 = B.COL1)
+```
