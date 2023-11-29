@@ -6105,3 +6105,21 @@ https://steady-coding.tistory.com/507
 
 A.  
 [23.05.14 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8F%99%EA%B8%B0synchronous%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0asynchronous%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.11.29
+## Q. 스마트 포인터에 대해 설명해주세요.(C/C++)
+
+A.  
+스마트 포인터(smart pointer)
+- Java의 경우 Garbage Collection을 통해 메모리를 관리하지만 C++은 사용자가 스스로 메모리 할당/해제를 관리해야 함
+- 할당받은 메모리를 해제하지 않을 경우 프로그램은 계속 사용하고 있는 메모리로 인지하고 해당 메모리를 사용하지 않는 메모리 누수(memory leak)가 발생함
+- 이와 같은 메모리 누수를 방지하기 위해 스마트 포인터를 제공해줌
+- 스마트 포인터는 포인터처럼 사용하는 클래스 템플릿으로 메모리를 자동으로 해제해줌
+
+스마트 포인터의 종류
+- shared_ptr
+- unique_ptr
+- weak_ptr
+
+https://min-zero.tistory.com/entry/C-STL-1-3-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%8A%A4%EB%A7%88%ED%8A%B8-%ED%8F%AC%EC%9D%B8%ED%84%B0smart-pointer
