@@ -6123,3 +6123,10 @@ A.
 - weak_ptr
 
 https://min-zero.tistory.com/entry/C-STL-1-3-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%8A%A4%EB%A7%88%ED%8A%B8-%ED%8F%AC%EC%9D%B8%ED%84%B0smart-pointer
+
+
+23.11.30
+## Q. 데이터베이스에서 트리거와 프로시저의 차이점을 설명해주세요.(데이터베이스)
+
+A.  
+[22.12.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%97%90%EC%84%9C-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EC%99%80-%ED%94%84%EB%A1%9C%EC%8B%9C%EC%A0%80%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
