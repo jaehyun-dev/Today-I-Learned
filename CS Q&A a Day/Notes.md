@@ -6130,3 +6130,12 @@ https://min-zero.tistory.com/entry/C-STL-1-3-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%8A%
 
 A.  
 [22.12.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%97%90%EC%84%9C-%ED%8A%B8%EB%A6%AC%EA%B1%B0%EC%99%80-%ED%94%84%EB%A1%9C%EC%8B%9C%EC%A0%80%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.12.01
+## Q. TCP의 연결과정(3-way-handshake)과 해제과정(4-way-handshake)이 차이가 나는 이유에 대해서 설명해주세요.(네트워크)
+
+A.  
+클라이언트가 데이터 전송을 마쳤다고 하더라도 서버는 아직 보낼 데이터가 남아있을 수 있기 때문에 일단 FIN에 대한 ACK만 먼저 보내고, 데이터를 모두 전송한 후에 자신도 FIN 메시지를 보내므로, 연결은 3-way-handshake, 해제는 4-way-handshake를 사용함
+
+https://it-mesung.tistory.com/166
