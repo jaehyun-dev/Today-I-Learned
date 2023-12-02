@@ -6139,3 +6139,10 @@ A.
 클라이언트가 데이터 전송을 마쳤다고 하더라도 서버는 아직 보낼 데이터가 남아있을 수 있기 때문에 일단 FIN에 대한 ACK만 먼저 보내고, 데이터를 모두 전송한 후에 자신도 FIN 메시지를 보내므로, 연결은 3-way-handshake, 해제는 4-way-handshake를 사용함
 
 https://it-mesung.tistory.com/166
+
+
+23.12.02
+## Q. 페이지 교체 알고리즘에 대해 아는대로 설명해주세요.(운영체제)
+
+A.  
+[23.01.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B5%90%EC%B2%B4-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%84%EB%8A%94%EB%8C%80%EB%A1%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
