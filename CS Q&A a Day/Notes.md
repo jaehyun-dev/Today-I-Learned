@@ -6146,3 +6146,18 @@ https://it-mesung.tistory.com/166
 
 A.  
 [23.01.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B5%90%EC%B2%B4-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%84%EB%8A%94%EB%8C%80%EB%A1%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.12.03
+## Q. unique_ptr에 대해 설명해주세요.(C/C++)
+
+A.
+unique_ptr
+- 포인터를 단독으로 소유함
+- 원시포인터는 누구와도 공유되지 않으며, 복사나 대입이 불가함
+- 범위를 벗어나면 원시포인터는 지워짐
+- 소멸자가 호출되면 알아서 해제되기 때문에 클래스 멤버 변수로 활용할 때 좋음
+- 지역 변수로 활용하면 개발자의 실수를 줄여줄 수 있음
+- 벡터를 clear하면 자동으로 포인터를 지워주므로 STL 벡터에 포인터를 저장할 때 좋음
+
+https://jjeongil.tistory.com/1050
