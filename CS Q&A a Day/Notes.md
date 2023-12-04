@@ -6161,3 +6161,10 @@ unique_ptr
 - 벡터를 clear하면 자동으로 포인터를 지워주므로 STL 벡터에 포인터를 저장할 때 좋음
 
 https://jjeongil.tistory.com/1050
+
+
+23.12.04
+## Q. 후보키, 기본키, 대체키의 상관관계에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+[22.09.19 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%9B%84%EB%B3%B4%ED%82%A4-%EA%B8%B0%EB%B3%B8%ED%82%A4-%EB%8C%80%EC%B2%B4%ED%82%A4%EC%9D%98-%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
