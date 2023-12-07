@@ -6168,3 +6168,17 @@ https://jjeongil.tistory.com/1050
 
 A.  
 [22.09.19 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%9B%84%EB%B3%B4%ED%82%A4-%EA%B8%B0%EB%B3%B8%ED%82%A4-%EB%8C%80%EC%B2%B4%ED%82%A4%EC%9D%98-%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+
+23.12.07
+## Q. TCP의 연결해제 과정에 대해서 설명해주세요.(네트워크)
+
+A.  
+1. A -> B 종료 요청(FIN) 전송
+2. B -> A 종료 응답(ACK) 전송
+3. B -> A 종료 요청(FIN) 전송
+4. A -> B 종료 응답(ACK) 전송
+
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/edafe0a2-06af-4879-84e5-dc1bd03bcf4e)
+
+https://jungwoong.tistory.com/22
