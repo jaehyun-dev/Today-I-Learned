@@ -6182,3 +6182,11 @@ A.
 ![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/edafe0a2-06af-4879-84e5-dc1bd03bcf4e)
 
 https://jungwoong.tistory.com/22
+
+
+23.12.08
+## Q. 멀티 스레딩(Multi-threading)의 장점과 단점은 무엇인가요?(운영체제)
+
+A.  
+[23.01.24 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%94%A9multi-threading%EC%9D%98-%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+## 
