@@ -6205,5 +6205,5 @@ A.
 동적 타입 변환
 - 'dynamic_cast'를 사용하여 객체를 다른 형태로 변환할 때, 가상 함수 테이블(Virtual Function Table)을 통해 올바른 타입으로 변환할 수 있음
 
-[출처: ChatGPT]
+[출처: ChatGPT]  
 https://junstar92.tistory.com/176
