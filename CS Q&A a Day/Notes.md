@@ -6189,4 +6189,21 @@ https://jungwoong.tistory.com/22
 
 A.  
 [23.01.24 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%94%A9multi-threading%EC%9D%98-%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
-## 
+
+
+23.12.09
+## Q. 가상 소멸자를 사용해야 하는 이유에 대해 설명해주세요.(C/C++)
+
+A.  
+다형성 지원
+- 부모 클래스 포인터로 파생 클래스 객체를 삭제하면 파생 클래스의 소멸자가 호출되지 않아 메모리 누수가 발생할 수 있음
+- 가상 소멸자를 사용하면 올바른 소멸자가 호출되어 동적으로 할당된 메모리를 올바르게 해제할 수 있음
+
+상속된 클래스의 소멸 순서 보장
+- 기반 클래스의 가상 소멸자를 정의하면 파생 클래스에서도 가상 소멸자를 정의하게 되어, 상속된 클래스의 소멸 순서가 올바르게 보장됨
+
+동적 타입 변환
+- 'dynamic_cast'를 사용하여 객체를 다른 형태로 변환할 때, 가상 함수 테이블(Virtual Function Table)을 통해 올바른 타입으로 변환할 수 있음
+
+[출처: ChatGPT]
+https://junstar92.tistory.com/176
