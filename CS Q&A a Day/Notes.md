@@ -6254,4 +6254,4 @@ A.
 
 https://youngq.tistory.com/72  
 
-[cf. 22.12.11 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8C%A8%ED%82%B7%EA%B5%90%ED%99%98%EB%B0%A9%EC%8B%9D%EA%B3%BC-%ED%9A%8C%EC%84%A0%EA%B5%90%ED%99%98%EB%B0%A9%EC%8B%9D%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
+cf. [22.12.11 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%8C%A8%ED%82%B7%EA%B5%90%ED%99%98%EB%B0%A9%EC%8B%9D%EA%B3%BC-%ED%9A%8C%EC%84%A0%EA%B5%90%ED%99%98%EB%B0%A9%EC%8B%9D%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
