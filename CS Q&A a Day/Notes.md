@@ -6262,3 +6262,13 @@ cf. [22.12.11 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/
 
 A.  
 [23.02.23 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.12.13
+## Q. 가상함수의 동작원리에 대해 설명해주세요.(C/C++)
+
+A.  
+- 어떤 클래스에 가상함수가 존재하면 컴파일러가 가상함수 테이블을 만든 뒤 실체 호출되어야 할 함수의 위치정보를 저장함
+- 오버라이딩된 가상함수의 주소정보는 파생 클래스의 가상함수 테이블에 포함되지 않으므로, 호출 시 무조건 마지막에 오버라이딩한 파생 클래스의 멤버 함수가 호출됨
+
+https://nomad-programmer.tistory.com/359
