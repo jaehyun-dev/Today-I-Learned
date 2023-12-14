@@ -6272,3 +6272,10 @@ A.
 - 오버라이딩된 가상함수의 주소정보는 파생 클래스의 가상함수 테이블에 포함되지 않으므로, 호출 시 무조건 마지막에 오버라이딩한 파생 클래스의 멤버 함수가 호출됨
 
 https://nomad-programmer.tistory.com/359
+
+
+23.12.14
+## Q. 데이터베이스의 무결성 제약조건의 정의와 필요성에 대해 설명해주세요.(데이터베이스)
+
+A.  
+[23.01.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%ED%95%84%EC%9A%94%EC%84%B1%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
