@@ -6287,7 +6287,7 @@ A.
 A.  
 - Source port, Destination port
 - Sequence Number
-- Acknowledgment Number
+- Acknowledgement Number
 - Data offset
 - Reserved(3 bits)
 - Flags(NS ~ FIN)
