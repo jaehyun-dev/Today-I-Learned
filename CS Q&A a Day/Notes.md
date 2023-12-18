@@ -6336,3 +6336,4 @@ A.
 키 제약조건(key constraint)
 - 키 애트리뷰트에 중복된 값이 존재해서는 안 됨
 
+https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
