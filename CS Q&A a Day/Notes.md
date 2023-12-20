@@ -6361,3 +6361,19 @@ A.
    - 작성한 코드가 들어가는 부분(기계어 포함)
    - "read only" 영역이므로 쓰기 작업이 들오면 "access violation"이 발생함
    - 프로세스가 종료될 때까지 계속 유지되는 영역
+2. Data
+   - 전역변수(global), 정적변수(static), 배열(array), 구조체(structure) 등이 저장됨
+       - 초기화된 데이터: Data에 저장
+       - 초기화되지 않은 데이터: BSS(Block Stated Symbol)에 저장
+   - 프로세스가 종료될 때까지 계속 유지되는 영역
+3. Heap
+   - 프로그래머가 동적으로 사용하는 영역
+   - malloc, free 또는 new, delete에 의해 할당 또는 반환되는 영역
+   - Java, C++과 같이 Garbage Collector가 활동하는 경우 자동으로 반환되는 경우도 있음
+4. Stack
+   - 지역변수, 매개변수, 복귀 번지 등이 저장되어 있는 프로그램이 자동으로 사용하는 임시 메모리
+   - 함수 호출 시 생성되고 함수 종료 시 반환됨
+   - LIFO 정책 사용
+   - 다른 세그먼트들이 하위 영역으로부터 할당되지만 Stack 세그먼트는 상위 영역부터 할당됨
+
+https://box0830.tistory.com/150
