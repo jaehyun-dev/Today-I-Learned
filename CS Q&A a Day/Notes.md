@@ -6351,3 +6351,13 @@ A.
 3. 클라이언트가 서버에 응답을 전송
 
 https://hyemsinabro.tistory.com/m/157
+
+
+23.12.20
+## Q. Code, Data, Stack, Heap 영역에 대해 설명해주세요.(운영체제)
+
+A.  
+1. Code
+   - 작성한 코드가 들어가는 부분(기계어 포함)
+   - "read only" 영역이므로 쓰기 작업이 들오면 "access violation"이 발생함
+   - 프로세스가 종료될 때까지 계속 유지되는 영역
