@@ -6377,3 +6377,15 @@ A.
    - 다른 세그먼트들이 하위 영역으로부터 할당되지만 Stack 세그먼트는 상위 영역부터 할당됨
 
 https://box0830.tistory.com/150
+
+
+23.12.21
+## Q. C++의 형변환 연산자에 대해 설명해주세요.(C/C++)
+
+A.  
+- static_cast
+- dynamic_cast
+- reinterpret_cast
+- const_cast
+
+https://mynameisdabin.tistory.com/20
