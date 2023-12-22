@@ -6398,3 +6398,10 @@ A.
     - 처음부터 읽기 전용으로 만들어진 메모리를 억지로 접근해서 바꾸려고 하면 에러가 발생함
 
 https://mynameisdabin.tistory.com/20
+
+
+23.12.22
+## Q. 대표적인 SQL종류 3가지에 대해서 설명하고, 종류별 명령어를 아는 만큼 나열해주세요.(데이터베이스)
+
+A.  
+[23.01.16 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8C%80%ED%91%9C%EC%A0%81%EC%9D%B8-sql%EC%A2%85%EB%A5%98-3%EA%B0%80%EC%A7%80%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%98%EA%B3%A0-%EC%A2%85%EB%A5%98%EB%B3%84-%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A5%BC-%EC%95%84%EB%8A%94-%EB%A7%8C%ED%81%BC-%EB%82%98%EC%97%B4%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
