@@ -3140,13 +3140,13 @@ A.
 https://namuhuchutong.tistory.com/3
 
 23.04.06
-## Q. DHCP란 무엇인가요?
+## Q. DHCP란 무엇인가요?(네트워크)
 
 A.  
 DHCP(Dynamic Host Configuration Protocol)
 - 호스트의 IP주소와 각종 TCP/IP 프로토콜의 기본 설정을 클라이언트에게 자동적으로 제공해주는 프로토콜
-- 네크워크에 사용되는 IP주소를 DHCP서버가 중압집중식으로 관리하는 클라이언트/서버 모델을 사용하게 됨
-- 네트워크 안의 컴퓨터에 자동으로 네입 서버 주소, IP주소, 게이트웨이 주소를 할당해주는 것을 의미하고, 해당 클라이언트에게 일정 기간 임대를 하는 동적 주소 할당 프로토콜
+- 네크워크에 사용되는 IP주소를 DHCP서버가 중앙집중식으로 관리하는 클라이언트/서버 모델을 사용하게 됨
+- 네트워크 안의 컴퓨터에 자동으로 네임 서버 주소, IP주소, 게이트웨이 주소를 할당해주는 것을 의미하고, 해당 클라이언트에게 일정 기간 임대를 하는 동적 주소 할당 프로토콜
 
 https://jwprogramming.tistory.com/35
 
@@ -6412,3 +6412,10 @@ A.
 
 A.  
 [23.04.06 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-dhcp%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
+
+
+23.12.24
+## Q. 컴파일러와 인터프리터의 차이가 무엇인가요?(운영체제)
+
+A.  
+[22.12.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC%EC%99%80-%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0%EC%9D%98-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
