@@ -6419,3 +6419,71 @@ A.
 
 A.  
 [22.12.30 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC%EC%99%80-%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0%EC%9D%98-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+23.12.25
+## Q. public, protected, private 상속 접근 지정자에 대해 설명해주세요.(C/C++)
+
+A.  
+public
+- 기반 클래스의 정의부에서 public으로 정의된 속성에 대해서는 파생 클래스의 정의부에서 접근이 가능하며 파생클래스의 객체를 통해서도 접근이 가능함
+
+private
+- 기반 클래스의 정의부에서 private로 정의된 속성에 대해서는 파생 클래스의 정의부에서 접근이 불가하며 파생클래스의 객체를 통해서도 접근이 불가함
+- 기반 클래스의 객체를 통해서도 접근이 불가하며 오직 기반 클래스의 정의부 내에서만 접근 가능함
+
+public
+- 기반 클래스의 정의부에서 protected로 정의된 속성에 대해서는 파생클래스의 정의부에서 접근이 가능하지만 외부에서는 접근이 불가함
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">상속 접근 지정자</th>
+    <th class="tg-c3ow">기반 클래스</th>
+    <th class="tg-c3ow">파생 클래스로의 상속 형태</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow" rowspan="3"><br><br>public</td>
+    <td class="tg-c3ow">public</td>
+    <td class="tg-c3ow">public</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">private</td>
+    <td class="tg-c3ow">접근 불가</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">protected</td>
+    <td class="tg-c3ow">protected</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="3"><br><br>private<br></td>
+    <td class="tg-c3ow">public</td>
+    <td class="tg-c3ow">private</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">private</td>
+    <td class="tg-c3ow">접근 불가</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">protected</td>
+    <td class="tg-c3ow">private</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="3"><br><br>protected<br></td>
+    <td class="tg-c3ow">public</td>
+    <td class="tg-c3ow">protected</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">private</td>
+    <td class="tg-c3ow">접근 불가</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">protected</td>
+    <td class="tg-c3ow">protected</td>
+  </tr>
+</tbody>
+</table>
+
+https://thrillfighter.tistory.com/531
