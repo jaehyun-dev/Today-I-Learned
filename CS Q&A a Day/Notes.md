@@ -6503,3 +6503,20 @@ A.
     - 릴레이션이 기본키의 일부이면 NULL 값을 가질 수 없음
 
 https://rainbow97.tistory.com/entry/Database-02-4-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4
+
+
+23.12.27
+## Q. 도메인 질의 과정에 대해 root 도메인부터 차근차근 설명해주세요.(네트워크)
+
+A.  
+- 도메인 네임으로 요청하면 먼저 로컬에서 찾아봄(hosts.txt -> DNS 캐시 테이블 -> 로컬 DNS 서버)
+- 없으면 외부 네트워크 DNS 서버로 요청함
+- 도메인 네임은 계층적으로 구성됨
+    - ex) www.naver.com
+    - com: 최상위 도메인, root 도메인
+    - naver: 2단계 도메인
+    - www: 호스트(웹서버) 서브 도메인
+- Root 네임서버는 com 영역을 호스트하는 네임서버(TLD)를 찾아 넘김
+- com 네임서버는 naver.com 영역을 호스팅하는 네임서버를 찾음
+
+https://velog.io/@cieroyou/DNS-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
