@@ -6520,3 +6520,10 @@ A.
 - com 네임서버는 naver.com 영역을 호스팅하는 네임서버를 찾음
 
 https://velog.io/@cieroyou/DNS-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+
+
+23.12.28
+## Q. 데드락(Deadlock)이 무엇인지 설명하고 데드락의 4가지 조건에 대해 각각 설명해주세요.(운영체제)
+
+A.  
+[23.02.17 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EB%93%9C%EB%9D%BD%EC%9D%B4-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%98%EA%B3%A0-%EB%8D%B0%EB%93%9C%EB%9D%BD%EC%9D%98-4%EA%B0%80%EC%A7%80-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EA%B0%81%EA%B0%81-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
