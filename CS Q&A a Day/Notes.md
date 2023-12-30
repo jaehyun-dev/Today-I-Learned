@@ -6551,3 +6551,10 @@ A.
     - 위의 과정을 거쳐 번역된 오브젝트 코드는 링커를 통해 다른 오브젝트 코드 또는 Lib(정적 라이브러리)와 연결되어 실행가능한 프로그램으로 만들어짐
 
 https://ledpear.tistory.com/74
+
+
+23.12.30
+## Q. 기본키와 엔티티 무결성 제약 조건에 대해서 설명해주세요.(데이터베이스)
+
+A.  
+[22.11.10 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B8%B0%EB%B3%B8%ED%82%A4%EC%99%80-%EC%97%94%ED%8B%B0%ED%8B%B0-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
