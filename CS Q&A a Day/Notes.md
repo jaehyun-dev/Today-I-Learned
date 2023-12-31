@@ -6558,3 +6558,14 @@ https://ledpear.tistory.com/74
 
 A.  
 [22.11.10 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EA%B8%B0%EB%B3%B8%ED%82%A4%EC%99%80-%EC%97%94%ED%8B%B0%ED%8B%B0-%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
+23.12.31
+## Q. 전송계층이 하는 역할은 무엇인가요?(네트워크)
+
+A.  
+- 목적지에 신뢰할 수 있는 데이터를 전달하는 역할
+- 오류를 점검하는 기능이 있어 오류가 발생하면 데이터를 재전송하도록 요청함
+- 전송된 데이터의 목적지가 어떤 어플리케이션인지 식별하는 기능
+
+https://yohanpro.com/posts/%EC%A0%84%EC%86%A1%EA%B3%84%EC%B8%B5%EC%9D%98%20%EC%97%AD%ED%95%A0/
