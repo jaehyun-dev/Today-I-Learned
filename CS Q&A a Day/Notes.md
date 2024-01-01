@@ -6569,3 +6569,10 @@ A.
 - 전송된 데이터의 목적지가 어떤 어플리케이션인지 식별하는 기능
 
 https://yohanpro.com/posts/%EC%A0%84%EC%86%A1%EA%B3%84%EC%B8%B5%EC%9D%98%20%EC%97%AD%ED%95%A0/
+
+
+24.01.01
+## Q. 운영체제란 무엇인가요? 운영체제가 필요한 이유는 무엇이고 하는 역할은 무엇인가요?(운영체제)
+
+A.  
+[22.12.24 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%ED%95%98%EB%8A%94-%EC%97%AD%ED%95%A0%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
