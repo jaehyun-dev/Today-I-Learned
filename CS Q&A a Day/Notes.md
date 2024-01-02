@@ -6576,3 +6576,14 @@ https://yohanpro.com/posts/%EC%A0%84%EC%86%A1%EA%B3%84%EC%B8%B5%EC%9D%98%20%EC%9
 
 A.  
 [22.12.24 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%ED%95%98%EB%8A%94-%EC%97%AD%ED%95%A0%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C)
+
+
+24.01.02
+## Q. 얕은 복사(shallow copy)와 깊은 복사(deep copy)의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+- 객체를 생성하고 초기화시킬 때 멤버 변수를 어떻게 초기화하느냐에 따라 깊은 복사와 얕은 복사로 나뉨
+- 얕은 복사(shallow copy): 변수가 가리키는 실제 데이터가 아닌 단지 메모리 주소만을 복사하여 변수의 데이터로 만드는 방법
+- 깊은 복사(deep copy): 변수가 관리하는 리소스 자체를 복사(새롭게 메모리를 할당)하여 새롭게 멤버 변수에 입력시키는 방법
+
+https://bblackscene21.tistory.com/6
