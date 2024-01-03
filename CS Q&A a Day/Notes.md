@@ -6587,3 +6587,10 @@ A.
 - 깊은 복사(deep copy): 변수가 관리하는 리소스 자체를 복사(새롭게 메모리를 할당)하여 새롭게 멤버 변수에 입력시키는 방법
 
 https://bblackscene21.tistory.com/6
+
+
+24.01.03
+## Q. 데이터베이스에서 차수와 카디널리티에 대해 설명해주세요.(데이터베이스)
+
+A.  
+[22.09.18 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%B0%A8%EC%88%98%EC%99%80-%EC%B9%B4%EB%94%94%EB%84%90%EB%A6%AC%ED%8B%B0%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
