@@ -6601,3 +6601,15 @@ A.
 
 A.  
 [23.02.22 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-rest-api%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
+
+
+24.01.05
+## Q. C++의 입출력 속도를 높이는 방법에 대해 설명해주세요.(C/C++)
+
+A.  
+```C++
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+cout.tie(NULL);
+```
+위 코드를 추가해주면 됨
