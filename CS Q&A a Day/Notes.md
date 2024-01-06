@@ -6613,3 +6613,34 @@ cin.tie(NULL);
 cout.tie(NULL);
 ```
 위 코드를 추가해주면 됨
+
+
+24.01.06
+## Q. DNS 라운드 로빈 방식에 대해 설명해주시고 문제점에 대해서도 말씀해주세요.(네트워크)
+
+A.  
+DNS(Domain Name System)
+- IP 주소체계와 문자를 상호 확인 및 변환해주는 시스템
+
+DNS Query
+- DNS 서버에서 Domain Name을 이용하여 IP를 받아오는 것
+- 이때 Domain Name Server에 접속하는 유저에 대해서 라운드 로빈 방식으로 IP를 할당함
+
+DNS Round Robin(라운드 로빈)
+- 시분할 시스템을 위해 설계된 선점형 스케줄링의 하나
+- 프로세스들 사이에 우선순위를 두지 않음
+- 순서대로 시간 단위(Time Quantum/Slice)로 CPU를 할당하는 방식의 CPU 스케줄링 알고리즘
+- 자동적으로 시간에 따라 스케쥴링이 변화되기 때문에 부하에 대한 걱정을 할 필요가 없으므로 로드 밸런서가 필요 없음
+
+문제점
+- 서버의 수만큼 공인 IP 주소가 필요함
+- 부하가 균등하게 분산되지 않음
+- 서버가 다운돼도 확인이 불가능함
+
+해결 방법
+- 다중화 구성 방식(Synchronous Time-Division Multiplexing)
+- 가중치 편성 방식(Weighted round robin)
+- 최소 연결 방식(Least connection)
+
+http://dailusia.blog.fc2.com/blog-entry-362.html  
+[참고) 22.12.17 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-dns-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%EB%B0%A9%EC%8B%9D-%EC%A4%91-%ED%95%98%EB%82%98%EC%9D%B8-dns-round-robin%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
