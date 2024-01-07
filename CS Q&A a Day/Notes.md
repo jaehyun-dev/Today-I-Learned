@@ -6644,3 +6644,16 @@ DNS Round Robin(라운드 로빈)
 
 http://dailusia.blog.fc2.com/blog-entry-362.html  
 [참고) 22.12.17 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-dns-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%EB%B0%A9%EC%8B%9D-%EC%A4%91-%ED%95%98%EB%82%98%EC%9D%B8-dns-round-robin%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
+
+
+24.01.07
+## Q. malloc과 new의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+1. malloc은 라이브러리 제공 함수로, stdib.h를 include 해주어야 사용 가능하지만, new는 기본으로 제공하는 키워드이므로 별도의 라이브러리 추가 없이 바로 사용 가능함
+2. malloc은 사이즈를 매개변수로 받고, 리턴타입이 void*형이므로 sizeof()와 캐스팅을 활용해야 쉬운 코딩이 가능한 반면 new는 할당할 타입을 지정하면 알아서 할당할 타입의 포인터로 넘어오기 때문에 할당할 타입과 같은 타입의 포인터 변수로 받아오기만 하면 됨
+3. malloc은 메모리를 동적으로 할당하는 것만이 목적이기 때문에 초깃값을 지정해줄 수 없지만, new는 할당과 동시에 초기화가 가능함
+4. new는 객체를 자동으로 초기화해주는 함수인 생성자를 자동으로 호출한다는 것이 malloc과 가장 큰 차이점
+5. malloc은 realloc이라는 함수로 재할당이 가능하지만 new에는 이에 대응하는 것이 없으므로 새로 할당 -> 복사 -> 해제하는 과정을 거쳐야 함
+
+https://jhtop93.tistory.com/3
