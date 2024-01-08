@@ -6657,3 +6657,43 @@ A.
 5. malloc은 realloc이라는 함수로 재할당이 가능하지만 new에는 이에 대응하는 것이 없으므로 새로 할당 -> 복사 -> 해제하는 과정을 거쳐야 함
 
 https://jhtop93.tistory.com/3
+
+
+24.01.08
+## Q. 'Restful'의 뜻은 무엇이고 어떤 예시가 있을까요?(네트워크)
+
+A.  
+RESTful
+- REST의 설계 규칙을 잘 지키고 원리를 잘 따르는 것
+- RESTful하게 만든 API는 요청을 보내는 주소만으로도 어떤 것을 요청하는지 파악이 가능함
+- URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시하는 것
+
+예시
+- `https://school.com/grade`는 학교의 항년을 목록으로 받는 요청
+```json
+{
+"result" : [
+    {"idx": 1, "name": "1학년"},
+    {"idx": 2, "name": "2학년"},
+    {"idx": 3, "name": "3학년"}
+    ]
+}
+```  
+- `https://school.com/grade/2`는 idx가 2인 학년의 정보가 올 것
+- `https://school.com/grade/2/students`는 2학년 학생들의 정보를 받아올 것
+```json
+{
+"results" : [
+    {"idx": 1, "name": "홍길동", "gender": "male"},
+    {"idx": 2, "name": "성춘향", "gender": "female"},
+    {"idx": 3, "name": "전우치", "gender": "male"},
+    {"idx": 4, "name": "나기백", "gender": "male"},
+    ...
+    ]
+}
+```
+- `https://school.com/grade/2/students/15`라는 idx를 붙이면 2학년 학생 중 15의 idx를 가진 학생의 정보가 올 것
+- `https://school.com/grade/2/students?gender=male`와 같이 조건을 붙여서 남학생 정보만 받아올 수도 있음
+- `https://school.com/grade/2/students?page=2&count=10`과 같이 한 페이지당 10명의 데이터를 받아오는 표현도 가능
+
+https://dev-coco.tistory.com/97
