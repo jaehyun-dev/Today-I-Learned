@@ -6697,3 +6697,18 @@ RESTful
 - `https://school.com/grade/2/students?page=2&count=10`과 같이 한 페이지당 10명의 데이터를 받아오는 표현도 가능
 
 https://dev-coco.tistory.com/97
+
+
+24.01.09
+## Q. struct와 class의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+struct(구조체)
+- 접근제어 지시자를 따로 선언하지 않는다면 모든 변수와 함수는 public으로 선언됨
+- 따라서 어디서든 접근이 가능하므로 main함수에서 초기화가 가능함
+
+class(클래스)
+- 접근제어 지시자를 따로 선언하지 않는다면 모든 변수와 함수는 private으로 선언됨
+- 따라서 main함수에서 초기화가 불가능함
+
+https://k96-ozon.tistory.com/31
