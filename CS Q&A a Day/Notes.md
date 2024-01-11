@@ -6730,3 +6730,24 @@ DNS(Domain Name System, 도메인 네임 시스템)
 3. 리졸버(Resolver) = 권한 없는 DNS 서버
 
 https://hanamon.kr/dns%EB%9E%80-%EB%8F%84%EB%A9%94%EC%9D%B8-%EB%84%A4%EC%9E%84-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B0%9C%EB%85%90%EB%B6%80%ED%84%B0-%EC%9E%91%EB%8F%99-%EB%B0%A9%EC%8B%9D%EA%B9%8C%EC%A7%80/
+
+
+24.01.11
+## Q. C++의 std:cout과 C의 printf()의 차이에 대해 설명해주세요.(C/C++)
+
+A.  
+cout
+- <iostream>
+- C++의 스트림 유형의 객체
+- 출력하려는 값의 자료형을 컴파일러가 검사할 수 있음
+- cout은 출력하려는 값의 형에 따라 적절한 함수를 호출함
+- 파일 입출력(fstream) 및 스트링 입출력(stringstream)에서도 표준 입출력과 동일한 인터페이스를 사용하므로 편리함
+- printf에 비해 처리 속도가 느림
+
+printf
+- <cstdio>
+- C의 형식화된 문자열을 표시하는 데 주로 사용되는 함수
+- cout과 달리 출력하려는 값의 자료형을 컴파일러가 검사할 수 없으므로 버그가 발생할 확률이 높음
+- cout에 비해 처리 속도가 빠름(일반적으로 cin / cout / endl 이 scanf / printf / \n보다 속도가 느림)
+
+https://blog.naver.com/PostView.naver?blogId=view7186&logNo=222083168651&parentCategoryNo=&categoryNo=1&viewDate=&isShowPopularPosts=true&from=search
