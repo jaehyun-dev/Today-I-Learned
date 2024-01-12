@@ -6751,3 +6751,24 @@ printf
 - cout에 비해 처리 속도가 빠름(일반적으로 cin / cout / endl 이 scanf / printf / \n보다 속도가 느림)
 
 https://blog.naver.com/PostView.naver?blogId=view7186&logNo=222083168651&parentCategoryNo=&categoryNo=1&viewDate=&isShowPopularPosts=true&from=search
+
+
+24.01.12
+## Q. 대칭키와 비대칭키의 차이점을 설명해주세요.(네트워크)
+
+A.  
+대칭키 암호화 방식
+- 암복호화에 사용하는 키가 동일한 암호화 방식
+- DES, 3DES, AES, SEED, ARIA, RC-4 등이 있음
+- 장점: 비대칭키 방식에 비해 속도가 빠르고 수행 시간이 짧음
+- 단점: 안전한 키교환 방식이 요구됨, 사람이 증가할수록 키 관리가 어려워짐
+
+비대칭키(공개키) 암호화 방식
+- 암복호화에 사용하는 키가 서로 다른(비대칭) 암호화 방식
+- 공개키는 모든 사람이 접근 가능한 키, 개인키는 각 사용자만이 가지고 있는 키
+- A가 B에게 데이터를 보낼 때 A는 B의 공개키로 암호화한 데이터를 보내고 B는 본인의 개인키로 복호화해서 볼 수 있음 
+- RSA, DSA 등이 있음
+- 장점: 키 분배가 필요 없음, 기밀성/인증/부인방지 기능을 제공
+- 단점: 대칭키 암호화 방식에 비해 속도가 느림
+
+https://liveyourit.tistory.com/183
