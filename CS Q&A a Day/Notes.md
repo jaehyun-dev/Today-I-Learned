@@ -6794,3 +6794,16 @@ std::endl
 - 즉시 출력해줘야 하는 게 아니라면 \n을 사용하여 모아뒀다가 출력하는 게 시간을 줄일 수 있음
 
 https://yechoi.tistory.com/48
+
+
+24.01.14
+## Q. HTTP 요청메서드 중 PUT과 PATCH의 차이점에 대해서 설명해주세요.(네트워크)
+
+A.  
+PUT
+- 리소스의 모든 것을 업데이트함
+
+PATCH
+- 리소스의 일부를 업데이트함
+
+https://programmer93.tistory.com/39
