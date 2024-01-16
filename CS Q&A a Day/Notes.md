@@ -6824,3 +6824,24 @@ A.
 - 부모 클래스형 포인터로 멤버 함수를 호출할 때, 컴파일러는 정적 타입을 보고 이 타입에 맞는 멤버함수를 호출하기 때문
 
 https://coding-factory.tistory.com/699
+
+
+24.01.16
+## Q. HTTP와 HTTPS의 차이점이 무엇일까요?(네트워크)
+
+A.  
+HTTP
+- HyperText Transfer Protocol의 약자, 하이퍼텍스트 전송 프로토콜
+- 인터넷을 작동시키는 역할을 하며, 웹 서버 및 웹 브라우저 상호 간의 데이터 전송을 위한 응용계층 프로토콜
+
+HTTPS
+- HyperText Transfer Protocol Secure의 약자, 하이퍼텍스트 전송 프로토콜 보안
+- SSL(Secure Socket Layer) 인증서를 사용하는 HTTP
+- 표준 HTTP와 동일한 방식으로 작동하나, 서버와 주고받는 데이터가 암호화되기 때문에 웹사이트에 추가적인 보호를 제공함
+- 개인 데이터를 훔치거나 해킹하거나 볼 수 없도록 작동함
+
+차이점
+- HTTPS를 사용한 웹 페이지를 통해 전송되는 모든 데이터는 추가적인 보안 계층, 즉 TLS(전송 계층 보안) 프로토콜이 있음
+- 모든 유형의 데이터는 변경되거나 손상될 수 없는 HTTPS 사이트를 통해 전달되며 제3자로부터 보호됨
+
+https://www.ascentkorea.com/difference-between-http-and-https/
