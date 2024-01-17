@@ -6845,3 +6845,103 @@ HTTPS
 - 모든 유형의 데이터는 변경되거나 손상될 수 없는 HTTPS 사이트를 통해 전달되며 제3자로부터 보호됨
 
 https://www.ascentkorea.com/difference-between-http-and-https/
+
+
+24.01.17
+## Q. Call by value, Call by reference, Call by address에 대해 설명해주세요.(C/C++)
+
+A.  
+Call by value
+- 값에 의한 전달
+```C
+void CallByValue(int value)
+{
+    value = 20;
+    std::cout << value << std::endl;    //value의 값
+    std::cout << &value << std::endl;   //value의 주소
+}
+
+int main()
+{
+    int num = 10;
+    CallByValue(num);
+    std::cout << num << std::endl;    //num의 값
+    std::cout << &num << std::endl;   //num의 주소
+
+    return 0;
+}
+```
+```
+20
+0000002F6D75FBF0
+10
+0000002F6D75FC14
+```
+- 함수가 호출되면 int value = num 형태로 값의 복사가 이뤄짐
+- 실제로 num을 대입시키는 게 아니라 num이 가지는 값을 복사하고 임시로 메모리에 저장한 후 그 값을 value에 집어넣음
+- value와 num은 지역변수로서 각각 다른 주소값을 가짐
+- 따라서 value의 값을 바꿔도 num의 값은 바뀌지 않음
+- 함수가 종료되면 value는 사라지고, main이 종료되면 num도 사라짐
+
+Call by address
+- 주소에 의한 전달
+```C
+void CallByAddress(int* address)
+{
+    *address = 20;
+    std::cout << *address << std::endl;    //address가 가리키는 주소의 값
+    std::cout << &address << std::endl;    //address의 주소
+}
+
+int main()
+{
+    int num = 10;
+    CallByAddress(&num);
+    std::cout << num << std::endl;    //num의 값
+    std::cout << &num << std::endl;   //num의 주소
+
+    return 0;
+}
+```
+```
+20
+00000012B92FFCE0
+20
+00000012B92FFD04
+```
+- 함수가 호출되면 int *address = &num 형태로 address가 num의 주소를 가리키고 있기 때문에 역참조 연산자 '\*'로 num의 주소에 접근을 하고 값을 바꿔버리면 num의 값이 바뀌게 됨
+- address와 num은 지역변수로서 각각 다른 주소에 할당이 됨
+- 함수가 종료되면 address가 사라지고, main이 종료되면 num도 사라짐
+
+Call by reference
+- C++에서 추가된 개념
+- 참조에 의한 전달
+```C++
+void CallByReference(int& reference)
+{
+    reference = 20;
+    std::cout << reference << std::endl;    //reference가 가리키는 주소의 값
+    std::cout << &reference << std::endl;   //reference의 주소
+}
+
+int main()
+{
+    int num = 10;
+    CallByReference(num);
+    std::cout << num << std::endl;    //num의 값
+    std::cout << &num << std::endl;   //num의 주소
+
+    return 0;
+}
+```
+```
+20
+000000567BCFFA14
+20
+000000567BCFFA14
+```
+- 함수가 호출되면 매개변수로 선언된 reference는 num이 할당된 메모리를 공유하게 됨
+- "num을 함수 안에서는 reference로 부르겠다"라는 일종의 별명
+- 따라서 reference의 값을 바꾸면 num의 값도 바뀌고 주소를 출력하면 같은 주소가 나옴
+
+https://rehtorb-algorithm.tistory.com/11
