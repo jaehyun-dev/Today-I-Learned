@@ -7106,3 +7106,32 @@ A.
 - 메모리를 할당하지 않고 대상의 이름만 알려준다면 선언, 대상의 메모리가 할당된다면 정의
 
 https://banaba.tistory.com/41
+
+
+24.01.24
+## Q. HTTP 1.0, 1.1의 특징에 대해 설명해주시고 두 버전의 가장 큰 차이점은 무엇이라고 생각하시나요?(네트워크)
+
+A.  
+1) Non-Persistent vs Persistent
+    - HTTP는 TCP를 이용하여 통신함
+    - HTTP 1.0은 TCP 세션을 유지하지 않고, 1.1은 TCP 세션을 유지함
+    - HTTP 1.0은 매번 데이터를 요청하고 수신할 때마다 새로운 TCP 세션을 맺어야 함
+    - HTTP 1.1은 한 번의 TCP 세션에 여러 개의 요청을 보내고 응답을 수신할 수 있음
+    - HTTP 1.1은 TCP 세션 처리 부하를 줄이고 응답속도를 개선할 수 있음
+
+2) 파이프라이닝(Pipelining)
+    - HTTP 1.0은 파이프라이닝을 제공하지 않는 반면 HTTP 1.1은 파이프라이닝 기능을 제공함
+    - HTTP 1.0은 1번 요청을 보내고 1번 응답을 받아야지 2번 요청을 보냄
+    - HTTP 1.1은 여러 개의 요청을 동시에 보낼 수 있음
+
+3) 호스트 헤더(Host Header)
+    - HTTP 1.0은 하나의 IP 주소에 여러 개의 도메인을 운영할 수 없으므로 도메인 별로 IP를 구분해서 준비해야 하므로 서버의 개수가 늘어나야 함
+    - HTTP 1.1은 가상 호스팅(Virtual Hosting)이 가능해졌기 때문에 하나의 IP 주소에 여러 개의 도메인을 적용시킬 수 있음
+
+4) 향상된 인증 절차(Improved Authentication Procedure)
+    - HTTP 1.1은 다음과 같은 2개의 header가 추가됨
+        - proxy-authentication
+        - proxy-authorization
+    - 프록시가 사용자의 인증을 요구하는 것이 가능해져서 인증 절차가 향상됨
+
+https://code-lab1.tistory.com/196
