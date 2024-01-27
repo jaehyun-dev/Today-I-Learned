@@ -7172,3 +7172,26 @@ C++언어
 - 메모리가 안전하지 않음
 
 https://se-jung-h.tistory.com/entry/CS-%EC%A7%80%EC%8B%9D-C%EC%99%80-C%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
+
+24.01.27
+## Q. HTTP 2.0은 1.1에 비해 어떤 특징을 가지나요?(네트워크)
+
+A.  
+Multiplexed Streams
+- HTTP 1.1의 HTTP Pipelining의 개선안으로 하나의 Connection으로 동시에 여러 개의 메시지를 주고 받을 수 있음
+- 응답은 요청 순서에 상관없이 Stream으로 받기 때문에 HOL Blocking도 발생하지 않음
+
+Stream Prioritization
+- 응답에 대한 우선순위를 정해 우선순위가 높을수록 응답을 빨리 함
+- 하나의 HTML 문서에 CSS 파일과 여러 IMG 파일이 있을 경우, CSS 파일의 우선순위를 올려 렌더링을 진행하며 IMG 파일은 도착하는 대로 띄워주는 식
+
+Server Push
+- 서버가 클라이언트의 요청없이 응답을 보내는 방법
+- 하나의 HTML 문서에 CSS 파일과 여러 IMG 파일이 있을 경우, 각각의 파일을 위한 요청을 보내는 대신 클라이언트의 요청을 최소화하고 서버가 리소스를 알아서 보내줌
+
+Header Compression
+- Header Table과 Huffman Encoding을 사용하는 HPACK 압축방식으로 이전 요청과 중복되는 Header도 똑같이 전송하는 네트워크 자원 낭비를 개선함
+- 클라이언트와 서버는 각각 Header Table을 관리하고 이전 요청과 동일한 필드는 Table의 index만 보내고, 변경되는 값은 Huffman Encoding 후 보냄으로써 Header의 크기를 경량화함
+
+https://ssungkang.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-HTTP-11-VS-HTTP-20
