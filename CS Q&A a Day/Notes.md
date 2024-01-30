@@ -7254,3 +7254,19 @@ HTTP(HyperText Transfer Protocol)
 - 일반적으로 안정적인 TCP/IP 레이어를 기반으로 사용하는 응용 프로토콜
 
 https://surprisecomputer.tistory.com/54
+
+
+24.01.30
+## Q. API를 모르는 사람에게 알려주듯 설명해주세요.(네트워크)
+
+A.  
+API(Application Programming Interface)
+- 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스
+
+인터페이스(Interface)
+- 컴퓨터 시스템끼리 정보를 교환하는 공유 경계
+- 하드웨어 장치들은 인터페이스를 통해 데이터를 송수신할 수 있음
+
+API는 어떤 응용프로그램에서 데이터를 주고 받기 위한 방법으로, 어떤 사이트에서 데이터를 공유할 경우 어떤 방식으로 정보를 요청해야 하는지, 어떤 데이터를 제공받을 수 있을지에 대한 규격을 약속한 것
+
+https://steemit.com/kr/@yahweh87/it-api
