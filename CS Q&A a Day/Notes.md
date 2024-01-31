@@ -7270,3 +7270,14 @@ API(Application Programming Interface)
 API는 어떤 응용프로그램에서 데이터를 주고 받기 위한 방법으로, 어떤 사이트에서 데이터를 공유할 경우 어떤 방식으로 정보를 요청해야 하는지, 어떤 데이터를 제공받을 수 있을지에 대한 규격을 약속한 것
 
 https://steemit.com/kr/@yahweh87/it-api
+
+
+24.01.31
+## Q. 인터넷이란 무엇일까요?(네트워크)
+
+A.  
+Internet
+- 여러 통신망을 하나로 연결한다는 의미의 Inter-network에서 시작된 말로 전세계 컴퓨터를 하나로 연결하는 컴퓨터망을 의미함
+- 클라이언트와 서버로 구성되어 있으며, TCP/IP라는 기본 프로토콜을 통해 제공됨
+
+https://velog.io/@hyewon_park/%EC%9D%B8%ED%84%B0%EB%84%B7%EC%9D%B4%EB%9E%80
