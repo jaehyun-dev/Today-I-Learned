@@ -7281,3 +7281,10 @@ Internet
 - 클라이언트와 서버로 구성되어 있으며, TCP/IP라는 기본 프로토콜을 통해 제공됨
 
 https://velog.io/@hyewon_park/%EC%9D%B8%ED%84%B0%EB%84%B7%EC%9D%B4%EB%9E%80
+
+
+24.02.01
+## Q. 인터넷과 인트라넷의 차이점에 대해서 설명해주세요.(네트워크)
+
+A.  
+[22.11.03 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B3%BC-%EC%9D%B8%ED%8A%B8%EB%9D%BC%EB%84%B7%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
