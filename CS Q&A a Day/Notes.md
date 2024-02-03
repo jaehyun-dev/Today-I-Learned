@@ -7295,3 +7295,24 @@ A.
 
 A.  
 [22.11.16 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%9D%BC%EC%9A%B0%ED%84%B0%EC%99%80-%EC%8A%A4%EC%9C%84%EC%B9%98%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EB%A7%90%EC%94%80%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
+
+
+24.02.03
+## Q. LAN과 WAN은 어떤 차이가 있을까요?(네트워크)
+
+A.  
+LAN(Local Area Network)
+- 사용자가 포함된 지역 네트워크
+- 학교, 회사, 집 등 소규모 지역에서 컴퓨터, IP 전화기 등의 장비를 서로 연결한 것
+- 컴퓨터끼리 1대1로 직접 연결하는 게 아니라, 공유기나 스위치 등을 이용해서 연결함
+- 구성할 때 드는 비용과 전기세를 빼고는 유지보수비가 들지 않음
+- 이더넷 프로토콜을 주로 사용함
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/8664522c-79c4-49f8-a451-d8fd02a23cb7)
+
+
+WAN(Wide Area Network)
+- LAN과 LAN 사이를 광범위한 지역 단위로 구성하는 네트워크
+- ISP 네트워크망을 통해 LAN 컴퓨터에서 외부 LAN의 웹서버에 접속할 수 있음
+![image](https://github.com/jaehyun-dev/Today-I-Learned/assets/71001479/1a47cd70-f0d6-4b15-b5cb-9cc89f9d78a4)
+
+https://ledgku.tistory.com/17
