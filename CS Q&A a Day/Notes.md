@@ -7348,3 +7348,10 @@ TCP/IP(Transmission Control Protocol/Internet Protocol) 4계층
 - 현재의 실제 네트워크 환경에서는 TCP/IP 모델이 더 일반적으로 사용되고 있음
 
 [출처] ChatGPT 답변 정리
+
+
+24.02.05
+## Q. 라우터의 라우팅 기술인 정적라우팅과 동적라우팅에 대해 설명해주세요.(네트워크)
+
+A.  
+[22.09.12 질문 및 답변](https://github.com/jaehyun-dev/Today-I-Learned/blob/main/CS%20Q%26A%20a%20Day/Notes.md#q-%EB%9D%BC%EC%9A%B0%ED%84%B0%EC%9D%98-%EB%9D%BC%EC%9A%B0%ED%8C%85-%EA%B8%B0%EC%88%A0%EC%9D%B8-%EC%A0%95%EC%A0%81%EB%9D%BC%EC%9A%B0%ED%8C%85%EA%B3%BC-%EB%8F%99%EC%A0%81%EB%9D%BC%EC%9A%B0%ED%8C%85%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
